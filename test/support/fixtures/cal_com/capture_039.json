@@ -1,0 +1,16 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/bookings/members",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-039",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user",
+        "timeZone": "America/Los_Angeles"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"mostBookings\": [],\n    \"leastBookings\": [],\n    \"mostCancelled\": [],\n    \"mostCompleted\": [],\n    \"leastCompleted\": [],\n    \"mostNoShow\": [],\n    \"highestRatings\": [],\n    \"lowestRatings\": []\n  }\n}\n"
+}

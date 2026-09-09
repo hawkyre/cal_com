@@ -1,0 +1,19 @@
+{
+  "provider": "cal_com",
+  "operation": "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-057",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981260,
+        "linkId": "1PUEHF2tXqFPynCRTzs79o"
+      },
+      "body": {
+        "maxUsageCount": 2
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"linkId\": \"1PUEHF2tXqFPynCRTzs79o\",\n    \"eventTypeId\": 6981260,\n    \"isExpired\": false,\n    \"bookingUrl\": \"https://example.invalid/redacted\",\n    \"expiresAt\": \"2026-09-09T00:00:00.000Z\"\n  }\n}\n"
+}

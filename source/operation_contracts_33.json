@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.EventTypesPrivateLinksController20240904UpdatePrivateLink": {
+    "input": "CalCom.Entities.InputEventTypesPrivateLinksController20240904UpdatePrivateLink",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904UpdatePrivateLink200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_update_private_link, id: \"PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}\", method: :patch, path: \"/v2/event-types/{eventTypeId}/private-links/{linkId}\", module: CalCom.Operations.EventTypesPrivateLinksController20240904UpdatePrivateLink, input_module: CalCom.Entities.InputEventTypesPrivateLinksController20240904UpdatePrivateLink, version: \"2024-09-04\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904UpdatePrivateLink200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreatePrivateLinkOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesPrivateLinksController20240904DeletePrivateLink": {
+    "input": "CalCom.Entities.InputEventTypesPrivateLinksController20240904DeletePrivateLink",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904DeletePrivateLink200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_delete_private_link, id: \"DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}\", method: :delete, path: \"/v2/event-types/{eventTypeId}/private-links/{linkId}\", module: CalCom.Operations.EventTypesPrivateLinksController20240904DeletePrivateLink, input_module: CalCom.Entities.InputEventTypesPrivateLinksController20240904DeletePrivateLink, version: \"2024-09-04\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904DeletePrivateLink200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeletePrivateLinkOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerUpdateMyBookingLimits": {
+    "input": "CalCom.Entities.InputMeControllerUpdateMyBookingLimits",
+    "result": "CalCom.Entities.ResultMeControllerUpdateMyBookingLimits200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_update_my_booking_limits, id: \"PATCH /v2/me/booking-limits\", method: :patch, path: \"/v2/me/booking-limits\", module: CalCom.Operations.MeControllerUpdateMyBookingLimits, input_module: CalCom.Entities.InputMeControllerUpdateMyBookingLimits, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerUpdateMyBookingLimits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingLimitsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerClearMyBookingLimits": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_clear_my_booking_limits, id: \"DELETE /v2/me/booking-limits\", method: :delete, path: \"/v2/me/booking-limits\", module: CalCom.Operations.MeControllerClearMyBookingLimits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 204, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  },
+  "CalCom.Operations.MeControllerUpdateMyTeamBookingLimit": {
+    "input": "CalCom.Entities.InputMeControllerUpdateMyTeamBookingLimit",
+    "result": "CalCom.Entities.ResultMeControllerUpdateMyTeamBookingLimit200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_update_my_team_booking_limit, id: \"PATCH /v2/me/team-booking-limits/{teamId}\", method: :patch, path: \"/v2/me/team-booking-limits/{teamId}\", module: CalCom.Operations.MeControllerUpdateMyTeamBookingLimit, input_module: CalCom.Entities.InputMeControllerUpdateMyTeamBookingLimit, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerUpdateMyTeamBookingLimit200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UpdateTeamBookingLimitOutput}, nullable: false}, empty?: false}]}"
+  }
+}

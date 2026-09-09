@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/schedules/{scheduleId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-086",
+  "http_status": 404,
+  "request": {
+    "params": {
+      "path": {
+        "scheduleId": 2335925
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"error\",\n  \"timestamp\": \"2026-09-08T03:11:09.041Z\",\n  \"path\": \"/v2/schedules/2335925\",\n  \"error\": {\n    \"code\": \"NotFoundException\",\n    \"message\": \"Schedule with ID=2335925 does not exist.\",\n    \"details\": {\n      \"message\": \"Schedule with ID=2335925 does not exist.\",\n      \"error\": \"Not Found\",\n      \"statusCode\": 404\n    }\n  }\n}\n"
+}

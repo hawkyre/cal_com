@@ -1,0 +1,19 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/auth/oauth2/token",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-oauth-20260908-04",
+  "http_status": 200,
+  "source_sha256": "ccd156272822688ac3d8c09d89bd3e8fdbf10ebc07576f7d62ae06600f5f0687",
+  "request": {
+    "params": {
+      "body": {
+        "client_id": "redacted-client-id",
+        "client_secret": "redacted-client-secret",
+        "grant_type": "refresh_token",
+        "refresh_token": "redacted-refresh_token-7"
+      }
+    }
+  },
+  "body": "{\"access_token\":\"redacted-access_token-4\",\"token_type\":\"bearer\",\"refresh_token\":\"redacted-refresh_token-4\",\"expires_in\":1800,\"scope\":\"PROFILE_READ\"}"
+}

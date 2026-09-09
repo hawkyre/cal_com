@@ -1,0 +1,16 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/auth/oauth2/clients/{clientId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-oauth-20260908-01-client",
+  "http_status": 200,
+  "source_sha256": "e484d596e1a285d6dec087763810828720b2cc437e877a94574a026a53fe0318",
+  "request": {
+    "params": {
+      "path": {
+        "clientId": "redacted-client-id"
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":{\"client_id\":\"redacted-client-id\",\"redirect_uris\":[\"https://kithe.example/oauth/cal/callback\"],\"redirect_uri\":\"https://kithe.example/oauth/cal/callback\",\"name\":\"redacted-client\",\"logo\":null,\"is_trusted\":false,\"client_type\":\"CONFIDENTIAL\"}}"
+}

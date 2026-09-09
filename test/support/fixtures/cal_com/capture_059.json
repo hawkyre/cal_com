@@ -1,0 +1,20 @@
+{
+  "provider": "cal_com",
+  "operation": "PATCH /v2/slots/reservations/{uid}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-059",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "uid": "0d4dcf88-4be1-463c-818b-cbf00652e154"
+      },
+      "body": {
+        "eventTypeId": 6981260,
+        "slotStart": "2026-09-09T16:15:00Z",
+        "reservationDuration": 5
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"eventTypeId\": 6981260,\n    \"slotStart\": \"2026-09-09T16:15:00.000Z\",\n    \"slotEnd\": \"2026-09-09T16:30:00.000Z\",\n    \"slotDuration\": 15,\n    \"reservationUid\": \"0d4dcf88-4be1-463c-818b-cbf00652e154\",\n    \"reservationDuration\": 5,\n    \"reservationUntil\": \"2026-09-08T03:11:13.031Z\"\n  }\n}\n"
+}

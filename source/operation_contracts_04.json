@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsTeamsRoutingFormsControllerGetTeamRoutingForms": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRoutingFormsControllerGetTeamRoutingForms",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsControllerGetOrganizationRoutingForms200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_routing_forms_controller_get_team_routing_forms, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/routing-forms\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/routing-forms\", module: CalCom.Operations.OrganizationsTeamsRoutingFormsControllerGetTeamRoutingForms, input_module: CalCom.Entities.InputOrganizationsTeamsRoutingFormsControllerGetTeamRoutingForms, version: nil, media_type: nil, page_size: nil, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsRoutingFormsControllerGetOrganizationRoutingForms200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsRoutingFormsResponsesControllerGetRoutingFormResponses": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerGetRoutingFormResponses",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponses200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_routing_forms_responses_controller_get_routing_form_responses, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses\", module: CalCom.Operations.OrganizationsTeamsRoutingFormsResponsesControllerGetRoutingFormResponses, input_module: CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerGetRoutingFormResponses, version: nil, media_type: nil, page_size: nil, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponses200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormResponsesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsSchedulesControllerGetTeamSchedules": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsSchedulesControllerGetTeamSchedules",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_schedules_controller_get_team_schedules, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/schedules\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/schedules\", module: CalCom.Operations.OrganizationsTeamsSchedulesControllerGetTeamSchedules, input_module: CalCom.Entities.InputOrganizationsTeamsSchedulesControllerGetTeamSchedules, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulesOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsSchedulesControllerGetUserSchedules": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsSchedulesControllerGetUserSchedules",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_schedules_controller_get_user_schedules, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/users/{userId}/schedules\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/users/{userId}/schedules\", module: CalCom.Operations.OrganizationsTeamsSchedulesControllerGetUserSchedules, input_module: CalCom.Entities.InputOrganizationsTeamsSchedulesControllerGetUserSchedules, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulesOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerGetWorkflows": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_get_workflows, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/workflows\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerGetWorkflows, input_module: CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  }
+}

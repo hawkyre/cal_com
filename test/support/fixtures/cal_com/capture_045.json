@@ -1,0 +1,19 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/routings/routed-to-per-period",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-045",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user",
+        "startDate": "2026-09-01",
+        "endDate": "2026-09-08",
+        "period": "perDay",
+        "limit": 2
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"users\": {\n      \"data\": []\n    },\n    \"periodStats\": {\n      \"data\": []\n    }\n  }\n}\n"
+}

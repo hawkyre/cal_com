@@ -1,0 +1,31 @@
+{
+  "provider": "cal_com",
+  "operation": "PUT /v2/event-types/{eventTypeId}/booking-fields",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-073",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981260
+      },
+      "body": {
+        "bookingFields": [
+          {
+            "field": "email",
+            "required": true,
+            "hidden": false
+          },
+          {
+            "field": "custom",
+            "slug": "connector-test-note",
+            "label": "Connector replacement note",
+            "type": "shortText",
+            "required": false
+          }
+        ]
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"bookingFields\": [\n      {\n        \"field\": \"name\",\n        \"slug\": \"name\",\n        \"variant\": \"fullName\",\n        \"disableOnPrefill\": false\n      },\n      {\n        \"field\": \"attendeePhoneNumber\",\n        \"slug\": \"attendeePhoneNumber\",\n        \"required\": false,\n        \"hidden\": true,\n        \"disableOnPrefill\": false\n      },\n      {\n        \"field\": \"location\",\n        \"slug\": \"location\"\n      },\n      {\n        \"field\": \"email\",\n        \"slug\": \"email\",\n        \"required\": true,\n        \"hidden\": false,\n        \"disableOnPrefill\": false\n      },\n      {\n        \"field\": \"custom\",\n        \"slug\": \"connector-test-note\",\n        \"label\": \"Connector replacement note\",\n        \"required\": false,\n        \"hidden\": false,\n        \"disableOnPrefill\": false,\n        \"type\": \"shortText\"\n      },\n      {\n        \"field\": \"title\",\n        \"slug\": \"title\",\n        \"required\": true,\n        \"hidden\": true,\n        \"disableOnPrefill\": false\n      },\n      {\n        \"field\": \"notes\",\n        \"slug\": \"notes\",\n        \"required\": false,\n        \"hidden\": false,\n        \"disableOnPrefill\": false\n      },\n      {\n        \"field\": \"guests\",\n        \"slug\": \"guests\",\n        \"required\": false,\n        \"hidden\": false,\n        \"disableOnPrefill\": false\n      },\n      {\n        \"field\": \"rescheduleReason\",\n        \"slug\": \"rescheduleReason\",\n        \"required\": false,\n        \"hidden\": false,\n        \"disableOnPrefill\": false\n      }\n    ]\n  }\n}\n"
+}

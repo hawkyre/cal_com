@@ -1,0 +1,29 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/bookings",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-107",
+  "http_status": 201,
+  "request": {
+    "params": {
+      "body": {
+        "eventTypeId": 6981506,
+        "start": "2026-09-09T16:45:00Z",
+        "attendee": {
+          "name": "Kithe Connector Test",
+          "timeZone": "America/Los_Angeles",
+          "language": "en",
+          "email": "redacted@example.invalid"
+        },
+        "guests": [],
+        "location": {
+          "type": "link"
+        },
+        "metadata": {
+          "purpose": "connector-test-decline"
+        }
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":{\"id\":24927701,\"uid\":\"sEHiJyFzhkvk2ZUZws51U5\",\"title\":\"Kithe connector approval test between redacted and Kithe Connector Test\",\"description\":\"\",\"hosts\":[{\"id\":3209949,\"name\":\"redacted\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"username\":\"redacted\",\"timeZone\":\"America/Los_Angeles\"}],\"status\":\"pending\",\"cancellationReason\":\"\",\"cancelledByEmail\":\"\",\"rescheduledByEmail\":null,\"start\":\"2026-09-09T16:45:00.000Z\",\"end\":\"2026-09-09T17:00:00.000Z\",\"duration\":15,\"eventTypeId\":6981506,\"eventType\":{\"id\":6981506,\"slug\":\"kithe-connector-approval-20260908\"},\"meetingUrl\":\"https://example.invalid/redacted\",\"location\":\"https://example.invalid/redacted\",\"absentHost\":false,\"createdAt\":\"2026-09-08T04:01:42.754Z\",\"updatedAt\":\"2026-09-08T04:01:42.885Z\",\"metadata\":{\"purpose\":\"connector-test-decline\"},\"rating\":null,\"icsUid\":\"redacted@example.invalid\",\"attendees\":[{\"name\":\"Kithe Connector Test\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"timeZone\":\"America/Los_Angeles\",\"language\":\"en\",\"absent\":false}],\"guests\":[],\"bookingFieldsResponses\":{\"email\":\"redacted@example.invalid\",\"name\":\"Kithe Connector Test\",\"guests\":[],\"location\":{\"value\":\"link\",\"optionValue\":\"\"},\"displayEmail\":\"redacted@example.invalid\",\"displayGuests\":[]},\"isPlatformManagedUserBooking\":false}}"
+}

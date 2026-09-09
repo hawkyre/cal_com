@@ -1,0 +1,21 @@
+{
+  "provider": "cal_com",
+  "operation": "PATCH /v2/bookings/{bookingUid}/location",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-103",
+  "http_status": 404,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "eS6BZvpsXtP1LKMbr1esZM"
+      },
+      "body": {
+        "location": {
+          "type": "link",
+          "link": "https://example.invalid/redacted"
+        }
+      }
+    }
+  },
+  "body": "{\"status\":\"error\",\"timestamp\":\"2026-09-08T04:00:14.805Z\",\"path\":\"/v2/bookings/eS6BZvpsXtP1LKMbr1esZM/location\",\"error\":{\"code\":\"NotFoundException\",\"message\":\"Cannot PATCH /v2/bookings/eS6BZvpsXtP1LKMbr1esZM/location\",\"details\":{\"message\":\"Cannot PATCH /v2/bookings/eS6BZvpsXtP1LKMbr1esZM/location\",\"error\":\"Not Found\",\"statusCode\":404}}}"
+}

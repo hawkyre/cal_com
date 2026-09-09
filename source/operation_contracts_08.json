@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.AllowlistsControllerGetAllowlist": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlist",
+    "result": "CalCom.Entities.ResultAllowlistsControllerGetAllowlist200.t()",
+    "contract": "%CalCom.Operation{key: :allowlists_controller_get_allowlist, id: \"GET /v2/allowlists/{service}\", method: :get, path: \"/v2/allowlists/{service}\", module: CalCom.Operations.AllowlistsControllerGetAllowlist, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlist, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultAllowlistsControllerGetAllowlist200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetAllowlistOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.ApiKeysControllerRefresh": {
+    "input": "CalCom.Entities.InputApiKeysControllerRefresh",
+    "result": "CalCom.Entities.ResultApiKeysControllerRefresh200.t()",
+    "contract": "%CalCom.Operation{key: :api_keys_controller_refresh, id: \"POST /v2/api-keys/refresh\", method: :post, path: \"/v2/api-keys/refresh\", module: CalCom.Operations.ApiKeysControllerRefresh, input_module: CalCom.Entities.InputApiKeysControllerRefresh, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultApiKeysControllerRefresh200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.RefreshApiKeyOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260501GetBookings": {
+    "input": "CalCom.Entities.InputBookingsController20260501GetBookings",
+    "result": "CalCom.Entities.ResultOrganizationsBookingsControllerGetAllOrgTeamBookingsCursor200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_05_01_get_bookings, id: \"GET /v2/bookings\", method: :get, path: \"/v2/bookings\", module: CalCom.Operations.BookingsController20260501GetBookings, input_module: CalCom.Entities.InputBookingsController20260501GetBookings, version: \"2026-05-01\", media_type: nil, page_size: 50, page_key: \"limit\", pagination: :cursor, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsBookingsControllerGetAllOrgTeamBookingsCursor200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingsOutput20260501}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225GetBookingBySeatUid": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetBookingBySeatUid",
+    "result": "CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_get_booking_by_seat_uid, id: \"GET /v2/bookings/by-seat/{seatUid}\", method: :get, path: \"/v2/bookings/by-seat/{seatUid}\", module: CalCom.Operations.BookingsController20260225GetBookingBySeatUid, input_module: CalCom.Entities.InputBookingsController20260225GetBookingBySeatUid, version: \"2026-02-25\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225GetBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetBooking",
+    "result": "CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_get_booking, id: \"GET /v2/bookings/{bookingUid}\", method: :get, path: \"/v2/bookings/{bookingUid}\", module: CalCom.Operations.BookingsController20260225GetBooking, input_module: CalCom.Entities.InputBookingsController20260225GetBooking, version: \"2026-02-25\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_memberships_controller_get_all_org_team_memberships, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/memberships\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/memberships\", module: CalCom.Operations.OrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships, input_module: CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgTeamMembershipsOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsMembershipsControllerGetOrgTeamMembership": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetOrgTeamMembership",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsMembershipsControllerGetOrgTeamMembership200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_memberships_controller_get_org_team_membership, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}\", module: CalCom.Operations.OrganizationsTeamsMembershipsControllerGetOrgTeamMembership, input_module: CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetOrgTeamMembership, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsMembershipsControllerGetOrgTeamMembership200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamMembershipOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsRolesControllerGetAllRoles": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesControllerGetAllRoles200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_controller_get_all_roles, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/roles\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles\", module: CalCom.Operations.OrganizationsTeamsRolesControllerGetAllRoles, input_module: CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesControllerGetAllRoles200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetAllTeamRolesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsRolesControllerGetRole": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesControllerGetRole200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_controller_get_role, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}\", module: CalCom.Operations.OrganizationsTeamsRolesControllerGetRole, input_module: CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesControllerGetRole200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamRoleOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerListPermissions": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_permissions_controller_list_permissions, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", module: CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerListPermissions, input_module: CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRolePermissionsOutput}, nullable: false}, empty?: false}]}"
+  }
+}

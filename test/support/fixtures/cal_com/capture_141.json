@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "DELETE /v2/webhooks/{webhookId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-141",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "webhookId": "988a7645-2a82-4093-9723-f9a66e159bd4"
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":{\"id\":\"988a7645-2a82-4093-9723-f9a66e159bd4\",\"payloadTemplate\":null,\"triggers\":[\"BOOKING_CREATED\",\"BOOKING_RESCHEDULED\",\"BOOKING_REQUESTED\",\"BOOKING_CANCELLED\",\"BOOKING_REJECTED\",\"BOOKING_NO_SHOW_UPDATED\",\"BOOKING_LOCATION_UPDATED\"],\"subscriberUrl\":\"https://example.invalid/redacted\",\"active\":true,\"secret\":\"REDACTED\",\"time\":null,\"timeUnit\":null,\"version\":\"2026-07-27\",\"userId\":3209949}}"
+}

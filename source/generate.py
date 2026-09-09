@@ -19,6 +19,7 @@ SOURCE = Path(__file__).resolve().parent
 REPO = SOURCE.parent
 CHUNK_BYTES = 24000  # Largest entity file a reviewer reads in one screenful.
 OPERATIONS_PER_FILE = 5
+LINE_LENGTH = 98  # `mix format`'s default; generated files must match it.
 
 # Filled by main() so the pure helpers below stay importable and testable.
 PREFIX = ""
@@ -366,16 +367,28 @@ def render_registry(contracts):
 
 
 def render_webhook_payloads(webhook_modules):
-    union = " | ".join("Entities." + name.removeprefix(PREFIX) + ".t()" for name in webhook_modules.values())
-    pairs = ",\n".join("    " + literal(event) + " => Entities." + name.removeprefix(PREFIX)
-                       for event, name in webhook_modules.items())
+    """Render the webhook dispatch module exactly as `mix format` would.
+
+    Generated files are checked by `--check` and by `mix format
+    --check-formatted`, so the two must agree. Only this module emits lines
+    long enough to wrap; the map pairs and the result union follow the
+    formatter's 98-column break with its continuation indents.
+    """
+    parts = ["Entities." + name.removeprefix(PREFIX) + ".t()" for name in webhook_modules.values()]
+    union = " | ".join(parts)
+    if len("  @type t :: " + union) > LINE_LENGTH:
+        union = "\n          " + "\n          | ".join(parts)
+    else:
+        union = " " + union
+    pairs = ",\n".join(map_entry(event, name) for event, name in webhook_modules.items())
     return ('defmodule ' + ROOT_NS + '.WebhookPayloads do\n'
             '  @moduledoc "Concrete payloads for every documented Cal webhook trigger."\n'
             "  alias " + ROOT_NS + ".{Codec, Entities}\n"
             "  alias " + ROOT_NS + ".Error\n"
+            "\n"
             "  @modules %{\n" + pairs + "\n  }\n"
             '  @typedoc "The complete source event payload union."\n'
-            "  @type t :: " + union + "\n"
+            "  @type t ::" + union + "\n"
             '  @doc "Return the exact source trigger names."\n'
             "  @spec events() :: [String.t()]\n"
             "  def events, do: Map.keys(@modules)\n"
@@ -387,8 +400,17 @@ def render_webhook_payloads(webhook_modules):
             "      module -> module.parse(raw)\n"
             "    end\n"
             "  end\n"
+            "\n"
             "  def parse(_raw), do: Codec.invalid(\"webhook\")\n"
             "end\n")
+
+
+def map_entry(event, module):
+    target = "Entities." + module.removeprefix(PREFIX)
+    line = "    " + literal(event) + " => " + target
+    if len(line) + 1 <= LINE_LENGTH:
+        return line
+    return "    " + literal(event) + " =>\n      " + target
 
 
 def operation_declarations(contracts):
@@ -419,17 +441,29 @@ def build(original, inventory, overrides, webhook_shapes):
     """Render every generated file as {relative path: contents}."""
     global schemas
     operations = selected_operations(original, inventory["operations"])
+    # Reachability is computed before the response overrides, exactly as the
+    # in-tree generator did: an override replaces a schema with one that is
+    # already reachable, and the order fixes which canonical name a shared
+    # shape gets. Changing it renames generated modules.
+    schemas = reachable_schemas(original, operations)
     for operation_id, responses in overrides.get("operation_responses", {}).items():
         for status, schema in responses.items():
             operations[operation_id]["responses"][status]["content"]["application/json"]["schema"] = schema
-    schemas = reachable_schemas(original, operations)
     for name, fields in overrides.get("schema_properties", {}).items():
         schemas[name]["properties"].update(fields)
 
-    contracts = operation_contracts(operations)
     for name, schema in schemas.items():
         if schema.get("type") == "object" or "properties" in schema:
             register(schema, name)
+    contracts = operation_contracts(operations)
+
+    webhook_modules = {}
+    if webhook_shapes is not None:
+        for event, fields in overrides.get("webhook_properties", {}).items():
+            webhook_shapes[event]["properties"]["payload"]["properties"].update(fields)
+        webhook_modules = {event: register(shape, "Webhook" + module_name(event.lower()))
+                           for event, shape in webhook_shapes.items()}
+
     generated, declarations = entity_modules()
 
     lib = "lib/" + snake(ROOT_NS) + "/"
@@ -456,10 +490,6 @@ def build(original, inventory, overrides, webhook_shapes):
     files[lib + "registry.ex"] = render_registry(contracts)
 
     if webhook_shapes is not None:
-        for event, fields in overrides.get("webhook_properties", {}).items():
-            webhook_shapes[event]["properties"]["payload"]["properties"].update(fields)
-        webhook_modules = {event: register(shape, "Webhook" + module_name(event.lower()))
-                           for event, shape in webhook_shapes.items()}
         files[lib + "webhook_payloads.ex"] = render_webhook_payloads(webhook_modules)
     return files
 

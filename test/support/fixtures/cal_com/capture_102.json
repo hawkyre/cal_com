@@ -1,0 +1,24 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/bookings/{bookingUid}/mark-absent",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-102",
+  "http_status": 400,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "eS6BZvpsXtP1LKMbr1esZM"
+      },
+      "body": {
+        "host": false,
+        "attendees": [
+          {
+            "email": "redacted@example.invalid",
+            "absent": false
+          }
+        ]
+      }
+    }
+  },
+  "body": "{\"status\":\"error\",\"timestamp\":\"2026-09-08T04:00:11.854Z\",\"path\":\"/v2/bookings/eS6BZvpsXtP1LKMbr1esZM/mark-absent\",\"error\":{\"code\":\"BadRequestException\",\"message\":\"Bookings can only be marked as absent after their scheduled start time. Current time in UTC+0: 2026-09-08T04:00:11.853Z, Booking start time in UTC+0: 2026-09-09T16:00:00.000Z\",\"details\":{\"message\":\"Bookings can only be marked as absent after their scheduled start time. Current time in UTC+0: 2026-09-08T04:00:11.853Z, Booking start time in UTC+0: 2026-09-09T16:00:00.000Z\",\"error\":\"Bad Request\",\"statusCode\":400}}}"
+}

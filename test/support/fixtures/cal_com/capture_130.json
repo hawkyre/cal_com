@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/bookings/{bookingUid}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-130",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "dS4hSXi9zZfBX5RHgtq5g7"
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":{\"id\":24927669,\"uid\":\"dS4hSXi9zZfBX5RHgtq5g7\",\"title\":\"Kithe connector standard test between redacted and Kithe Connector Test\",\"description\":\"\",\"hosts\":[{\"id\":3209949,\"name\":\"redacted\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"username\":\"redacted\",\"timeZone\":\"America/Los_Angeles\"}],\"status\":\"cancelled\",\"cancellationReason\":\"Kithe connector test\",\"cancelledByEmail\":\"redacted@example.invalid\",\"reschedulingReason\":\"Kithe connector lifecycle test\",\"rescheduledByEmail\":null,\"rescheduledFromUid\":\"eS6BZvpsXtP1LKMbr1esZM\",\"start\":\"2026-09-09T16:15:00.000Z\",\"end\":\"2026-09-09T16:30:00.000Z\",\"duration\":15,\"eventTypeId\":6981507,\"eventType\":{\"id\":6981507,\"slug\":\"kithe-connector-standard-20260908\"},\"meetingUrl\":\"https://example.invalid/redacted\",\"location\":\"https://example.invalid/redacted\",\"absentHost\":false,\"createdAt\":\"2026-09-08T04:00:19.716Z\",\"updatedAt\":\"2026-09-08T04:02:20.779Z\",\"metadata\":{\"attempt\":\"cal-test-20260908-096\",\"purpose\":\"connector-test\"},\"rating\":null,\"icsUid\":\"redacted@example.invalid\",\"attendees\":[{\"name\":\"Kithe Connector Test\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"timeZone\":\"America/Los_Angeles\",\"language\":\"en\",\"absent\":false}],\"guests\":[],\"bookingFieldsResponses\":{\"email\":\"redacted@example.invalid\",\"name\":\"Kithe Connector Test\",\"guests\":[],\"rescheduleReason\":\"Kithe connector lifecycle test\",\"location\":{\"value\":\"link\",\"optionValue\":\"\"},\"displayEmail\":\"redacted@example.invalid\",\"displayGuests\":[]}}}"
+}

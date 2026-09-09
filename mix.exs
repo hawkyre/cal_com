@@ -18,8 +18,9 @@ defmodule CalCom.MixProject do
   end
 
   # The package is a pure library: it builds requests and parses responses and
-  # never opens a socket, so it starts no supervision tree of its own.
-  def application, do: [extra_applications: []]
+  # never opens a socket, so it starts no supervision tree of its own. It needs
+  # :crypto for webhook HMACs and for the page digest a walk keeps.
+  def application, do: [extra_applications: [:crypto]]
 
   # Runtime dependencies are constraint ranges on the majors this package is
   # generated and tested against, never exact pins, so a consumer on another

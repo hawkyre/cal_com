@@ -1,0 +1,29 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/bookings/kpi-stats",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-053",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user",
+        "timeZone": "America/Los_Angeles",
+        "columnFilters": [
+          {
+            "id": "createdAt",
+            "value": {
+              "type": "dr",
+              "data": {
+                "startDate": "2026-09-01",
+                "endDate": "2026-09-08",
+                "preset": "custom"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"empty\": true,\n    \"created\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"scheduled\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"completed\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"rescheduled\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"cancelled\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"rating\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"no_show\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"no_show_guest\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"csat\": {\n      \"count\": 0,\n      \"deltaPrevious\": 0\n    },\n    \"previousRange\": {\n      \"startDate\": \"2026-08-25\",\n      \"endDate\": \"2026-09-01\"\n    }\n  }\n}\n"
+}

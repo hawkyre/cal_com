@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "DELETE /v2/event-types/{eventTypeId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-082",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981260
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": 6981260,\n    \"lengthInMinutes\": 15,\n    \"slug\": \"kithe-connector-test-20260908\",\n    \"title\": \"Kithe connector test updated 20260908\"\n  }\n}\n"
+}

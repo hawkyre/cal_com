@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerGetRoutingFormWorkflows": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflows200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_get_routing_form_workflows, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerGetRoutingFormWorkflows, input_module: CalCom.Entities.InputOrganizationsTeamsMembershipsControllerGetAllOrgTeamMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflows200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerGetWorkflowById": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_get_workflow_by_id, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerGetWorkflowById, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_get_routing_form_workflow_by_id, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsUsersControllerGetOrganizationsUsers": {
+    "input": "CalCom.Entities.InputOrganizationsUsersControllerGetOrganizationsUsers",
+    "result": "CalCom.Entities.ResultOrganizationsUsersControllerGetOrganizationsUsers200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_users_controller_get_organizations_users, id: \"GET /v2/organizations/{orgId}/users\", method: :get, path: \"/v2/organizations/{orgId}/users\", module: CalCom.Operations.OrganizationsUsersControllerGetOrganizationsUsers, input_module: CalCom.Entities.InputOrganizationsUsersControllerGetOrganizationsUsers, version: nil, media_type: nil, page_size: nil, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersControllerGetOrganizationsUsers200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrganizationUsersResponseDTO}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsUsersBookingsControllerGetOrganizationUserBookings": {
+    "input": "CalCom.Entities.InputOrganizationsUsersBookingsControllerGetOrganizationUserBookings",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_users_bookings_controller_get_organization_user_bookings, id: \"GET /v2/organizations/{orgId}/users/{userId}/bookings\", method: :get, path: \"/v2/organizations/{orgId}/users/{userId}/bookings\", module: CalCom.Operations.OrganizationsUsersBookingsControllerGetOrganizationUserBookings, input_module: CalCom.Entities.InputOrganizationsUsersBookingsControllerGetOrganizationUserBookings, version: nil, media_type: nil, page_size: 100, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  }
+}

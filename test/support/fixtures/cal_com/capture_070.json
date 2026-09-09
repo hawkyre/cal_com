@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/slots/reservations/{uid}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-070",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "uid": "0d4dcf88-4be1-463c-818b-cbf00652e154"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": null\n}\n"
+}

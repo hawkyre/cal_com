@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/bookings/{bookingUid}/attendees",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-114",
+  "http_status": 404,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "9ft9mwbNCEM6rE8r59aQQm"
+      }
+    }
+  },
+  "body": "{\"status\":\"error\",\"timestamp\":\"2026-09-08T04:03:52.153Z\",\"path\":\"/v2/bookings/9ft9mwbNCEM6rE8r59aQQm/attendees\",\"error\":{\"code\":\"NotFoundException\",\"message\":\"Cannot GET /v2/bookings/9ft9mwbNCEM6rE8r59aQQm/attendees\",\"details\":{\"message\":\"Cannot GET /v2/bookings/9ft9mwbNCEM6rE8r59aQQm/attendees\",\"error\":\"Not Found\",\"statusCode\":404}}}"
+}

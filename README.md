@@ -46,6 +46,39 @@ end
 
 `Req` is an example, not a dependency: the package declares no HTTP client.
 
+## Walking a paginated collection
+
+```elixir
+{:ok, call} = CalCom.Call.parse(%{"operation" => "GET /v2/bookings", "params" => %{"query" => %{"limit" => 50}}})
+context = %CalCom.Context{call: call, credentials: credentials}
+
+request = CalCom.Pagination.first(call.operation.key, context, nil)
+# send `request`, then:
+next = CalCom.Pagination.next(call.operation.key, response, request)
+```
+
+`next/3` returns the next request, `nil` when the walk is finished, or
+`{:error, %CalCom.Error{reason: :invalid_cursor}}` when the provider repeats a
+page or a cursor or returns contradictory metadata — a walk never loops
+silently.
+
+## Webhooks
+
+```elixir
+case CalCom.Webhook.parse(raw_body, headers, secret: secret) do
+  {:ok, %CalCom.Webhook{event: event, version: version, value: payload}} -> handle(event, payload)
+  {:error, %CalCom.Error{reason: :unauthorized}} -> reject()
+end
+```
+
+`verify/3` checks the HMAC over the exact raw body bytes and `parse/3` refuses a
+repeated signature or version header, an unsupported version and an unknown
+trigger before your domain sees the delivery. The secret is passed in, never
+read from configuration.
+
+`CalCom.Registry.all/0` lists every generated operation; `Registry.find/1`
+takes its method-route id or key.
+
 ## Errors
 
 `%CalCom.Error{}` carries a closed `reason` and the redacted provider `payload`.
@@ -56,8 +89,8 @@ generator run and a release, not a rescue clause.
 ## Regenerating from the spec
 
 Everything under `lib/cal_com/entities/`, `lib/cal_com/operations/`,
-`lib/cal_com/registry.ex` and `source/*_contracts_*.json` is generated from
-`source/openapi.json`:
+`lib/cal_com/registry.ex`, `lib/cal_com/webhook_payloads.ex` and
+`source/*_contracts_*.json` is generated from `source/openapi.json`:
 
 ```console
 python3 source/generate.py          # writes the files

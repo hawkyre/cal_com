@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsTeamsControllerGetMyTeams": {
+    "input": "CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMemberships",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsControllerGetMyTeams200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_controller_get_my_teams, id: \"GET /v2/organizations/{orgId}/teams/me\", method: :get, path: \"/v2/organizations/{orgId}/teams/me\", module: CalCom.Operations.OrganizationsTeamsControllerGetMyTeams, input_module: CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsControllerGetMyTeams200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgMeTeamsOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsControllerGetTeam": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsControllerGetTeam",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_controller_get_team, id: \"GET /v2/organizations/{orgId}/teams/{teamId}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}\", module: CalCom.Operations.OrganizationsTeamsControllerGetTeam, input_module: CalCom.Entities.InputOrganizationsTeamsControllerGetTeam, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgTeamOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsBookingsControllerGetAllOrgTeamBookings": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_bookings_controller_get_all_org_team_bookings, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/bookings\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/bookings\", module: CalCom.Operations.OrganizationsTeamsBookingsControllerGetAllOrgTeamBookings, input_module: CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings, version: nil, media_type: nil, page_size: 100, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingsOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsBookingsControllerGetBookingReferences": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetBookingReferences",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetBookingReferences200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_bookings_controller_get_booking_references, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/bookings/{bookingUid}/references\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/bookings/{bookingUid}/references\", module: CalCom.Operations.OrganizationsTeamsBookingsControllerGetBookingReferences, input_module: CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetBookingReferences, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetBookingReferences200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingReferencesOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks": {
+    "input": "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_event_types_private_links_controller_2024_09_04_get_private_links, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links\", module: CalCom.Operations.OrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks, input_module: CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks, version: \"2024-09-04\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetPrivateLinksOutput}, nullable: false}, empty?: false}]}"
+  }
+}

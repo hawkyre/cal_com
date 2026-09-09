@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "DELETE /v2/webhooks/{webhookId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-081",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "webhookId": "d09abae2-f22b-4da8-ac03-6a0804fea099"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"d09abae2-f22b-4da8-ac03-6a0804fea099\",\n    \"payloadTemplate\": null,\n    \"triggers\": [\n      \"OOO_CREATED\"\n    ],\n    \"subscriberUrl\": \"https://example.invalid/webhook\",\n    \"active\": true,\n    \"secret\": \"REDACTED\",\n    \"time\": null,\n    \"timeUnit\": null,\n    \"version\": \"2026-07-27\",\n    \"userId\": 3209949\n  }\n}\n"
+}

@@ -49,12 +49,29 @@ end
 
 defmodule CalCom.Call do
   @moduledoc "One operation with its concrete parsed input."
-  alias CalCom.Operation
+  alias CalCom.{Codec, Operation, Registry}
   @enforce_keys [:operation, :input]
   @derive {Inspect, only: [:operation]}
   defstruct [:operation, :input]
   @typedoc "A parsed provider call. The operation fixes the input module."
   @type t :: %__MODULE__{operation: Operation.t(), input: struct()}
+
+  @doc "Parse a method-route operation and its path, query, headers, and body values."
+  @spec parse(term()) :: {:ok, t()} | {:error, CalCom.Error.t()}
+  def parse(%{"operation" => id, "params" => params}) when is_binary(id) do
+    with %Operation{} = operation <- Registry.find(id),
+         {:ok, input} <- operation.input_module.parse(params) do
+      {:ok, %__MODULE__{operation: operation, input: input}}
+    else
+      nil -> Codec.invalid("operation")
+      {:error, _error} = error -> error
+    end
+  end
+
+  def parse(%{"operation" => id, "input" => input}),
+    do: parse(%{"operation" => id, "params" => input})
+
+  def parse(_raw), do: Codec.invalid("call")
 end
 
 defmodule CalCom.Context do

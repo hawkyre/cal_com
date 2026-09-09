@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.InsightsControllerGetBookingAverageDuration": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingAverageDuration200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_average_duration, id: \"POST /v2/insights/bookings/average-duration\", method: :post, path: \"/v2/insights/bookings/average-duration\", module: CalCom.Operations.InsightsControllerGetBookingAverageDuration, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingAverageDuration200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingAverageDurationOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingMemberStats": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingMemberStats200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_member_stats, id: \"POST /v2/insights/bookings/members\", method: :post, path: \"/v2/insights/bookings/members\", module: CalCom.Operations.InsightsControllerGetBookingMemberStats, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingMemberStats200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingMemberStatsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetRoutingFormsByStatus": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormsByStatus200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_forms_by_status, id: \"POST /v2/insights/routings/forms-by-status\", method: :post, path: \"/v2/insights/routings/forms-by-status\", module: CalCom.Operations.InsightsControllerGetRoutingFormsByStatus, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormsByStatus200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormsByStatusOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetRoutingFormResponses": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormResponses",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormResponses200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_form_responses, id: \"POST /v2/insights/routings/form-responses\", method: :post, path: \"/v2/insights/routings/form-responses\", module: CalCom.Operations.InsightsControllerGetRoutingFormResponses, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormResponses, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :body_offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormResponses200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormResponsesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetRoutingFormFieldOptions": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormFieldOptions200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_form_field_options, id: \"POST /v2/insights/routings/form-field-options\", method: :post, path: \"/v2/insights/routings/form-field-options\", module: CalCom.Operations.InsightsControllerGetRoutingFormFieldOptions, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormFieldOptions200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormFieldOptionsOutput}, nullable: false}, empty?: false}]}"
+  }
+}

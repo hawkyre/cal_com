@@ -1,0 +1,11 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/schedules",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-014",
+  "http_status": 200,
+  "request": {
+    "params": {}
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": 2335882,\n      \"ownerId\": 3209949,\n      \"name\": \"Working hours\",\n      \"timeZone\": \"America/Los_Angeles\",\n      \"availability\": [\n        {\n          \"days\": [\n            \"Monday\",\n            \"Tuesday\",\n            \"Wednesday\",\n            \"Thursday\",\n            \"Friday\"\n          ],\n          \"startTime\": \"09:00\",\n          \"endTime\": \"17:00\"\n        }\n      ],\n      \"isDefault\": true,\n      \"overrides\": []\n    }\n  ]\n}\n"
+}

@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/bookings/{bookingUid}/attendees",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-119",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "uvJaFTtQ7qtqvnHcxzP3PN"
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":[{\"name\":\"Kithe Connector Test\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"timeZone\":\"America/Los_Angeles\",\"language\":\"en\",\"absent\":false,\"id\":29735374}]}"
+}

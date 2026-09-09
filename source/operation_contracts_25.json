@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.BookingsController20260225CancelBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225CancelBooking",
+    "result": "CalCom.Entities.ResultBookingsController20260225CancelBooking200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_cancel_booking, id: \"POST /v2/bookings/{bookingUid}/cancel\", method: :post, path: \"/v2/bookings/{bookingUid}/cancel\", module: CalCom.Operations.BookingsController20260225CancelBooking, input_module: CalCom.Entities.InputBookingsController20260225CancelBooking, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225CancelBooking200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225MarkNoShow": {
+    "input": "CalCom.Entities.InputBookingsController20260225MarkNoShow",
+    "result": "CalCom.Entities.ResultBookingsController20260225MarkNoShow200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_mark_no_show, id: \"POST /v2/bookings/{bookingUid}/mark-absent\", method: :post, path: \"/v2/bookings/{bookingUid}/mark-absent\", module: CalCom.Operations.BookingsController20260225MarkNoShow, input_module: CalCom.Entities.InputBookingsController20260225MarkNoShow, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225MarkNoShow200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.MarkAbsentBookingOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225ReassignBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetCalendarLinks",
+    "result": "CalCom.Entities.ResultBookingsController20260225ReassignBooking200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_reassign_booking, id: \"POST /v2/bookings/{bookingUid}/reassign\", method: :post, path: \"/v2/bookings/{bookingUid}/reassign\", module: CalCom.Operations.BookingsController20260225ReassignBooking, input_module: CalCom.Entities.InputBookingsController20260225GetCalendarLinks, version: \"2026-02-25\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225ReassignBooking200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ReassignBookingOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225ReassignBookingToUser": {
+    "input": "CalCom.Entities.InputBookingsController20260225ReassignBookingToUser",
+    "result": "CalCom.Entities.ResultBookingsController20260225ReassignBooking200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_reassign_booking_to_user, id: \"POST /v2/bookings/{bookingUid}/reassign/{userId}\", method: :post, path: \"/v2/bookings/{bookingUid}/reassign/{userId}\", module: CalCom.Operations.BookingsController20260225ReassignBookingToUser, input_module: CalCom.Entities.InputBookingsController20260225ReassignBookingToUser, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225ReassignBooking200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ReassignBookingOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225ConfirmBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetCalendarLinks",
+    "result": "CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_confirm_booking, id: \"POST /v2/bookings/{bookingUid}/confirm\", method: :post, path: \"/v2/bookings/{bookingUid}/confirm\", module: CalCom.Operations.BookingsController20260225ConfirmBooking, input_module: CalCom.Entities.InputBookingsController20260225GetCalendarLinks, version: \"2026-02-25\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/me",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-001-me",
+  "http_status": 200,
+  "request": {
+    "params": {}
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": 3209949,\n    \"email\": \"redacted@example.invalid\",\n    \"name\": \"redacted\",\n    \"avatarUrl\": null,\n    \"bio\": \"\",\n    \"timeFormat\": 12,\n    \"defaultScheduleId\": 2335882,\n    \"weekStart\": \"Sunday\",\n    \"timeZone\": \"America/Los_Angeles\",\n    \"username\": \"redacted-test\",\n    \"locale\": null,\n    \"organizationId\": null\n  }\n}\n"
+}

@@ -1,0 +1,462 @@
+{
+  "schema_properties": {
+    "ConnectedCalendarsData": {
+      "destinationCalendar": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/DestinationCalendar"
+          },
+          {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "EventTypeOutput_2026_06_12": {
+      "bookingWindow": {
+        "oneOf": [
+          {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/BusinessDaysWindow_2024_06_14"
+                },
+                {
+                  "$ref": "#/components/schemas/CalendarDaysWindow_2024_06_14"
+                },
+                {
+                  "$ref": "#/components/schemas/RangeWindow_2024_06_14"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Disabled_2024_06_14"
+          }
+        ]
+      },
+      "seats": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Seats_2024_06_14"
+          },
+          {
+            "$ref": "#/components/schemas/Disabled_2024_06_14"
+          }
+        ]
+      }
+    },
+    "UserWebhookOutputDto": {
+      "payloadTemplate": {
+        "type": "string",
+        "description": "The template of the payload that will be sent to the subscriberUrl, check cal.com/docs/core-features/webhooks for more information",
+        "example": "{\"content\":\"A new event has been scheduled\",\"type\":\"{{type}}\",\"name\":\"{{title}}\",\"organizer\":\"{{organizer.name}}\",\"booker\":\"{{attendees.0.name}}\"}",
+        "nullable": true
+      },
+      "time": {
+        "type": "number",
+        "description": "How long after the booking start time the no-show triggers are evaluated",
+        "example": 5,
+        "nullable": true
+      },
+      "timeUnit": {
+        "enum": [
+          "DAY",
+          "HOUR",
+          "MINUTE"
+        ],
+        "type": "string",
+        "description": "The unit of the no-show time value",
+        "example": "MINUTE",
+        "nullable": true
+      },
+      "id": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "EventTypeWebhookOutputDto": {
+      "payloadTemplate": {
+        "type": "string",
+        "description": "The template of the payload that will be sent to the subscriberUrl, check cal.com/docs/core-features/webhooks for more information",
+        "example": "{\"content\":\"A new event has been scheduled\",\"type\":\"{{type}}\",\"name\":\"{{title}}\",\"organizer\":\"{{organizer.name}}\",\"booker\":\"{{attendees.0.name}}\"}",
+        "nullable": true
+      },
+      "time": {
+        "type": "number",
+        "description": "How long after the booking start time the no-show triggers are evaluated",
+        "example": 5,
+        "nullable": true
+      },
+      "timeUnit": {
+        "enum": [
+          "DAY",
+          "HOUR",
+          "MINUTE"
+        ],
+        "type": "string",
+        "description": "The unit of the no-show time value",
+        "example": "MINUTE",
+        "nullable": true
+      },
+      "id": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "UserOooOutputDto": {
+      "toUserId": {
+        "type": "number",
+        "nullable": true
+      }
+    },
+    "GetReservedSlotOutput_2024_09_04": {
+      "data": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "reservationUid": {
+            "type": "string"
+          },
+          "eventTypeId": {
+            "type": "number"
+          },
+          "slotStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "slotEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "slotDuration": {
+            "type": "number"
+          },
+          "reservationUntil": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "reservationUid",
+          "eventTypeId",
+          "slotStart",
+          "slotEnd",
+          "slotDuration",
+          "reservationUntil"
+        ]
+      }
+    },
+    "BookingOutput_2024_08_13": {
+      "rescheduledByEmail": {
+        "type": "string",
+        "format": "email",
+        "example": "rescheduler@example.com",
+        "nullable": true
+      },
+      "rating": {
+        "type": "number",
+        "example": 4,
+        "nullable": true
+      }
+    },
+    "RecurringBookingOutput_2024_08_13": {
+      "rating": {
+        "type": "number",
+        "example": 4,
+        "nullable": true
+      }
+    },
+    "CreateSeatedBookingOutput_2024_08_13": {
+      "description": {
+        "type": "string",
+        "example": "Learn how to integrate scheduling into marketplace.",
+        "nullable": true
+      },
+      "rescheduledByEmail": {
+        "type": "string",
+        "format": "email",
+        "example": "rescheduler@example.com",
+        "nullable": true
+      },
+      "rating": {
+        "type": "number",
+        "example": 4,
+        "nullable": true
+      }
+    },
+    "GetSeatedBookingOutput_2024_08_13": {
+      "description": {
+        "type": "string",
+        "example": "Learn how to integrate scheduling into marketplace.",
+        "nullable": true
+      },
+      "rescheduledByEmail": {
+        "type": "string",
+        "format": "email",
+        "example": "rescheduler@example.com",
+        "nullable": true
+      },
+      "rating": {
+        "type": "number",
+        "example": 4,
+        "nullable": true
+      }
+    }
+  },
+  "operation_responses": {
+    "GET /v2/credits/available": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "hasCredits": {
+                "type": "boolean"
+              },
+              "balance": {
+                "type": "object",
+                "properties": {
+                  "monthlyRemaining": {
+                    "type": "number"
+                  },
+                  "additional": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "monthlyRemaining",
+                  "additional"
+                ]
+              }
+            },
+            "required": [
+              "hasCredits",
+              "balance"
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "data"
+        ]
+      }
+    },
+    "GET /v2/slots": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "attendeesCount": {
+                    "type": "number"
+                  },
+                  "bookingUid": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "start"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "status",
+          "data"
+        ]
+      }
+    },
+    "GET /v2/bookings/verification/email/check": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "data"
+        ]
+      }
+    }
+  },
+  "webhook_properties": {
+    "BOOKING_CREATED": {
+      "customReplyToEmail": {
+        "nullable": true
+      },
+      "destinationCalendar": {
+        "nullable": true
+      },
+      "eventDescription": {
+        "type": "string",
+        "nullable": true
+      },
+      "hashedLink": {
+        "nullable": true
+      },
+      "oneTimePassword": {
+        "nullable": true
+      },
+      "organizationId": {
+        "type": "number",
+        "nullable": true
+      },
+      "schedulingType": {
+        "nullable": true
+      },
+      "seatsPerTimeSlot": {
+        "nullable": true
+      }
+    },
+    "BOOKING_REJECTED": {
+      "customReplyToEmail": {
+        "nullable": true
+      },
+      "eventDescription": {
+        "type": "string",
+        "nullable": true
+      },
+      "organizationId": {
+        "type": "number",
+        "nullable": true
+      }
+    },
+    "BOOKING_REQUESTED": {
+      "customReplyToEmail": {
+        "nullable": true
+      },
+      "destinationCalendar": {
+        "nullable": true
+      },
+      "eventDescription": {
+        "type": "string",
+        "nullable": true
+      },
+      "hashedLink": {
+        "nullable": true
+      },
+      "organizationId": {
+        "type": "number",
+        "nullable": true
+      },
+      "schedulingType": {
+        "nullable": true
+      },
+      "seatsPerTimeSlot": {
+        "nullable": true
+      }
+    },
+    "BOOKING_CANCELLED": {
+      "customReplyToEmail": {
+        "nullable": true
+      },
+      "destinationCalendar": {
+        "type": "array",
+        "items": {},
+        "nullable": true
+      },
+      "eventDescription": {
+        "nullable": true
+      },
+      "organizationId": {
+        "type": "number",
+        "nullable": true
+      },
+      "seatsPerTimeSlot": {
+        "nullable": true
+      }
+    },
+    "BOOKING_RESCHEDULED": {
+      "customReplyToEmail": {
+        "nullable": true
+      },
+      "destinationCalendar": {
+        "nullable": true
+      },
+      "eventDescription": {
+        "type": "string",
+        "nullable": true
+      },
+      "hashedLink": {
+        "nullable": true
+      },
+      "oneTimePassword": {
+        "nullable": true
+      },
+      "organizationId": {
+        "type": "number",
+        "nullable": true
+      },
+      "schedulingType": {
+        "nullable": true
+      },
+      "seatsPerTimeSlot": {
+        "nullable": true
+      }
+    },
+    "BOOKING_LOCATION_UPDATED": {
+      "organizationId": {
+        "type": "number",
+        "nullable": true
+      },
+      "eventDescription": {
+        "type": "string",
+        "nullable": true
+      }
+    }
+  }
+}

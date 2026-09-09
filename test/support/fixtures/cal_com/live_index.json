@@ -1,0 +1,712 @@
+[
+  {
+    "capture": "capture_001.json",
+    "operation": "GET /v2/me",
+    "status": 200
+  },
+  {
+    "capture": "capture_002.json",
+    "operation": "GET /v2/schedules/default",
+    "status": 200
+  },
+  {
+    "capture": "capture_003.json",
+    "operation": "GET /v2/teams",
+    "status": 200
+  },
+  {
+    "capture": "capture_004.json",
+    "operation": "GET /v2/calendars",
+    "status": 200
+  },
+  {
+    "capture": "capture_005.json",
+    "operation": "GET /v2/credits/available",
+    "status": 200
+  },
+  {
+    "capture": "capture_006.json",
+    "operation": "GET /v2/event-types",
+    "status": 200
+  },
+  {
+    "capture": "capture_007.json",
+    "operation": "GET /v2/allowlists",
+    "status": 404
+  },
+  {
+    "capture": "capture_008.json",
+    "operation": "GET /v2/bookings",
+    "status": 200
+  },
+  {
+    "capture": "capture_009.json",
+    "operation": "GET /v2/webhooks",
+    "status": 200
+  },
+  {
+    "capture": "capture_010.json",
+    "operation": "GET /v2/workflows",
+    "status": 200
+  },
+  {
+    "capture": "capture_011.json",
+    "operation": "GET /v2/me/booking-limits",
+    "status": 403
+  },
+  {
+    "capture": "capture_012.json",
+    "operation": "GET /v2/me/team-booking-limits",
+    "status": 200
+  },
+  {
+    "capture": "capture_013.json",
+    "operation": "GET /v2/me/ooo",
+    "status": 200
+  },
+  {
+    "capture": "capture_014.json",
+    "operation": "GET /v2/schedules",
+    "status": 200
+  },
+  {
+    "capture": "capture_015.json",
+    "operation": "GET /v2/event-types",
+    "status": 200
+  },
+  {
+    "capture": "capture_016.json",
+    "operation": "GET /v2/calendars",
+    "status": 200
+  },
+  {
+    "capture": "capture_017.json",
+    "operation": "GET /v2/credits/available",
+    "status": 200
+  },
+  {
+    "capture": "capture_018.json",
+    "operation": "GET /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_019.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/history",
+    "status": 200
+  },
+  {
+    "capture": "capture_020.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/scheduling-config",
+    "status": 422
+  },
+  {
+    "capture": "capture_021.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/booking-fields",
+    "status": 200
+  },
+  {
+    "capture": "capture_022.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/private-links",
+    "status": 200
+  },
+  {
+    "capture": "capture_024.json",
+    "operation": "GET /v2/slots",
+    "status": 200
+  },
+  {
+    "capture": "capture_025.json",
+    "operation": "POST /v2/schedules",
+    "status": 201
+  },
+  {
+    "capture": "capture_026.json",
+    "operation": "GET /v2/schedules/{scheduleId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_027.json",
+    "operation": "POST /v2/event-types",
+    "status": 201
+  },
+  {
+    "capture": "capture_028.json",
+    "operation": "POST /v2/workflows",
+    "status": 403
+  },
+  {
+    "capture": "capture_031.json",
+    "operation": "PATCH /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_032.json",
+    "operation": "POST /v2/event-types/{eventTypeId}/private-links",
+    "status": 201
+  },
+  {
+    "capture": "capture_033.json",
+    "operation": "GET /v2/slots",
+    "status": 200
+  },
+  {
+    "capture": "capture_034.json",
+    "operation": "GET /v2/webhooks",
+    "status": 200
+  },
+  {
+    "capture": "capture_035.json",
+    "operation": "PATCH /v2/schedules/{scheduleId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_036.json",
+    "operation": "POST /v2/insights/bookings/kpi-stats",
+    "status": 400
+  },
+  {
+    "capture": "capture_037.json",
+    "operation": "POST /v2/insights/bookings/event-trends",
+    "status": 400
+  },
+  {
+    "capture": "capture_038.json",
+    "operation": "POST /v2/insights/bookings/average-duration",
+    "status": 400
+  },
+  {
+    "capture": "capture_039.json",
+    "operation": "POST /v2/insights/bookings/members",
+    "status": 200
+  },
+  {
+    "capture": "capture_040.json",
+    "operation": "POST /v2/insights/routings/forms-by-status",
+    "status": 200
+  },
+  {
+    "capture": "capture_041.json",
+    "operation": "POST /v2/insights/routings/form-responses",
+    "status": 200
+  },
+  {
+    "capture": "capture_042.json",
+    "operation": "POST /v2/insights/routings/form-field-options",
+    "status": 200
+  },
+  {
+    "capture": "capture_043.json",
+    "operation": "POST /v2/insights/routings/form-response-headers",
+    "status": 200
+  },
+  {
+    "capture": "capture_044.json",
+    "operation": "POST /v2/insights/routings/failed-bookings-by-field",
+    "status": 200
+  },
+  {
+    "capture": "capture_045.json",
+    "operation": "POST /v2/insights/routings/routed-to-per-period",
+    "status": 200
+  },
+  {
+    "capture": "capture_046.json",
+    "operation": "GET /v2/calendars/{calendar}/check",
+    "status": 400
+  },
+  {
+    "capture": "capture_047.json",
+    "operation": "POST /v2/slots/reservations",
+    "status": 201
+  },
+  {
+    "capture": "capture_048.json",
+    "operation": "GET /v2/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_049.json",
+    "operation": "PATCH /v2/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_050.json",
+    "operation": "POST /v2/workflows",
+    "status": 403
+  },
+  {
+    "capture": "capture_051.json",
+    "operation": "GET /v2/calendars/ics-feed/check",
+    "status": 400
+  },
+  {
+    "capture": "capture_052.json",
+    "operation": "GET /v2/bookings/verification/email/check",
+    "status": 200
+  },
+  {
+    "capture": "capture_053.json",
+    "operation": "POST /v2/insights/bookings/kpi-stats",
+    "status": 200
+  },
+  {
+    "capture": "capture_054.json",
+    "operation": "POST /v2/insights/bookings/event-trends",
+    "status": 200
+  },
+  {
+    "capture": "capture_055.json",
+    "operation": "POST /v2/insights/bookings/average-duration",
+    "status": 200
+  },
+  {
+    "capture": "capture_056.json",
+    "operation": "POST /v2/event-types/{eventTypeId}/booking-fields",
+    "status": 201
+  },
+  {
+    "capture": "capture_057.json",
+    "operation": "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_058.json",
+    "operation": "GET /v2/slots/reservations/{uid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_059.json",
+    "operation": "PATCH /v2/slots/reservations/{uid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_060.json",
+    "operation": "PATCH /v2/event-types/{eventTypeId}/booking-fields",
+    "status": 200
+  },
+  {
+    "capture": "capture_061.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/webhooks",
+    "status": 200
+  },
+  {
+    "capture": "capture_062.json",
+    "operation": "PATCH /v2/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_063.json",
+    "operation": "POST /v2/me/ooo",
+    "status": 201
+  },
+  {
+    "capture": "capture_064.json",
+    "operation": "PATCH /v2/me/ooo/{oooId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_065.json",
+    "operation": "GET /v2/me/ooo",
+    "status": 200
+  },
+  {
+    "capture": "capture_066.json",
+    "operation": "POST /v2/event-types/{eventTypeId}/webhooks",
+    "status": 201
+  },
+  {
+    "capture": "capture_067.json",
+    "operation": "DELETE /v2/me/ooo/{oooId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_068.json",
+    "operation": "DELETE /v2/slots/reservations/{uid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_069.json",
+    "operation": "GET /v2/me/ooo",
+    "status": 200
+  },
+  {
+    "capture": "capture_070.json",
+    "operation": "GET /v2/slots/reservations/{uid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_071.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_072.json",
+    "operation": "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_073.json",
+    "operation": "PUT /v2/event-types/{eventTypeId}/booking-fields",
+    "status": 200
+  },
+  {
+    "capture": "capture_074.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}",
+    "status": 200
+  },
+  {
+    "capture": "capture_075.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}",
+    "status": 404
+  },
+  {
+    "capture": "capture_076.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_077.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/history",
+    "status": 200
+  },
+  {
+    "capture": "capture_078.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/history",
+    "status": 200
+  },
+  {
+    "capture": "capture_079.json",
+    "operation": "GET /v2/event-types/{eventTypeId}/private-links",
+    "status": 200
+  },
+  {
+    "capture": "capture_080.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}/webhooks",
+    "status": 200
+  },
+  {
+    "capture": "capture_081.json",
+    "operation": "DELETE /v2/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_082.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_083.json",
+    "operation": "DELETE /v2/schedules/{scheduleId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_084.json",
+    "operation": "GET /v2/webhooks",
+    "status": 200
+  },
+  {
+    "capture": "capture_085.json",
+    "operation": "GET /v2/event-types/{eventTypeId}",
+    "status": 404
+  },
+  {
+    "capture": "capture_086.json",
+    "operation": "GET /v2/schedules/{scheduleId}",
+    "status": 404
+  },
+  {
+    "capture": "capture_087.json",
+    "operation": "POST /v2/schedules",
+    "status": 201
+  },
+  {
+    "capture": "capture_088.json",
+    "operation": "POST /v2/event-types",
+    "status": 201
+  },
+  {
+    "capture": "capture_089.json",
+    "operation": "POST /v2/event-types",
+    "status": 201
+  },
+  {
+    "capture": "capture_090.json",
+    "operation": "POST /v2/event-types",
+    "status": 201
+  },
+  {
+    "capture": "capture_091.json",
+    "operation": "POST /v2/event-types",
+    "status": 201
+  },
+  {
+    "capture": "capture_092.json",
+    "operation": "GET /v2/event-types",
+    "status": 200
+  },
+  {
+    "capture": "capture_093.json",
+    "operation": "GET /v2/slots",
+    "status": 200
+  },
+  {
+    "capture": "capture_094.json",
+    "operation": "GET /v2/slots",
+    "status": 200
+  },
+  {
+    "capture": "capture_095.json",
+    "operation": "POST /v2/webhooks",
+    "status": 201
+  },
+  {
+    "capture": "capture_096.json",
+    "operation": "POST /v2/bookings",
+    "status": 201
+  },
+  {
+    "capture": "capture_097.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_098.json",
+    "operation": "GET /v2/bookings/{bookingUid}/attendees",
+    "status": 404
+  },
+  {
+    "capture": "capture_099.json",
+    "operation": "GET /v2/bookings/{bookingUid}/calendar-links",
+    "status": 200
+  },
+  {
+    "capture": "capture_100.json",
+    "operation": "GET /v2/bookings/{bookingUid}/references",
+    "status": 200
+  },
+  {
+    "capture": "capture_101.json",
+    "operation": "GET /v2/bookings/{bookingUid}/routing-trace",
+    "status": 404
+  },
+  {
+    "capture": "capture_102.json",
+    "operation": "POST /v2/bookings/{bookingUid}/mark-absent",
+    "status": 400
+  },
+  {
+    "capture": "capture_103.json",
+    "operation": "PATCH /v2/bookings/{bookingUid}/location",
+    "status": 404
+  },
+  {
+    "capture": "capture_104.json",
+    "operation": "POST /v2/bookings/{bookingUid}/reschedule",
+    "status": 201
+  },
+  {
+    "capture": "capture_105.json",
+    "operation": "POST /v2/bookings/{bookingUid}/request-reschedule",
+    "status": 200
+  },
+  {
+    "capture": "capture_106.json",
+    "operation": "POST /v2/bookings",
+    "status": 201
+  },
+  {
+    "capture": "capture_107.json",
+    "operation": "POST /v2/bookings",
+    "status": 201
+  },
+  {
+    "capture": "capture_108.json",
+    "operation": "POST /v2/bookings/{bookingUid}/confirm",
+    "status": 200
+  },
+  {
+    "capture": "capture_109.json",
+    "operation": "POST /v2/bookings/{bookingUid}/decline",
+    "status": 200
+  },
+  {
+    "capture": "capture_110.json",
+    "operation": "POST /v2/bookings",
+    "status": 201
+  },
+  {
+    "capture": "capture_111.json",
+    "operation": "POST /v2/bookings",
+    "status": 201
+  },
+  {
+    "capture": "capture_112.json",
+    "operation": "GET /v2/bookings/by-seat/{seatUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_113.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_114.json",
+    "operation": "GET /v2/bookings/{bookingUid}/attendees",
+    "status": 404
+  },
+  {
+    "capture": "capture_115.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_116.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_117.json",
+    "operation": "GET /v2/bookings",
+    "status": 200
+  },
+  {
+    "capture": "capture_118.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_119.json",
+    "operation": "GET /v2/bookings/{bookingUid}/attendees",
+    "status": 200
+  },
+  {
+    "capture": "capture_120.json",
+    "operation": "GET /v2/bookings/{bookingUid}/routing-trace",
+    "status": 200
+  },
+  {
+    "capture": "capture_121.json",
+    "operation": "GET /v2/bookings/{bookingUid}/attendees/{attendeeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_122.json",
+    "operation": "PATCH /v2/bookings/{bookingUid}/location",
+    "status": 200
+  },
+  {
+    "capture": "capture_123.json",
+    "operation": "POST /v2/bookings/{bookingUid}/attendees",
+    "status": 400
+  },
+  {
+    "capture": "capture_124.json",
+    "operation": "POST /v2/bookings/{bookingUid}/guests",
+    "status": 400
+  },
+  {
+    "capture": "capture_125.json",
+    "operation": "GET /v2/bookings",
+    "status": 200
+  },
+  {
+    "capture": "capture_126.json",
+    "operation": "POST /v2/bookings/{bookingUid}/cancel",
+    "status": 200
+  },
+  {
+    "capture": "capture_127.json",
+    "operation": "POST /v2/bookings/{bookingUid}/cancel",
+    "status": 200
+  },
+  {
+    "capture": "capture_128.json",
+    "operation": "POST /v2/bookings/{bookingUid}/cancel",
+    "status": 200
+  },
+  {
+    "capture": "capture_129.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_130.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_131.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_132.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_133.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_134.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_135.json",
+    "operation": "GET /v2/bookings/{bookingUid}",
+    "status": 200
+  },
+  {
+    "capture": "capture_136.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_137.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_138.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_139.json",
+    "operation": "DELETE /v2/event-types/{eventTypeId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_140.json",
+    "operation": "DELETE /v2/schedules/{scheduleId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_141.json",
+    "operation": "DELETE /v2/webhooks/{webhookId}",
+    "status": 200
+  },
+  {
+    "capture": "capture_142.json",
+    "operation": "GET /v2/event-types",
+    "status": 200
+  },
+  {
+    "capture": "capture_143.json",
+    "operation": "GET /v2/schedules",
+    "status": 200
+  },
+  {
+    "capture": "capture_144.json",
+    "operation": "GET /v2/webhooks",
+    "status": 200
+  },
+  {
+    "capture": "capture_145.json",
+    "operation": "GET /v2/bookings",
+    "status": 200
+  }
+]

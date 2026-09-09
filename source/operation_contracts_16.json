@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.MeControllerGetMyTeamBookingLimits": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultMeControllerGetMyTeamBookingLimits200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_get_my_team_booking_limits, id: \"GET /v2/me/team-booking-limits\", method: :get, path: \"/v2/me/team-booking-limits\", module: CalCom.Operations.MeControllerGetMyTeamBookingLimits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMyTeamBookingLimits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamBookingLimitsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OAuth2ControllerGetClient": {
+    "input": "CalCom.Entities.InputOAuth2ControllerGetClient",
+    "result": "CalCom.Entities.ResultOAuth2ControllerGetClient200.t()",
+    "contract": "%CalCom.Operation{key: :o_auth2_controller_get_client, id: \"GET /v2/auth/oauth2/clients/{clientId}\", method: :get, path: \"/v2/auth/oauth2/clients/{clientId}\", module: CalCom.Operations.OAuth2ControllerGetClient, input_module: CalCom.Entities.InputOAuth2ControllerGetClient, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOAuth2ControllerGetClient200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2ClientResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OAuth2ControllerToken": {
+    "input": "CalCom.Entities.InputOAuth2ControllerToken",
+    "result": "CalCom.Entities.ResultOAuth2ControllerToken200.t()",
+    "contract": "%CalCom.Operation{key: :o_auth2_controller_token, id: \"POST /v2/auth/oauth2/token\", method: :post, path: \"/v2/auth/oauth2/token\", module: CalCom.Operations.OAuth2ControllerToken, input_module: CalCom.Entities.InputOAuth2ControllerToken, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOAuth2ControllerToken200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2TokensDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsEventTypesController20260612GetTeamEventTypes": {
+    "input": "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamEventTypes",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_event_types_controller_2026_06_12_get_team_event_types, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/event-types\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/event-types\", module: CalCom.Operations.OrganizationsEventTypesController20260612GetTeamEventTypes, input_module: CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamEventTypes, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypesOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsEventTypesController20260612GetTeamEventType": {
+    "input": "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventType200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_event_types_controller_2026_06_12_get_team_event_type, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}\", module: CalCom.Operations.OrganizationsEventTypesController20260612GetTeamEventType, input_module: CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  }
+}

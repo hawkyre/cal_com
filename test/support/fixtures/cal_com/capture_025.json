@@ -1,0 +1,17 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/schedules",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-025",
+  "http_status": 201,
+  "request": {
+    "params": {
+      "body": {
+        "name": "Kithe connector test 20260908",
+        "timeZone": "America/Los_Angeles",
+        "isDefault": false
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": 2335925,\n    \"ownerId\": 3209949,\n    \"name\": \"Kithe connector test 20260908\",\n    \"timeZone\": \"America/Los_Angeles\",\n    \"availability\": [\n      {\n        \"days\": [\n          \"Monday\",\n          \"Tuesday\",\n          \"Wednesday\",\n          \"Thursday\",\n          \"Friday\"\n        ],\n        \"startTime\": \"09:00\",\n        \"endTime\": \"17:00\"\n      }\n    ],\n    \"isDefault\": false,\n    \"overrides\": []\n  }\n}\n"
+}

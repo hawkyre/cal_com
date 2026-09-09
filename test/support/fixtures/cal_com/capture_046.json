@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/calendars/{calendar}/check",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-046",
+  "http_status": 400,
+  "request": {
+    "params": {
+      "path": {
+        "calendar": "google"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"error\",\n  \"timestamp\": \"2026-09-08T03:03:39.336Z\",\n  \"path\": \"/v2/calendars/google/check\",\n  \"error\": {\n    \"code\": \"BadRequestException\",\n    \"message\": \"Credentials for google_calendar not found.\",\n    \"details\": {\n      \"message\": \"Credentials for google_calendar not found.\",\n      \"error\": \"Bad Request\",\n      \"statusCode\": 400\n    }\n  }\n}\n"
+}

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse": {
+    "input": "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_routing_forms_responses_controller_update_routing_form_response, id: \"PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}\", method: :patch, path: \"/v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}\", module: CalCom.Operations.OrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse, input_module: CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UpdateRoutingFormResponseOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_routing_forms_responses_controller_create_routing_form_response, id: \"POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses\", method: :post, path: \"/v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses\", module: CalCom.Operations.OrganizationsTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse, input_module: CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateRoutingFormResponseOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsTeamsRoutingFormsResponsesControllerUpdateRoutingFormResponse": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerUpdateRoutingFormResponse",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_routing_forms_responses_controller_update_routing_form_response, id: \"PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}\", method: :patch, path: \"/v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}\", module: CalCom.Operations.OrganizationsTeamsRoutingFormsResponsesControllerUpdateRoutingFormResponse, input_module: CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerUpdateRoutingFormResponse, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponse200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UpdateRoutingFormResponseOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225CreateBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225CreateBooking",
+    "result": "CalCom.Entities.ResultBookingsController20260225CreateBooking201.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_create_booking, id: \"POST /v2/bookings\", method: :post, path: \"/v2/bookings\", module: CalCom.Operations.BookingsController20260225CreateBooking, input_module: CalCom.Entities.InputBookingsController20260225CreateBooking, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultBookingsController20260225CreateBooking201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateBookingOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingsController20260225RescheduleBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225RescheduleBooking",
+    "result": "CalCom.Entities.ResultBookingsController20260225RescheduleBooking201.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_reschedule_booking, id: \"POST /v2/bookings/{bookingUid}/reschedule\", method: :post, path: \"/v2/bookings/{bookingUid}/reschedule\", module: CalCom.Operations.BookingsController20260225RescheduleBooking, input_module: CalCom.Entities.InputBookingsController20260225RescheduleBooking, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultBookingsController20260225RescheduleBooking201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.RescheduleBookingOutput20240813}, nullable: false}, empty?: false}]}"
+  }
+}

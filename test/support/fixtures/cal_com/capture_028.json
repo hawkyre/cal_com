@@ -1,0 +1,36 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/workflows",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-028",
+  "http_status": 403,
+  "request": {
+    "params": {
+      "body": {
+        "name": "Kithe connector test inactive 20260908",
+        "activation": {
+          "isActiveOnAllEventTypes": false,
+          "activeOnEventTypeIds": []
+        },
+        "trigger": {
+          "type": "newEvent"
+        },
+        "steps": [
+          {
+            "action": "email_host",
+            "stepNumber": 1,
+            "recipient": "email",
+            "template": "custom",
+            "sender": "Kithe connector test",
+            "includeCalendarEvent": false,
+            "message": {
+              "subject": "Inactive connector test",
+              "html": "<p>Inactive connector test.</p>"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"error\",\n  \"timestamp\": \"2026-09-08T03:00:05.885Z\",\n  \"path\": \"/v2/workflows\",\n  \"error\": {\n    \"code\": \"ForbiddenException\",\n    \"message\": \"You do not have permission to apply this workflow update — check that the referenced resources (e.g. event types) belong to you.\",\n    \"details\": {\n      \"message\": \"You do not have permission to apply this workflow update — check that the referenced resources (e.g. event types) belong to you.\",\n      \"error\": \"Forbidden\",\n      \"statusCode\": 403\n    }\n  }\n}\n"
+}

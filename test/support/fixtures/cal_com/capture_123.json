@@ -1,0 +1,20 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/bookings/{bookingUid}/attendees",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-123",
+  "http_status": 400,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "uvJaFTtQ7qtqvnHcxzP3PN"
+      },
+      "body": {
+        "name": "Kithe Connector Test",
+        "timeZone": "America/Los_Angeles",
+        "email": "redacted@example.invalid"
+      }
+    }
+  },
+  "body": "{\"statusCode\":400,\"message\":\"emails_must_be_unique_valid\",\"status\":\"error\",\"timestamp\":\"2026-09-08T04:09:42.545Z\",\"path\":\"/v2/bookings/uvJaFTtQ7qtqvnHcxzP3PN/attendees\",\"error\":{\"code\":\"bad_request_error\",\"message\":\"Emails must be unique and valid\",\"details\":{\"message\":\"Emails must be unique and valid\",\"error\":\"Bad Request\",\"statusCode\":400}}}"
+}

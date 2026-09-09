@@ -1,0 +1,16 @@
+{
+  "provider": "cal_com",
+  "operation": "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-076",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981260,
+        "webhookId": "3e8102c9-8da8-4ab9-b14a-8d403c7c1aeb"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"3e8102c9-8da8-4ab9-b14a-8d403c7c1aeb\",\n    \"payloadTemplate\": null,\n    \"triggers\": [\n      \"BOOKING_CANCELLED\"\n    ],\n    \"subscriberUrl\": \"https://example.invalid/webhook\",\n    \"active\": false,\n    \"secret\": \"REDACTED\",\n    \"time\": null,\n    \"timeUnit\": null,\n    \"version\": \"2026-07-27\",\n    \"eventTypeId\": 6981260\n  }\n}\n"
+}

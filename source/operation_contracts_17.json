@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsEventTypesController20260612GetTeamsEventTypes": {
+    "input": "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypes",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_event_types_controller_2026_06_12_get_teams_event_types, id: \"GET /v2/organizations/{orgId}/teams/event-types\", method: :get, path: \"/v2/organizations/{orgId}/teams/event-types\", module: CalCom.Operations.OrganizationsEventTypesController20260612GetTeamsEventTypes, input_module: CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypes, version: \"2026-06-12\", media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypesOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsEventTypesController20260612GetBookingFields": {
+    "input": "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_event_types_controller_2026_06_12_get_booking_fields, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.OrganizationsEventTypesController20260612GetBookingFields, input_module: CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserOOOControllerGetMyOOO": {
+    "input": "CalCom.Entities.InputUserOOOControllerGetMyOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200.t()",
+    "contract": "%CalCom.Operation{key: :user_ooo_controller_get_my_ooo, id: \"GET /v2/me/ooo\", method: :get, path: \"/v2/me/ooo\", module: CalCom.Operations.UserOOOControllerGetMyOOO, input_module: CalCom.Entities.InputUserOOOControllerGetMyOOO, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOoosOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.RoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse": {
+    "input": "CalCom.Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse",
+    "result": "CalCom.Entities.ResultRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse200.t()",
+    "contract": "%CalCom.Operation{key: :routing_forms_controller_calculate_slots_based_on_routing_form_response, id: \"POST /v2/routing-forms/{routingFormId}/calculate-slots\", method: :post, path: \"/v2/routing-forms/{routingFormId}/calculate-slots\", module: CalCom.Operations.RoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse, input_module: CalCom.Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ResponseSlotsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611GetSchedules": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_get_schedules, id: \"GET /v2/schedules\", method: :get, path: \"/v2/schedules\", module: CalCom.Operations.SchedulesController20240611GetSchedules, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: \"2024-06-11\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulesOutput20240611}, nullable: false}, empty?: false}]}"
+  }
+}

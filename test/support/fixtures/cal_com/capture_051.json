@@ -1,0 +1,11 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/calendars/ics-feed/check",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-051",
+  "http_status": 400,
+  "request": {
+    "params": {}
+  },
+  "body": "{\n  \"status\": \"error\",\n  \"timestamp\": \"2026-09-08T03:04:26.890Z\",\n  \"path\": \"/v2/calendars/ics-feed/check\",\n  \"error\": {\n    \"code\": \"BadRequestException\",\n    \"message\": \"Credentials for Ics Feed calendar not found.\",\n    \"details\": {\n      \"message\": \"Credentials for Ics Feed calendar not found.\",\n      \"error\": \"Bad Request\",\n      \"statusCode\": 400\n    }\n  }\n}\n"
+}

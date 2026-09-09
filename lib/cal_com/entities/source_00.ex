@@ -1,26 +1,111 @@
 alias CalCom.Entities
 
-defmodule Entities.InputMeControllerGetMe do
+defmodule Entities.AddAttendeeInput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end
 
-defmodule Entities.GetMeOutput do
+defmodule Entities.AddAttendeeOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end
 
-defmodule Entities.ResultMeControllerGetMe200 do
+defmodule Entities.AddGuestsInput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end
 
-defmodule Entities.MeOrgOutput do
+defmodule Entities.AddGuestsOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end
 
-defmodule Entities.MeOutput do
+defmodule Entities.AllowlistMetadataOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AllowlistServiceData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AllowlistServiceOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AllowlistServicesData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.ApiKeyOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BaseBookingLimitsCount20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BaseBookingLimitsDuration20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BaseConfirmationPolicy20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BlockOrgBookingData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BlockOrgBookingInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BlockOrgBookingOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookerActiveBookingsLimitOutput20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookerActiveBookingsLimit20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookerLayouts20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookingAttendee do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookingAttendeeOutput20240813 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookingAttendeeWithId20240813 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.BookingFieldsInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end

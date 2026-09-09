@@ -1,0 +1,29 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/bookings/event-trends",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-054",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user",
+        "timeZone": "America/Los_Angeles",
+        "columnFilters": [
+          {
+            "id": "createdAt",
+            "value": {
+              "type": "dr",
+              "data": {
+                "startDate": "2026-09-01",
+                "endDate": "2026-09-08",
+                "preset": "custom"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"formattedDateFull\": \"Aug 31 (Mon)\",\n      \"isToday\": false,\n      \"Month\": \"Aug 31\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 1 (Tue)\",\n      \"isToday\": false,\n      \"Month\": \"Sep 1\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 2 (Wed)\",\n      \"isToday\": false,\n      \"Month\": \"2\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 3 (Thu)\",\n      \"isToday\": false,\n      \"Month\": \"3\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 4 (Fri)\",\n      \"isToday\": false,\n      \"Month\": \"4\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 5 (Sat)\",\n      \"isToday\": false,\n      \"Month\": \"5\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 6 (Sun)\",\n      \"isToday\": false,\n      \"Month\": \"6\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    },\n    {\n      \"formattedDateFull\": \"Sep 7 (Mon)\",\n      \"isToday\": true,\n      \"Month\": \"7\",\n      \"Created\": 0,\n      \"Completed\": 0,\n      \"Rescheduled\": 0,\n      \"Cancelled\": 0,\n      \"No-Show (Host)\": 0,\n      \"No-Show (Guest)\": 0\n    }\n  ]\n}\n"
+}

@@ -1,0 +1,29 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/bookings/average-duration",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-055",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user",
+        "timeZone": "America/Los_Angeles",
+        "columnFilters": [
+          {
+            "id": "createdAt",
+            "value": {
+              "type": "dr",
+              "data": {
+                "startDate": "2026-09-01",
+                "endDate": "2026-09-08",
+                "preset": "custom"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"Date\": \"Aug 31\",\n      \"formattedDateFull\": \"Aug 31 (Mon)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"Sep 1\",\n      \"formattedDateFull\": \"Sep 1 (Tue)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"2\",\n      \"formattedDateFull\": \"Sep 2 (Wed)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"3\",\n      \"formattedDateFull\": \"Sep 3 (Thu)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"4\",\n      \"formattedDateFull\": \"Sep 4 (Fri)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"5\",\n      \"formattedDateFull\": \"Sep 5 (Sat)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"6\",\n      \"formattedDateFull\": \"Sep 6 (Sun)\",\n      \"isToday\": false,\n      \"Average\": 0\n    },\n    {\n      \"Date\": \"7\",\n      \"formattedDateFull\": \"Sep 7 (Mon)\",\n      \"isToday\": true,\n      \"Average\": 0\n    }\n  ]\n}\n"
+}

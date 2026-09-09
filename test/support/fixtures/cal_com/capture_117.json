@@ -1,0 +1,16 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/bookings",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-117",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "query": {
+        "limit": 2,
+        "status": "upcoming"
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":[{\"id\":24927700,\"uid\":\"uvJaFTtQ7qtqvnHcxzP3PN\",\"title\":\"Kithe connector approval test between redacted and Kithe Connector Test\",\"description\":\"\",\"hosts\":[{\"id\":3209949,\"name\":\"redacted\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"username\":\"redacted\",\"timeZone\":\"America/Los_Angeles\"}],\"status\":\"accepted\",\"cancellationReason\":\"\",\"cancelledByEmail\":\"\",\"rescheduledByEmail\":null,\"start\":\"2026-09-09T16:30:00.000Z\",\"end\":\"2026-09-09T16:45:00.000Z\",\"duration\":15,\"eventTypeId\":6981506,\"eventType\":{\"id\":6981506,\"slug\":\"kithe-connector-approval-20260908\"},\"meetingUrl\":\"https://example.invalid/redacted\",\"location\":\"https://example.invalid/redacted\",\"absentHost\":false,\"createdAt\":\"2026-09-08T04:01:39.703Z\",\"updatedAt\":\"2026-09-08T04:02:24.045Z\",\"metadata\":{\"purpose\":\"connector-test-confirm\"},\"rating\":null,\"icsUid\":\"redacted@example.invalid\",\"attendees\":[{\"name\":\"Kithe Connector Test\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"timeZone\":\"America/Los_Angeles\",\"language\":\"en\",\"absent\":false}],\"guests\":[],\"bookingFieldsResponses\":{\"email\":\"redacted@example.invalid\",\"name\":\"Kithe Connector Test\",\"guests\":[],\"location\":{\"value\":\"link\",\"optionValue\":\"\"},\"displayEmail\":\"redacted@example.invalid\",\"displayGuests\":[]}},{\"id\":24927710,\"uid\":\"9ft9mwbNCEM6rE8r59aQQm\",\"title\":\"Kithe connector seated test with redacted\",\"description\":null,\"hosts\":[{\"id\":3209949,\"name\":\"redacted\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"username\":\"redacted\",\"timeZone\":\"America/Los_Angeles\"}],\"status\":\"accepted\",\"cancellationReason\":\"\",\"rescheduledByEmail\":null,\"start\":\"2026-09-09T17:00:00.000Z\",\"end\":\"2026-09-09T17:15:00.000Z\",\"duration\":15,\"eventTypeId\":6981545,\"eventType\":{\"id\":6981545,\"slug\":\"kithe-connector-seated-20260908\"},\"meetingUrl\":\"https://example.invalid/redacted\",\"location\":\"https://example.invalid/redacted\",\"absentHost\":false,\"createdAt\":\"2026-09-08T04:02:30.479Z\",\"updatedAt\":\"2026-09-08T04:02:30.674Z\",\"rating\":null,\"icsUid\":\"redacted@example.invalid\",\"attendees\":[{\"name\":\"Kithe Connector Test\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"timeZone\":\"America/Los_Angeles\",\"language\":\"en\",\"absent\":false,\"seatUid\":\"6e69813c-7954-418d-8e4c-b66556d9df00\",\"createdAt\":\"2026-09-08T04:02:30.479Z\",\"bookingFieldsResponses\":{\"name\":\"Kithe Connector Test\",\"guests\":[],\"location\":{\"value\":\"link\",\"optionValue\":\"\"}},\"metadata\":{\"purpose\":\"connector-test-seated\"}}]}],\"pagination\":{\"nextCursor\":\"eyJ2IjoxLCJzb3J0VXVpZCI6IjAxYTA4NzFjLWIyODAtNzI0Yi1iZmZlLWM0Y2E3ODVmZTk2NyJ9\",\"hasMore\":true}}"
+}

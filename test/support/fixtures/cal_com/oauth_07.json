@@ -1,0 +1,20 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/auth/oauth2/token",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-oauth-20260908-07",
+  "http_status": 200,
+  "source_sha256": "d44f362c5ddc2614db62a8c454f75ebb4d8b344fae70ade7c54818ce8c31b6f6",
+  "request": {
+    "params": {
+      "body": {
+        "client_id": "redacted-client-id",
+        "client_secret": "redacted-client-secret",
+        "code": "redacted-code",
+        "grant_type": "authorization_code",
+        "redirect_uri": "https://kithe.example/oauth/cal/callback"
+      }
+    }
+  },
+  "body": "{\"access_token\":\"redacted-access_token-7\",\"token_type\":\"bearer\",\"refresh_token\":\"redacted-refresh_token-7\",\"expires_in\":1800,\"scope\":\"PROFILE_READ\"}"
+}

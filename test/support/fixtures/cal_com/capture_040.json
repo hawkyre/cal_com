@@ -1,0 +1,17 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/routings/forms-by-status",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-040",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user",
+        "startDate": "2026-09-01",
+        "endDate": "2026-09-08"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"total\": 0,\n    \"totalWithoutBooking\": 0,\n    \"totalWithBooking\": 0\n  }\n}\n"
+}

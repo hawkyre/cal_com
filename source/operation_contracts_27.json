@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.BookingAttendeesController20240813AddAttendee": {
+    "input": "CalCom.Entities.InputBookingAttendeesController20240813AddAttendee",
+    "result": "CalCom.Entities.ResultBookingAttendeesController20240813AddAttendee201.t()",
+    "contract": "%CalCom.Operation{key: :booking_attendees_controller_2024_08_13_add_attendee, id: \"POST /v2/bookings/{bookingUid}/attendees\", method: :post, path: \"/v2/bookings/{bookingUid}/attendees\", module: CalCom.Operations.BookingAttendeesController20240813AddAttendee, input_module: CalCom.Entities.InputBookingAttendeesController20240813AddAttendee, version: \"2024-08-13\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultBookingAttendeesController20240813AddAttendee201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddAttendeeOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.BookingGuestsController20240813AddGuests": {
+    "input": "CalCom.Entities.InputBookingGuestsController20240813AddGuests",
+    "result": "CalCom.Entities.ResultBookingGuestsController20240813AddGuests200.t()",
+    "contract": "%CalCom.Operation{key: :booking_guests_controller_2024_08_13_add_guests, id: \"POST /v2/bookings/{bookingUid}/guests\", method: :post, path: \"/v2/bookings/{bookingUid}/guests\", module: CalCom.Operations.BookingGuestsController20240813AddGuests, input_module: CalCom.Entities.InputBookingGuestsController20240813AddGuests, version: \"2024-08-13\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingGuestsController20240813AddGuests200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SlotsController20240904ReserveSlot": {
+    "input": "CalCom.Entities.InputSlotsController20240904ReserveSlot",
+    "result": "CalCom.Entities.ResultSlotsController20240904ReserveSlot201.t()",
+    "contract": "%CalCom.Operation{key: :slots_controller_2024_09_04_reserve_slot, id: \"POST /v2/slots/reservations\", method: :post, path: \"/v2/slots/reservations\", module: CalCom.Operations.SlotsController20240904ReserveSlot, input_module: CalCom.Entities.InputSlotsController20240904ReserveSlot, version: \"2024-09-04\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultSlotsController20240904ReserveSlot201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ReserveSlotOutputResponse20240904}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SlotsController20240904UpdateReservedSlot": {
+    "input": "CalCom.Entities.InputSlotsController20240904UpdateReservedSlot",
+    "result": "CalCom.Entities.ResultSlotsController20240904ReserveSlot201.t()",
+    "contract": "%CalCom.Operation{key: :slots_controller_2024_09_04_update_reserved_slot, id: \"PATCH /v2/slots/reservations/{uid}\", method: :patch, path: \"/v2/slots/reservations/{uid}\", module: CalCom.Operations.SlotsController20240904UpdateReservedSlot, input_module: CalCom.Entities.InputSlotsController20240904UpdateReservedSlot, version: \"2024-09-04\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultSlotsController20240904ReserveSlot201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ReserveSlotOutputResponse20240904}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SlotsController20240904DeleteReservedSlot": {
+    "input": "CalCom.Entities.InputSlotsController20240904GetReservedSlot",
+    "result": "CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200.t()",
+    "contract": "%CalCom.Operation{key: :slots_controller_2024_09_04_delete_reserved_slot, id: \"DELETE /v2/slots/reservations/{uid}\", method: :delete, path: \"/v2/slots/reservations/{uid}\", module: CalCom.Operations.SlotsController20240904DeleteReservedSlot, input_module: CalCom.Entities.InputSlotsController20240904GetReservedSlot, version: \"2024-09-04\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCalendarsControllerCheckIcsFeed200}, nullable: false}, empty?: false}]}"
+  }
+}

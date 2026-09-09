@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerCreateFormWorkflow": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerCreateFormWorkflow",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_create_form_workflow, id: \"POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form\", method: :post, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerCreateFormWorkflow, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerCreateFormWorkflow, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerUpdateWorkflow": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerUpdateWorkflow",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_update_workflow, id: \"PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}\", method: :patch, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerUpdateWorkflow, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerUpdateWorkflow, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerDeleteWorkflow": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_delete_workflow, id: \"DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}\", method: :delete, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerDeleteWorkflow, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerUpdateRoutingFormWorkflow": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerUpdateRoutingFormWorkflow",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_update_routing_form_workflow, id: \"PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form\", method: :patch, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerUpdateRoutingFormWorkflow, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerUpdateRoutingFormWorkflow, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationTeamWorkflowsControllerDeleteRoutingFormWorkflow": {
+    "input": "CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :organization_team_workflows_controller_delete_routing_form_workflow, id: \"DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form\", method: :delete, path: \"/v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form\", module: CalCom.Operations.OrganizationTeamWorkflowsControllerDeleteRoutingFormWorkflow, input_module: CalCom.Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "provider": "cal_com",
+  "operation": "PATCH /v2/me/ooo/{oooId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-064",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "oooId": 94436
+      },
+      "body": {
+        "notes": "Temporary Kithe connector callback test updated"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"userId\": 3209949,\n    \"toUserId\": null,\n    \"id\": 94436,\n    \"uuid\": \"ecf15374-c96a-4e17-aa28-11ed1d0f35af\",\n    \"start\": \"2026-09-20T00:00:00.000Z\",\n    \"end\": \"2026-09-20T23:59:59.999Z\",\n    \"notes\": \"Temporary Kithe connector callback test updated\",\n    \"reason\": \"unspecified\"\n  }\n}\n"
+}

@@ -1,0 +1,24 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/event-types/{eventTypeId}/webhooks",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-066",
+  "http_status": 201,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981260
+      },
+      "body": {
+        "active": false,
+        "subscriberUrl": "https://example.invalid/webhook",
+        "triggers": [
+          "BOOKING_CREATED"
+        ],
+        "version": "2026-07-27",
+        "secret": "REDACTED"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"3e8102c9-8da8-4ab9-b14a-8d403c7c1aeb\",\n    \"payloadTemplate\": null,\n    \"triggers\": [\n      \"BOOKING_CREATED\"\n    ],\n    \"subscriberUrl\": \"https://example.invalid/webhook\",\n    \"active\": false,\n    \"secret\": \"REDACTED\",\n    \"time\": null,\n    \"timeUnit\": null,\n    \"version\": \"2026-07-27\",\n    \"eventTypeId\": 6981260\n  }\n}\n"
+}

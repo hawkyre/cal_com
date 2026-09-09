@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.TeamsEventTypesController20260612GetTeamEventType": {
+    "input": "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventType",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventType200.t()",
+    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_get_team_event_type, id: \"GET /v2/teams/{teamId}/event-types/{eventTypeId}\", method: :get, path: \"/v2/teams/{teamId}/event-types/{eventTypeId}\", module: CalCom.Operations.TeamsEventTypesController20260612GetTeamEventType, input_module: CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventType, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsEventTypesController20260612GetBookingFields": {
+    "input": "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventType",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_get_booking_fields, id: \"GET /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields\", method: :get, path: \"/v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.TeamsEventTypesController20260612GetBookingFields, input_module: CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventType, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsControllerGetTeams": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultTeamsControllerGetTeams200.t()",
+    "contract": "%CalCom.Operation{key: :teams_controller_get_teams, id: \"GET /v2/teams\", method: :get, path: \"/v2/teams\", module: CalCom.Operations.TeamsControllerGetTeams, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultTeamsControllerGetTeams200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsControllerGetTeam": {
+    "input": "CalCom.Entities.InputTeamsControllerGetTeam",
+    "result": "CalCom.Entities.ResultTeamsControllerGetTeam200.t()",
+    "contract": "%CalCom.Operation{key: :teams_controller_get_team, id: \"GET /v2/teams/{teamId}\", method: :get, path: \"/v2/teams/{teamId}\", module: CalCom.Operations.TeamsControllerGetTeam, input_module: CalCom.Entities.InputTeamsControllerGetTeam, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultTeamsControllerGetTeam200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsBookingsControllerGetAllTeamBookings": {
+    "input": "CalCom.Entities.InputTeamsBookingsControllerGetAllTeamBookings",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings200.t()",
+    "contract": "%CalCom.Operation{key: :teams_bookings_controller_get_all_team_bookings, id: \"GET /v2/teams/{teamId}/bookings\", method: :get, path: \"/v2/teams/{teamId}/bookings\", module: CalCom.Operations.TeamsBookingsControllerGetAllTeamBookings, input_module: CalCom.Entities.InputTeamsBookingsControllerGetAllTeamBookings, version: nil, media_type: nil, page_size: 100, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingsOutput20240813}, nullable: false}, empty?: false}]}"
+  }
+}

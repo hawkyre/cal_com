@@ -1,0 +1,17 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/schedules",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-087",
+  "http_status": 201,
+  "request": {
+    "params": {
+      "body": {
+        "name": "Kithe booking connector test 20260908",
+        "timeZone": "America/Los_Angeles",
+        "isDefault": false
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":{\"id\":2335989,\"ownerId\":3209949,\"name\":\"Kithe booking connector test 20260908\",\"timeZone\":\"America/Los_Angeles\",\"availability\":[{\"days\":[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"],\"startTime\":\"09:00\",\"endTime\":\"17:00\"}],\"isDefault\":false,\"overrides\":[]}}"
+}

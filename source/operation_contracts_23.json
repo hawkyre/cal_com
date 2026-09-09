@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.UserWorkflowsControllerGetWorkflows": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhooks",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200.t()",
+    "contract": "%CalCom.Operation{key: :user_workflows_controller_get_workflows, id: \"GET /v2/workflows\", method: :get, path: \"/v2/workflows\", module: CalCom.Operations.UserWorkflowsControllerGetWorkflows, input_module: CalCom.Entities.InputWebhooksControllerGetWebhooks, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserWorkflowsControllerGetWorkflowById": {
+    "input": "CalCom.Entities.InputUserWorkflowsControllerGetWorkflowById",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200.t()",
+    "contract": "%CalCom.Operation{key: :user_workflows_controller_get_workflow_by_id, id: \"GET /v2/workflows/{workflowId}\", method: :get, path: \"/v2/workflows/{workflowId}\", module: CalCom.Operations.UserWorkflowsControllerGetWorkflowById, input_module: CalCom.Entities.InputUserWorkflowsControllerGetWorkflowById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsBookingsControllerReportOrgBooking": {
+    "input": "CalCom.Entities.InputOrganizationsBookingsControllerReportOrgBooking",
+    "result": "CalCom.Entities.ResultOrganizationsBookingsControllerReportOrgBooking200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_bookings_controller_report_org_booking, id: \"POST /v2/organizations/{orgId}/bookings/report\", method: :post, path: \"/v2/organizations/{orgId}/bookings/report\", module: CalCom.Operations.OrganizationsBookingsControllerReportOrgBooking, input_module: CalCom.Entities.InputOrganizationsBookingsControllerReportOrgBooking, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsBookingsControllerReportOrgBooking200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ReportOrgBookingOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsBookingsControllerBlockOrgBooking": {
+    "input": "CalCom.Entities.InputOrganizationsBookingsControllerBlockOrgBooking",
+    "result": "CalCom.Entities.ResultOrganizationsBookingsControllerBlockOrgBooking200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_bookings_controller_block_org_booking, id: \"POST /v2/organizations/{orgId}/bookings/block\", method: :post, path: \"/v2/organizations/{orgId}/bookings/block\", module: CalCom.Operations.OrganizationsBookingsControllerBlockOrgBooking, input_module: CalCom.Entities.InputOrganizationsBookingsControllerBlockOrgBooking, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsBookingsControllerBlockOrgBooking200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BlockOrgBookingOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse": {
+    "input": "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_routing_forms_responses_controller_create_routing_form_response, id: \"POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses\", method: :post, path: \"/v2/organizations/{orgId}/routing-forms/{routingFormId}/responses\", module: CalCom.Operations.OrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse, input_module: CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateRoutingFormResponseOutput}, nullable: false}, empty?: false}]}"
+  }
+}

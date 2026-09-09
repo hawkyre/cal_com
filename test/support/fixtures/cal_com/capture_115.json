@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/bookings/{bookingUid}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-115",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "bookingUid": "2CntncJTHMXHGTUgMzPguX"
+      }
+    }
+  },
+  "body": "{\"status\":\"success\",\"data\":{\"attendees\":[{\"name\":\"Kithe Connector Test\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"timeZone\":\"America/Los_Angeles\",\"language\":\"en\",\"absent\":false}],\"guests\":[],\"bookingFieldsResponses\":{\"email\":\"redacted@example.invalid\",\"name\":\"Kithe Connector Test\",\"guests\":[],\"location\":{\"value\":\"link\",\"optionValue\":\"\"},\"displayEmail\":\"redacted@example.invalid\",\"displayGuests\":[]},\"id\":24927711,\"uid\":\"2CntncJTHMXHGTUgMzPguX\",\"title\":\"Kithe connector recurring test between redacted and Kithe Connector Test\",\"description\":\"\",\"hosts\":[{\"id\":3209949,\"name\":\"redacted\",\"email\":\"redacted@example.invalid\",\"displayEmail\":\"redacted@example.invalid\",\"username\":\"redacted\",\"timeZone\":\"America/Los_Angeles\"}],\"status\":\"accepted\",\"cancellationReason\":\"\",\"cancelledByEmail\":\"\",\"start\":\"2026-09-09T17:15:00.000Z\",\"end\":\"2026-09-09T17:30:00.000Z\",\"duration\":15,\"eventTypeId\":6981546,\"eventType\":{\"id\":6981546,\"slug\":\"kithe-connector-recurring-20260908\"},\"meetingUrl\":\"https://example.invalid/redacted\",\"location\":\"https://example.invalid/redacted\",\"absentHost\":false,\"createdAt\":\"2026-09-08T04:02:34.028Z\",\"updatedAt\":\"2026-09-08T04:02:34.150Z\",\"metadata\":{\"purpose\":\"connector-test-recurring\"},\"rating\":null,\"icsUid\":\"redacted@example.invalid\",\"recurringBookingUid\":\"57afb822-b198-4531-ac83-2673f72552e5\"}}"
+}

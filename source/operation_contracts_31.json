@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsSchedulesControllerDeleteUserSchedule": {
+    "input": "CalCom.Entities.InputOrganizationsSchedulesControllerGetUserSchedule",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerDeleteUserSchedule200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_schedules_controller_delete_user_schedule, id: \"DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}\", method: :delete, path: \"/v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}\", module: CalCom.Operations.OrganizationsSchedulesControllerDeleteUserSchedule, input_module: CalCom.Entities.InputOrganizationsSchedulesControllerGetUserSchedule, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerDeleteUserSchedule200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.DestinationCalendarsControllerUpdateDestinationCalendars": {
+    "input": "CalCom.Entities.InputDestinationCalendarsControllerUpdateDestinationCalendars",
+    "result": "CalCom.Entities.ResultDestinationCalendarsControllerUpdateDestinationCalendars200.t()",
+    "contract": "%CalCom.Operation{key: :destination_calendars_controller_update_destination_calendars, id: \"PUT /v2/destination-calendars\", method: :put, path: \"/v2/destination-calendars\", module: CalCom.Operations.DestinationCalendarsControllerUpdateDestinationCalendars, input_module: CalCom.Entities.InputDestinationCalendarsControllerUpdateDestinationCalendars, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultDestinationCalendarsControllerUpdateDestinationCalendars200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DestinationCalendarsOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612CreateEventType": {
+    "input": "CalCom.Entities.InputEventTypesController20260612CreateEventType",
+    "result": "CalCom.Entities.ResultEventTypesController20260612CreateEventType201.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_create_event_type, id: \"POST /v2/event-types\", method: :post, path: \"/v2/event-types\", module: CalCom.Operations.EventTypesController20260612CreateEventType, input_module: CalCom.Entities.InputEventTypesController20260612CreateEventType, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultEventTypesController20260612CreateEventType201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612UpdateEventType": {
+    "input": "CalCom.Entities.InputEventTypesController20260612UpdateEventType",
+    "result": "CalCom.Entities.ResultEventTypesController20260612UpdateEventType200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_update_event_type, id: \"PATCH /v2/event-types/{eventTypeId}\", method: :patch, path: \"/v2/event-types/{eventTypeId}\", module: CalCom.Operations.EventTypesController20260612UpdateEventType, input_module: CalCom.Entities.InputEventTypesController20260612UpdateEventType, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612UpdateEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612DeleteEventType": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypesController20260612DeleteEventType200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_delete_event_type, id: \"DELETE /v2/event-types/{eventTypeId}\", method: :delete, path: \"/v2/event-types/{eventTypeId}\", module: CalCom.Operations.EventTypesController20260612DeleteEventType, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612DeleteEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteEventTypeOutput20240614}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsWebhooksControllerCreateOrganizationWebhook": {
+    "input": "CalCom.Entities.InputOrganizationsWebhooksControllerCreateOrganizationWebhook",
+    "result": "CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_webhooks_controller_create_organization_webhook, id: \"POST /v2/organizations/{orgId}/webhooks\", method: :post, path: \"/v2/organizations/{orgId}/webhooks\", module: CalCom.Operations.OrganizationsWebhooksControllerCreateOrganizationWebhook, input_module: CalCom.Entities.InputOrganizationsWebhooksControllerCreateOrganizationWebhook, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsWebhooksControllerGetOrganizationWebhook": {
+    "input": "CalCom.Entities.InputOrganizationsWebhooksControllerGetOrganizationWebhook",
+    "result": "CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_webhooks_controller_get_organization_webhook, id: \"GET /v2/organizations/{orgId}/webhooks/{webhookId}\", method: :get, path: \"/v2/organizations/{orgId}/webhooks/{webhookId}\", module: CalCom.Operations.OrganizationsWebhooksControllerGetOrganizationWebhook, input_module: CalCom.Entities.InputOrganizationsWebhooksControllerGetOrganizationWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsWebhooksControllerDeleteWebhook": {
+    "input": "CalCom.Entities.InputOrganizationsWebhooksControllerGetOrganizationWebhook",
+    "result": "CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_webhooks_controller_delete_webhook, id: \"DELETE /v2/organizations/{orgId}/webhooks/{webhookId}\", method: :delete, path: \"/v2/organizations/{orgId}/webhooks/{webhookId}\", module: CalCom.Operations.OrganizationsWebhooksControllerDeleteWebhook, input_module: CalCom.Entities.InputOrganizationsWebhooksControllerGetOrganizationWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsWebhooksControllerUpdateOrgWebhook": {
+    "input": "CalCom.Entities.InputOrganizationsWebhooksControllerUpdateOrgWebhook",
+    "result": "CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_webhooks_controller_update_org_webhook, id: \"PATCH /v2/organizations/{orgId}/webhooks/{webhookId}\", method: :patch, path: \"/v2/organizations/{orgId}/webhooks/{webhookId}\", module: CalCom.Operations.OrganizationsWebhooksControllerUpdateOrgWebhook, input_module: CalCom.Entities.InputOrganizationsWebhooksControllerUpdateOrgWebhook, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsWebhooksControllerCreateOrganizationWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.AllowlistsControllerGetAllowlists": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultAllowlistsControllerGetAllowlists200.t()",
+    "contract": "%CalCom.Operation{key: :allowlists_controller_get_allowlists, id: \"GET /v2/allowlists\", method: :get, path: \"/v2/allowlists\", module: CalCom.Operations.AllowlistsControllerGetAllowlists, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultAllowlistsControllerGetAllowlists200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetAllowlistsOutput}, nullable: false}, empty?: false}]}"
+  }
+}

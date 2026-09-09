@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.BookingRoutingTraceController20240813GetBookingRoutingTrace": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetCalendarLinks",
+    "result": "CalCom.Entities.ResultBookingRoutingTraceController20240813GetBookingRoutingTrace200.t()",
+    "contract": "%CalCom.Operation{key: :booking_routing_trace_controller_2024_08_13_get_booking_routing_trace, id: \"GET /v2/bookings/{bookingUid}/routing-trace\", method: :get, path: \"/v2/bookings/{bookingUid}/routing-trace\", module: CalCom.Operations.BookingRoutingTraceController20240813GetBookingRoutingTrace, input_module: CalCom.Entities.InputBookingsController20260225GetCalendarLinks, version: \"2024-08-13\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingRoutingTraceController20240813GetBookingRoutingTrace200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingRoutingTraceOutput20240813}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.CalendarsControllerCheckIcsFeed": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_check_ics_feed, id: \"GET /v2/calendars/ics-feed/check\", method: :get, path: \"/v2/calendars/ics-feed/check\", module: CalCom.Operations.CalendarsControllerCheckIcsFeed, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCalendarsControllerCheckIcsFeed200}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.CalendarsControllerGetBusyTimes": {
+    "input": "CalCom.Entities.InputCalendarsControllerGetBusyTimes",
+    "result": "CalCom.Entities.ResultCalendarsControllerGetBusyTimes200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_get_busy_times, id: \"GET /v2/calendars/busy-times\", method: :get, path: \"/v2/calendars/busy-times\", module: CalCom.Operations.CalendarsControllerGetBusyTimes, input_module: CalCom.Entities.InputCalendarsControllerGetBusyTimes, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerGetBusyTimes200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBusyTimesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.CalendarsControllerGetCalendars": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultCalendarsControllerGetCalendars200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_get_calendars, id: \"GET /v2/calendars\", method: :get, path: \"/v2/calendars\", module: CalCom.Operations.CalendarsControllerGetCalendars, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerGetCalendars200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ConnectedCalendarsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.CalendarsControllerCheck": {
+    "input": "CalCom.Entities.InputCalendarsControllerCheck",
+    "result": "CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_check, id: \"GET /v2/calendars/{calendar}/check\", method: :get, path: \"/v2/calendars/{calendar}/check\", module: CalCom.Operations.CalendarsControllerCheck, input_module: CalCom.Entities.InputCalendarsControllerCheck, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCalendarsControllerCheckIcsFeed200}, nullable: false}, empty?: false}]}"
+  }
+}

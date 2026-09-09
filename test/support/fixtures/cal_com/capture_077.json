@@ -1,0 +1,18 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/event-types/{eventTypeId}/history",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-077",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981260
+      },
+      "query": {
+        "limit": 1
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"eventTypeId\": 6981260,\n    \"auditLogs\": [\n      {\n        \"id\": \"01a07efd-9095-72ca-ba1f-9e947dc3eb88\",\n        \"action\": \"EVENT_TYPE_MODIFIED\",\n        \"type\": \"RECORD_MODIFIED\",\n        \"timestamp\": \"2026-09-08T03:09:01.971Z\",\n        \"source\": \"WEBAPP\",\n        \"actor\": {\n          \"type\": \"USER\",\n          \"displayName\": \"redacted\",\n          \"displayEmail\": \"redacted@example.invalid\",\n          \"displayAvatar\": null\n        },\n        \"impersonatedBy\": null,\n        \"actionDisplayTitle\": \"redacted modified the event type\",\n        \"displayFields\": [\n          {\n            \"label\": \"Booking questions\",\n            \"fieldValue\": {\n              \"type\": \"diff\",\n              \"previous\": \"[\\n  {\\n    \\\"disableOnPrefill\\\": false,\\n    \\\"editable\\\": \\\"user\\\",\\n    \\\"hidden\\\": false,\\n    \\\"label\\\": \\\"Connector replacement note\\\",\\n    \\\"name\\\": \\\"connector-test-note\\\",\\n    \\\"required\\\": false,\\n    \\\"sources\\\": [\\n      {\\n        \\\"fieldRequired\\\": true,\\n        \\\"id\\\": \\\"user\\\",\\n        \\\"label\\\": \\\"User\\\",\\n        \\\"type\\\": \\\"user\\\"\\n      }\\n    ],\\n    \\\"type\\\": \\\"text\\\"\\n  }\\n]\",\n              \"next\": \"[]\"\n            }\n          }\n        ],\n        \"displayJson\": {\n          \"changedFields\": [\n            \"bookingFields\"\n          ],\n          \"changes\": [\n            {\n              \"added\": [],\n              \"field\": \"bookingFields\",\n              \"label\": \"Booking questions\",\n              \"removed\": [\n                {\n                  \"disableOnPrefill\": false,\n                  \"editable\": \"user\",\n                  \"hidden\": false,\n                  \"label\": \"Connector replacement note\",\n                  \"name\": \"connector-test-note\",\n                  \"required\": false,\n                  \"sources\": [\n                    {\n                      \"fieldRequired\": true,\n                      \"id\": \"user\",\n                      \"label\": \"User\",\n                      \"type\": \"user\"\n                    }\n                  ],\n                  \"type\": \"text\"\n                }\n              ],\n              \"type\": \"collection\",\n              \"updated\": []\n            }\n          ],\n          \"version\": 1\n        }\n      }\n    ]\n  },\n  \"pagination\": {\n    \"nextCursor\": \"01a07efd-9095-72ca-ba1f-9e947dc3eb88\",\n    \"hasMore\": true\n  }\n}\n"
+}

@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "GET /v2/event-types/{eventTypeId}/scheduling-config",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-020",
+  "http_status": 422,
+  "request": {
+    "params": {
+      "path": {
+        "eventTypeId": 6981147
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"error\",\n  \"timestamp\": \"2026-09-08T02:58:02.772Z\",\n  \"path\": \"/v2/event-types/6981147/scheduling-config\",\n  \"error\": {\n    \"code\": \"UnprocessableEntityException\",\n    \"message\": \"Event type with id 6981147 is not a team event type. Scheduling configuration is only available for team event types.\",\n    \"details\": {\n      \"message\": \"Event type with id 6981147 is not a team event type. Scheduling configuration is only available for team event types.\",\n      \"error\": \"Unprocessable Entity\",\n      \"statusCode\": 422\n    }\n  }\n}\n"
+}

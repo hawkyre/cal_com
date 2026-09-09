@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "DELETE /v2/schedules/{scheduleId}",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-140",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "path": {
+        "scheduleId": 2335989
+      }
+    }
+  },
+  "body": "{\"status\":\"success\"}"
+}

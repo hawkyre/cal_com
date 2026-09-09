@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.CreditsControllerGetAvailableCredits": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultCreditsControllerGetAvailableCredits200.t()",
+    "contract": "%CalCom.Operation{key: :credits_controller_get_available_credits, id: \"GET /v2/credits/available\", method: :get, path: \"/v2/credits/available\", module: CalCom.Operations.CreditsControllerGetAvailableCredits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCreditsControllerGetAvailableCredits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCreditsControllerGetAvailableCredits200}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612GetEventTypes": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetEventTypes",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetEventTypes200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_event_types, id: \"GET /v2/event-types\", method: :get, path: \"/v2/event-types\", module: CalCom.Operations.EventTypesController20260612GetEventTypes, input_module: CalCom.Entities.InputEventTypesController20260612GetEventTypes, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetEventTypes200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypesOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612GetEventTypeHistory": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetEventTypeHistory",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetEventTypeHistory200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_event_type_history, id: \"GET /v2/event-types/{eventTypeId}/history\", method: :get, path: \"/v2/event-types/{eventTypeId}/history\", module: CalCom.Operations.EventTypesController20260612GetEventTypeHistory, input_module: CalCom.Entities.InputEventTypesController20260612GetEventTypeHistory, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: \"limit\", pagination: :cursor, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetEventTypeHistory200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeHistoryOutput20240614}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612GetSchedulingConfig": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetSchedulingConfig200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_scheduling_config, id: \"GET /v2/event-types/{eventTypeId}/scheduling-config\", method: :get, path: \"/v2/event-types/{eventTypeId}/scheduling-config\", module: CalCom.Operations.EventTypesController20260612GetSchedulingConfig, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetSchedulingConfig200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulingConfigOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612GetEventTypeById": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetEventTypeById200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_event_type_by_id, id: \"GET /v2/event-types/{eventTypeId}\", method: :get, path: \"/v2/event-types/{eventTypeId}\", module: CalCom.Operations.EventTypesController20260612GetEventTypeById, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetEventTypeById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  }
+}

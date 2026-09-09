@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.UserOOOControllerDeleteMyOOO": {
+    "input": "CalCom.Entities.InputUserOOOControllerDeleteMyOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :user_ooo_controller_delete_my_ooo, id: \"DELETE /v2/me/ooo/{oooId}\", method: :delete, path: \"/v2/me/ooo/{oooId}\", module: CalCom.Operations.UserOOOControllerDeleteMyOOO, input_module: CalCom.Entities.InputUserOOOControllerDeleteMyOOO, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611CreateSchedule": {
+    "input": "CalCom.Entities.InputSchedulesController20240611CreateSchedule",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerCreateUserSchedule201.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_create_schedule, id: \"POST /v2/schedules\", method: :post, path: \"/v2/schedules\", module: CalCom.Operations.SchedulesController20240611CreateSchedule, input_module: CalCom.Entities.InputSchedulesController20240611CreateSchedule, version: \"2024-06-11\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsSchedulesControllerCreateUserSchedule201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611UpdateSchedule": {
+    "input": "CalCom.Entities.InputSchedulesController20240611UpdateSchedule",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerUpdateUserSchedule200.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_update_schedule, id: \"PATCH /v2/schedules/{scheduleId}\", method: :patch, path: \"/v2/schedules/{scheduleId}\", module: CalCom.Operations.SchedulesController20240611UpdateSchedule, input_module: CalCom.Entities.InputSchedulesController20240611UpdateSchedule, version: \"2024-06-11\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerUpdateUserSchedule200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611DeleteSchedule": {
+    "input": "CalCom.Entities.InputSchedulesController20240611GetSchedule",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerDeleteUserSchedule200.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_delete_schedule, id: \"DELETE /v2/schedules/{scheduleId}\", method: :delete, path: \"/v2/schedules/{scheduleId}\", module: CalCom.Operations.SchedulesController20240611DeleteSchedule, input_module: CalCom.Entities.InputSchedulesController20240611GetSchedule, version: \"2024-06-11\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerDeleteUserSchedule200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SelectedCalendarsControllerAddSelectedCalendar": {
+    "input": "CalCom.Entities.InputSelectedCalendarsControllerAddSelectedCalendar",
+    "result": "CalCom.Entities.ResultSelectedCalendarsControllerAddSelectedCalendar201.t()",
+    "contract": "%CalCom.Operation{key: :selected_calendars_controller_add_selected_calendar, id: \"POST /v2/selected-calendars\", method: :post, path: \"/v2/selected-calendars\", module: CalCom.Operations.SelectedCalendarsControllerAddSelectedCalendar, input_module: CalCom.Entities.InputSelectedCalendarsControllerAddSelectedCalendar, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultSelectedCalendarsControllerAddSelectedCalendar201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.SelectedCalendarOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

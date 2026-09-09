@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.EventTypeWebhooksControllerGetEventTypeWebhook": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_get_event_type_webhook, id: \"GET /v2/event-types/{eventTypeId}/webhooks/{webhookId}\", method: :get, path: \"/v2/event-types/{eventTypeId}/webhooks/{webhookId}\", module: CalCom.Operations.EventTypeWebhooksControllerGetEventTypeWebhook, input_module: CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypeWebhooksControllerDeleteEventTypeWebhook": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_delete_event_type_webhook, id: \"DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}\", method: :delete, path: \"/v2/event-types/{eventTypeId}/webhooks/{webhookId}\", module: CalCom.Operations.EventTypeWebhooksControllerDeleteEventTypeWebhook, input_module: CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesPrivateLinksController20240904GetPrivateLinks": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_get_private_links, id: \"GET /v2/event-types/{eventTypeId}/private-links\", method: :get, path: \"/v2/event-types/{eventTypeId}/private-links\", module: CalCom.Operations.EventTypesPrivateLinksController20240904GetPrivateLinks, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2024-09-04\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetPrivateLinksOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingKpiStats": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingKpiStats200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_kpi_stats, id: \"POST /v2/insights/bookings/kpi-stats\", method: :post, path: \"/v2/insights/bookings/kpi-stats\", module: CalCom.Operations.InsightsControllerGetBookingKpiStats, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingKpiStats200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingKpiStatsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingEventTrends": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingEventTrends200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_event_trends, id: \"POST /v2/insights/bookings/event-trends\", method: :post, path: \"/v2/insights/bookings/event-trends\", module: CalCom.Operations.InsightsControllerGetBookingEventTrends, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingEventTrends200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingEventTrendsOutput}, nullable: false}, empty?: false}]}"
+  }
+}

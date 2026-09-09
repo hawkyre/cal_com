@@ -1,0 +1,15 @@
+{
+  "provider": "cal_com",
+  "operation": "POST /v2/insights/routings/form-field-options",
+  "captured_on": "2026-09-08",
+  "attempt_key": "cal-test-20260908-042",
+  "http_status": 200,
+  "request": {
+    "params": {
+      "body": {
+        "scope": "user"
+      }
+    }
+  },
+  "body": "{\n  \"status\": \"success\",\n  \"data\": []\n}\n"
+}
