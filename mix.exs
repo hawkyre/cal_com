@@ -2,7 +2,7 @@ defmodule CalCom.MixProject do
   use Mix.Project
 
   @version "0.1.0"
-  @source_url "https://github.com/kithe-org/cal_com"
+  @source_url "https://github.com/hawkyre/cal_com"
 
   def project do
     [

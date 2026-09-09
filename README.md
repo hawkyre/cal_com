@@ -22,7 +22,7 @@ Depend on it by git ref:
 ```elixir
 def deps do
   [
-    {:cal_com, git: "git@github.com:kithe-org/cal_com.git", tag: "v0.1.0"}
+    {:cal_com, git: "git@github.com:hawkyre/cal_com.git", tag: "v0.1.0"}
   ]
 end
 ```
