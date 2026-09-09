@@ -1,0 +1,7 @@
+{
+  "CalCom.Operations.MeControllerGetMe": {
+    "input": "CalCom.Entities.InputMeControllerGetMe",
+    "result": "CalCom.Entities.ResultMeControllerGetMe200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_get_me, id: \"GET /v2/me\", method: :get, path: \"/v2/me\", module: CalCom.Operations.MeControllerGetMe, input_module: CalCom.Entities.InputMeControllerGetMe, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMe200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetMeOutput}, nullable: false}, empty?: false}]}"
+  }
+}

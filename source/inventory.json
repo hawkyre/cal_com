@@ -1,0 +1,5 @@
+{
+  "operations": [
+    "GET /v2/me"
+  ]
+}

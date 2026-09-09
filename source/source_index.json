@@ -1,0 +1,5 @@
+{
+  "GetMeOutput": "CalCom.Entities.GetMeOutput",
+  "MeOrgOutput": "CalCom.Entities.MeOrgOutput",
+  "MeOutput": "CalCom.Entities.MeOutput"
+}
