@@ -43,7 +43,10 @@ defmodule CalCom.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => @source_url}
+      links: %{"GitHub" => @source_url},
+      # `source/` ships with the package: the generated modules read their
+      # contracts from it at compile time, and a consumer can regenerate them.
+      files: ~w(lib priv source mix.exs .formatter.exs README.md CHANGELOG.md LICENSE)
     ]
   end
 end

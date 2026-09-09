@@ -102,6 +102,26 @@ SHA-256 of `source/openapi.json` differs, printing both hashes. A spec refresh
 therefore cannot land without updating the hash in the same commit. The
 operations generated are exactly the ones listed in `source/inventory.json`.
 
+## Compile cost
+
+The package compiles 94 files that define 199 operations and 833 entity
+modules: about 20 seconds of wall time on a 20-core machine, roughly three
+minutes of CPU, paid once per build volume. Incremental builds after that
+touch only what changed; a fresh `_build` pays the whole cost again.
+
+## Releasing
+
+Releases are cut by hand from a maintainer's machine; CI only proves the
+tarball builds. A release that is not traceable to its provider document is
+not a release, so the CHANGELOG entry and the hash move together:
+
+1. `python3 source/generate.py --check`, `mix test`, `mix credo --strict` and
+   `mix dialyzer` are green on `main`.
+2. Add a CHANGELOG entry naming the current `source/SOURCE_HASH`.
+3. Bump `@version` in `mix.exs`, commit, and push.
+4. `git tag vX.Y.Z && git push origin vX.Y.Z` — CI runs the suite on the tag.
+5. `mix hex.publish` with two-factor confirmation.
+
 ## Development
 
 ```console

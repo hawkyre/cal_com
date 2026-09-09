@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "29.0.5"
+          elixir-version: "1.20.3"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache deps and build
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-
+
+      - run: mix deps.get
+
+      - run: mix format --check-formatted
+
+      - run: mix compile --warnings-as-errors
+
+      - run: mix test
+
+      - run: mix credo --strict
+
+      - run: mix dialyzer
+
+      - name: Generated files match the spec
+        run: python3 source/generate.py --check
+
+      - name: Generator normalization against the original document
+        run: python3 -m unittest test/generate_test.py
+
+      # A release must name the provider document it was generated from. The
+      # check runs on every branch too, so a spec refresh cannot land without
+      # its CHANGELOG entry.
+      - name: CHANGELOG names the generated spec hash
+        run: |
+          hash="$(tr -d '[:space:]' < source/SOURCE_HASH)"
+          if ! grep -q "$hash" CHANGELOG.md; then
+            echo "CHANGELOG.md does not name the spec hash $hash" >&2
+            exit 1
+          fi
+
+      # Publishing is by hand, from a maintainer's machine; CI only proves the
+      # tarball builds.
+      - run: mix hex.build
