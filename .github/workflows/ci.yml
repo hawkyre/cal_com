@@ -50,7 +50,7 @@ jobs:
         run: python3 source/generate.py --check
 
       - name: Generator normalization against the original document
-        run: python3 -m unittest test/generate_test.py
+        run: python3 test/generate_test.py
 
       # A release must name the provider document it was generated from. The
       # check runs on every branch too, so a spec refresh cannot land without

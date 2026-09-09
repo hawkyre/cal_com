@@ -129,7 +129,7 @@ mix test
 mix format --check-formatted
 mix credo --strict
 mix dialyzer
-python3 -m unittest test/generate_test.py
+python3 test/generate_test.py
 ```
 
 The package keeps the strict bar it was extracted under: every public function
