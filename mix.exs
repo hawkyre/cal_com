@@ -24,13 +24,13 @@ defmodule CalCom.MixProject do
 
   # Runtime dependencies are constraint ranges on the majors this package is
   # generated and tested against, never exact pins, so a consumer on another
-  # minor resolves without a conflict.
+  # minor resolves without a conflict. Decimal arrives through Ecto and is not
+  # constrained here: this package never names it.
   defp deps do
     [
       {:ecto, "~> 3.13"},
       {:typed_ecto_schema, "~> 0.4"},
       {:jason, "~> 1.2"},
-      {:decimal, "~> 2.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
