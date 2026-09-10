@@ -1,19 +1,157 @@
 {
   "body": {
-    "error": {
-      "details": {
-        "error": "Forbidden",
-        "message": "RolesGuard - User is not a member of the team with id=422942.",
-        "statusCode": 403
+    "data": {
+      "lockTimeZoneToggleOnBookingPage": false,
+      "slotInterval": null,
+      "bookingProposalCount": null,
+      "hideCalendarEventDetails": false,
+      "afterEventBuffer": 0,
+      "requiresBookerEmailVerification": false,
+      "allowReschedulingPastBookings": false,
+      "recurrence": null,
+      "parentEventTypeId": null,
+      "lengthInMinutes": 15,
+      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL4XBW7",
+      "seats": {
+        "disabled": true
       },
-      "message": "RolesGuard - User is not a member of the team with id=422942."
+      "hideCalendarNotes": false,
+      "bookingRequiresAuthentication": false,
+      "hidden": false,
+      "skipAttendeeEmailDeliverabilityCheck": false,
+      "ownerId": null,
+      "useDestinationCalendarEmail": false,
+      "offsetStart": 0,
+      "disableGuests": false,
+      "showOptimizedSlots": false,
+      "description": "",
+      "id": 7013668,
+      "teamId": 422851,
+      "confirmationPolicy": {
+        "disabled": true
+      },
+      "isInstantEvent": false,
+      "minimumBookingNotice": 120,
+      "privateNoteMode": null,
+      "currency": "usd",
+      "price": 0,
+      "hideOrganizerEmail": false,
+      "scheduleId": null,
+      "allowReschedulingCancelledBookings": false,
+      "assignAllTeamMembers": false,
+      "privateNoteEnabled": false,
+      "disableCancelling": {
+        "disabled": false
+      },
+      "beforeEventBuffer": 0,
+      "team": {
+        "bannerUrl": null,
+        "brandColor": null,
+        "darkBrandColor": null,
+        "id": 422851,
+        "logoUrl": null,
+        "name": "Team1",
+        "slug": "team1",
+        "theme": null,
+        "weekStart": "Sunday"
+      },
+      "privateNoteTemplate": null,
+      "bookerActiveBookingsLimit": {
+        "disabled": true
+      },
+      "successRedirectUrl": null,
+      "bookingFields": [
+        {
+          "disableOnPrefill": false,
+          "field": "name",
+          "slug": "name",
+          "variant": "fullName"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "email",
+          "hidden": false,
+          "required": true,
+          "slug": "email"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "attendeePhoneNumber",
+          "hidden": true,
+          "required": false,
+          "slug": "attendeePhoneNumber"
+        },
+        {
+          "field": "location",
+          "slug": "location"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "title",
+          "hidden": true,
+          "required": true,
+          "slug": "title"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "notes",
+          "hidden": false,
+          "required": false,
+          "slug": "notes"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "guests",
+          "hidden": false,
+          "required": false,
+          "slug": "guests"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "rescheduleReason",
+          "hidden": false,
+          "required": false,
+          "slug": "rescheduleReason"
+        }
+      ],
+      "allowRRHostChoiceOnReschedule": false,
+      "hosts": [
+        {
+          "avatarUrl": null,
+          "name": "hawkyre",
+          "userId": 3209949,
+          "username": "hawkyre-test"
+        }
+      ],
+      "onlyShowFirstAvailableSlot": false,
+      "rescheduleWithSameRoundRobinHost": false,
+      "rrHostSubsetEnabled": false,
+      "forwardParamsSuccessRedirect": true,
+      "locations": [
+        {
+          "integration": "cal-video",
+          "type": "integration"
+        }
+      ],
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "calVideoSettings": {
+        "sendTranscriptionEmails": true
+      },
+      "slug": "kithe-team-cert-TL4XBW7",
+      "bookingWindow": {
+        "disabled": true
+      },
+      "interfaceLanguage": null,
+      "schedulingType": "collective",
+      "metadata": {},
+      "title": "Kithe certification team event"
     },
-    "path": "/v2/teams/422942/event-types",
-    "status": "error",
-    "timestamp": "2026-09-10T05:59:48.820Z"
+    "status": "success"
   },
   "captured_on": "2026-09-10",
-  "http_status": 403,
+  "http_status": 201,
   "operation": "POST /v2/teams/{teamId}/event-types",
   "parsed": false,
   "provider": "cal_com"
