@@ -1,0 +1,18 @@
+{
+  "body": {
+    "data": {
+      "bookingUrl": "https://hawk-labs.cal.com/d/nk2vnLkE3kraJJ1oooN1Sh/kithe-team-cert-TL50S828",
+      "eventTypeId": 7014441,
+      "isExpired": false,
+      "linkId": "nk2vnLkE3kraJJ1oooN1Sh",
+      "maxUsageCount": 1,
+      "usageCount": 0
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

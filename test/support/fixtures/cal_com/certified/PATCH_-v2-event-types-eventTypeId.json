@@ -10,7 +10,7 @@
       "allowReschedulingPastBookings": false,
       "recurrence": null,
       "lengthInMinutes": 15,
-      "bookingUrl": "https://hawk-labs.cal.com/me/cert-edited-TL4ZJ05",
+      "bookingUrl": "https://hawk-labs.cal.com/me/cert-edited-TL50OP5",
       "seats": {
         "disabled": true
       },
@@ -38,7 +38,7 @@
       "disableGuests": false,
       "showOptimizedSlots": false,
       "description": "Created by the cal_com certification sweep",
-      "id": 7014085,
+      "id": 7014405,
       "confirmationPolicy": {
         "disabled": true
       },
@@ -128,7 +128,7 @@
       "calVideoSettings": {
         "sendTranscriptionEmails": true
       },
-      "slug": "cert-edited-TL4ZJ05",
+      "slug": "cert-edited-TL50OP5",
       "bookingWindow": {
         "disabled": true
       },

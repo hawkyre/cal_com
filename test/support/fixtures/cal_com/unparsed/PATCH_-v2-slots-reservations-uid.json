@@ -8,9 +8,9 @@
       },
       "message": "Event Type with ID=0 not found"
     },
-    "path": "/v2/slots/reservations/3158a9ec-095e-43e6-b8e3-e6a9c6b5bed9",
+    "path": "/v2/slots/reservations/746421c1-003b-468d-b848-73036b62b614",
     "status": "error",
-    "timestamp": "2026-09-10T07:02:04.717Z"
+    "timestamp": "2026-09-10T07:27:06.597Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 404,

@@ -10,7 +10,7 @@
     },
     "path": "/v2/insights/routings/forms-by-status",
     "status": "error",
-    "timestamp": "2026-09-10T07:05:06.909Z"
+    "timestamp": "2026-09-10T07:31:19.848Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 403,

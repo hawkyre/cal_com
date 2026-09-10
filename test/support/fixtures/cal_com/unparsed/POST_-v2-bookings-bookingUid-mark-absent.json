@@ -3,14 +3,14 @@
     "error": {
       "details": {
         "error": "Bad Request",
-        "message": "Bookings can only be marked as absent after their scheduled start time. Current time in UTC+0: 2026-09-10T07:05:22.443Z, Booking start time in UTC+0: 2026-09-15T18:15:00.000Z",
+        "message": "Bookings can only be marked as absent after their scheduled start time. Current time in UTC+0: 2026-09-10T07:31:37.406Z, Booking start time in UTC+0: 2026-09-15T18:15:00.000Z",
         "statusCode": 400
       },
-      "message": "Bookings can only be marked as absent after their scheduled start time. Current time in UTC+0: 2026-09-10T07:05:22.443Z, Booking start time in UTC+0: 2026-09-15T18:15:00.000Z"
+      "message": "Bookings can only be marked as absent after their scheduled start time. Current time in UTC+0: 2026-09-10T07:31:37.406Z, Booking start time in UTC+0: 2026-09-15T18:15:00.000Z"
     },
-    "path": "/v2/bookings/rTtZvWWRneWjZ35MwSXRHh/mark-absent",
+    "path": "/v2/bookings/qJcy6M9ok53158HhCDH3Pn/mark-absent",
     "status": "error",
-    "timestamp": "2026-09-10T07:05:22.444Z"
+    "timestamp": "2026-09-10T07:31:37.407Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

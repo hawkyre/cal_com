@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Bad Request",
+        "message": "System booking fields cannot be deleted; set hidden instead.",
+        "statusCode": 400
+      },
+      "message": "System booking fields cannot be deleted; set hidden instead."
+    },
+    "path": "/v2/organizations/422850/teams/422851/event-types/7014440/booking-fields/notes",
+    "status": "error",
+    "timestamp": "2026-09-10T07:28:55.414Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}",
+  "parsed": false,
+  "provider": "cal_com"
+}

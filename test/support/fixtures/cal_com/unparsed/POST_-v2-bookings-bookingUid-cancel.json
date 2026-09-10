@@ -3,14 +3,14 @@
     "error": {
       "details": {
         "error": "Bad Request",
-        "message": "Can't cancel booking with uid=mKAbmyekjo2yGXeTcNiNFe because it has been cancelled already. Please provide uid of a booking that is not cancelled.",
+        "message": "Can't cancel booking with uid=q8b6RuGNmdyntv1a7fz9H5 because it has been cancelled already. Please provide uid of a booking that is not cancelled.",
         "statusCode": 400
       },
-      "message": "Can't cancel booking with uid=mKAbmyekjo2yGXeTcNiNFe because it has been cancelled already. Please provide uid of a booking that is not cancelled."
+      "message": "Can't cancel booking with uid=q8b6RuGNmdyntv1a7fz9H5 because it has been cancelled already. Please provide uid of a booking that is not cancelled."
     },
-    "path": "/v2/bookings/mKAbmyekjo2yGXeTcNiNFe/cancel",
+    "path": "/v2/bookings/q8b6RuGNmdyntv1a7fz9H5/cancel",
     "status": "error",
-    "timestamp": "2026-09-10T07:07:13.643Z"
+    "timestamp": "2026-09-10T07:33:41.966Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

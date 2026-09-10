@@ -1,0 +1,14 @@
+{
+  "body": {
+    "data": {
+      "linkId": "p7JkVkoYAwy2z1CnKcJyii",
+      "message": "Private link deleted successfully"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

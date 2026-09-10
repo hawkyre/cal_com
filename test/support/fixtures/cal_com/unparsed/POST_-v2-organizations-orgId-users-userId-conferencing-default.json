@@ -10,7 +10,7 @@
     },
     "path": "/v2/organizations/422850/users/3209949/conferencing/default",
     "status": "error",
-    "timestamp": "2026-09-10T07:04:24.004Z"
+    "timestamp": "2026-09-10T07:29:52.275Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

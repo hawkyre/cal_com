@@ -1,0 +1,18 @@
+{
+  "body": {
+    "data": {
+      "bookingUrl": "https://hawk-labs.cal.com/d/cbir8q9mYabzpM4F38FYKc/kithe-cert-TL50QX1O",
+      "eventTypeId": 7014425,
+      "isExpired": false,
+      "linkId": "cbir8q9mYabzpM4F38FYKc",
+      "maxUsageCount": 2,
+      "usageCount": 0
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

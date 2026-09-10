@@ -5,7 +5,7 @@
     },
     "path": "/v2/selected-calendars?credentialId=a&externalId=a&integration=a",
     "status": "error",
-    "timestamp": "2026-09-10T07:02:17.720Z"
+    "timestamp": "2026-09-10T07:27:18.965Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 500,

@@ -63,6 +63,9 @@ defmodule Mutate do
         do: Client.log("  #{String.pad_trailing(id, 74)} #{proves}")
 
     if System.get_env("MUTATE_APPLY") == "1" do
+      # The read pass wipes this tree; the write pass has to do the same, or a
+      # refusal's body from an earlier run outlives the verdict that replaced it.
+      File.rm_rf!("test/support/fixtures/cal_com/unparsed")
       account = Discover.account(credentials)
       ids = Discover.ids(credentials, account)
       Client.log("account: user=#{account.user_id} org=#{inspect(account.organization_id)}")
@@ -243,6 +246,12 @@ defmodule Mutate do
       {"DELETE /v2/teams/{teamId}/memberships/{membershipId}",
        "the account holds one membership per team and the provider refuses a second with 409, so the only membership this could delete is the user's own"},
       {"POST /v2/teams/{teamId}/memberships", "the user route answers 403 for this account"},
+      {"POST /v2/event-types/{eventTypeId}/booking-fields",
+       "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\""},
+      {"POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\""},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\""},
       {"POST /v2/organizations/{orgId}/memberships",
        "would invite a real person to the organization"},
       {"POST /v2/organizations/{orgId}/teams/{teamId}/invite",
@@ -280,6 +289,8 @@ defmodule Mutate do
       organization_webhooks() ++
       event_type_children() ++
       team_scoped() ++
+      team_booking_fields() ++
+      booking_field_deletes() ++
       team_admin() ++
       org_users() ++
       memberships() ++
@@ -2598,8 +2609,167 @@ defmodule Mutate do
 
            Ledger.track(
              "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}",
-             Map.put(path, "linkId", Ledger.created_id(created, :id))
+             Map.put(path, "linkId", Ledger.created_id(created, :link_id))
            )
+         end)
+       end}
+    ]
+  end
+
+  # The same three booking-field routes, two of which are team-scoped: the body a
+  # PATCH takes is a partial field and the body a PUT takes is the full list the
+  # route's own GET returns.
+  @spec team_booking_fields() :: [{String.t(), String.t(), fun()}]
+  defp team_booking_fields do
+    partial = [%{"slug" => "email", "required" => true}]
+
+    [
+      {"PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "edits booking fields on a team event type this run created",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+             params("PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path: team_path(team_id, event_type_id),
+               body: %{"bookingFields" => partial}
+             )
+           )
+         end)
+       end},
+      {"PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "replaces booking fields on a team event type this run created",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           path = team_path(team_id, event_type_id)
+
+           fields =
+             booking_fields(
+               credentials,
+               "GET /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path
+             )
+
+           Ledger.call(
+             credentials,
+             "PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+             params("PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path: path,
+               body: %{"bookingFields" => fields}
+             )
+           )
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "edits booking fields on a team event type through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+             params(
+               "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path: path,
+               body: %{"bookingFields" => partial}
+             )
+           )
+         end)
+       end},
+      {"PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "replaces booking fields on a team event type through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           fields =
+             booking_fields(
+               credentials,
+               "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path
+             )
+
+           Ledger.call(
+             credentials,
+             "PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+             params(
+               "PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path: path,
+               body: %{"bookingFields" => fields}
+             )
+           )
+         end)
+       end}
+    ]
+  end
+
+  # `notes` is a default system field on every event type, so deleting it proves
+  # the route on an event type this run created and discards.
+  @system_field_slug "notes"
+
+  @spec booking_field_deletes() :: [{String.t(), String.t(), fun()}]
+  defp booking_field_deletes do
+    [
+      {"DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}",
+       "removes a default booking field from an event type this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           Ledger.call(
+             credentials,
+             "DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}",
+             %{"path" => %{"eventTypeId" => event_type_id, "slug" => @system_field_slug}}
+           )
+         end)
+       end},
+      {"DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}",
+       "removes a default booking field from a team event type this run created",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           Ledger.call(
+             credentials,
+             "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}",
+             %{"path" => Map.put(team_path(team_id, event_type_id), "slug", @system_field_slug)}
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}",
+       "removes a default booking field from a team event type through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           Ledger.call(
+             credentials,
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}",
+             %{"path" => Map.put(path, "slug", @system_field_slug)}
+           )
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}",
+       "edits the private link this run created on a team event type",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links",
+               params(
+                 "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links",
+                 path: path
+               )
+             )
+
+           case Ledger.created_id(created, :link_id) do
+             nil ->
+               :ok
+
+             link_id ->
+               Ledger.call(
+                 credentials,
+                 "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}",
+                 params(
+                   "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}",
+                   path: Map.put(path, "linkId", link_id),
+                   body: %{"maxUsageCount" => 2}
+                 )
+               )
+           end
          end)
        end}
     ]
@@ -2776,7 +2946,7 @@ defmodule Mutate do
 
            Ledger.track(
              "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}",
-             %{"eventTypeId" => event_type_id, "linkId" => Ledger.created_id(created, :id)}
+             %{"eventTypeId" => event_type_id, "linkId" => Ledger.created_id(created, :link_id)}
            )
          end)
        end},
@@ -2864,26 +3034,19 @@ defmodule Mutate do
   end
 
   # The event type's own booking fields, read back so a replace reflects them.
-  @spec booking_fields(Credentials.t(), term()) :: [map()]
-  defp booking_fields(credentials, event_type_id) do
-    verdict =
-      Ledger.call(
-        credentials,
-        "GET /v2/event-types/{eventTypeId}/booking-fields",
-        %{"path" => %{"eventTypeId" => event_type_id}}
-      )
+  # The route is a parameter because each of the three routes has its own GET.
+  @spec booking_fields(Credentials.t(), String.t(), map()) :: [map()]
+  defp booking_fields(credentials, read_id, path) do
+    verdict = Ledger.call(credentials, read_id, %{"path" => path})
 
     case verdict[:capture] do
       # The read answers `data: {bookingFields: [...]}`; the patch wants the list
       # itself, so the envelope is unwrapped rather than sent back whole.
+      # The list goes back exactly as it came: PUT accepts the shape its own GET
+      # returns, and inventing a property for a system field is refused outright
+      # ("property required should not exist" on `name`).
       {%{} = typed, _package} ->
-        # Every entry has to carry something to update: the provider refuses one
-        # holding only its identity ("must contain at least one property to
-        # update"), which is what a bare system field such as location returns.
-        typed.value.data
-        |> CalCom.Codec.wire()
-        |> Map.get("bookingFields", [])
-        |> Enum.map(&Map.put_new(&1, "required", false))
+        typed.value.data |> CalCom.Codec.wire() |> Map.get("bookingFields", [])
 
       _none ->
         []

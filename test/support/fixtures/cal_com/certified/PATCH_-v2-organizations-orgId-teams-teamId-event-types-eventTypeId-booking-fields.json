@@ -1,0 +1,66 @@
+{
+  "body": {
+    "data": {
+      "bookingFields": [
+        {
+          "disableOnPrefill": false,
+          "field": "name",
+          "slug": "name",
+          "variant": "fullName"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "email",
+          "hidden": false,
+          "required": true,
+          "slug": "email"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "attendeePhoneNumber",
+          "hidden": true,
+          "required": false,
+          "slug": "attendeePhoneNumber"
+        },
+        {
+          "field": "location",
+          "slug": "location"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "title",
+          "hidden": true,
+          "required": true,
+          "slug": "title"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "notes",
+          "hidden": false,
+          "required": false,
+          "slug": "notes"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "guests",
+          "hidden": false,
+          "required": false,
+          "slug": "guests"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "rescheduleReason",
+          "hidden": false,
+          "required": false,
+          "slug": "rescheduleReason"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+  "parsed": true,
+  "provider": "cal_com"
+}

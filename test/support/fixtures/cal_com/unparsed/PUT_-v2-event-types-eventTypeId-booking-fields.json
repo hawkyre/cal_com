@@ -8,9 +8,9 @@
       },
       "message": "bookingFields[0].field must be a string."
     },
-    "path": "/v2/event-types/7014304/booking-fields",
+    "path": "/v2/event-types/7014423/booking-fields",
     "status": "error",
-    "timestamp": "2026-09-10T07:17:48.103Z"
+    "timestamp": "2026-09-10T07:28:07.277Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

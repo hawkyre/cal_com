@@ -143,15 +143,30 @@ defmodule Sweep.Ledger do
   created object one level down (`data: {role: {...}}`), so a miss looks once
   inside the values of `data` before giving up.
   """
+  # Providers name the id of what they just created differently per resource —
+  # `id` for most, `linkId` for a private link. The field a scenario asks for is
+  # tried first, then the other names, so a fixture is never silently untracked
+  # because the response called it something else.
+  @id_fields [:id, :link_id, :uid, :reservation_uid]
+
   @spec created_id(map(), atom()) :: term()
   def created_id(verdict, field) do
     case verdict[:capture] do
       # A refused body rides in the same slot as a parsed one, marked false; a
       # capture that never parsed has no id to read.
-      {false, _package} -> nil
-      {nil, _package} -> nil
-      {typed, _package} -> maybe_id(Map.get(typed, :value), field)
-      _none -> nil
+      {false, _package} ->
+        nil
+
+      {nil, _package} ->
+        nil
+
+      {typed, _package} ->
+        Enum.find_value([field | @id_fields] |> Enum.uniq(), fn name ->
+          maybe_id(Map.get(typed, :value), name)
+        end)
+
+      _none ->
+        nil
     end
   end
 
