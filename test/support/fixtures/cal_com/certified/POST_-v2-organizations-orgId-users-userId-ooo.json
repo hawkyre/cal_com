@@ -1,0 +1,20 @@
+{
+  "body": {
+    "data": {
+      "end": "2026-09-13T23:59:59.999Z",
+      "id": 94934,
+      "notes": "cal_com certification",
+      "reason": "unspecified",
+      "start": "2026-09-13T00:00:00.000Z",
+      "toUserId": null,
+      "userId": 3209949,
+      "uuid": "c540452e-4032-445b-8002-83ff26f4c848"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/organizations/{orgId}/users/{userId}/ooo",
+  "parsed": true,
+  "provider": "cal_com"
+}

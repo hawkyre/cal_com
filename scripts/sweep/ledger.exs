@@ -20,15 +20,29 @@ defmodule Sweep.Ledger do
   @doc "Call one operation, record its verdict, and hand the verdict back."
   @spec call(Credentials.t(), String.t(), map()) :: map()
   def call(credentials, operation_id, params) do
-    operation = CalCom.Registry.find(operation_id)
+    case CalCom.Registry.find(operation_id) do
+      nil ->
+        # A scenario naming an operation the registry does not have is a harness
+        # bug, and it must say so: `nil.input_module` would abort the whole run
+        # and leave its fixtures behind.
+        Client.log("  UNKNOWN OPERATION #{operation_id}")
+        %{status: "unknown_operation", reason: "not in the registry"}
+
+      operation ->
+        dispatch(credentials, operation, params)
+    end
+  end
+
+  @spec dispatch(Credentials.t(), CalCom.Operation.t(), map()) :: map()
+  defp dispatch(credentials, operation, params) do
     started = System.monotonic_time(:millisecond)
     {_id, verdict} = Judge.call(operation, credentials, params)
 
     Client.log(
-      "  #{String.pad_trailing(operation_id, 74)} #{verdict.status} #{verdict[:http] || ""} #{elapsed(started)}ms"
+      "  #{String.pad_trailing(operation.id, 74)} #{verdict.status} #{verdict[:http] || ""} #{elapsed(started)}ms"
     )
 
-    Process.put(@verdicts, Map.put(verdicts(), operation_id, verdict))
+    Process.put(@verdicts, Map.put(verdicts(), operation.id, verdict))
     verdict
   end
 
@@ -53,9 +67,10 @@ defmodule Sweep.Ledger do
   def track(undo_operation, param, _id),
     do: put_resource(undo_operation, %{"path" => %{param => nil}})
 
-  @doc "Register a resource by the call that cleans it up."
+  @doc "Register a resource by the call that cleans it up, or by a bare path."
   @spec track(String.t(), map()) :: :ok
-  def track(undo_operation, params), do: put_resource(undo_operation, params)
+  def track(undo_operation, %{"path" => _path} = params), do: put_resource(undo_operation, params)
+  def track(undo_operation, path), do: put_resource(undo_operation, %{"path" => path})
 
   @spec put_resource(String.t(), map()) :: :ok
   defp put_resource(operation_id, %{"path" => path} = params) do

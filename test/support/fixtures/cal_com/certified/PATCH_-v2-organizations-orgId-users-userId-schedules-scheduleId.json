@@ -1,0 +1,31 @@
+{
+  "body": {
+    "data": {
+      "availability": [
+        {
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "endTime": "17:00",
+          "startTime": "09:00"
+        }
+      ],
+      "id": 2347200,
+      "isDefault": false,
+      "name": "Kithe certification (edited) TL4Z923",
+      "overrides": [],
+      "ownerId": 3209949,
+      "timeZone": "Europe/London"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

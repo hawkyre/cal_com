@@ -278,6 +278,7 @@ defmodule Mutate do
       event_type_children() ++
       team_scoped() ++
       team_admin() ++
+      org_users() ++
       account_settings() ++
       insights() ++
       bookings() ++
@@ -1645,6 +1646,275 @@ defmodule Mutate do
          end)
        end}
     ]
+  end
+
+  # ---------------------------------------------------------------------------
+  # The account's own user, addressed through the organization routes
+  # ---------------------------------------------------------------------------
+
+  @spec org_user_path(term(), term()) :: map()
+  defp org_user_path(org_id, user_id), do: %{"orgId" => org_id, "userId" => user_id}
+
+  @spec with_org_user(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_org_user(credentials, fun) do
+    with_org_id(credentials, fn org_id ->
+      fun.(org_user_path(org_id, team_user_id(credentials)), org_id)
+    end)
+  end
+
+  @spec org_ooo(Credentials.t(), map()) :: map()
+  defp org_ooo(credentials, path) do
+    Ledger.call(
+      credentials,
+      "POST /v2/organizations/{orgId}/users/{userId}/ooo",
+      params("POST /v2/organizations/{orgId}/users/{userId}/ooo",
+        path: path,
+        body: Map.merge(ooo_window(), %{"notes" => "cal_com certification"})
+      )
+    )
+  end
+
+  @spec with_org_ooo(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_org_ooo(credentials, fun) do
+    with_org_user(credentials, fn path, _org_id ->
+      case Ledger.created_id(org_ooo(credentials, path), :id) do
+        nil ->
+          :ok
+
+        ooo_id ->
+          Ledger.track(
+            "DELETE /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}",
+            Map.put(path, "oooId", ooo_id)
+          )
+
+          fun.(path, ooo_id)
+      end
+    end)
+  end
+
+  @spec org_schedule(Credentials.t(), map()) :: map()
+  defp org_schedule(credentials, path) do
+    Ledger.call(
+      credentials,
+      "POST /v2/organizations/{orgId}/users/{userId}/schedules",
+      params("POST /v2/organizations/{orgId}/users/{userId}/schedules",
+        path: path,
+        body: %{
+          "name" => "Kithe certification " <> suffix(),
+          "timeZone" => "Europe/London",
+          "isDefault" => false
+        }
+      )
+    )
+  end
+
+  @spec with_org_schedule(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_org_schedule(credentials, fun) do
+    with_org_user(credentials, fn path, _org_id ->
+      case Ledger.created_id(org_schedule(credentials, path), :id) do
+        nil ->
+          :ok
+
+        schedule_id ->
+          Ledger.track(
+            "DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+            Map.put(path, "scheduleId", schedule_id)
+          )
+
+          fun.(path, schedule_id)
+      end
+    end)
+  end
+
+  @spec org_users() :: [{String.t(), String.t(), fun()}]
+  defp org_users do
+    [
+      {"PATCH /v2/organizations/{orgId}/users/{userId}",
+       "edits this user through the organization route, then puts the name back",
+       fn credentials, _ids ->
+         with_org_user(credentials, fn path, _org_id ->
+           # The organization route has no single-user GET, so the current name
+           # comes from /v2/me and the PATCH sends that same value: the profile is
+           # left exactly as it was found.
+           {:ok, me} = Client.call(credentials, "GET /v2/me", %{})
+
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/users/{userId}",
+             params("PATCH /v2/organizations/{orgId}/users/{userId}",
+               path: path,
+               body: %{"name" => me.value.data.name}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/users/{userId}/ooo",
+       "records an out-of-office entry through the organization route",
+       fn credentials, _ids ->
+         with_org_ooo(credentials, fn _path, _ooo -> :ok end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}",
+       "edits the out-of-office entry this run created",
+       fn credentials, _ids ->
+         with_org_ooo(credentials, fn path, ooo_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}",
+             params("PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}",
+               path: Map.put(path, "oooId", ooo_id),
+               body: Map.merge(ooo_window(), %{"notes" => "Edited by the certification sweep"})
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}",
+       "deletes an out-of-office entry this run created",
+       fn credentials, _ids ->
+         with_org_user(credentials, fn path, _org_id ->
+           case Ledger.created_id(org_ooo(credentials, path), :id) do
+             nil ->
+               :ok
+
+             ooo_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}",
+                 %{"path" => Map.put(path, "oooId", ooo_id)}
+               )
+           end
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/users/{userId}/schedules",
+       "creates a schedule through the organization route",
+       fn credentials, _ids ->
+         with_org_schedule(credentials, fn _path, _schedule -> :ok end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+       "edits the schedule this run created",
+       fn credentials, _ids ->
+         with_org_schedule(credentials, fn path, schedule_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+             params("PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+               path: Map.put(path, "scheduleId", schedule_id),
+               body: %{"name" => "Kithe certification (edited) " <> suffix()}
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+       "deletes a schedule this run created",
+       fn credentials, _ids ->
+         with_org_user(credentials, fn path, _org_id ->
+           case Ledger.created_id(org_schedule(credentials, path), :id) do
+             nil ->
+               :ok
+
+             schedule_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}",
+                 %{"path" => Map.put(path, "scheduleId", schedule_id)}
+               )
+           end
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/users/{userId}/conferencing/default",
+       "sets a default conferencing app for this user",
+       fn credentials, _ids ->
+         with_org_user(credentials, fn path, _org_id ->
+           Ledger.call(
+             credentials,
+             "POST /v2/organizations/{orgId}/users/{userId}/conferencing/default",
+             params("POST /v2/organizations/{orgId}/users/{userId}/conferencing/default",
+               path: path,
+               body: %{"app" => "zoom"}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/teams/{teamId}/users/{userId}/ooo",
+       "records an out-of-office entry for a team member",
+       fn credentials, _ids ->
+         with_team_ooo(credentials, fn _path, _ooo -> :ok end)
+       end},
+      {"PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+       "edits the team out-of-office entry this run created",
+       fn credentials, _ids ->
+         with_team_ooo(credentials, fn path, ooo_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+             params("PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+               path: Map.put(path, "oooId", ooo_id),
+               body: Map.merge(ooo_window(), %{"notes" => "Edited by the certification sweep"})
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+       "deletes a team out-of-office entry this run created",
+       fn credentials, _ids ->
+         with_team_user(credentials, fn path, _team_id ->
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/teams/{teamId}/users/{userId}/ooo",
+               params("POST /v2/teams/{teamId}/users/{userId}/ooo",
+                 path: path,
+                 body: Map.merge(ooo_window(), %{"notes" => "cal_com certification"})
+               )
+             )
+
+           case Ledger.created_id(created, :id) do
+             nil ->
+               :ok
+
+             ooo_id ->
+               Ledger.call(credentials, "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}", %{
+                 "path" => Map.put(path, "oooId", ooo_id)
+               })
+           end
+         end)
+       end}
+    ]
+  end
+
+  @spec with_team_user(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_team_user(credentials, fun) do
+    case team_fixture(credentials) do
+      nil -> :ok
+      team_id -> fun.(%{"teamId" => team_id, "userId" => team_user_id(credentials)}, team_id)
+    end
+  end
+
+  @spec with_team_ooo(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_team_ooo(credentials, fun) do
+    with_team_user(credentials, fn path, team_id ->
+      created =
+        Ledger.call(
+          credentials,
+          "POST /v2/teams/{teamId}/users/{userId}/ooo",
+          params("POST /v2/teams/{teamId}/users/{userId}/ooo",
+            path: path,
+            body: Map.merge(ooo_window(), %{"notes" => "cal_com certification"})
+          )
+        )
+
+      case Ledger.created_id(created, :id) do
+        nil ->
+          :ok
+
+        ooo_id ->
+          Ledger.track(
+            "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+            Map.put(path, "oooId", ooo_id)
+          )
+
+          fun.(path, ooo_id)
+      end
+    end)
   end
 
   # ---------------------------------------------------------------------------

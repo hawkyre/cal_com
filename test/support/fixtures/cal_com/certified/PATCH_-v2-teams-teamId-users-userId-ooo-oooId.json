@@ -1,0 +1,20 @@
+{
+  "body": {
+    "data": {
+      "end": "2026-09-16T23:59:59.999Z",
+      "id": 94936,
+      "notes": "Edited by the certification sweep",
+      "reason": "unspecified",
+      "start": "2026-09-16T00:00:00.000Z",
+      "toUserId": null,
+      "userId": 3209949,
+      "uuid": "6a4ef0f6-1e91-443c-96f0-0a1c186e583e"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

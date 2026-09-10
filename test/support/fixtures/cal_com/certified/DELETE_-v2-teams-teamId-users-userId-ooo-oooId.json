@@ -1,0 +1,20 @@
+{
+  "body": {
+    "data": {
+      "end": "2026-09-14T23:59:59.999Z",
+      "id": 94935,
+      "notes": "cal_com certification",
+      "reason": "unspecified",
+      "start": "2026-09-14T00:00:00.000Z",
+      "toUserId": null,
+      "userId": 3209949,
+      "uuid": "5c67614f-d6eb-4769-a346-dc780fdba16d"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}",
+  "parsed": true,
+  "provider": "cal_com"
+}
