@@ -1,0 +1,28 @@
+{
+  "body": {
+    "data": {
+      "accepted": true,
+      "disableImpersonation": false,
+      "id": 2508056,
+      "role": "OWNER",
+      "teamId": 422851,
+      "user": {
+        "avatarUrl": null,
+        "bio": "",
+        "email": "me@hawkyre.com",
+        "metadata": {
+          "stripeCustomerId": "cus_VDgA0SJoJOqQ6y"
+        },
+        "name": "hawkyre",
+        "username": "hawkyre-test"
+      },
+      "userId": 3209949
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/teams/{teamId}/memberships/{membershipId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

@@ -1,0 +1,10 @@
+{
+  "body": {
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "POST /v2/verified-resources/emails/verification-code/request",
+  "parsed": true,
+  "provider": "cal_com"
+}

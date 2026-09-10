@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "active": false,
+      "eventTypeId": 7014112,
+      "id": "2b442a67-db08-4eca-bdcf-839eae39294c",
+      "payloadTemplate": null,
+      "subscriberUrl": "https://example.invalid/kithe-certification-TL4ZLP1W",
+      "time": null,
+      "timeUnit": null,
+      "triggers": [
+        "BOOKING_CREATED"
+      ],
+      "version": "2021-10-20"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

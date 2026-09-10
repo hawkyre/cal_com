@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "createdAt": "2026-09-10T07:02:35.733Z",
+      "enabled": true,
+      "id": "10cd0661-4dc0-4422-9b4c-00dc35baa154",
+      "isLocked": false,
+      "isWeightsEnabled": false,
+      "name": "Kithe certification (edited) TL4ZKB12",
+      "slug": "kithe-cert-TL4ZKA11",
+      "teamId": 422850,
+      "type": "TEXT",
+      "updatedAt": "2026-09-10T07:02:36.763Z",
+      "usersCanEditRelation": false
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/attributes/{attributeId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

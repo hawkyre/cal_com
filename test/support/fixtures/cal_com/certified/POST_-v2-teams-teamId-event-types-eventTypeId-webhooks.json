@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "active": true,
+      "eventTypeId": 7014114,
+      "id": "20267ea8-a3a9-4759-9204-afa5fa369f3e",
+      "payloadTemplate": null,
+      "subscriberUrl": "https://example.invalid/kithe-certification-TL4ZLV20",
+      "time": null,
+      "timeUnit": null,
+      "triggers": [
+        "BOOKING_CREATED"
+      ],
+      "version": "2021-10-20"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
+  "parsed": true,
+  "provider": "cal_com"
+}

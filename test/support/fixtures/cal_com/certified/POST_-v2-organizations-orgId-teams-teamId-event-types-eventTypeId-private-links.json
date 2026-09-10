@@ -1,0 +1,18 @@
+{
+  "body": {
+    "data": {
+      "bookingUrl": "https://hawk-labs.cal.com/d/bh1e6hrSfRka3UkVeVqYsd/kithe-team-cert-TL4ZMO2C",
+      "eventTypeId": 7014125,
+      "isExpired": false,
+      "linkId": "bh1e6hrSfRka3UkVeVqYsd",
+      "maxUsageCount": 1,
+      "usageCount": 0
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links",
+  "parsed": true,
+  "provider": "cal_com"
+}

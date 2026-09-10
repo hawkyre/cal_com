@@ -240,6 +240,9 @@ defmodule Mutate do
       {"POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/default",
        "needs a connected conferencing app"},
       {"POST /v2/organizations/{orgId}/users", "would invite a real person to the organization"},
+      {"DELETE /v2/teams/{teamId}/memberships/{membershipId}",
+       "the account holds one membership per team and the provider refuses a second with 409, so the only membership this could delete is the user's own"},
+      {"POST /v2/teams/{teamId}/memberships", "the user route answers 403 for this account"},
       {"POST /v2/organizations/{orgId}/memberships",
        "would invite a real person to the organization"},
       {"POST /v2/organizations/{orgId}/teams/{teamId}/invite",
@@ -279,6 +282,9 @@ defmodule Mutate do
       team_scoped() ++
       team_admin() ++
       org_users() ++
+      memberships() ++
+      attributes_with_options() ++
+      attribute_options() ++
       account_settings() ++
       insights() ++
       bookings() ++
@@ -1643,6 +1649,429 @@ defmodule Mutate do
              "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
              params("DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks", path: path)
            )
+         end)
+       end}
+    ]
+  end
+
+  # ---------------------------------------------------------------------------
+  # Memberships and attribute assignments
+  # ---------------------------------------------------------------------------
+  #
+  # Two rules keep these safe. A PATCH sends the role the membership already has,
+  # so it proves the call without changing anyone's access; a DELETE only ever
+  # targets a membership this run created itself.
+
+  @spec membership_row(Credentials.t(), String.t(), map()) :: map() | nil
+  defp membership_row(credentials, list_id, params) do
+    case Ledger.call(credentials, list_id, params)[:capture] do
+      {%{} = typed, _package} -> typed.value.data |> List.wrap() |> List.first()
+      _none -> nil
+    end
+  end
+
+  # A parsed enum field arrives as an atom, and the request contract wants the
+  # wire string back, so the value is converted rather than passed through.
+  @spec membership_role(map() | nil) :: String.t()
+  defp membership_role(nil), do: "MEMBER"
+  defp membership_role(row), do: row |> Map.get(:role) |> role_wire()
+
+  @spec role_wire(term()) :: String.t()
+  defp role_wire(nil), do: "MEMBER"
+  defp role_wire(role) when is_atom(role), do: Atom.to_string(role)
+  defp role_wire(role), do: to_string(role)
+
+  @spec add_team_membership(Credentials.t(), map()) :: map()
+  defp add_team_membership(credentials, path) do
+    Ledger.call(
+      credentials,
+      "POST /v2/organizations/{orgId}/teams/{teamId}/memberships",
+      params("POST /v2/organizations/{orgId}/teams/{teamId}/memberships",
+        path: path,
+        body: %{"userId" => team_user_id(credentials), "role" => "MEMBER", "accepted" => true}
+      )
+    )
+  end
+
+  # A membership created here owns nothing, so deleting it removes only what this
+  # run added.
+  @spec with_added_membership(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_added_membership(credentials, fun) do
+    with_team_admin(credentials, fn org_id, team_id ->
+      path = team_admin_path(org_id, team_id)
+
+      case Ledger.created_id(add_team_membership(credentials, path), :id) do
+        nil ->
+          :ok
+
+        membership_id ->
+          Ledger.track(
+            "DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+            Map.put(path, "membershipId", membership_id)
+          )
+
+          fun.(path, membership_id)
+      end
+    end)
+  end
+
+  @spec membership_path(term(), term(), term()) :: map()
+  defp membership_path(org_id, team_id, membership_id) do
+    %{"orgId" => org_id, "teamId" => team_id, "membershipId" => membership_id}
+  end
+
+  @spec attributes_with_options() :: [{String.t(), String.t(), fun()}]
+  defp attributes_with_options do
+    body = fn ->
+      option = %{"value" => "certification", "slug" => slug("cert-option")}
+
+      %{
+        "name" => "Kithe certification " <> suffix(),
+        "slug" => slug("kithe-cert"),
+        "type" => "SINGLE_SELECT",
+        "options" => [option],
+        "enabled" => true
+      }
+    end
+
+    [
+      {"POST /v2/organizations/{orgId}/attributes/options/{userId}",
+       "assigns an attribute option to this user",
+       fn credentials, _ids ->
+         with_org_id(credentials, fn org_id ->
+           case with_attribute_assignment(credentials, org_id, body, fn _attribute, _option ->
+                  :ok
+                end) do
+             :ok -> :ok
+           end
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}",
+       "edits the attribute assignment this run made",
+       fn credentials, _ids ->
+         with_org_id(credentials, fn org_id ->
+           with_attribute_assignment(credentials, org_id, body, fn attribute_id, option_id ->
+             Ledger.call(
+               credentials,
+               "PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}",
+               params(
+                 "PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}",
+                 path: %{
+                   "orgId" => org_id,
+                   "userId" => team_user_id(credentials),
+                   "attributeOptionId" => option_id
+                 },
+                 body: %{"weight" => 1}
+               )
+             )
+
+             _ = attribute_id
+           end)
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}",
+       "removes the attribute assignment this run made",
+       fn credentials, _ids ->
+         with_org_id(credentials, fn org_id ->
+           with_attribute_assignment(credentials, org_id, body, fn _attribute_id, option_id ->
+             Ledger.call(
+               credentials,
+               "DELETE /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}",
+               %{
+                 "path" => %{
+                   "orgId" => org_id,
+                   "userId" => team_user_id(credentials),
+                   "attributeOptionId" => option_id
+                 }
+               }
+             )
+           end)
+         end)
+       end}
+    ]
+  end
+
+  # Creates an attribute with one option, assigns it to this user, and hands the
+  # attribute and option ids to the scenario; the attribute is deleted afterwards,
+  # which removes the assignment and the option with it.
+  @spec with_attribute_assignment(Credentials.t(), term(), (-> map()), (term(), term() -> any())) ::
+          any()
+  defp with_attribute_assignment(credentials, org_id, body, fun) do
+    created =
+      Ledger.call(
+        credentials,
+        "POST /v2/organizations/{orgId}/attributes",
+        params("POST /v2/organizations/{orgId}/attributes",
+          path: %{"orgId" => org_id},
+          body: body.()
+        )
+      )
+
+    case Ledger.created_id(created, :id) do
+      nil ->
+        :ok
+
+      attribute_id ->
+        Ledger.track("DELETE /v2/organizations/{orgId}/attributes/{attributeId}", %{
+          "orgId" => org_id,
+          "attributeId" => attribute_id
+        })
+
+        option_id = attribute_option_id(credentials, org_id, attribute_id)
+
+        if is_nil(option_id) do
+          :ok
+        else
+          Ledger.call(
+            credentials,
+            "POST /v2/organizations/{orgId}/attributes/options/{userId}",
+            params("POST /v2/organizations/{orgId}/attributes/options/{userId}",
+              path: %{"orgId" => org_id, "userId" => team_user_id(credentials)},
+              body: %{"attributeId" => attribute_id, "attributeOptionId" => option_id}
+            )
+          )
+
+          fun.(attribute_id, option_id)
+        end
+    end
+  end
+
+  @spec attribute_option_id(Credentials.t(), term(), term()) :: term()
+  defp attribute_option_id(credentials, org_id, attribute_id) do
+    params = %{"path" => %{"orgId" => org_id, "attributeId" => attribute_id}}
+
+    case Ledger.call(
+           credentials,
+           "GET /v2/organizations/{orgId}/attributes/{attributeId}/options",
+           params
+         )[:capture] do
+      {%{} = typed, _package} ->
+        typed.value.data |> List.wrap() |> List.first() |> then(&(&1 && Map.get(&1, :id)))
+
+      _none ->
+        nil
+    end
+  end
+
+  @spec memberships() :: [{String.t(), String.t(), fun()}]
+  defp memberships do
+    [
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/memberships",
+       "adds this user to a team through the organization route",
+       fn credentials, _ids -> with_added_membership(credentials, fn _path, _id -> :ok end) end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+       "edits this user's team membership, sending the role it already has",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           path = team_admin_path(org_id, team_id)
+
+           row =
+             membership_row(
+               credentials,
+               "GET /v2/organizations/{orgId}/teams/{teamId}/memberships",
+               params("GET /v2/organizations/{orgId}/teams/{teamId}/memberships", path: path)
+             )
+
+           case row && Map.get(row, :id) do
+             nil ->
+               :ok
+
+             membership_id ->
+               Ledger.call(
+                 credentials,
+                 "PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+                 params(
+                   "PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+                   path: membership_path(org_id, team_id, membership_id),
+                   body: %{"role" => membership_role(row), "disableImpersonation" => false}
+                 )
+               )
+           end
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+       "removes a team membership this run added",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           path = team_admin_path(org_id, team_id)
+
+           case Ledger.created_id(add_team_membership(credentials, path), :id) do
+             nil ->
+               :ok
+
+             membership_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+                 %{"path" => membership_path(org_id, team_id, membership_id)}
+               )
+           end
+         end)
+       end},
+      {"PATCH /v2/teams/{teamId}/memberships/{membershipId}",
+       "edits this user's team membership through the user route, sending its current role",
+       fn credentials, _ids ->
+         with_team_user(credentials, fn _path, team_id ->
+           row =
+             membership_row(credentials, "GET /v2/teams/{teamId}/memberships", %{
+               "path" => %{"teamId" => team_id}
+             })
+
+           case row && Map.get(row, :id) do
+             nil ->
+               :ok
+
+             membership_id ->
+               Ledger.call(
+                 credentials,
+                 "PATCH /v2/teams/{teamId}/memberships/{membershipId}",
+                 params("PATCH /v2/teams/{teamId}/memberships/{membershipId}",
+                   path: %{"teamId" => team_id, "membershipId" => membership_id},
+                   body: %{"role" => membership_role(row), "disableImpersonation" => false}
+                 )
+               )
+           end
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/memberships/{membershipId}",
+       "edits this user's organization membership, sending the role it already has",
+       fn credentials, _ids ->
+         with_org_id(credentials, fn org_id ->
+           row =
+             membership_row(
+               credentials,
+               "GET /v2/organizations/{orgId}/memberships",
+               params("GET /v2/organizations/{orgId}/memberships", path: %{"orgId" => org_id})
+             )
+
+           case row && Map.get(row, :id) do
+             nil ->
+               :ok
+
+             membership_id ->
+               Ledger.call(
+                 credentials,
+                 "PATCH /v2/organizations/{orgId}/memberships/{membershipId}",
+                 params("PATCH /v2/organizations/{orgId}/memberships/{membershipId}",
+                   path: %{"orgId" => org_id, "membershipId" => membership_id},
+                   body: %{"role" => membership_role(row), "disableImpersonation" => false}
+                 )
+               )
+           end
+         end)
+       end}
+    ]
+  end
+
+  @spec with_new_attribute(Credentials.t(), (-> map()), (term(), term() -> any())) :: any()
+  defp with_new_attribute(credentials, body, fun) do
+    with_org_id(credentials, fn org_id ->
+      created =
+        Ledger.call(
+          credentials,
+          "POST /v2/organizations/{orgId}/attributes",
+          params("POST /v2/organizations/{orgId}/attributes",
+            path: %{"orgId" => org_id},
+            body: body.()
+          )
+        )
+
+      case Ledger.created_id(created, :id) do
+        nil ->
+          :ok
+
+        attribute_id ->
+          Ledger.track("DELETE /v2/organizations/{orgId}/attributes/{attributeId}", %{
+            "orgId" => org_id,
+            "attributeId" => attribute_id
+          })
+
+          fun.(org_id, attribute_id)
+      end
+    end)
+  end
+
+  @spec attribute_option_body() :: map()
+  defp attribute_option_body, do: %{"value" => "certification", "slug" => slug("cert-option")}
+
+  @spec add_attribute_option(Credentials.t(), term(), term()) :: map()
+  defp add_attribute_option(credentials, org_id, attribute_id) do
+    Ledger.call(
+      credentials,
+      "POST /v2/organizations/{orgId}/attributes/{attributeId}/options",
+      params("POST /v2/organizations/{orgId}/attributes/{attributeId}/options",
+        path: %{"orgId" => org_id, "attributeId" => attribute_id},
+        body: attribute_option_body()
+      )
+    )
+  end
+
+  @spec attribute_options() :: [{String.t(), String.t(), fun()}]
+  defp attribute_options do
+    body = fn ->
+      %{
+        "name" => "Kithe certification " <> suffix(),
+        "slug" => slug("kithe-cert"),
+        "type" => "TEXT",
+        "options" => [],
+        "enabled" => true
+      }
+    end
+
+    [
+      {"POST /v2/organizations/{orgId}/attributes/{attributeId}/options",
+       "adds an option to an attribute this run created",
+       fn credentials, _ids ->
+         with_new_attribute(credentials, body, fn org_id, attribute_id ->
+           add_attribute_option(credentials, org_id, attribute_id)
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+       "edits the attribute option this run created",
+       fn credentials, _ids ->
+         with_new_attribute(credentials, body, fn org_id, attribute_id ->
+           case Ledger.created_id(add_attribute_option(credentials, org_id, attribute_id), :id) do
+             nil ->
+               :ok
+
+             option_id ->
+               Ledger.call(
+                 credentials,
+                 "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+                 params(
+                   "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+                   path: %{
+                     "orgId" => org_id,
+                     "attributeId" => attribute_id,
+                     "optionId" => option_id
+                   },
+                   body: %{"value" => "certification edited", "slug" => slug("cert-option")}
+                 )
+               )
+           end
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+       "deletes an attribute option this run created",
+       fn credentials, _ids ->
+         with_new_attribute(credentials, body, fn org_id, attribute_id ->
+           case Ledger.created_id(add_attribute_option(credentials, org_id, attribute_id), :id) do
+             nil ->
+               :ok
+
+             option_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+                 %{
+                   "path" => %{
+                     "orgId" => org_id,
+                     "attributeId" => attribute_id,
+                     "optionId" => option_id
+                   }
+                 }
+               )
+           end
          end)
        end}
     ]

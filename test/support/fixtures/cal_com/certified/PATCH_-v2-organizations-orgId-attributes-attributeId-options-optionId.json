@@ -1,0 +1,19 @@
+{
+  "body": {
+    "data": {
+      "attributeId": "71c958eb-7c04-415d-b8a3-9d8d2655ba5e",
+      "contains": [],
+      "id": "a763dc4c-5c31-4667-b98f-53ed79ada2e8",
+      "isGroup": false,
+      "slug": "cert-option-TL4ZTNA",
+      "targetMembershipId": null,
+      "value": "certification edited"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

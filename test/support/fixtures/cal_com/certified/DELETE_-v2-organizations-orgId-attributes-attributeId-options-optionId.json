@@ -1,0 +1,19 @@
+{
+  "body": {
+    "data": {
+      "attributeId": "8d607b4d-45fd-4354-a3cb-36bf25bfad69",
+      "contains": [],
+      "id": "34ae4163-a7f6-4838-a842-eeb9f4d99f3e",
+      "isGroup": false,
+      "slug": "cert-option-TL4ZTRD",
+      "targetMembershipId": null,
+      "value": "certification"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

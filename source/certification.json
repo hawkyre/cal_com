@@ -81,8 +81,8 @@
     },
     "DELETE /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/attributes/{attributeId}": {
       "fields": [],
@@ -91,8 +91,8 @@
     },
     "DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
       "fields": [],
@@ -133,8 +133,8 @@
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
       "fields": [],
@@ -158,8 +158,8 @@
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 204,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}": {
       "fields": [],
@@ -229,18 +229,17 @@
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "the account holds one membership per team and the provider refuses a second with 409, so the only membership this could delete is the user's own",
+      "status": "declined"
     },
     "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
       "fields": [],
@@ -651,12 +650,7 @@
     "GET /v2/organizations/{orgId}/attributes/{attributeId}/options": {
       "fields": [],
       "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no attributeId on this account",
-      "status": "unreachable"
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes/{attributeId}/options/assigned": {
       "fields": [],
@@ -1257,8 +1251,8 @@
     },
     "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/me": {
       "fields": [],
@@ -1296,18 +1290,18 @@
     },
     "PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/attributes/{attributeId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
       "fields": [],
@@ -1316,8 +1310,8 @@
     },
     "PATCH /v2/organizations/{orgId}/memberships/{membershipId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
       "reason": "would edit a managed organization the account already has",
@@ -1325,8 +1319,8 @@
     },
     "PATCH /v2/organizations/{orgId}/roles/{roleId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}": {
       "fields": [],
@@ -1355,13 +1349,13 @@
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}": {
       "fields": [],
@@ -1385,8 +1379,8 @@
     },
     "PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
       "fields": [],
@@ -1395,8 +1389,8 @@
     },
     "PATCH /v2/organizations/{orgId}/webhooks/{webhookId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/schedules/{scheduleId}": {
       "fields": [],
@@ -1417,8 +1411,8 @@
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
@@ -1427,13 +1421,13 @@
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/teams/{teamId}/memberships/{membershipId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
       "fields": [],
@@ -1677,13 +1671,13 @@
     },
     "POST /v2/organizations/{orgId}/attributes/options/{userId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/attributes/{attributeId}/options": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/bookings/block": {
       "fields": [],
@@ -1721,8 +1715,8 @@
     },
     "POST /v2/organizations/{orgId}/roles/{roleId}/permissions": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
@@ -1749,8 +1743,9 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
       "fields": [],
@@ -1759,8 +1754,8 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/invite": {
       "reason": "would email an invite to a real person",
@@ -1768,8 +1763,9 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/memberships": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 409,
+      "reason": "{:http, 409}",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/roles": {
       "fields": [],
@@ -1778,8 +1774,8 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
@@ -1884,18 +1880,16 @@
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/teams/{teamId}/invite": {
       "reason": "would email an invite to a real person",
       "status": "declined"
     },
     "POST /v2/teams/{teamId}/memberships": {
-      "fields": [],
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
+      "reason": "the user route answers 403 for this account",
+      "status": "declined"
     },
     "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
@@ -1929,13 +1923,14 @@
     },
     "POST /v2/verified-resources/emails/verification-code/request": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "POST /v2/verified-resources/emails/verification-code/verify": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/verified-resources/phones/verification-code/request": {
       "fields": [],
@@ -1979,8 +1974,8 @@
     },
     "PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
@@ -1988,5 +1983,5 @@
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T06:56:44.856685Z"
+  "writes_generated_at": "2026-09-10T07:08:36.255840Z"
 }

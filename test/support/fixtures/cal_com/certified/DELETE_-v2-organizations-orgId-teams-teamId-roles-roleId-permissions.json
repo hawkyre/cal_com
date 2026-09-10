@@ -1,0 +1,8 @@
+{
+  "body": "",
+  "captured_on": "2026-09-10",
+  "http_status": 204,
+  "operation": "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+  "parsed": true,
+  "provider": "cal_com"
+}

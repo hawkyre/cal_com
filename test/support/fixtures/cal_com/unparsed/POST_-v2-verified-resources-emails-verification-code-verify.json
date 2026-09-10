@@ -1,0 +1,15 @@
+{
+  "body": {
+    "error": {
+      "message": "invalid_code"
+    },
+    "path": "/v2/verified-resources/emails/verification-code/verify",
+    "status": "error",
+    "timestamp": "2026-09-10T07:05:26.452Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "POST /v2/verified-resources/emails/verification-code/verify",
+  "parsed": false,
+  "provider": "cal_com"
+}

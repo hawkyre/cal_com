@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "active": false,
+      "id": "f6c3d516-797c-45b6-a8d3-b397233c9d09",
+      "payloadTemplate": null,
+      "subscriberUrl": "https://example.invalid/kithe-certification-TL4ZKM1B",
+      "teamId": 422850,
+      "time": null,
+      "timeUnit": null,
+      "triggers": [
+        "BOOKING_CREATED"
+      ],
+      "version": "2021-10-20"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/webhooks/{webhookId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

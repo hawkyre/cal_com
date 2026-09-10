@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "color": null,
+      "createdAt": "2026-09-10T07:02:40.783Z",
+      "description": null,
+      "id": "44ba16ab-4c36-4f80-a484-e98388ccea26",
+      "name": "Kithe cert role (edited) TL4ZKG17",
+      "organizationId": 422850,
+      "permissions": [
+        "booking.read"
+      ],
+      "type": "CUSTOM",
+      "updatedAt": "2026-09-10T07:02:41.805Z"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/roles/{roleId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

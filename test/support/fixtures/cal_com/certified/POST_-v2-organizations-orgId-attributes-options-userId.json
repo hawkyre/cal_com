@@ -1,0 +1,22 @@
+{
+  "body": {
+    "data": {
+      "attributeOptionId": "23509caa-66b8-486e-99ae-a2b47dcb39cf",
+      "createdAt": "2026-09-10T07:04:53.938Z",
+      "createdByDSyncId": null,
+      "createdById": 3209949,
+      "id": "f2bb80af-aaed-4af5-bb2d-3d92db876e9e",
+      "memberId": 2508055,
+      "updatedAt": "2026-09-10T07:04:53.938Z",
+      "updatedByDSyncId": null,
+      "updatedById": null,
+      "weight": null
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/organizations/{orgId}/attributes/options/{userId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

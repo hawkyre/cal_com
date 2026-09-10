@@ -2,16 +2,16 @@
   "body": {
     "data": {
       "color": null,
-      "createdAt": "2026-09-10T06:43:32.904Z",
+      "createdAt": "2026-09-10T07:02:44.818Z",
       "description": null,
-      "id": "dd5b7e46-90c6-4284-bb3a-f1ab36c9bf01",
-      "name": "Kithe cert role TL4YOJ16",
+      "id": "3843ae3b-ecba-4620-bad0-e1cf165a58bb",
+      "name": "Kithe cert role TL4ZKJ19",
       "organizationId": 422850,
       "permissions": [
         "booking.read"
       ],
       "type": "CUSTOM",
-      "updatedAt": "2026-09-10T06:43:32.904Z"
+      "updatedAt": "2026-09-10T07:02:44.818Z"
     },
     "status": "success"
   },

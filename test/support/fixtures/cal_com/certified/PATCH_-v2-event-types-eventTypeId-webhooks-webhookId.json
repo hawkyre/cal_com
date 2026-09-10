@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "active": false,
+      "eventTypeId": 7014094,
+      "id": "2f70d638-1528-473f-b6f6-f35e3bb2dedf",
+      "payloadTemplate": null,
+      "subscriberUrl": "https://example.invalid/kithe-certification-TL4ZKU1G",
+      "time": null,
+      "timeUnit": null,
+      "triggers": [
+        "BOOKING_CREATED"
+      ],
+      "version": "2021-10-20"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

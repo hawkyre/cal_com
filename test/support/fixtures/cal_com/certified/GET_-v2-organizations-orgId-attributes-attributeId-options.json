@@ -1,0 +1,21 @@
+{
+  "body": {
+    "data": [
+      {
+        "attributeId": "155a9f1d-9cc9-4cf5-b03c-bc9d696d23ca",
+        "contains": [],
+        "id": "23509caa-66b8-486e-99ae-a2b47dcb39cf",
+        "isGroup": false,
+        "slug": "cert-option-TL4ZO32N",
+        "targetMembershipId": null,
+        "value": "certification"
+      }
+    ],
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/attributes/{attributeId}/options",
+  "parsed": true,
+  "provider": "cal_com"
+}
