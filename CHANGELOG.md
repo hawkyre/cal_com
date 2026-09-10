@@ -4,7 +4,7 @@ Every entry names the SHA-256 of the `source/openapi.json` the release was
 generated from, so a published version can be traced to its provider document.
 CI fails when the current hash is absent from this file.
 
-## Unreleased
+## 0.3.0 (2026-09-10)
 
 Still generated from `source/openapi.json` with SHA-256
 `44488d2fed1bfd978e3b006ca463ff43d5b5c72f028b3fa7c5620040c92c2484`; every
@@ -61,6 +61,26 @@ Mutations then found two more contract bugs, both fixed the same way:- `GetEvent
   GET and DELETE on the same route type it as a number, so a real schedule id
   could not be passed at all. `source/live_overrides.json` now carries the
   number, which is what the provider accepts.
+
+The write pass then certified the other 204 operations the same way, and found
+three more contract bugs plus a request body the document never mentions:
+
+- `GetEventTypeWorkflowOutput.data` is a single workflow object, not the array
+  the document declares; the list endpoints have their own envelope, which now
+  has its own module name (`GetEventTypeWorkflowsOutput`).
+- Every `*WebhookOutputDto.secret` is nullable — a webhook created without one
+  answers `null`, which the read pass could not see because the account's
+  webhook list was empty.
+- `PATCH /v2/schedules/{scheduleId}` types its path id as a string where GET and
+  DELETE on the same route type it as a number.
+- `POST /v2/bookings/{bookingUid}/cancel` requires `cancellationReason`, and the
+  document declares no request body at all; `source/live_overrides.json` now
+  carries one.
+- `PATCH`/`PUT` on booking fields accept the field object the route's own GET
+  returns, not only the partial system field the document declares.
+
+`source/certification.json` records a live verdict for all 349 operations and
+`mix test` refuses a report that leaves one unexplained.
 
 ## 0.2.0 (2026-09-09)
 
