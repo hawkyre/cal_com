@@ -134,7 +134,14 @@ defmodule Sweep.Report do
   @doc "Print the counts of one verdict map."
   @spec summary(map()) :: :ok
   def summary(verdicts) do
-    IO.puts("verdicts: #{inspect(verdicts |> Map.values() |> Enum.frequencies_by(& &1.status))}")
+    # The write pass merges into a report it read back from disk, so some
+    # verdicts carry string keys and some atom keys.
+    counts =
+      verdicts
+      |> Map.values()
+      |> Enum.frequencies_by(fn verdict -> verdict[:status] || verdict["status"] end)
+
+    IO.puts("verdicts: #{inspect(counts)}")
     :ok
   end
 
@@ -148,9 +155,10 @@ defmodule Sweep.Report do
   @spec capture!(String.t(), Response.t(), keyword()) :: :ok
   def capture!(id, package, options \\ []) do
     parsed? = Keyword.get(options, :parsed, true)
-    dir = if parsed?, do: "certified", else: "unparsed"
+    dir = Path.join(@fixtures, if(parsed?, do: "certified", else: "unparsed"))
 
-    write_capture(Path.join(@fixtures, dir), id, package, parsed?)
+    File.mkdir_p!(dir)
+    write_capture(dir, id, package, parsed?)
   end
 
   @spec write_capture(String.t(), String.t(), Response.t(), boolean()) :: :ok

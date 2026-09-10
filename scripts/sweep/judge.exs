@@ -66,7 +66,15 @@ defmodule Sweep.Judge do
         {operation.id, %{status: "verified", http: package.status, capture: {typed, package}}}
 
       {:error, %Error{reason: reason}} when package.status not in 200..299 ->
-        {operation.id, %{status: "refused", http: package.status, reason: inspect(reason)}}
+        # The refusal's body is kept as well: it is what a reader needs to see why
+        # the provider said no, and it lands in `unparsed/` marked as unparsed.
+        {operation.id,
+         %{
+           status: "refused",
+           http: package.status,
+           reason: inspect(reason),
+           capture: {false, package}
+         }}
 
       {:error, %Error{} = error} ->
         {operation.id,

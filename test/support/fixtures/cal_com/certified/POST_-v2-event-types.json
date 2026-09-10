@@ -1,0 +1,146 @@
+{
+  "body": {
+    "data": {
+      "lockTimeZoneToggleOnBookingPage": false,
+      "slotInterval": null,
+      "bookingProposalCount": null,
+      "hideCalendarEventDetails": false,
+      "afterEventBuffer": 0,
+      "requiresBookerEmailVerification": false,
+      "allowReschedulingPastBookings": false,
+      "recurrence": null,
+      "lengthInMinutes": 15,
+      "bookingUrl": "https://hawk-labs.cal.com/me/kithe-cert-booking-TL4WHO1",
+      "seats": {
+        "disabled": true
+      },
+      "users": [
+        {
+          "avatarUrl": null,
+          "brandColor": null,
+          "darkBrandColor": null,
+          "id": 3209949,
+          "metadata": {
+            "stripeCustomerId": "cus_VDgA0SJoJOqQ6y"
+          },
+          "name": "hawkyre",
+          "username": "hawkyre-test",
+          "weekStart": "Sunday"
+        }
+      ],
+      "hideCalendarNotes": false,
+      "bookingRequiresAuthentication": false,
+      "hidden": false,
+      "skipAttendeeEmailDeliverabilityCheck": false,
+      "ownerId": 3209949,
+      "useDestinationCalendarEmail": false,
+      "offsetStart": 0,
+      "disableGuests": false,
+      "showOptimizedSlots": false,
+      "description": "Created and deleted by the cal_com certification sweep",
+      "id": 7013513,
+      "confirmationPolicy": {
+        "disabled": true
+      },
+      "isInstantEvent": false,
+      "minimumBookingNotice": 120,
+      "privateNoteMode": null,
+      "currency": "usd",
+      "price": 0,
+      "hideOrganizerEmail": false,
+      "scheduleId": null,
+      "allowReschedulingCancelledBookings": false,
+      "privateNoteEnabled": false,
+      "disableCancelling": {
+        "disabled": false
+      },
+      "beforeEventBuffer": 0,
+      "privateNoteTemplate": null,
+      "bookerActiveBookingsLimit": {
+        "disabled": true
+      },
+      "successRedirectUrl": null,
+      "bookingFields": [
+        {
+          "disableOnPrefill": false,
+          "field": "name",
+          "slug": "name",
+          "variant": "fullName"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "email",
+          "hidden": false,
+          "required": true,
+          "slug": "email"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "attendeePhoneNumber",
+          "hidden": true,
+          "required": false,
+          "slug": "attendeePhoneNumber"
+        },
+        {
+          "field": "location",
+          "slug": "location"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "title",
+          "hidden": true,
+          "required": true,
+          "slug": "title"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "notes",
+          "hidden": false,
+          "required": false,
+          "slug": "notes"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "guests",
+          "hidden": false,
+          "required": false,
+          "slug": "guests"
+        },
+        {
+          "disableOnPrefill": false,
+          "field": "rescheduleReason",
+          "hidden": false,
+          "required": false,
+          "slug": "rescheduleReason"
+        }
+      ],
+      "onlyShowFirstAvailableSlot": false,
+      "forwardParamsSuccessRedirect": true,
+      "locations": [
+        {
+          "integration": "cal-video",
+          "type": "integration"
+        }
+      ],
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "calVideoSettings": {
+        "sendTranscriptionEmails": true
+      },
+      "slug": "kithe-cert-booking-TL4WHO1",
+      "bookingWindow": {
+        "disabled": true
+      },
+      "interfaceLanguage": null,
+      "metadata": {},
+      "title": "Kithe certification booking"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/event-types",
+  "parsed": true,
+  "provider": "cal_com"
+}

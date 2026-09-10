@@ -608,6 +608,18 @@
       }
     }
   },
+  "operation_bodies": {
+    "POST /v2/bookings/{bookingUid}/cancel": {
+      "type": "object",
+      "properties": {
+        "cancellationReason": {
+          "type": "string",
+          "description": "Why the booking is cancelled."
+        }
+      },
+      "required": ["cancellationReason"]
+    }
+  },
   "operation_parameters": {
     "GET /v2/bookings": {
       "cal-api-version": "2024-08-13"

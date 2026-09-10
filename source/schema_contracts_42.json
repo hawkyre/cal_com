@@ -326,6 +326,19 @@
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
+  "CalCom.Entities.InputBookingsController20260225CancelBookingBody": {
+    "fields": [
+      [
+        "cancellation_reason",
+        "cancellationReason",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
   "CalCom.Entities.InputBookingsController20260225ReassignBookingToUserPath": {
     "fields": [
       [

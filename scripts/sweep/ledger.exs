@@ -37,26 +37,32 @@ defmodule Sweep.Ledger do
   def verdicts, do: Process.get(@verdicts, %{})
 
   @doc """
-  Register a resource this run created, for `undo/1` to delete.
+  Register a resource this run created, for `undo/1` to clean up.
 
-  The whole path is recorded, not just the id: an organization resource needs
-  `orgId` alongside it, and a delete that loses a required parameter never
-  reaches the provider at all.
+  The whole call is recorded, not just one id: an organization resource needs
+  `orgId` alongside it, and cancelling a booking needs a body, so a cleanup that
+  loses a required part never reaches the provider at all.
   """
   @spec track(String.t(), map() | String.t(), term()) :: :ok
-  def track(undo_operation, path, _id) when is_map(path), do: put_resource(undo_operation, path)
-  def track(undo_operation, param, _id), do: put_resource(undo_operation, %{param => nil})
+  def track(undo_operation, %{"path" => _path} = params, _id),
+    do: put_resource(undo_operation, params)
 
-  @doc "Register a resource by the full path its delete needs."
+  def track(undo_operation, path, _id) when is_map(path),
+    do: put_resource(undo_operation, %{"path" => path})
+
+  def track(undo_operation, param, _id),
+    do: put_resource(undo_operation, %{"path" => %{param => nil}})
+
+  @doc "Register a resource by the call that cleans it up."
   @spec track(String.t(), map()) :: :ok
-  def track(undo_operation, path), do: put_resource(undo_operation, path)
+  def track(undo_operation, params), do: put_resource(undo_operation, params)
 
   @spec put_resource(String.t(), map()) :: :ok
-  defp put_resource(operation_id, path) do
-    # A path with a missing id would only produce a delete the provider never
-    # sees, so it is not recorded at all.
+  defp put_resource(operation_id, %{"path" => path} = params) do
+    # A path with a missing id would only produce a call the provider never sees,
+    # so it is not recorded at all.
     if Enum.all?(path, fn {_param, value} -> not is_nil(value) end) do
-      Process.put(@resources, [{operation_id, path} | resources()])
+      Process.put(@resources, [{operation_id, params} | resources()])
     end
 
     :ok
@@ -95,14 +101,14 @@ defmodule Sweep.Ledger do
           {String.t(), map()}
         ]
   defp delete_all(credentials, resources, leftovers) do
-    Enum.reduce(resources, leftovers, fn {operation_id, path}, leftovers ->
-      verdict = call(credentials, operation_id, %{"path" => path})
+    Enum.reduce(resources, leftovers, fn {operation_id, params}, leftovers ->
+      verdict = call(credentials, operation_id, params)
 
       if verdict.status in ["verified", "refused"] do
         leftovers
       else
-        Client.log("  LEFT BEHIND #{operation_id} #{inspect(path)} -> #{verdict.status}")
-        [{operation_id, path} | leftovers]
+        Client.log("  LEFT BEHIND #{operation_id} #{inspect(params)} -> #{verdict.status}")
+        [{operation_id, params} | leftovers]
       end
     end)
   end

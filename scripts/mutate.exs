@@ -46,6 +46,9 @@ defmodule Mutate do
     "timeZone" => "Europe/London",
     "language" => "en"
   }
+  # A second attendee has to be someone else: Cal.com answers "Emails must be
+  # unique and valid" when the addition repeats the booker.
+  @second_attendee "kithe.certification.attendee@example.invalid"
 
   @doc "Print the plan, then run it when `MUTATE_APPLY=1`."
   @spec main() :: :ok
@@ -211,7 +214,7 @@ defmodule Mutate do
        "needs a Telegram account to link"},
       {"DELETE /v2/notifications/subscriptions/telegram", "needs a Telegram account to unlink"},
       {"POST /v2/calendars/{calendar}/credentials", "needs a third-party calendar OAuth grant"},
-      {"DELETE /v2/calendars/{calendar}/disconnect", "needs a connected third-party calendar"},
+      {"POST /v2/calendars/{calendar}/disconnect", "needs a connected third-party calendar"},
       {"PATCH /v2/calendars/{calendar}/events/{eventUid}",
        "needs a synced event in a connected calendar"},
       {"POST /v2/conferencing/{app}/connect", "needs a Zoom or Google Meet OAuth grant"},
@@ -1467,8 +1470,7 @@ defmodule Mutate do
 
            Ledger.track(
              "POST /v2/bookings/{bookingUid}/cancel",
-             "bookingUid",
-             Ledger.created_id(created, :uid)
+             cancel_params(Ledger.created_id(created, :uid))
            )
          end)
        end},
@@ -1479,9 +1481,7 @@ defmodule Mutate do
              :ok
 
            uid ->
-             Ledger.call(credentials, "POST /v2/bookings/{bookingUid}/cancel", %{
-               "path" => %{"bookingUid" => uid}
-             })
+             Ledger.call(credentials, "POST /v2/bookings/{bookingUid}/cancel", cancel_params(uid))
          end
        end},
       {"POST /v2/bookings/{bookingUid}/confirm", "confirms a booking this run created",
@@ -1520,7 +1520,12 @@ defmodule Mutate do
              "POST /v2/bookings/{bookingUid}/attendees",
              params("POST /v2/bookings/{bookingUid}/attendees",
                path: %{"bookingUid" => uid},
-               body: %{"attendee" => @attendee}
+               body: %{
+                 "name" => @attendee["name"],
+                 "email" => @second_attendee,
+                 "timeZone" => @attendee["timeZone"],
+                 "language" => "en"
+               }
              )
            )
          end)
@@ -1551,7 +1556,7 @@ defmodule Mutate do
              "POST /v2/bookings/{bookingUid}/mark-absent",
              params("POST /v2/bookings/{bookingUid}/mark-absent",
                path: %{"bookingUid" => uid},
-               body: %{"attendees" => [%{"email" => @attendee["email"]}], "absent" => true}
+               body: %{"host" => false}
              )
            )
          end)
@@ -1690,9 +1695,22 @@ defmodule Mutate do
   @spec with_booking(Credentials.t(), map(), (term() -> any())) :: any()
   defp with_booking(credentials, ids, fun) do
     case Ledger.created_id(booking(credentials, ids), :uid) do
-      nil -> :ok
-      uid -> Ledger.track("POST /v2/bookings/{bookingUid}/cancel", "bookingUid", uid) && fun.(uid)
+      nil ->
+        :ok
+
+      uid ->
+        Ledger.track("POST /v2/bookings/{bookingUid}/cancel", cancel_params(uid)) && fun.(uid)
     end
+  end
+
+  # Cal.com requires a reason to cancel, and the document does not say so: the
+  # classification for this operation carries the body the provider demands.
+  @spec cancel_params(term()) :: map()
+  defp cancel_params(uid) do
+    %{
+      "path" => %{"bookingUid" => uid},
+      "body" => %{"cancellationReason" => "cal_com certification sweep"}
+    }
   end
 
   # ---------------------------------------------------------------------------

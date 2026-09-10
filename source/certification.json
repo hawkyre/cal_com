@@ -1457,15 +1457,16 @@
       "status": "write"
     },
     "POST /v2/bookings/{bookingUid}/attendees": {
-      "http": 400,
-      "status": "refused"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/cancel": {
-      "reason": "the write pass could not build a valid input for it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/confirm": {
       "http": 400,
+      "reason": "{:http, 400}",
       "status": "refused"
     },
     "POST /v2/bookings/{bookingUid}/decline": {
@@ -1478,8 +1479,9 @@
       "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/mark-absent": {
-      "reason": "the write pass could not build a valid input for it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/bookings/{bookingUid}/reassign": {
       "fields": [],
@@ -1919,5 +1921,5 @@
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T05:15:51.863565Z"
+  "writes_generated_at": "2026-09-10T05:56:36.902882Z"
 }

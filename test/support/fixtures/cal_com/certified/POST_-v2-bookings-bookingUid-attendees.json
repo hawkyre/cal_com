@@ -1,0 +1,20 @@
+{
+  "body": {
+    "data": {
+      "absent": false,
+      "bookingId": 25056002,
+      "displayEmail": "kithe.certification.attendee@example.invalid",
+      "email": "kithe.certification.attendee@example.invalid",
+      "id": 29884363,
+      "language": "en",
+      "name": "Kithe Connector Test",
+      "timeZone": "Europe/London"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/bookings/{bookingUid}/attendees",
+  "parsed": true,
+  "provider": "cal_com"
+}

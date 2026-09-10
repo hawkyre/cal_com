@@ -472,6 +472,10 @@ def build(original, inventory, overrides, webhook_shapes):
     # already reachable, and the order fixes which canonical name a shared
     # shape gets. Changing it renames generated modules.
     schemas = reachable_schemas(original, operations)
+    for operation_id, body in overrides.get("operation_bodies", {}).items():
+        content = operations[operation_id]["requestBody"]["content"]
+        media_type = next((key for key in content if "json" in key), next(iter(content), None))
+        content[media_type]["schema"] = body
     for operation_id, responses in overrides.get("operation_responses", {}).items():
         for status, schema in responses.items():
             operations[operation_id]["responses"][status]["content"]["application/json"]["schema"] = schema

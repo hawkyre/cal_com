@@ -45,6 +45,11 @@ defmodule Entities.InputBookingsController20260225GetBookingPath do
   use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
 end
 
+defmodule Entities.InputBookingsController20260225CancelBookingBody do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
+end
+
 defmodule Entities.InputBookingsController20260225ReassignBookingToUserPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
