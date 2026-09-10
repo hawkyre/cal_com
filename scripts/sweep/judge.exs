@@ -168,16 +168,34 @@ defmodule Sweep.Judge do
         []
 
       nil ->
-        {closest, {:error, list}} =
-          Enum.min_by(attempts, fn {_index, {:error, found}} -> length(found) end)
-
+        # The deepest failure is the informative one: a variant that refused the
+        # value's *kind* reports a single entry at this path, while a variant that
+        # got past the kind and failed on fields inside the value reports deeper
+        # paths. Taking the shortest instead named the wrong variant, which is
+        # how a `oneOf [object, array]` response came back as "wants an array".
+        {closest, {:error, list}} = Enum.max_by(attempts, &variant_depth/1)
         [entry(path, "no variant accepted it; closest is variant #{closest}") | list]
     end
+  end
+
+  @spec variant_depth({non_neg_integer(), :ok | {:error, list()}}) ::
+          {non_neg_integer(), integer()}
+  defp variant_depth({_index, {:error, found}}) do
+    deepest =
+      found
+      |> Enum.map(fn {entry_path, _why} -> length(String.split(entry_path, ".")) end)
+      |> Enum.max(fn -> 0 end)
+
+    {deepest, length(found)}
   end
 
   defp why(rule, value, path) do
     [entry(path, "refused #{inspect(value, limit: 3)}; contract is #{inspect(rule.kind)}")]
   end
+
+  @doc "Every field a value refused, as `{path, why}` pairs — the same walk a mismatch reports."
+  @spec fields_for(CalCom.Rule.t(), term(), [String.t()]) :: :ok | {:error, list()}
+  def fields_for(rule, value, path), do: fails(rule, value, path)
 
   @spec kind_of(term()) :: String.t()
   defp kind_of(value) when is_map(value), do: "an object"

@@ -481,18 +481,8 @@
     },
     "POST /v2/teams/{teamId}/event-types": {
       "http": 201,
-      "reason": ":invalid_body \"value\"",
-      "status": "shape_mismatch",
-      "fields": [
-        {
-          "path": "value.data",
-          "why": "no variant accepted it; closest is variant 1"
-        },
-        {
-          "path": "value.data",
-          "why": "contract wants an array, response has an object"
-        }
-      ]
+      "status": "verified",
+      "fields": []
     },
     "DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
       "fields": [],
@@ -1497,9 +1487,9 @@
       "status": "declined"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified",
+      "fields": []
     },
     "DELETE /v2/notifications/subscriptions/app-push": {
       "reason": "needs a device push token for this account",
@@ -1945,5 +1935,5 @@
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T06:14:21.294940Z"
+  "writes_generated_at": "2026-09-10T06:22:40.858909Z"
 }

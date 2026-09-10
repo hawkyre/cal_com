@@ -445,7 +445,7 @@
     "GetEventTypeWorkflowOutput": {
       "data": {
         "$ref": "#/components/schemas/EventTypeWorkflowOutput",
-        "description": "The source types this as an array, but every endpoint that shares the shape — create, get one, patch one — answers with a single workflow object. The list endpoints use their own envelope."
+        "description": "The source types this as an array, but every endpoint that shares the shape \u2014 create, get one, patch one \u2014 answers with a single workflow object. The list endpoints use their own envelope."
       }
     },
     "MembershipUserOutputDto": {
@@ -606,6 +606,69 @@
           "description": "Permission in `resource.action` form. The source closes this to a 53-value enum, but live roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
         }
       }
+    },
+    "TeamEventTypeOutput_2026_06_12": {
+      "bookingWindow": {
+        "oneOf": [
+          {
+            "type": "array",
+            "description": "Limit how far in the future this event can be booked",
+            "items": {
+              "oneOf": [
+                {
+                  "title": "Business Days",
+                  "$ref": "#/components/schemas/BusinessDaysWindow_2024_06_14"
+                },
+                {
+                  "title": "Calendar Days",
+                  "$ref": "#/components/schemas/CalendarDaysWindow_2024_06_14"
+                },
+                {
+                  "title": "Date Range",
+                  "$ref": "#/components/schemas/RangeWindow_2024_06_14"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Disabled_2024_06_14"
+          }
+        ],
+        "description": "The provider answers the disabled marker here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and contract wants an array, response has an object."
+      },
+      "seats": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Seats_2024_06_14"
+          },
+          {
+            "$ref": "#/components/schemas/Disabled_2024_06_14"
+          }
+        ],
+        "description": "The provider answers the disabled marker, not a Seats_2024_06_14. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and required by the contract, absent from the response."
+      }
+    },
+    "EventTypeTeam": {
+      "bannerUrl": {
+        "nullable": true,
+        "description": "The provider sends an explicit null here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and refused nil; contract is :string."
+      },
+      "logoUrl": {
+        "nullable": true,
+        "description": "The provider sends an explicit null here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and refused nil; contract is :string."
+      },
+      "brandColor": {
+        "nullable": true,
+        "description": "The provider sends an explicit null here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and refused nil; contract is :string."
+      },
+      "darkBrandColor": {
+        "nullable": true,
+        "description": "The provider sends an explicit null here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and refused nil; contract is :string."
+      },
+      "theme": {
+        "nullable": true,
+        "description": "The provider sends an explicit null here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and refused nil; contract is :string."
+      }
     }
   },
   "operation_bodies": {
@@ -617,7 +680,9 @@
           "description": "Why the booking is cancelled."
         }
       },
-      "required": ["cancellationReason"]
+      "required": [
+        "cancellationReason"
+      ]
     }
   },
   "operation_parameters": {
@@ -869,5 +934,6 @@
         "nullable": true
       }
     }
-  }
+  },
+  "schema_required": {}
 }

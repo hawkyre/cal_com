@@ -587,8 +587,8 @@
       [
         "banner_url",
         "bannerUrl",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
         true
       ],
       [
@@ -601,8 +601,8 @@
       [
         "logo_url",
         "logoUrl",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
         true
       ],
       [
@@ -615,22 +615,22 @@
       [
         "brand_color",
         "brandColor",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
         true
       ],
       [
         "dark_brand_color",
         "darkBrandColor",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
         true
       ],
       [
         "theme",
         "theme",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
         true
       ]
     ],
