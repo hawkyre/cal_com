@@ -37,6 +37,7 @@ defmodule CalCom.MixProject do
       {:ecto, "~> 3.13"},
       {:typed_ecto_schema, "~> 0.4"},
       {:jason, "~> 1.2"},
+      {:ex_doc, "~> 0.40", only: :dev, runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
       # Dev only, for `scripts/certify.exs`: the package itself stays

@@ -72,3 +72,4 @@ jobs:
       # Publishing is by hand, from a maintainer's machine; CI only proves the
       # tarball builds.
       - run: mix hex.build
+      - run: mix docs
