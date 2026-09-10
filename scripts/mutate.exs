@@ -133,7 +133,14 @@ defmodule Mutate do
     for {id, verdict} <- Ledger.verdicts(), do: write_capture(id, verdict)
 
     Ledger.verdicts()
-    |> Map.new(fn {id, verdict} -> {id, Map.delete(verdict, :capture)} end)
+    |> Map.new(fn {id, verdict} ->
+      # `fields` names each offending path as a tuple, which JSON cannot encode;
+      # the read pass writes the same pairs as objects.
+      fields =
+        for {path, why} <- Map.get(verdict, :fields, []), do: %{"path" => path, "why" => why}
+
+      {id, verdict |> Map.delete(:capture) |> Map.put(:fields, fields)}
+    end)
     |> Map.merge(
       Map.new(declined(), fn {id, reason} -> {id, %{status: "declined", reason: reason}} end)
     )
@@ -998,24 +1005,6 @@ defmodule Mutate do
              Ledger.call(credentials, "DELETE /v2/teams/{teamId}", %{"path" => %{"teamId" => id}})
          end
        end},
-      {"POST /v2/teams/{teamId}/event-types", "creates a team event type",
-       fn credentials, _ids ->
-         with_team(credentials, fn team_id ->
-           Ledger.call(
-             credentials,
-             "POST /v2/teams/{teamId}/event-types",
-             params("POST /v2/teams/{teamId}/event-types",
-               path: %{"teamId" => team_id},
-               body: %{
-                 "title" => "Kithe certification team event",
-                 "slug" => slug("kithe-team-cert"),
-                 "lengthInMinutes" => 15,
-                 "hosts" => [%{"userId" => 3_209_949, "isFixed" => true}]
-               }
-             )
-           )
-         end)
-       end},
       {"POST /v2/teams/{teamId}/memberships", "adds this user to the team this run created",
        fn credentials, _ids ->
          with_team(credentials, fn team_id ->
@@ -1490,7 +1479,7 @@ defmodule Mutate do
           "title" => "Kithe certification team event",
           "slug" => slug("kithe-team-cert"),
           "lengthInMinutes" => 15,
-          "schedulingType" => "ROUND_ROBIN",
+          "schedulingType" => "collective",
           "hosts" => [%{"userId" => team_user_id(credentials), "isFixed" => true}]
         }
       )
