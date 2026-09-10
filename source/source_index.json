@@ -426,7 +426,7 @@
   "PartialOmitSystemRescheduleReasonFieldInput_2026_06_12Field": "CalCom.Entities.PartialOmitSystemAttendeePhoneFieldInput20260612Field",
   "PartialOmitSystemSplitNameFieldInput_2026_06_12Field": "CalCom.Entities.PartialOmitSystemSplitNameFieldInput20260612Field",
   "PartialOmitSystemTitleFieldInput_2026_06_12Field": "CalCom.Entities.PartialOmitSystemAttendeePhoneFieldInput20260612Field",
-  "PatchBookingFieldsInput_2026_06_12": "CalCom.Entities.PatchBookingFieldsInput20260612",
+  "PatchBookingFieldsInput_2026_06_12": "CalCom.Entities.BookingFieldsInput20260612",
   "PathsWorkflowStepOutputDto": "CalCom.Entities.PathsWorkflowStepOutputDto",
   "PendingSecretDto": "CalCom.Entities.PendingSecretDto",
   "PlatformOAuthClientDto": "CalCom.Entities.PlatformOAuthClientDto",

@@ -3,14 +3,14 @@
     "error": {
       "details": {
         "error": "Bad Request",
-        "message": "bookingFields[0]: unknown field 'a'. Allowed system fields: name, email, location, title, notes, guests, rescheduleReason, attendeePhoneNumber, smsReminderNumber, aiAgentCallPhoneNumber.",
+        "message": "bookingFields[0]: unknown field 'text'. Allowed system fields: name, email, location, title, notes, guests, rescheduleReason, attendeePhoneNumber, smsReminderNumber, aiAgentCallPhoneNumber.",
         "statusCode": 400
       },
-      "message": "bookingFields[0]: unknown field 'a'. Allowed system fields: name, email, location, title, notes, guests, rescheduleReason, attendeePhoneNumber, smsReminderNumber, aiAgentCallPhoneNumber."
+      "message": "bookingFields[0]: unknown field 'text'. Allowed system fields: name, email, location, title, notes, guests, rescheduleReason, attendeePhoneNumber, smsReminderNumber, aiAgentCallPhoneNumber."
     },
-    "path": "/v2/event-types/7014089/booking-fields",
+    "path": "/v2/event-types/7014299/booking-fields",
     "status": "error",
-    "timestamp": "2026-09-10T07:01:54.695Z"
+    "timestamp": "2026-09-10T07:17:44.108Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

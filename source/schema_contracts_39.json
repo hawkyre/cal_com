@@ -265,114 +265,6 @@
     "additional": "%CalCom.Rule{kind: :json, nullable: true}",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.BookingInsightsInputColumnFiltersItem": {
-    "fields": [
-      [
-        "id",
-        "id",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.BookingInsightsInputColumnFiltersItemValue}, nullable: false}",
-        "CalCom.Entities.BookingInsightsInputColumnFiltersItemValue.t()",
-        false
-      ]
-    ],
-    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.BookingOutput20240813Metadata": {
-    "fields": [],
-    "additional": "%CalCom.Rule{kind: :string, nullable: false}",
-    "additional_type": "String.t()"
-  },
-  "CalCom.Entities.ConnectedCalendarsDataDestinationCalendarOption1": {
-    "fields": [],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.DeletePrivateLinkOutputData": {
-    "fields": [
-      [
-        "link_id",
-        "linkId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "message",
-        "message",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ]
-    ],
-    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.EventTypeHistoryAuditLog20240614DisplayJson": {
-    "fields": [],
-    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.GetReservedSlotOutput20240904Data": {
-    "fields": [
-      [
-        "reservation_uid",
-        "reservationUid",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "slot_start",
-        "slotStart",
-        "%CalCom.Rule{kind: :datetime, nullable: false}",
-        "DateTime.t()",
-        true
-      ],
-      [
-        "slot_end",
-        "slotEnd",
-        "%CalCom.Rule{kind: :datetime, nullable: false}",
-        "DateTime.t()",
-        true
-      ],
-      [
-        "slot_duration",
-        "slotDuration",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "reservation_until",
-        "reservationUntil",
-        "%CalCom.Rule{kind: :datetime, nullable: false}",
-        "DateTime.t()",
-        true
-      ]
-    ],
-    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InsightsRoutingRoutedToUserOutputEmail": {
-    "fields": [],
-    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
-    "additional_type": "CalCom.Json.t()"
-  },
   "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption0": {
     "fields": [
       [
@@ -858,6 +750,114 @@
         false
       ]
     ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.BookingInsightsInputColumnFiltersItem": {
+    "fields": [
+      [
+        "id",
+        "id",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.BookingInsightsInputColumnFiltersItemValue}, nullable: false}",
+        "CalCom.Entities.BookingInsightsInputColumnFiltersItemValue.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.BookingOutput20240813Metadata": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: :string, nullable: false}",
+    "additional_type": "String.t()"
+  },
+  "CalCom.Entities.ConnectedCalendarsDataDestinationCalendarOption1": {
+    "fields": [],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.DeletePrivateLinkOutputData": {
+    "fields": [
+      [
+        "link_id",
+        "linkId",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "message",
+        "message",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.EventTypeHistoryAuditLog20240614DisplayJson": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.GetReservedSlotOutput20240904Data": {
+    "fields": [
+      [
+        "reservation_uid",
+        "reservationUid",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "event_type_id",
+        "eventTypeId",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "slot_start",
+        "slotStart",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        true
+      ],
+      [
+        "slot_end",
+        "slotEnd",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        true
+      ],
+      [
+        "slot_duration",
+        "slotDuration",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "reservation_until",
+        "reservationUntil",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InsightsRoutingRoutedToUserOutputEmail": {
+    "fields": [],
     "additional": "%CalCom.Rule{kind: :json, nullable: true}",
     "additional_type": "CalCom.Json.t()"
   },

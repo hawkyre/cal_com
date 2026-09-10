@@ -162,8 +162,8 @@
       [
         "body",
         "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.PatchBookingFieldsInput20260612}, nullable: false}",
-        "CalCom.Entities.PatchBookingFieldsInput20260612.t()",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsInput20260612}, nullable: false}",
+        "CalCom.Entities.BookingFieldsInput20260612.t()",
         true
       ]
     ],

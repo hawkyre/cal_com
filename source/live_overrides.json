@@ -669,6 +669,478 @@
         "nullable": true,
         "description": "The provider sends an explicit null here. Live evidence: POST /v2/teams/{teamId}/event-types answered 201 and refused nil; contract is :string."
       }
+    },
+    "PatchBookingFieldsInput_2026_06_12": {
+      "bookingFields": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "anyOf": [
+            {
+              "allOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "slug"
+                  ]
+                },
+                {
+                  "anyOf": [
+                    {
+                      "title": "Default Full Name",
+                      "$ref": "#/components/schemas/PartialOmitSystemFullNameFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Split Name",
+                      "$ref": "#/components/schemas/PartialOmitSystemSplitNameFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Email",
+                      "$ref": "#/components/schemas/PartialOmitSystemEmailFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Location",
+                      "$ref": "#/components/schemas/PartialOmitSystemLocationFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Title",
+                      "$ref": "#/components/schemas/PartialOmitSystemTitleFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Notes",
+                      "$ref": "#/components/schemas/PartialOmitSystemNotesFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Guests",
+                      "$ref": "#/components/schemas/PartialOmitSystemGuestsFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Reschedule Reason",
+                      "$ref": "#/components/schemas/PartialOmitSystemRescheduleReasonFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Attendee Phone",
+                      "$ref": "#/components/schemas/PartialOmitSystemAttendeePhoneFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Email",
+                      "$ref": "#/components/schemas/PartialOmitCustomEmailFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Phone",
+                      "$ref": "#/components/schemas/PartialOmitCustomPhoneFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Address",
+                      "$ref": "#/components/schemas/PartialOmitCustomAddressFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Short Text",
+                      "$ref": "#/components/schemas/PartialOmitCustomShortTextFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Number",
+                      "$ref": "#/components/schemas/PartialOmitCustomNumberFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Long Text",
+                      "$ref": "#/components/schemas/PartialOmitCustomLongTextFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Select",
+                      "$ref": "#/components/schemas/PartialOmitCustomSelectFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Multi-Select",
+                      "$ref": "#/components/schemas/PartialOmitCustomMultiSelectFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Multiple Emails",
+                      "$ref": "#/components/schemas/PartialOmitCustomMultiEmailFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Checkbox Group",
+                      "$ref": "#/components/schemas/PartialOmitCustomCheckboxGroupFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Checkbox",
+                      "$ref": "#/components/schemas/PartialOmitCustomCheckboxFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Radio Group",
+                      "$ref": "#/components/schemas/PartialOmitCustomRadioGroupFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom URL",
+                      "$ref": "#/components/schemas/PartialOmitCustomUrlFieldInput_2026_06_12Field"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "discriminator": {
+                "propertyName": "field"
+              },
+              "oneOf": [
+                {
+                  "title": "Default Name",
+                  "discriminator": {
+                    "propertyName": "variant"
+                  },
+                  "oneOf": [
+                    {
+                      "title": "Default Full Name",
+                      "$ref": "#/components/schemas/SystemFullNameFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Default Split Name",
+                      "$ref": "#/components/schemas/SystemSplitNameFieldOutput_2026_06_12"
+                    }
+                  ]
+                },
+                {
+                  "title": "Default Email",
+                  "$ref": "#/components/schemas/SystemEmailFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Location",
+                  "$ref": "#/components/schemas/SystemLocationFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Title",
+                  "$ref": "#/components/schemas/SystemTitleFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Notes",
+                  "$ref": "#/components/schemas/SystemNotesFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Guests",
+                  "$ref": "#/components/schemas/SystemGuestsFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Reschedule Reason",
+                  "$ref": "#/components/schemas/SystemRescheduleReasonFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Attendee Phone",
+                  "$ref": "#/components/schemas/SystemAttendeePhoneFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Workflow-added SMS Reminder",
+                  "$ref": "#/components/schemas/SystemSmsReminderFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Workflow-added AI Agent Phone",
+                  "$ref": "#/components/schemas/SystemAiAgentPhoneFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Custom Booking Field",
+                  "discriminator": {
+                    "propertyName": "type"
+                  },
+                  "oneOf": [
+                    {
+                      "title": "Custom Email",
+                      "$ref": "#/components/schemas/CustomEmailFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Phone",
+                      "$ref": "#/components/schemas/CustomPhoneFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Address",
+                      "$ref": "#/components/schemas/CustomAddressFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Short Text",
+                      "$ref": "#/components/schemas/CustomShortTextFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Number",
+                      "$ref": "#/components/schemas/CustomNumberFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Long Text",
+                      "$ref": "#/components/schemas/CustomLongTextFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Select",
+                      "$ref": "#/components/schemas/CustomSelectFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Multi-Select",
+                      "$ref": "#/components/schemas/CustomMultiSelectFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Multiple Emails",
+                      "$ref": "#/components/schemas/CustomMultiEmailFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Checkbox Group",
+                      "$ref": "#/components/schemas/CustomCheckboxGroupFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Radio Group",
+                      "$ref": "#/components/schemas/CustomRadioGroupFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Checkbox",
+                      "$ref": "#/components/schemas/CustomCheckboxFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom URL",
+                      "$ref": "#/components/schemas/CustomUrlFieldOutput_2026_06_12"
+                    }
+                  ]
+                },
+                {
+                  "title": "Unknown Booking Field",
+                  "$ref": "#/components/schemas/UnknownBookingFieldOutput_2026_06_12"
+                }
+              ]
+            }
+          ]
+        },
+        "description": "The document declares a partial system field per write variant, but the provider also accepts the field object its own GET returns on this route (verified by PUTting a live response back and reading 200), and that object carries `field` and `disableOnPrefill`, which the write variants forbid. Both shapes are accepted."
+      }
+    },
+    "BookingFieldsInput_2026_06_12": {
+      "bookingFields": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "anyOf": [
+            {
+              "allOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "slug"
+                  ]
+                },
+                {
+                  "anyOf": [
+                    {
+                      "title": "Default Full Name",
+                      "$ref": "#/components/schemas/PartialOmitSystemFullNameFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Split Name",
+                      "$ref": "#/components/schemas/PartialOmitSystemSplitNameFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Email",
+                      "$ref": "#/components/schemas/PartialOmitSystemEmailFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Location",
+                      "$ref": "#/components/schemas/PartialOmitSystemLocationFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Title",
+                      "$ref": "#/components/schemas/PartialOmitSystemTitleFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Notes",
+                      "$ref": "#/components/schemas/PartialOmitSystemNotesFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Guests",
+                      "$ref": "#/components/schemas/PartialOmitSystemGuestsFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Reschedule Reason",
+                      "$ref": "#/components/schemas/PartialOmitSystemRescheduleReasonFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Default Attendee Phone",
+                      "$ref": "#/components/schemas/PartialOmitSystemAttendeePhoneFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Email",
+                      "$ref": "#/components/schemas/PartialOmitCustomEmailFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Phone",
+                      "$ref": "#/components/schemas/PartialOmitCustomPhoneFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Address",
+                      "$ref": "#/components/schemas/PartialOmitCustomAddressFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Short Text",
+                      "$ref": "#/components/schemas/PartialOmitCustomShortTextFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Number",
+                      "$ref": "#/components/schemas/PartialOmitCustomNumberFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Long Text",
+                      "$ref": "#/components/schemas/PartialOmitCustomLongTextFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Select",
+                      "$ref": "#/components/schemas/PartialOmitCustomSelectFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Multi-Select",
+                      "$ref": "#/components/schemas/PartialOmitCustomMultiSelectFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Multiple Emails",
+                      "$ref": "#/components/schemas/PartialOmitCustomMultiEmailFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Checkbox Group",
+                      "$ref": "#/components/schemas/PartialOmitCustomCheckboxGroupFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Checkbox",
+                      "$ref": "#/components/schemas/PartialOmitCustomCheckboxFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom Radio Group",
+                      "$ref": "#/components/schemas/PartialOmitCustomRadioGroupFieldInput_2026_06_12Field"
+                    },
+                    {
+                      "title": "Custom URL",
+                      "$ref": "#/components/schemas/PartialOmitCustomUrlFieldInput_2026_06_12Field"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "discriminator": {
+                "propertyName": "field"
+              },
+              "oneOf": [
+                {
+                  "title": "Default Name",
+                  "discriminator": {
+                    "propertyName": "variant"
+                  },
+                  "oneOf": [
+                    {
+                      "title": "Default Full Name",
+                      "$ref": "#/components/schemas/SystemFullNameFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Default Split Name",
+                      "$ref": "#/components/schemas/SystemSplitNameFieldOutput_2026_06_12"
+                    }
+                  ]
+                },
+                {
+                  "title": "Default Email",
+                  "$ref": "#/components/schemas/SystemEmailFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Location",
+                  "$ref": "#/components/schemas/SystemLocationFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Title",
+                  "$ref": "#/components/schemas/SystemTitleFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Notes",
+                  "$ref": "#/components/schemas/SystemNotesFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Guests",
+                  "$ref": "#/components/schemas/SystemGuestsFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Reschedule Reason",
+                  "$ref": "#/components/schemas/SystemRescheduleReasonFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Default Attendee Phone",
+                  "$ref": "#/components/schemas/SystemAttendeePhoneFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Workflow-added SMS Reminder",
+                  "$ref": "#/components/schemas/SystemSmsReminderFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Workflow-added AI Agent Phone",
+                  "$ref": "#/components/schemas/SystemAiAgentPhoneFieldOutput_2026_06_12"
+                },
+                {
+                  "title": "Custom Booking Field",
+                  "discriminator": {
+                    "propertyName": "type"
+                  },
+                  "oneOf": [
+                    {
+                      "title": "Custom Email",
+                      "$ref": "#/components/schemas/CustomEmailFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Phone",
+                      "$ref": "#/components/schemas/CustomPhoneFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Address",
+                      "$ref": "#/components/schemas/CustomAddressFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Short Text",
+                      "$ref": "#/components/schemas/CustomShortTextFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Number",
+                      "$ref": "#/components/schemas/CustomNumberFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Long Text",
+                      "$ref": "#/components/schemas/CustomLongTextFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Select",
+                      "$ref": "#/components/schemas/CustomSelectFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Multi-Select",
+                      "$ref": "#/components/schemas/CustomMultiSelectFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Multiple Emails",
+                      "$ref": "#/components/schemas/CustomMultiEmailFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Checkbox Group",
+                      "$ref": "#/components/schemas/CustomCheckboxGroupFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Radio Group",
+                      "$ref": "#/components/schemas/CustomRadioGroupFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom Checkbox",
+                      "$ref": "#/components/schemas/CustomCheckboxFieldOutput_2026_06_12"
+                    },
+                    {
+                      "title": "Custom URL",
+                      "$ref": "#/components/schemas/CustomUrlFieldOutput_2026_06_12"
+                    }
+                  ]
+                },
+                {
+                  "title": "Unknown Booking Field",
+                  "$ref": "#/components/schemas/UnknownBookingFieldOutput_2026_06_12"
+                }
+              ]
+            }
+          ]
+        },
+        "description": "The document declares a partial system field per write variant, but the provider also accepts the field object its own GET returns on this route (verified by PUTting a live response back and reading 200), and that object carries `field` and `disableOnPrefill`, which the write variants forbid. Both shapes are accepted."
+      }
     }
   },
   "operation_bodies": {

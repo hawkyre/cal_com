@@ -1241,8 +1241,9 @@
       "status": "verified"
     },
     "PATCH /v2/event-types/{eventTypeId}/booking-fields": {
-      "reason": "the sweep could not build an input the contract accepts",
-      "status": "write"
+      "fields": [],
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}": {
       "fields": [],
@@ -1959,8 +1960,10 @@
       "status": "refused"
     },
     "PUT /v2/event-types/{eventTypeId}/booking-fields": {
-      "reason": "the sweep could not build an input the contract accepts",
-      "status": "write"
+      "fields": [],
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions": {
       "fields": [],
@@ -1983,5 +1986,5 @@
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T07:08:36.255840Z"
+  "writes_generated_at": "2026-09-10T07:18:12.227392Z"
 }

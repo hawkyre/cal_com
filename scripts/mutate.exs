@@ -520,7 +520,16 @@ defmodule Mutate do
              "POST /v2/event-types/{eventTypeId}/booking-fields",
              params("POST /v2/event-types/{eventTypeId}/booking-fields",
                path: %{"eventTypeId" => id},
-               body: %{"slug" => slug("cert-field")}
+               body: %{
+                 "bookingFields" => [
+                   %{
+                     "field" => "text",
+                     "slug" => slug("cert-field"),
+                     "label" => "Certification field",
+                     "required" => false
+                   }
+                 ]
+               }
              )
            )
          end)
@@ -2732,7 +2741,7 @@ defmodule Mutate do
            home =
              params("PATCH /v2/event-types/{eventTypeId}/booking-fields",
                path: %{"eventTypeId" => event_type_id},
-               body: %{"bookingFields" => booking_fields(credentials, event_type_id)}
+               body: %{"bookingFields" => [%{"slug" => "email", "required" => true}]}
              )
 
            Ledger.call(credentials, "PATCH /v2/event-types/{eventTypeId}/booking-fields", home)
@@ -2747,7 +2756,7 @@ defmodule Mutate do
              "PUT /v2/event-types/{eventTypeId}/booking-fields",
              params("PUT /v2/event-types/{eventTypeId}/booking-fields",
                path: %{"eventTypeId" => event_type_id},
-               body: %{"bookingFields" => booking_fields(credentials, event_type_id)}
+               body: %{"bookingFields" => [%{"slug" => "email", "required" => true}]}
              )
            )
          end)
@@ -2865,8 +2874,19 @@ defmodule Mutate do
       )
 
     case verdict[:capture] do
-      {%{} = typed, _package} -> typed.value.data |> CalCom.Codec.wire()
-      _none -> []
+      # The read answers `data: {bookingFields: [...]}`; the patch wants the list
+      # itself, so the envelope is unwrapped rather than sent back whole.
+      {%{} = typed, _package} ->
+        # Every entry has to carry something to update: the provider refuses one
+        # holding only its identity ("must contain at least one property to
+        # update"), which is what a bare system field such as location returns.
+        typed.value.data
+        |> CalCom.Codec.wire()
+        |> Map.get("bookingFields", [])
+        |> Enum.map(&Map.put_new(&1, "required", false))
+
+      _none ->
+        []
     end
   end
 

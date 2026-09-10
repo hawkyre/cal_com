@@ -998,5 +998,59 @@
     ],
     "additional": "%CalCom.Rule{kind: :json, nullable: true}",
     "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PathsWorkflowStepOutputDto": {
+    "fields": [
+      [
+        "id",
+        "id",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "step_number",
+        "stepNumber",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "action",
+        "action",
+        "%CalCom.Rule{kind: {:enum, [{\"paths\", :paths}]}, nullable: false}",
+        ":paths",
+        true
+      ],
+      [
+        "paths",
+        "paths",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: {:object, CalCom.Entities.SchedulingHostGroup}, nullable: false}}, nullable: false}",
+        "[CalCom.Entities.SchedulingHostGroup.t()]",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PendingSecretDto": {
+    "fields": [
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :datetime, nullable: true}",
+        "DateTime.t()",
+        true
+      ],
+      [
+        "expires_at",
+        "expiresAt",
+        "%CalCom.Rule{kind: :datetime, nullable: true}",
+        "DateTime.t()",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
   }
 }
