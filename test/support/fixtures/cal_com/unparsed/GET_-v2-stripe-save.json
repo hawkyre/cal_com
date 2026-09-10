@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Bad Request",
+        "message": "Malformed `state` query param",
+        "statusCode": 400
+      },
+      "message": "Malformed `state` query param"
+    },
+    "path": "/v2/stripe/save?code=a&state=a",
+    "status": "error",
+    "timestamp": "2026-09-10T06:37:41.543Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "GET /v2/stripe/save",
+  "parsed": false,
+  "provider": "cal_com"
+}

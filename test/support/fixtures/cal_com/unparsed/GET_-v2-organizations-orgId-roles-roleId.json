@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Not Found",
+        "message": "Role with id owner_role within team id 422850 not found",
+        "statusCode": 404
+      },
+      "message": "Role with id owner_role within team id 422850 not found"
+    },
+    "path": "/v2/organizations/422850/roles/owner_role",
+    "status": "error",
+    "timestamp": "2026-09-10T06:36:47.514Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 404,
+  "operation": "GET /v2/organizations/{orgId}/roles/{roleId}",
+  "parsed": false,
+  "provider": "cal_com"
+}

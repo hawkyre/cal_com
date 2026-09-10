@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Conflict",
+        "message": "Ooo entry already exists.",
+        "statusCode": 409
+      },
+      "message": "Ooo entry already exists."
+    },
+    "path": "/v2/me/ooo/94929",
+    "status": "error",
+    "timestamp": "2026-09-10T06:43:00.831Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 409,
+  "operation": "PATCH /v2/me/ooo/{oooId}",
+  "parsed": false,
+  "provider": "cal_com"
+}

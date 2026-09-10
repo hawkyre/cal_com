@@ -28,8 +28,14 @@ defmodule Sweep.Discover do
     %{"userId" => [account.user_id], "orgId" => organization}
     |> collect(credentials, "GET /v2/event-types", "eventTypeId", %{}, id())
     |> collect(credentials, "GET /v2/schedules", "scheduleId", %{}, id())
-    |> collect(credentials, "GET /v2/teams", "teamId", %{}, id())
-    |> collect(credentials, "GET /v2/organizations/{orgId}/teams", "teamId", org, id())
+    |> collect(credentials, "GET /v2/teams", "teamId", %{}, &teams_only(&1, account))
+    |> collect(
+      credentials,
+      "GET /v2/organizations/{orgId}/teams",
+      "teamId",
+      org,
+      &teams_only(&1, account)
+    )
     |> collect(credentials, "GET /v2/bookings", "bookingUid", %{}, uid())
     |> collect(credentials, "GET /v2/organizations/{orgId}/bookings", "bookingUid", org, uid())
     |> collect(credentials, "GET /v2/webhooks", "webhookId", %{}, id())
@@ -76,6 +82,14 @@ defmodule Sweep.Discover do
     |> collect(credentials, "GET /v2/verified-resources/phones", "id", %{}, id())
     |> collect(credentials, "GET /v2/conferencing", "app", %{}, type())
     |> attendees(credentials)
+  end
+
+  # The organization is listed among its own teams and answers 404 for every
+  # `/teams/{teamId}` route, so it is not an id any of them can be addressed with.
+  @spec teams_only(map(), map()) :: [term()]
+  defp teams_only(row, account) do
+    id = Map.get(row, :id)
+    if is_nil(id) or id == account.organization_id, do: [], else: [id]
   end
 
   @spec id() :: (term() -> [term()])

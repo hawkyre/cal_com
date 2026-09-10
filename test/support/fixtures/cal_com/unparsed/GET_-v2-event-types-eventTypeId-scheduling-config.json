@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Unprocessable Entity",
+        "message": "Event type with id 6981147 is not a team event type. Scheduling configuration is only available for team event types.",
+        "statusCode": 422
+      },
+      "message": "Event type with id 6981147 is not a team event type. Scheduling configuration is only available for team event types."
+    },
+    "path": "/v2/event-types/6981147/scheduling-config",
+    "status": "error",
+    "timestamp": "2026-09-10T06:36:14.491Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 422,
+  "operation": "GET /v2/event-types/{eventTypeId}/scheduling-config",
+  "parsed": false,
+  "provider": "cal_com"
+}

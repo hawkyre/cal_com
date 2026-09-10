@@ -10,7 +10,7 @@
     },
     "path": "/v2/insights/routings/failed-bookings-by-field",
     "status": "error",
-    "timestamp": "2026-09-10T06:01:23.515Z"
+    "timestamp": "2026-09-10T06:44:42.919Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 403,

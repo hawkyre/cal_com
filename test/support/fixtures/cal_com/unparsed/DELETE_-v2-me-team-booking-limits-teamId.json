@@ -9,10 +9,10 @@
       "message": "This team does not apply a booking limit to you as a round-robin host"
     },
     "message": "This team does not apply a booking limit to you as a round-robin host",
-    "path": "/v2/me/team-booking-limits/422850",
+    "path": "/v2/me/team-booking-limits/422851",
     "status": "error",
     "statusCode": 404,
-    "timestamp": "2026-09-10T05:59:33.886Z"
+    "timestamp": "2026-09-10T06:43:06.857Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 404,

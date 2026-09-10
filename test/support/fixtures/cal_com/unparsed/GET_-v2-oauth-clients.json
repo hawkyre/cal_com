@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Forbidden",
+        "message": "OrganizationRolesGuard - Organization is not a platform (SHP).",
+        "statusCode": 403
+      },
+      "message": "OrganizationRolesGuard - Organization is not a platform (SHP)."
+    },
+    "path": "/v2/oauth-clients",
+    "status": "error",
+    "timestamp": "2026-09-10T06:36:23.506Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 403,
+  "operation": "GET /v2/oauth-clients",
+  "parsed": false,
+  "provider": "cal_com"
+}

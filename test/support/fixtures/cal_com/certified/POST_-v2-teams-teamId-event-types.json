@@ -11,7 +11,7 @@
       "recurrence": null,
       "parentEventTypeId": null,
       "lengthInMinutes": 15,
-      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL4XBW7",
+      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL4YPM1T",
       "seats": {
         "disabled": true
       },
@@ -25,7 +25,7 @@
       "disableGuests": false,
       "showOptimizedSlots": false,
       "description": "",
-      "id": 7013668,
+      "id": 7013920,
       "teamId": 422851,
       "confirmationPolicy": {
         "disabled": true
@@ -139,7 +139,7 @@
       "calVideoSettings": {
         "sendTranscriptionEmails": true
       },
-      "slug": "kithe-team-cert-TL4XBW7",
+      "slug": "kithe-team-cert-TL4YPM1T",
       "bookingWindow": {
         "disabled": true
       },
@@ -153,6 +153,6 @@
   "captured_on": "2026-09-10",
   "http_status": 201,
   "operation": "POST /v2/teams/{teamId}/event-types",
-  "parsed": false,
+  "parsed": true,
   "provider": "cal_com"
 }

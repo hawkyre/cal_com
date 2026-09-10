@@ -1,7 +1,7 @@
 {
   "body": {
     "data": {
-      "authUrl": "https://connect.stripe.com/oauth/authorize?client_id=ca_KHCNqOhNnle2Od6KZ6iKmha6g9xlFdC1&scope=read_write&response_type=code&stripe_user[email]=me%40hawkyre.com&stripe_user[first_name]=hawkyre&stripe_user[country]=undefined&redirect_uri=https%3A%2F%2Fapi.cal.com%2Fv2%2Fstripe%2Fsave&state=%7B%22p%22%3A%22%7B%5C%22accessToken%5C%22%3A%5C%22cal_live_7f868a8bb894528cd66d501236cad756%5C%22%2C%5C%22fromApp%5C%22%3Afalse%2C%5C%22iat%5C%22%3A1789017063%7D%22%2C%22s%22%3A%2274d3d3d38692acac0eb60aa481a1ad4b0352ff39f363de440dcd3d4d8965f920%22%7D"
+      "authUrl": "https://connect.stripe.com/oauth/authorize?client_id=ca_KHCNqOhNnle2Od6KZ6iKmha6g9xlFdC1&scope=read_write&response_type=code&stripe_user[email]=me%40hawkyre.com&stripe_user[first_name]=hawkyre&stripe_user[country]=undefined&redirect_uri=https%3A%2F%2Fapi.cal.com%2Fv2%2Fstripe%2Fsave&state=%7B%22p%22%3A%22%7B%5C%22accessToken%5C%22%3A%5C%22cal_live_7f868a8bb894528cd66d501236cad756%5C%22%2C%5C%22fromApp%5C%22%3Afalse%2C%5C%22iat%5C%22%3A1789022260%7D%22%2C%22s%22%3A%22126904c1cdc815e68719472f4e7483969c6d9a1443d264d166234f15a17ea02f%22%7D"
     },
     "status": "success"
   },

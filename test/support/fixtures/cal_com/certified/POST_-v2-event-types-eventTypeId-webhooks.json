@@ -2,10 +2,10 @@
   "body": {
     "data": {
       "active": true,
-      "eventTypeId": 7013545,
-      "id": "27e60142-c6d0-44b8-bcec-654e0950748d",
+      "eventTypeId": 7013902,
+      "id": "3325dd27-be3f-40c1-b3c9-f46c627cdbbb",
       "payloadTemplate": null,
-      "subscriberUrl": "https://example.invalid/kithe-certification-TL4WPO1K",
+      "subscriberUrl": "https://example.invalid/kithe-certification-TL4YOY1H",
       "time": null,
       "timeUnit": null,
       "triggers": [

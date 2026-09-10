@@ -8,9 +8,9 @@
       },
       "message": "Provide at least one interval. To go back to the team default, DELETE this resource instead."
     },
-    "path": "/v2/me/team-booking-limits/422850",
+    "path": "/v2/me/team-booking-limits/422851",
     "status": "error",
-    "timestamp": "2026-09-10T05:59:32.792Z"
+    "timestamp": "2026-09-10T06:43:05.806Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

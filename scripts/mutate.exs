@@ -16,6 +16,7 @@ Code.require_file("sweep/inputs.exs", __DIR__)
 Code.require_file("sweep/judge.exs", __DIR__)
 Code.require_file("sweep/ledger.exs", __DIR__)
 Code.require_file("sweep/report.exs", __DIR__)
+Code.require_file("sweep/reap.exs", __DIR__)
 
 Sweep.Client.start()
 
@@ -68,6 +69,11 @@ defmodule Mutate do
       run(credentials, scenarios, ids)
       leftovers = Ledger.undo(credentials)
       if leftovers == [], do: Client.log("undo: everything this run created is gone")
+
+      # The ledger cannot see a fixture whose create never parsed, so cleanup
+      # finishes by finding anything still carrying the certification marker.
+      reaped = Sweep.Reap.reap(true)
+      Client.log("reap: #{reaped} fixtures removed by marker")
       finish(credentials, account)
     else
       IO.puts("\ndry run: set MUTATE_APPLY=1 to call these")
@@ -271,6 +277,7 @@ defmodule Mutate do
       organization_webhooks() ++
       event_type_children() ++
       team_scoped() ++
+      team_admin() ++
       account_settings() ++
       insights() ++
       bookings() ++
@@ -1638,6 +1645,299 @@ defmodule Mutate do
          end)
        end}
     ]
+  end
+
+  # ---------------------------------------------------------------------------
+  # Team administration: roles, workflows, booking fields, private links
+  # ---------------------------------------------------------------------------
+
+  @spec team_admin_path(term(), term()) :: map()
+  defp team_admin_path(org_id, team_id), do: %{"orgId" => org_id, "teamId" => team_id}
+
+  @spec with_team_admin(Credentials.t(), (term(), term() -> any())) :: any()
+  defp with_team_admin(credentials, fun) do
+    with_org_id(credentials, fn org_id ->
+      case team_fixture(credentials) do
+        nil -> :ok
+        team_id -> fun.(org_id, team_id)
+      end
+    end)
+  end
+
+  @spec with_org_id(Credentials.t(), (term() -> any())) :: any()
+  defp with_org_id(credentials, fun) do
+    case organization_id(credentials) do
+      nil -> :ok
+      org_id -> fun.(org_id)
+    end
+  end
+
+  # An organization team role is a fixture: created, used, deleted.
+  @spec team_role(Credentials.t(), map()) :: map()
+  defp team_role(credentials, path) do
+    Ledger.call(
+      credentials,
+      "POST /v2/organizations/{orgId}/teams/{teamId}/roles",
+      params("POST /v2/organizations/{orgId}/teams/{teamId}/roles",
+        path: path,
+        body: %{"name" => "Kithe cert team role " <> suffix(), "permissions" => ["booking.read"]}
+      )
+    )
+  end
+
+  @spec with_team_role(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_team_role(credentials, fun) do
+    with_team_admin(credentials, fn org_id, team_id ->
+      path = team_admin_path(org_id, team_id)
+      created = team_role(credentials, path)
+
+      case Ledger.created_id(created, :id) do
+        nil ->
+          :ok
+
+        role_id ->
+          Ledger.track(
+            "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+            Map.put(path, "roleId", role_id)
+          )
+
+          fun.(path, role_id)
+      end
+    end)
+  end
+
+  @spec team_admin() :: [{String.t(), String.t(), fun()}]
+  defp team_admin do
+    [
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/roles",
+       "creates a role on a team this account owns",
+       fn credentials, _ids -> with_team_role(credentials, fn _path, _role -> :ok end) end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+       "edits the team role this run created",
+       fn credentials, _ids ->
+         with_team_role(credentials, fn path, role_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+             params("PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+               path: Map.put(path, "roleId", role_id),
+               body: %{"name" => "Kithe cert team role (edited) " <> suffix()}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+       "grants a permission to the team role this run created",
+       fn credentials, _ids ->
+         with_team_role(credentials, fn path, role_id ->
+           Ledger.call(
+             credentials,
+             "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+             params("POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+               path: Map.put(path, "roleId", role_id),
+               body: %{"permissions" => ["booking.read"]}
+             )
+           )
+         end)
+       end},
+      {"PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+       "replaces the permissions of the team role this run created",
+       fn credentials, _ids ->
+         with_team_role(credentials, fn path, role_id ->
+           Ledger.call(
+             credentials,
+             "PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+             params("PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+               path: Map.put(path, "roleId", role_id),
+               body: %{"permissions" => ["booking.read"]}
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+       "clears every permission of the team role this run created",
+       fn credentials, _ids ->
+         with_team_role(credentials, fn path, role_id ->
+           Ledger.call(
+             credentials,
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+             params("DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+               path: Map.put(path, "roleId", role_id)
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+       "deletes a team role this run created",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           path = team_admin_path(org_id, team_id)
+
+           case Ledger.created_id(team_role(credentials, path), :id) do
+             nil ->
+               :ok
+
+             role_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+                 %{"path" => Map.put(path, "roleId", role_id)}
+               )
+           end
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+       "creates a workflow on a team this account owns",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           path = team_admin_path(org_id, team_id)
+
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+               params("POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+                 path: path,
+                 body: %{"name" => "Kithe cert team workflow " <> suffix()}
+               )
+             )
+
+           Ledger.track(
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+             Map.put(path, "workflowId", Ledger.created_id(created, :id))
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+       "deletes a team workflow this run created",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           path = team_admin_path(org_id, team_id)
+
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+               params("POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+                 path: path,
+                 body: %{"name" => "Kithe cert team workflow " <> suffix()}
+               )
+             )
+
+           case Ledger.created_id(created, :id) do
+             nil ->
+               :ok
+
+             workflow_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+                 %{"path" => Map.put(path, "workflowId", workflow_id)}
+               )
+           end
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/event-types",
+       "creates a team event type through the organization route",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           path = team_admin_path(org_id, team_id)
+
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/organizations/{orgId}/teams/{teamId}/event-types",
+               params("POST /v2/organizations/{orgId}/teams/{teamId}/event-types",
+                 path: path,
+                 body: team_event_type_body(credentials)
+               )
+             )
+
+           Ledger.track(
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
+             Map.put(path, "eventTypeId", Ledger.created_id(created, :id))
+           )
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+       "adds a booking field to a team event type through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           Ledger.call(
+             credentials,
+             "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+             params(
+               "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields",
+               path: path,
+               body: %{"slug" => "kithe-cert-field"}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links",
+       "creates a private link on a team event type through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links",
+               params(
+                 "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links",
+                 path: path
+               )
+             )
+
+           Ledger.track(
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}",
+             Map.put(path, "linkId", Ledger.created_id(created, :id))
+           )
+         end)
+       end}
+    ]
+  end
+
+  @spec team_event_type_body(Credentials.t()) :: map()
+  defp team_event_type_body(credentials) do
+    %{
+      "title" => "Kithe certification team event",
+      "slug" => slug("kithe-team-cert"),
+      "lengthInMinutes" => 15,
+      "schedulingType" => "collective",
+      "hosts" => [%{"userId" => team_user_id(credentials), "isFixed" => true}]
+    }
+  end
+
+  # A team event type created through the organization route, with its org and
+  # team ids in the path, tracked for deletion.
+  @spec with_org_team_event_type(Credentials.t(), (map() -> any())) :: any()
+  defp with_org_team_event_type(credentials, fun) do
+    with_team_admin(credentials, fn org_id, team_id ->
+      path = team_admin_path(org_id, team_id)
+
+      created =
+        Ledger.call(
+          credentials,
+          "POST /v2/organizations/{orgId}/teams/{teamId}/event-types",
+          params("POST /v2/organizations/{orgId}/teams/{teamId}/event-types",
+            path: path,
+            body: team_event_type_body(credentials)
+          )
+        )
+
+      case Ledger.created_id(created, :id) do
+        nil ->
+          :ok
+
+        event_type_id ->
+          Ledger.track(
+            "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
+            Map.put(path, "eventTypeId", event_type_id)
+          )
+
+          fun.(Map.put(path, "eventTypeId", event_type_id))
+      end
+    end)
   end
 
   # ---------------------------------------------------------------------------

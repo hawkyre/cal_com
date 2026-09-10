@@ -10,7 +10,7 @@
       "allowReschedulingPastBookings": false,
       "recurrence": null,
       "lengthInMinutes": 15,
-      "bookingUrl": "https://hawk-labs.cal.com/me/kithe-cert-TL4WQ11P",
+      "bookingUrl": "https://hawk-labs.cal.com/me/kithe-cert-TL4YP81M",
       "seats": {
         "disabled": true
       },
@@ -38,7 +38,7 @@
       "disableGuests": false,
       "showOptimizedSlots": false,
       "description": "Created by the cal_com certification sweep",
-      "id": 7013555,
+      "id": 7013913,
       "confirmationPolicy": {
         "disabled": true
       },
@@ -128,7 +128,7 @@
       "calVideoSettings": {
         "sendTranscriptionEmails": true
       },
-      "slug": "kithe-cert-TL4WQ11P",
+      "slug": "kithe-cert-TL4YP81M",
       "bookingWindow": {
         "disabled": true
       },

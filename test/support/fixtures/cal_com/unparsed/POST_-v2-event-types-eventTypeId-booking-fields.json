@@ -8,9 +8,9 @@
       },
       "message": "bookingFields[0]: unknown field 'a'. Allowed system fields: name, email, location, title, notes, guests, rescheduleReason, attendeePhoneNumber, smsReminderNumber, aiAgentCallPhoneNumber."
     },
-    "path": "/v2/event-types/7013522/booking-fields",
+    "path": "/v2/event-types/7013891/booking-fields",
     "status": "error",
-    "timestamp": "2026-09-10T05:59:12.807Z"
+    "timestamp": "2026-09-10T06:42:45.789Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

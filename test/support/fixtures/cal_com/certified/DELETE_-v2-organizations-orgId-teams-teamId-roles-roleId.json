@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "color": null,
+      "createdAt": "2026-09-10T06:44:22.941Z",
+      "description": null,
+      "id": "0bd67409-fc94-46a7-8af3-95c65f568ca7",
+      "name": "Kithe cert team role TL4YPX1Z",
+      "permissions": [
+        "booking.read"
+      ],
+      "teamId": 422851,
+      "type": "CUSTOM",
+      "updatedAt": "2026-09-10T06:44:22.941Z"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

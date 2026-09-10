@@ -1,0 +1,32 @@
+{
+  "body": {
+    "data": {
+      "appIconLogo": null,
+      "appLogo": null,
+      "bannerUrl": null,
+      "bio": null,
+      "brandColor": null,
+      "calVideoLogo": null,
+      "darkBrandColor": null,
+      "hideBookATeamMember": false,
+      "hideBranding": false,
+      "id": 422851,
+      "isOrganization": false,
+      "isPrivate": false,
+      "logoUrl": null,
+      "name": "Team1",
+      "parentId": 422850,
+      "slug": "team1",
+      "theme": null,
+      "timeFormat": null,
+      "timeZone": "Europe/London",
+      "weekStart": "Sunday"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/teams/{teamId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

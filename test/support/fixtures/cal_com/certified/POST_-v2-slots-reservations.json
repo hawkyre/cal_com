@@ -1,13 +1,13 @@
 {
   "body": {
     "data": {
-      "eventTypeId": 7013523,
+      "eventTypeId": 7013895,
       "reservationDuration": 5,
-      "reservationUid": "aa020951-dc62-488b-ac46-27507da64ab4",
-      "reservationUntil": "2026-09-10T06:04:23.801Z",
+      "reservationUid": "b89ad8f7-b165-4a50-b54e-ca807f5daf0b",
+      "reservationUntil": "2026-09-10T06:47:56.912Z",
       "slotDuration": 15,
-      "slotEnd": "2026-09-11T16:45:00.000Z",
-      "slotStart": "2026-09-11T16:30:00.000Z"
+      "slotEnd": "2026-09-15T16:45:00.000Z",
+      "slotStart": "2026-09-15T16:30:00.000Z"
     },
     "status": "success"
   },

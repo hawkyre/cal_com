@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Bad Request",
+        "message": "usernames property is wrong,each value in usernames must be a string, The array must contain at least 2 elements., usernames must be an array , organizationSlug property is wrong,organizationSlug must be a string , start property is wrong,start must be a valid ISO 8601 date string , end property is wrong,end must be a valid ISO 8601 date string ",
+        "statusCode": 400
+      },
+      "message": "usernames property is wrong,each value in usernames must be a string, The array must contain at least 2 elements., usernames must be an array , organizationSlug property is wrong,organizationSlug must be a string , start property is wrong,start must be a valid ISO 8601 date string , end property is wrong,end must be a valid ISO 8601 date string "
+    },
+    "path": "/v2/slots?end=a&start=a",
+    "status": "error",
+    "timestamp": "2026-09-10T06:37:37.568Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "GET /v2/slots",
+  "parsed": false,
+  "provider": "cal_com"
+}

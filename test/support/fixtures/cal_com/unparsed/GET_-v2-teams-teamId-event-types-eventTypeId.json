@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Not Found",
+        "message": "Event type with id 6981147 not found",
+        "statusCode": 404
+      },
+      "message": "Event type with id 6981147 not found"
+    },
+    "path": "/v2/teams/422851/event-types/6981147",
+    "status": "error",
+    "timestamp": "2026-09-10T06:37:46.586Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 404,
+  "operation": "GET /v2/teams/{teamId}/event-types/{eventTypeId}",
+  "parsed": false,
+  "provider": "cal_com"
+}
