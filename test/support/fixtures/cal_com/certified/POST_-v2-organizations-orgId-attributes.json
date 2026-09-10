@@ -1,16 +1,16 @@
 {
   "body": {
     "data": {
-      "createdAt": "2026-09-10T07:57:23.946Z",
+      "createdAt": "2026-09-10T08:17:31.709Z",
       "enabled": true,
-      "id": "e8b507b0-8eb9-4199-ade5-62a500b280cb",
+      "id": "2df5ea6b-762a-4c96-9242-af022f3f0df1",
       "isLocked": false,
       "isWeightsEnabled": false,
-      "name": "Kithe certification TL523M3J",
-      "slug": "kithe-cert-TL523M3K",
+      "name": "Kithe certification TL53163J",
+      "slug": "kithe-cert-TL53163K",
       "teamId": 422850,
       "type": "TEXT",
-      "updatedAt": "2026-09-10T07:57:23.946Z",
+      "updatedAt": "2026-09-10T08:17:31.709Z",
       "usersCanEditRelation": false
     },
     "status": "success"

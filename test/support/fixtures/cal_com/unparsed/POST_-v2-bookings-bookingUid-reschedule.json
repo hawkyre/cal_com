@@ -8,9 +8,9 @@
       },
       "message": "Attempting to book a meeting in the past."
     },
-    "path": "/v2/bookings/mL7ipJiy5G1Euz3E76SRr6/reschedule",
+    "path": "/v2/bookings/pEdAfsgJM8spjkvLozdhCV/reschedule",
     "status": "error",
-    "timestamp": "2026-09-10T07:56:15.634Z"
+    "timestamp": "2026-09-10T08:16:43.865Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

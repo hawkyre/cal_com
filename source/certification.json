@@ -81,9 +81,10 @@
       "fields": []
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "POST /v2/bookings/{bookingUid}/decline": {
       "http": 400,
@@ -251,9 +252,10 @@
       "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "GET /v2/verified-resources/emails": {
       "fields": [],
@@ -575,9 +577,8 @@
       "fields": []
     },
     "DELETE /v2/oauth-clients/{clientId}/webhooks": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "OAuth clients are a platform feature this account cannot use",
+      "status": "declined"
     },
     "GET /v2/bookings/{bookingUid}/attendees/{attendeeId}": {
       "fields": [],
@@ -648,9 +649,10 @@
       "status": "verified"
     },
     "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "DELETE /v2/notifications/subscriptions/slack": {
       "reason": "needs a Slack workspace to unlink",
@@ -663,14 +665,14 @@
       "status": "refused"
     },
     "POST /v2/verified-resources/phones/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused",
+      "fields": []
     },
     "POST /v2/bookings/{bookingUid}/reassign": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "needs a second user on the account, and inviting a real person is declined",
+      "status": "declined"
     },
     "GET /v2/organizations/{orgId}/webhooks/{webhookId}": {
       "fields": [],
@@ -776,9 +778,10 @@
       "status": "unreachable"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused",
+      "fields": []
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
       "fields": [],
@@ -869,9 +872,10 @@
       "status": "declined"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused",
+      "fields": []
     },
     "PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "http": 200,
@@ -911,9 +915,10 @@
       "fields": []
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "DELETE /v2/organizations/{orgId}/users/{userId}": {
       "reason": "would remove a member the account already has",
@@ -978,9 +983,10 @@
       "status": "unreachable"
     },
     "POST /v2/teams/{teamId}/verified-resources/phones/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "POST /v2/organizations/{orgId}/bookings/block": {
       "reason": "blocks a booker by email or domain and the API has no unblock route, so it would permanently change who can book this account",
@@ -1022,9 +1028,10 @@
       "status": "refused"
     },
     "POST /v2/verified-resources/phones/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "GET /v2/event-types/{eventTypeId}/crm-sync-errors": {
       "fields": [],
@@ -1175,10 +1182,10 @@
       "fields": []
     },
     "POST /v2/verified-resources/emails/verification-code/verify": {
-      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused"
+      "status": "refused",
+      "fields": []
     },
     "POST /v2/schedules": {
       "http": 201,
@@ -1205,9 +1212,8 @@
       "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "the account holds one membership per team, so the only membership this could remove is the user's own",
+      "status": "declined"
     },
     "GET /v2/credits/available": {
       "fields": [],
@@ -1259,9 +1265,8 @@
       "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/reassign/{userId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "needs a second user on the account, and inviting a real person is declined",
+      "status": "declined"
     },
     "GET /v2/workflows": {
       "fields": [],
@@ -1620,9 +1625,10 @@
       "status": "unreachable"
     },
     "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "POST /v2/insights/routings/failed-bookings-by-field": {
       "http": 403,
@@ -1636,9 +1642,10 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "GET /v2/schedules/{scheduleId}": {
       "fields": [],
@@ -1788,9 +1795,8 @@
       "fields": []
     },
     "POST /v2/bookings/{bookingUid}/cancel": {
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused",
+      "http": 200,
+      "status": "verified",
       "fields": []
     },
     "DELETE /v2/oauth-clients/{clientId}/users/{userId}": {
@@ -1857,9 +1863,9 @@
       "status": "verified"
     },
     "POST /v2/verified-resources/emails/verification-code/request": {
-      "fields": [],
       "http": 200,
-      "status": "verified"
+      "status": "verified",
+      "fields": []
     },
     "POST /v2/bookings/{bookingUid}/attendees": {
       "http": 201,
@@ -1867,14 +1873,14 @@
       "fields": []
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "would delete a team the account already has: team creation is refused with 409, so there is no disposable team, and the three teams here are the user's own",
+      "status": "declined"
     },
     "POST /v2/teams/{teamId}/verified-resources/phones/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused",
+      "fields": []
     },
     "POST /v2/teams": {
       "http": 201,
@@ -1949,9 +1955,10 @@
       "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused",
+      "fields": []
     },
     "GET /v2/allowlists": {
       "fields": [],
@@ -1998,5 +2005,5 @@
       "fields": []
     }
   },
-  "writes_generated_at": "2026-09-10T08:00:32.516747Z"
+  "writes_generated_at": "2026-09-10T08:19:31.291306Z"
 }

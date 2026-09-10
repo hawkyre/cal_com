@@ -2,13 +2,13 @@
   "body": {
     "data": {
       "end": "2026-09-21T23:59:59.999Z",
-      "id": 94967,
+      "id": 94977,
       "notes": "cal_com certification",
       "reason": "unspecified",
       "start": "2026-09-21T00:00:00.000Z",
       "toUserId": null,
       "userId": 3209949,
-      "uuid": "c250553c-668f-4535-a365-17ad00523f4c"
+      "uuid": "76f1017a-4478-42ab-858a-1ec099a1cb49"
     },
     "status": "success"
   },

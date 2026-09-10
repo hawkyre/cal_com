@@ -10,7 +10,7 @@
     },
     "path": "/v2/bookings/verification/email/verify-code",
     "status": "error",
-    "timestamp": "2026-09-10T07:55:46.251Z"
+    "timestamp": "2026-09-10T08:16:22.194Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

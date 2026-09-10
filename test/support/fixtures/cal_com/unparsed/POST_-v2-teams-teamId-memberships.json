@@ -3,14 +3,14 @@
     "error": {
       "details": {
         "error": "Forbidden",
-        "message": "RolesGuard - User is not a member of the team with id=423121.",
+        "message": "RolesGuard - User is not a member of the team with id=423201.",
         "statusCode": 403
       },
-      "message": "RolesGuard - User is not a member of the team with id=423121."
+      "message": "RolesGuard - User is not a member of the team with id=423201."
     },
-    "path": "/v2/teams/423121/memberships",
+    "path": "/v2/teams/423201/memberships",
     "status": "error",
-    "timestamp": "2026-09-10T07:52:38.057Z"
+    "timestamp": "2026-09-10T08:13:10.465Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 403,

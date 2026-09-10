@@ -2,11 +2,11 @@
   "body": {
     "data": [
       {
-        "attributeId": "9e7ef079-f1aa-4cca-a342-826112a1556b",
+        "attributeId": "ba784f0c-14e7-4f0d-98d4-ada5e1f2051c",
         "contains": [],
-        "id": "604fd152-84aa-4561-baff-41bfe08b483a",
+        "id": "eb3c8b6f-0aa7-49f8-86bc-733c9328ce48",
         "isGroup": false,
-        "slug": "cert-option-TL523A39",
+        "slug": "cert-option-TL530U39",
         "targetMembershipId": null,
         "value": "certification"
       }

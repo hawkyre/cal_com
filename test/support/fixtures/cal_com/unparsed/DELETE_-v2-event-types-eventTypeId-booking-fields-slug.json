@@ -8,9 +8,9 @@
       },
       "message": "System booking fields cannot be deleted; set hidden instead."
     },
-    "path": "/v2/event-types/7014745/booking-fields/notes",
+    "path": "/v2/event-types/7014996/booking-fields/notes",
     "status": "error",
-    "timestamp": "2026-09-10T07:53:58.174Z"
+    "timestamp": "2026-09-10T08:14:30.595Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

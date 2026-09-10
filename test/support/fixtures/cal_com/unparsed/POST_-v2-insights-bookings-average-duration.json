@@ -10,7 +10,7 @@
     },
     "path": "/v2/insights/bookings/average-duration",
     "status": "error",
-    "timestamp": "2026-09-10T07:57:29.923Z"
+    "timestamp": "2026-09-10T08:17:37.732Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 403,

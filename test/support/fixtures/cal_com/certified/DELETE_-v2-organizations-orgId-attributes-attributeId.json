@@ -1,16 +1,16 @@
 {
   "body": {
     "data": {
-      "createdAt": "2026-09-10T07:52:41.057Z",
+      "createdAt": "2026-09-10T08:13:13.529Z",
       "enabled": true,
-      "id": "3df351bf-a0ed-4d2f-a16f-a46d9963234d",
+      "id": "f18a91ff-7094-411c-8d0a-7354f31ab86a",
       "isLocked": false,
       "isWeightsEnabled": false,
-      "name": "Kithe certification TL51VSV",
-      "slug": "kithe-cert-TL51VSW",
+      "name": "Kithe certification TL52U0V",
+      "slug": "kithe-cert-TL52U0W",
       "teamId": 422850,
       "type": "TEXT",
-      "updatedAt": "2026-09-10T07:52:41.057Z",
+      "updatedAt": "2026-09-10T08:13:13.529Z",
       "usersCanEditRelation": false
     },
     "status": "success"

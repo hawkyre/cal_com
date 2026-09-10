@@ -3,9 +3,9 @@
     "error": {
       "message": "Booking already confirmed"
     },
-    "path": "/v2/bookings/8gEn1S3Bcz6r9oowY6u7pV/confirm",
+    "path": "/v2/bookings/inNp5ZrenDNWZZcN9adzfA/confirm",
     "status": "error",
-    "timestamp": "2026-09-10T07:57:44.670Z"
+    "timestamp": "2026-09-10T08:17:52.062Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

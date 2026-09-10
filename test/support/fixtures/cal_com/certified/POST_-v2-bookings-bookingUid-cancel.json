@@ -19,15 +19,15 @@
       },
       "cancellationReason": "cal_com certification sweep",
       "cancelledByEmail": "",
-      "createdAt": "2026-09-10T07:49:42.144Z",
+      "createdAt": "2026-09-10T08:16:40.968Z",
       "description": "",
       "duration": 15,
-      "end": "2026-09-15T16:15:00.000Z",
+      "end": "2026-09-15T16:45:00.000Z",
       "eventType": {
-        "id": 7014667,
-        "slug": "kithe-cert-confirm-TL51QP1"
+        "id": 7015014,
+        "slug": "kithe-cert-confirm-TL52ZO2Y"
       },
-      "eventTypeId": 7014667,
+      "eventTypeId": 7015014,
       "hosts": [
         {
           "displayEmail": "me@hawkyre.com",
@@ -38,18 +38,18 @@
           "username": "hawkyre-test"
         }
       ],
-      "icsUid": "iqTSBuNv6Ax2K5LLBwJhcn@Cal.com",
-      "id": 25059329,
-      "location": "https://app.cal.com/video/iqTSBuNv6Ax2K5LLBwJhcn",
-      "meetingUrl": "https://app.cal.com/video/iqTSBuNv6Ax2K5LLBwJhcn",
+      "icsUid": "qr3FBYuoZ8UCpAASMGx4pU@Cal.com",
+      "id": 25060361,
+      "location": "https://app.cal.com/video/qr3FBYuoZ8UCpAASMGx4pU",
+      "meetingUrl": "https://app.cal.com/video/qr3FBYuoZ8UCpAASMGx4pU",
       "metadata": {},
       "rating": null,
       "rescheduledByEmail": null,
-      "start": "2026-09-15T16:00:00.000Z",
+      "start": "2026-09-15T16:30:00.000Z",
       "status": "cancelled",
       "title": "Kithe certification confirmation between hawkyre and Kithe Connector Test",
-      "uid": "iqTSBuNv6Ax2K5LLBwJhcn",
-      "updatedAt": "2026-09-10T07:50:03.874Z"
+      "uid": "qr3FBYuoZ8UCpAASMGx4pU",
+      "updatedAt": "2026-09-10T08:18:24.017Z"
     },
     "status": "success"
   },

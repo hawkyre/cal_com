@@ -24,9 +24,9 @@
       },
       "message": "Bad Request Exception"
     },
-    "path": "/v2/workflows/446722",
+    "path": "/v2/workflows/446789",
     "status": "error",
-    "timestamp": "2026-09-10T07:52:29.095Z"
+    "timestamp": "2026-09-10T08:13:00.564Z"
   },
   "captured_on": "2026-09-10",
   "http_status": 400,

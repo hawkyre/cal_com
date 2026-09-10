@@ -243,6 +243,16 @@ defmodule Mutate do
       {"POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/default",
        "needs a connected conferencing app"},
       {"POST /v2/organizations/{orgId}/users", "would invite a real person to the organization"},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}",
+       "would delete a team the account already has: team creation is refused with 409, so there is no disposable team, and the three teams here are the user's own"},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}",
+       "the account holds one membership per team, so the only membership this could remove is the user's own"},
+      {"POST /v2/bookings/{bookingUid}/reassign",
+       "needs a second user on the account, and inviting a real person is declined"},
+      {"POST /v2/bookings/{bookingUid}/reassign/{userId}",
+       "needs a second user on the account, and inviting a real person is declined"},
+      {"DELETE /v2/oauth-clients/{clientId}/webhooks",
+       "OAuth clients are a platform feature this account cannot use"},
       {"POST /v2/organizations/{orgId}/bookings/block",
        "blocks a booker by email or domain and the API has no unblock route, so it would permanently change who can book this account"},
       {"DELETE /v2/teams/{teamId}/memberships/{membershipId}",
@@ -300,6 +310,7 @@ defmodule Mutate do
       team_edits() ++
       attempts() ++
       booking_lifecycle() ++
+      verified_resource_attempts() ++
       attributes_with_options() ++
       attribute_options() ++
       account_settings() ++
@@ -1809,7 +1820,11 @@ defmodule Mutate do
           {"POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses",
            "creates a routing form response through the user route"},
           {"POST /v2/routing-forms/{routingFormId}/calculate-slots",
-           "computes slots for a routing form"}
+           "computes slots for a routing form"},
+          {"PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}",
+           "edits a routing form response"},
+          {"PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}",
+           "edits a routing form response on a team route"}
         ] do
       {id, proves,
        fn credentials, ids ->
@@ -1834,6 +1849,13 @@ defmodule Mutate do
                true ->
                  %{"routingFormId" => "none"}
              end
+
+           # `responseId` is declared a number and `routingFormId` a string, so
+           # the probe value has to match the declaration to reach the provider.
+           path =
+             if String.contains?(id, "responses/{responseId}"),
+               do: Map.put(path, "responseId", 0),
+               else: path
 
            Ledger.call(credentials, id, params(id, path: path))
          end)
@@ -1877,6 +1899,99 @@ defmodule Mutate do
   @spec event_type_path(Credentials.t(), term()) :: map()
   defp event_type_path(credentials, event_type_id) do
     %{"teamId" => team_fixture(credentials), "eventTypeId" => event_type_id}
+  end
+
+  # The same two calls on the other two routes and the other medium. Each is
+  # called for real: the provider's answer is the evidence, and for the team
+  # routes that answer is usually about the plan rather than the request.
+  @spec verify_email() :: String.t()
+  defp verify_email, do: System.get_env("CALCOM_VERIFY_EMAIL", @attendee["email"])
+
+  # 555-01xx is the range reserved for fiction, so nothing real receives a text.
+  @spec verify_phone() :: String.t()
+  defp verify_phone, do: System.get_env("CALCOM_VERIFY_PHONE", "+14155550123")
+
+  @spec verified_resource_attempts() :: [{String.t(), String.t(), fun()}]
+  defp verified_resource_attempts do
+    user = [
+      {"POST /v2/verified-resources/phones/verification-code/request",
+       "asks Cal.com to text a verification code", %{}},
+      {"POST /v2/verified-resources/phones/verification-code/verify",
+       "checks the phone verification code", %{}}
+    ]
+
+    team = fn medium ->
+      [
+        {"POST /v2/teams/{teamId}/verified-resources/#{medium}/verification-code/request",
+         "asks Cal.com to send a team #{medium} verification code", :team},
+        {"POST /v2/teams/{teamId}/verified-resources/#{medium}/verification-code/verify",
+         "checks the team #{medium} verification code", :team},
+        {"POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/#{medium}/verification-code/request",
+         "asks Cal.com to send a team #{medium} verification code through the organization route",
+         :team_admin},
+        {"POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/#{medium}/verification-code/verify",
+         "checks the team #{medium} verification code through the organization route",
+         :team_admin}
+      ]
+    end
+
+    (user ++ team.("emails") ++ team.("phones"))
+    |> Enum.map(fn {id, proves, scope} ->
+      {id, proves,
+       fn credentials, _ids ->
+         # The sampler's placeholders are rejected by the provider's own
+         # validators (`isEmail` on a `.invalid` address, `isPhoneNumber` on a
+         # made-up number), so these carry shapes the provider will look at: the
+         # operator's address when one is configured, and a number from the range
+         # reserved for fiction otherwise.
+         body =
+           cond do
+             String.ends_with?(id, "/emails/verification-code/request") ->
+               %{"email" => verify_email()}
+
+             String.ends_with?(id, "/phones/verification-code/request") ->
+               %{"phone" => verify_phone()}
+
+             String.ends_with?(id, "/emails/verification-code/verify") ->
+               %{
+                 "email" => verify_email(),
+                 "code" => System.get_env("CALCOM_EMAIL_CODE", "000000")
+               }
+
+             String.ends_with?(id, "/phones/verification-code/verify") ->
+               %{
+                 "phone" => verify_phone(),
+                 "code" => System.get_env("CALCOM_PHONE_CODE", "000000")
+               }
+
+             true ->
+               %{}
+           end
+
+         case scope do
+           %{} ->
+             Ledger.call(credentials, id, params(id, body: body))
+
+           :team ->
+             with_team_user(credentials, fn path, _team_id ->
+               Ledger.call(
+                 credentials,
+                 id,
+                 params(id, path: Map.take(path, ["teamId"]), body: %{})
+               )
+             end)
+
+           :team_admin ->
+             with_team_admin(credentials, fn org_id, team_id ->
+               Ledger.call(
+                 credentials,
+                 id,
+                 params(id, path: team_admin_path(org_id, team_id), body: %{})
+               )
+             end)
+         end
+       end}
+    end)
   end
 
   # ---------------------------------------------------------------------------
