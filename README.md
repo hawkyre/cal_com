@@ -36,7 +36,14 @@ alias CalCom.Operations.MeControllerGetMe
 {:ok, input} = MeControllerGetMe.parse_input(%{})
 {:ok, request} = MeControllerGetMe.request(input, %Credentials{kind: :api_key, token: key})
 
-%{status: status, headers: headers, body: body} = Req.request!(method: request.method, url: request.url, headers: request.headers, body: request.body)
+%{status: status, headers: headers, body: body} =
+  Req.request!(
+    method: request.method,
+    url: request.url,
+    headers: request.headers,
+    body: request.body,
+    decode_body: false
+  )
 
 case MeControllerGetMe.parse_response(%Response{status: status, headers: headers, body: body}) do
   {:ok, result} -> result
@@ -45,6 +52,11 @@ end
 ```
 
 `Req` is an example, not a dependency: the package declares no HTTP client.
+
+`%CalCom.Response{body: body}` takes the **raw bytes**. Most clients decode JSON for you
+by default — with `Req` that is `decode_body: false`, as above — and handing the package a
+decoded map fails its `binary()` contract. Your client's own decoding is your business; the
+package parses the bytes.
 
 ## Walking a paginated collection
 
