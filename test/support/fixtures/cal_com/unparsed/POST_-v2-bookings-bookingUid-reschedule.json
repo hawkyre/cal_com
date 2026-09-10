@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Bad Request",
+        "message": "Attempting to book a meeting in the past.",
+        "statusCode": 400
+      },
+      "message": "Attempting to book a meeting in the past."
+    },
+    "path": "/v2/bookings/mL7ipJiy5G1Euz3E76SRr6/reschedule",
+    "status": "error",
+    "timestamp": "2026-09-10T07:56:15.634Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "POST /v2/bookings/{bookingUid}/reschedule",
+  "parsed": false,
+  "provider": "cal_com"
+}

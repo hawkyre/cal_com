@@ -120,10 +120,13 @@ defmodule Sweep.Ledger do
       verdict = call(credentials, operation_id, params)
 
       # Only a 2xx proves the resource is gone, and a 404 means it already was.
-      # Any other refusal — a 403 on something the account does not own, a
-      # validation error — leaves it there and has to be reported, not counted
-      # as cleaned.
-      if verdict.status == "verified" or verdict[:http] == 404 do
+      # A refused *cancel* is the same story: a booking a scenario already
+      # cancelled answers 400 because there is nothing left to cancel, so the
+      # resource being gone is exactly what that means. Any other refusal — a 403
+      # on something the account does not own, a validation error — leaves it
+      # there and has to be reported.
+      if verdict.status == "verified" or verdict[:http] == 404 or
+           cancelled?(operation_id, verdict) do
         leftovers
       else
         Client.log(
@@ -134,6 +137,12 @@ defmodule Sweep.Ledger do
       end
     end)
   end
+
+  @spec cancelled?(String.t(), map()) :: boolean()
+  defp cancelled?("POST /v2/bookings/{bookingUid}/cancel", %{status: "refused", http: 400}),
+    do: true
+
+  defp cancelled?(_operation_id, _verdict), do: false
 
   @doc """
   The id a create answered with, as the package parsed it.

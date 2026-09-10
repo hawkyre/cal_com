@@ -2,10 +2,10 @@
   "body": {
     "data": {
       "absent": false,
-      "bookingId": 25058715,
+      "bookingId": 25059623,
       "displayEmail": "kithe.certification.attendee@example.invalid",
       "email": "kithe.certification.attendee@example.invalid",
-      "id": 29887484,
+      "id": 29888538,
       "language": "en",
       "name": "Kithe Connector Test",
       "timeZone": "Europe/London"

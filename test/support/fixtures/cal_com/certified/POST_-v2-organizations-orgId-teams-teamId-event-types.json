@@ -11,7 +11,7 @@
       "recurrence": null,
       "parentEventTypeId": null,
       "lengthInMinutes": 15,
-      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL51FEP",
+      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL52192X",
       "seats": {
         "disabled": true
       },
@@ -25,7 +25,7 @@
       "disableGuests": false,
       "showOptimizedSlots": false,
       "description": "",
-      "id": 7014602,
+      "id": 7014782,
       "teamId": 422851,
       "confirmationPolicy": {
         "disabled": true
@@ -139,7 +139,7 @@
       "calVideoSettings": {
         "sendTranscriptionEmails": true
       },
-      "slug": "kithe-team-cert-TL51FEP",
+      "slug": "kithe-team-cert-TL52192X",
       "bookingWindow": {
         "disabled": true
       },

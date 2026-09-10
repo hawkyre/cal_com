@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Bad Request",
+        "message": "Provide at least one interval. To go back to the team default, DELETE this resource instead.",
+        "statusCode": 400
+      },
+      "message": "Provide at least one interval. To go back to the team default, DELETE this resource instead."
+    },
+    "path": "/v2/me/team-booking-limits/422851",
+    "status": "error",
+    "timestamp": "2026-09-10T07:52:22.010Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "PATCH /v2/me/team-booking-limits/{teamId}",
+  "parsed": false,
+  "provider": "cal_com"
+}

@@ -1,0 +1,15 @@
+{
+  "body": {
+    "error": {
+      "message": "Booking already confirmed"
+    },
+    "path": "/v2/bookings/hGbjNxYnQPvvSaZnFN8EH8/decline",
+    "status": "error",
+    "timestamp": "2026-09-10T07:56:08.734Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "POST /v2/bookings/{bookingUid}/decline",
+  "parsed": false,
+  "provider": "cal_com"
+}

@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Not Found",
+        "message": "IsWorkflowInTeam - routing form workflow (446734) not found.",
+        "statusCode": 404
+      },
+      "message": "IsWorkflowInTeam - routing form workflow (446734) not found."
+    },
+    "path": "/v2/organizations/422850/teams/422851/workflows/446734/routing-form",
+    "status": "error",
+    "timestamp": "2026-09-10T07:57:01.010Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 404,
+  "operation": "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+  "parsed": false,
+  "provider": "cal_com"
+}

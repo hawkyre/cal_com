@@ -1,0 +1,26 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "errors": [
+          {
+            "children": [],
+            "constraints": {
+              "arrayMinSize": "Your workflow must contain at least one allowed step. allowed steps are email_attendee,email_address,sms_attendee,sms_number"
+            },
+            "property": "steps"
+          }
+        ]
+      },
+      "message": "Bad Request Exception"
+    },
+    "path": "/v2/organizations/422850/teams/422851/workflows/routing-form",
+    "status": "error",
+    "timestamp": "2026-09-10T07:56:21.500Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 400,
+  "operation": "POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form",
+  "parsed": false,
+  "provider": "cal_com"
+}

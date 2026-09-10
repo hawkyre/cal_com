@@ -1,16 +1,16 @@
 {
   "body": {
     "data": {
-      "createdAt": "2026-09-10T07:31:05.838Z",
+      "createdAt": "2026-09-10T07:57:23.946Z",
       "enabled": true,
-      "id": "ce7c5c46-1316-48a9-b521-9e29d4adc9db",
+      "id": "e8b507b0-8eb9-4199-ade5-62a500b280cb",
       "isLocked": false,
       "isWeightsEnabled": false,
-      "name": "Kithe certification TL50VS35",
-      "slug": "kithe-cert-TL50VS36",
+      "name": "Kithe certification TL523M3J",
+      "slug": "kithe-cert-TL523M3K",
       "teamId": 422850,
       "type": "TEXT",
-      "updatedAt": "2026-09-10T07:31:05.838Z",
+      "updatedAt": "2026-09-10T07:57:23.946Z",
       "usersCanEditRelation": false
     },
     "status": "success"

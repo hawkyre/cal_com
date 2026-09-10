@@ -1,10 +1,10 @@
 {
   "body": {
     "data": {
-      "bookingUrl": "https://hawk-labs.cal.com/d/cbir8q9mYabzpM4F38FYKc/kithe-cert-TL50QX1O",
-      "eventTypeId": 7014425,
+      "bookingUrl": "https://hawk-labs.cal.com/d/dwAssqjmsFjQofS8VDaTPU/kithe-cert-TL51WS1O",
+      "eventTypeId": 7014722,
       "isExpired": false,
-      "linkId": "cbir8q9mYabzpM4F38FYKc",
+      "linkId": "dwAssqjmsFjQofS8VDaTPU",
       "maxUsageCount": 2,
       "usageCount": 0
     },

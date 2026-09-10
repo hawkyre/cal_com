@@ -1,16 +1,16 @@
 {
   "body": {
     "data": {
-      "createdAt": "2026-09-10T07:27:36.989Z",
+      "createdAt": "2026-09-10T07:52:44.050Z",
       "enabled": true,
-      "id": "00878b8f-5102-47a3-a462-00aac91bd2d6",
+      "id": "9fc16020-0ca9-4b8d-8337-302f2b3167d4",
       "isLocked": false,
       "isWeightsEnabled": false,
-      "name": "Kithe certification (edited) TL50Q112",
-      "slug": "kithe-cert-TL50Q011",
+      "name": "Kithe certification (edited) TL51VW12",
+      "slug": "kithe-cert-TL51VV11",
       "teamId": 422850,
       "type": "TEXT",
-      "updatedAt": "2026-09-10T07:27:38.009Z",
+      "updatedAt": "2026-09-10T07:52:45.071Z",
       "usersCanEditRelation": false
     },
     "status": "success"

@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Forbidden",
+        "message": "IsTeamOutsideOrg - This endpoint is only available for teams that are not part of an organization. Use the organization team endpoint instead.",
+        "statusCode": 403
+      },
+      "message": "IsTeamOutsideOrg - This endpoint is only available for teams that are not part of an organization. Use the organization team endpoint instead."
+    },
+    "path": "/v2/teams/422851/routing-forms/none/responses?end=a&start=a",
+    "status": "error",
+    "timestamp": "2026-09-10T07:55:52.256Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 403,
+  "operation": "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses",
+  "parsed": false,
+  "provider": "cal_com"
+}

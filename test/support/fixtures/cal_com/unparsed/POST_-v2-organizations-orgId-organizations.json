@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Forbidden",
+        "message": "Manager organization must be a platform organization. Normal organizations can't create managed organizations yet.",
+        "statusCode": 403
+      },
+      "message": "Manager organization must be a platform organization. Normal organizations can't create managed organizations yet."
+    },
+    "path": "/v2/organizations/422850/organizations",
+    "status": "error",
+    "timestamp": "2026-09-10T07:55:41.258Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 403,
+  "operation": "POST /v2/organizations/{orgId}/organizations",
+  "parsed": false,
+  "provider": "cal_com"
+}

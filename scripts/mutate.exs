@@ -243,6 +243,8 @@ defmodule Mutate do
       {"POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/default",
        "needs a connected conferencing app"},
       {"POST /v2/organizations/{orgId}/users", "would invite a real person to the organization"},
+      {"POST /v2/organizations/{orgId}/bookings/block",
+       "blocks a booker by email or domain and the API has no unblock route, so it would permanently change who can book this account"},
       {"DELETE /v2/teams/{teamId}/memberships/{membershipId}",
        "the account holds one membership per team and the provider refuses a second with 409, so the only membership this could delete is the user's own"},
       {"POST /v2/teams/{teamId}/memberships", "the user route answers 403 for this account"},
@@ -297,6 +299,7 @@ defmodule Mutate do
       org_role_permissions() ++
       team_edits() ++
       attempts() ++
+      booking_lifecycle() ++
       attributes_with_options() ++
       attribute_options() ++
       account_settings() ++
@@ -1874,6 +1877,224 @@ defmodule Mutate do
   @spec event_type_path(Credentials.t(), term()) :: map()
   defp event_type_path(credentials, event_type_id) do
     %{"teamId" => team_fixture(credentials), "eventTypeId" => event_type_id}
+  end
+
+  # ---------------------------------------------------------------------------
+  # Booking lifecycle that needs its own event type
+  # ---------------------------------------------------------------------------
+  #
+  # `decline` only applies to a booking that is waiting for its host, so this
+  # family builds an event type that requires confirmation, books it, and then
+  # walks the answer the provider gives.
+
+  @spec slot_for(Credentials.t(), term()) :: String.t() | nil
+  defp slot_for(credentials, event_type_id) do
+    start_at = DateTime.utc_now() |> DateTime.add(1, :day) |> DateTime.truncate(:second)
+    end_at = DateTime.add(start_at, 9, :day)
+
+    case Ledger.call(
+           credentials,
+           "GET /v2/slots",
+           params("GET /v2/slots",
+             query: %{
+               "eventTypeId" => event_type_id,
+               "start" => DateTime.to_iso8601(start_at),
+               "end" => DateTime.to_iso8601(end_at),
+               "timeZone" => "America/Los_Angeles"
+             }
+           )
+         )[:capture] do
+      {%{} = typed, _package} ->
+        typed.value.data
+        |> CalCom.Codec.wire()
+        |> Enum.flat_map(fn {_date, rows} -> Enum.map(rows, &Map.get(&1, "start")) end)
+        |> List.first()
+
+      _none ->
+        nil
+    end
+  end
+
+  @spec confirmation_event_type(Credentials.t()) :: term()
+  defp confirmation_event_type(credentials) do
+    case Process.get(:certify_confirmation_event_type) do
+      nil ->
+        created =
+          Ledger.call(
+            credentials,
+            "POST /v2/event-types",
+            params("POST /v2/event-types",
+              body: %{
+                "title" => "Kithe certification confirmation",
+                "slug" => slug("kithe-cert-confirm"),
+                "lengthInMinutes" => 15,
+                "requiresConfirmation" => true
+              }
+            )
+          )
+
+        id =
+          case Ledger.created_id(created, :id) do
+            nil ->
+              nil
+
+            event_type_id ->
+              Ledger.call(
+                credentials,
+                "PATCH /v2/event-types/{eventTypeId}",
+                params("PATCH /v2/event-types/{eventTypeId}",
+                  path: %{"eventTypeId" => event_type_id},
+                  body: %{"requiresConfirmation" => true}
+                )
+              )
+
+              event_type_id
+          end
+
+        Ledger.track("DELETE /v2/event-types/{eventTypeId}", "eventTypeId", id)
+        Process.put(:certify_confirmation_event_type, id)
+        id
+
+      id ->
+        id
+    end
+  end
+
+  @spec book_on(Credentials.t(), term()) :: map()
+  defp book_on(credentials, event_type_id) do
+    case slot_for(credentials, event_type_id) do
+      nil ->
+        Ledger.call(credentials, "POST /v2/bookings", %{"body" => %{}})
+
+      start ->
+        Ledger.call(
+          credentials,
+          "POST /v2/bookings",
+          params("POST /v2/bookings",
+            body: %{"start" => start, "eventTypeId" => event_type_id, "attendee" => @attendee}
+          )
+        )
+    end
+  end
+
+  @spec booking_lifecycle() :: [{String.t(), String.t(), fun()}]
+  defp booking_lifecycle do
+    [
+      {"POST /v2/bookings/{bookingUid}/decline",
+       "declines a booking that is waiting for its host",
+       fn credentials, _ids ->
+         with_confirmation_booking(credentials, fn uid ->
+           Ledger.call(
+             credentials,
+             "POST /v2/bookings/{bookingUid}/decline",
+             params("POST /v2/bookings/{bookingUid}/decline",
+               path: %{"bookingUid" => uid},
+               body: %{"reason" => "cal_com certification sweep"}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/bookings/{bookingUid}/reschedule",
+       "asks the provider to reschedule a booking this run created",
+       fn credentials, _ids ->
+         with_booking(credentials, %{}, fn uid ->
+           Ledger.call(
+             credentials,
+             "POST /v2/bookings/{bookingUid}/reschedule",
+             params("POST /v2/bookings/{bookingUid}/reschedule", path: %{"bookingUid" => uid})
+           )
+         end)
+       end},
+      # Declined on purpose: the only block route blocks a booker by email or
+      # domain, and the API exposes no unblock route, so running it would change
+      # who can book this account with no way back.
+      {"POST /v2/organizations/{orgId}/bookings/block",
+       "declined: blocks a booker by email or domain, and there is no unblock route in the API",
+       fn _credentials, _ids -> :ok end}
+    ] ++ workflow_routing_form_attempts()
+  end
+
+  # A booking on the confirmation-required event type, cancelled when the
+  # scenario is done with it.
+  @spec with_confirmation_booking(Credentials.t(), (term() -> any())) :: any()
+  defp with_confirmation_booking(credentials, fun) do
+    case confirmation_event_type(credentials) do
+      nil ->
+        :ok
+
+      event_type_id ->
+        case Ledger.created_id(book_on(credentials, event_type_id), :uid) do
+          nil ->
+            :ok
+
+          uid ->
+            Ledger.track("POST /v2/bookings/{bookingUid}/cancel", cancel_params(uid))
+            fun.(uid)
+        end
+    end
+  end
+
+  @spec workflow_routing_form_attempts() :: [{String.t(), String.t(), fun()}]
+  defp workflow_routing_form_attempts do
+    [
+      {"POST /v2/teams/{teamId}/workflows/routing-form",
+       "links a routing form to a team workflow",
+       fn credentials, _ids ->
+         with_team_workflow(credentials, fn path, workflow_id ->
+           Ledger.call(
+             credentials,
+             "POST /v2/teams/{teamId}/workflows/routing-form",
+             params("POST /v2/teams/{teamId}/workflows/routing-form",
+               path: %{"teamId" => team_fixture(credentials)},
+               body: %{"workflowId" => workflow_id, "routingFormId" => "none"}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form",
+       "links a routing form to a team workflow through the organization route",
+       fn credentials, _ids ->
+         with_team_workflow(credentials, fn path, workflow_id ->
+           Ledger.call(
+             credentials,
+             "POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form",
+             params("POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form",
+               path: path,
+               body: %{"workflowId" => workflow_id, "routingFormId" => "none"}
+             )
+           )
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+       "edits the routing form linked to a team workflow",
+       fn credentials, _ids ->
+         with_team_workflow(credentials, fn path, workflow_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+             params(
+               "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+               path: Map.put(path, "workflowId", workflow_id),
+               body: %{"routingFormId" => "none"}
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+       "unlinks the routing form from a team workflow",
+       fn credentials, _ids ->
+         with_team_workflow(credentials, fn path, workflow_id ->
+           Ledger.call(
+             credentials,
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+             params(
+               "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form",
+               path: Map.put(path, "workflowId", workflow_id)
+             )
+           )
+         end)
+       end}
+    ]
   end
 
   # ---------------------------------------------------------------------------

@@ -10,7 +10,7 @@
       "allowReschedulingPastBookings": false,
       "recurrence": null,
       "lengthInMinutes": 15,
-      "bookingUrl": "https://hawk-labs.cal.com/me/cert-edited-TL50OP5",
+      "bookingUrl": "https://hawk-labs.cal.com/me/kithe-cert-confirm-TL521B2Y",
       "seats": {
         "disabled": true
       },
@@ -37,8 +37,8 @@
       "offsetStart": 0,
       "disableGuests": false,
       "showOptimizedSlots": false,
-      "description": "Created by the cal_com certification sweep",
-      "id": 7014405,
+      "description": "",
+      "id": 7014783,
       "confirmationPolicy": {
         "disabled": true
       },
@@ -128,13 +128,13 @@
       "calVideoSettings": {
         "sendTranscriptionEmails": true
       },
-      "slug": "cert-edited-TL50OP5",
+      "slug": "kithe-cert-confirm-TL521B2Y",
       "bookingWindow": {
         "disabled": true
       },
       "interfaceLanguage": null,
       "metadata": {},
-      "title": "Kithe certification (edited)"
+      "title": "Kithe certification confirmation"
     },
     "status": "success"
   },

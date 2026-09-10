@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Forbidden",
+        "message": "RolesGuard - User is not a member of the team with id=423119.",
+        "statusCode": 403
+      },
+      "message": "RolesGuard - User is not a member of the team with id=423119."
+    },
+    "path": "/v2/teams/423119",
+    "status": "error",
+    "timestamp": "2026-09-10T07:52:34.113Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 403,
+  "operation": "PATCH /v2/teams/{teamId}",
+  "parsed": false,
+  "provider": "cal_com"
+}

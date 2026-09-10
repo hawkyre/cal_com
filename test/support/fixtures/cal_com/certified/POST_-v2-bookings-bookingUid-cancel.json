@@ -1,0 +1,61 @@
+{
+  "body": {
+    "data": {
+      "absentHost": false,
+      "attendees": [
+        {
+          "absent": false,
+          "displayEmail": "hawkyre@gmail.com",
+          "email": "hawkyre@gmail.com",
+          "language": "en",
+          "name": "Kithe Connector Test",
+          "timeZone": "Europe/London"
+        }
+      ],
+      "bookingFieldsResponses": {
+        "displayEmail": "hawkyre@gmail.com",
+        "email": "hawkyre@gmail.com",
+        "name": "Kithe Connector Test"
+      },
+      "cancellationReason": "cal_com certification sweep",
+      "cancelledByEmail": "",
+      "createdAt": "2026-09-10T07:49:42.144Z",
+      "description": "",
+      "duration": 15,
+      "end": "2026-09-15T16:15:00.000Z",
+      "eventType": {
+        "id": 7014667,
+        "slug": "kithe-cert-confirm-TL51QP1"
+      },
+      "eventTypeId": 7014667,
+      "hosts": [
+        {
+          "displayEmail": "me@hawkyre.com",
+          "email": "me@hawkyre.com",
+          "id": 3209949,
+          "name": "hawkyre",
+          "timeZone": "America/Los_Angeles",
+          "username": "hawkyre-test"
+        }
+      ],
+      "icsUid": "iqTSBuNv6Ax2K5LLBwJhcn@Cal.com",
+      "id": 25059329,
+      "location": "https://app.cal.com/video/iqTSBuNv6Ax2K5LLBwJhcn",
+      "meetingUrl": "https://app.cal.com/video/iqTSBuNv6Ax2K5LLBwJhcn",
+      "metadata": {},
+      "rating": null,
+      "rescheduledByEmail": null,
+      "start": "2026-09-15T16:00:00.000Z",
+      "status": "cancelled",
+      "title": "Kithe certification confirmation between hawkyre and Kithe Connector Test",
+      "uid": "iqTSBuNv6Ax2K5LLBwJhcn",
+      "updatedAt": "2026-09-10T07:50:03.874Z"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "POST /v2/bookings/{bookingUid}/cancel",
+  "parsed": true,
+  "provider": "cal_com"
+}
