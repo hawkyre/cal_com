@@ -1,96 +1,41 @@
 alias CalCom.Entities
 
-defmodule Entities.TeamVerifiedEmailOutputData do
+defmodule Entities.UpdatePrivateLinkBody do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamVerifiedEmailsOutput do
+defmodule Entities.UpdateRoutingFormResponseInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamVerifiedPhoneOutput do
+defmodule Entities.UpdateRoutingFormResponseOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamVerifiedPhoneOutputData do
+defmodule Entities.UpdateScheduleInput20240611 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamVerifiedPhonesOutput do
+defmodule Entities.UpdateTeamBookingLimitOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamWebhookOutputDto do
+defmodule Entities.UpdateTeamEventTypeInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamWebhookOutputResponseDto do
+defmodule Entities.UpdateUnifiedCalendarEventInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end
 
-defmodule Entities.TeamWebhooksOutputResponseDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.TextWorkflowMessageDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.TimeBasedPrivateLinkOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UnifiedCalendarEventOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UnknownBookingFieldOutput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateBookingInputLinkLocation20240813 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateBookingLimitsInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateBookingLocationInput20240813 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateCalendarEventAttendee do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateDelegationCredentialInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateEmailAddressWorkflowStepDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
-end
-
-defmodule Entities.UpdateEmailAttendeeWorkflowStepDto do
+defmodule Entities.UpdateWebhookInputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_24.json", __MODULE__}
 end

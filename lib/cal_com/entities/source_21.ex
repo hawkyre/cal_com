@@ -1,146 +1,111 @@
 alias CalCom.Entities
 
-defmodule Entities.RoutingInsightsBaseInput do
+defmodule Entities.TeamMembershipChangeOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingInsightsPaginatedInput do
+defmodule Entities.TeamMembershipOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceDataOutput20240813 do
+defmodule Entities.TeamRoleOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceFormOutput20240813 do
+defmodule Entities.TeamVerifiedEmailOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceFormResponseOutput20240813 do
+defmodule Entities.TeamVerifiedEmailOutputData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceFormSubmissionOutput20240813 do
+defmodule Entities.TeamVerifiedEmailsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceGroupOutput20240813 do
+defmodule Entities.TeamVerifiedPhoneOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceStepOutput20240813 do
+defmodule Entities.TeamVerifiedPhoneOutputData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.RuleEvaluationOutput do
+defmodule Entities.TeamVerifiedPhonesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.ScheduleAvailabilityInput20240611 do
+defmodule Entities.TeamWebhookOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.ScheduleOutput20240611 do
+defmodule Entities.TeamWebhookOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.ScheduleOverrideInput20240611 do
+defmodule Entities.TeamWebhooksOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SchedulingConfigData do
+defmodule Entities.TextWorkflowMessageDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SchedulingHost do
+defmodule Entities.TimeBasedPrivateLinkOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SchedulingHostGroup do
+defmodule Entities.UnifiedCalendarEventOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SeatedAttendee do
+defmodule Entities.UnknownBookingFieldOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.Seats20240614 do
+defmodule Entities.UpdateBookingInputLinkLocation20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SecretDto do
+defmodule Entities.UpdateBookingLimitsInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SelectedCalendarOutputResponseDto do
+defmodule Entities.UpdateBookingLocationInput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SelectedCalendarsInputDto do
+defmodule Entities.UpdateCalendarEventAttendee do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SendVerificationEmailData do
+defmodule Entities.UpdateDelegationCredentialInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end
 
-defmodule Entities.SendVerificationEmailInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.SendVerificationEmailOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.SetDefaultConferencingAppInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.SingleSelectAttribute do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.StripConnectOutputDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.StripConnectOutputResponseDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.StripCredentialsSaveOutputResponseDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.SystemAiAgentPhoneFieldInput20260612 do
+defmodule Entities.UpdateEmailAddressWorkflowStepDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end

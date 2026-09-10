@@ -1,35 +1,5 @@
 alias CalCom.Entities
 
-defmodule Entities.CreateOrgRolePermissionsInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.CreateOrgTeamDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.CreateOrganizationAttributeInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.CreateOrganizationAttributeOptionInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.CreateOrganizationAttributesOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.CreateOrganizationInput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
 defmodule Entities.CreateOrganizationUserInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
@@ -61,6 +31,36 @@ defmodule Entities.CreatePrivateLinkOutput do
 end
 
 defmodule Entities.CreateRecurringBookingInput20240813 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
+end
+
+defmodule Entities.CreateRecurringSeatedBookingOutput20240813 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
+end
+
+defmodule Entities.CreateRoutingFormResponseOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
+end
+
+defmodule Entities.CreateRoutingFormResponseOutputData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
+end
+
+defmodule Entities.CreateScheduleInput20240611 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
+end
+
+defmodule Entities.CreateScheduleOutput20240611 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
+end
+
+defmodule Entities.CreateSeatedBookingOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end

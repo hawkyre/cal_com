@@ -1,0 +1,16 @@
+{
+  "body": {
+    "data": {
+      "auditLogs": [],
+      "hasMore": false,
+      "membershipId": 2508055,
+      "userId": 3209949
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/attributes/assignments/{userId}/history",
+  "parsed": true,
+  "provider": "cal_com"
+}

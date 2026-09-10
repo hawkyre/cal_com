@@ -120,6 +120,36 @@ registration order does, so widening the inventory adds modules instead of
 renaming them. A brand-new shape takes the name the inventory gives it and is
 pinned on the next write.
 
+## Live certification
+
+`source/certification.json` records one verdict per operation, taken from a real
+call against a real account:
+
+```console
+CAL_COM_API_KEY=... mix run scripts/certify.exs   # reads
+MUTATE_APPLY=1 CAL_COM_API_KEY=... mix run scripts/mutate.exs   # mutations
+python3 scripts/coverage.py                        # the table below
+```
+
+| verdict       | meaning                                                                    |
+| ------------- | -------------------------------------------------------------------------- |
+| `verified`    | the provider answered 2xx and the body parsed into its generated type       |
+| `refused`     | the provider answered a documented failure, and the client classified it    |
+| `unreachable` | the account owns no id for a path parameter, so the success path is out of reach; the call is still made once with an id that cannot exist, and its classified answer is recorded under `probe` |
+| `declined`    | the operation cannot be exercised on the test account at all — each entry carries the reason (a third-party OAuth grant, a platform account, real money, a device token) |
+| `throttled`   | the provider rate-limited the call; the sweep retries it in a later round    |
+| `write`       | a mutation the write pass has not reached yet                                |
+
+Every capture a parsed call produced is kept, redacted, under
+`test/support/fixtures/cal_com/certified/`; a 2xx the contract refused is kept
+under `unparsed/` instead, so a shape bug leaves its evidence behind. Live
+corrections the spec gets wrong are recorded in `source/live_overrides.json`,
+each with the observation that justifies it — for example
+`PaginationMetaDto.currentPage` starting at 0, `TeamOutputDto` fields the
+provider sends as an explicit null, and `GET /v2/bookings`, whose documented
+`2026-05-01` version times out at the provider (Cloudflare 524 after 125s) while
+`2024-08-13` answers the same shape in under a second.
+
 ## Compile cost
 
 The package compiles 139 files that define 349 operations and 1242 entity

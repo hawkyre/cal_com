@@ -1,56 +1,21 @@
 alias CalCom.Entities
 
-defmodule Entities.SystemAiAgentPhoneFieldOutput20260612 do
+defmodule Entities.UpdateEmailAttendeeWorkflowStepDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
 end
 
-defmodule Entities.SystemEmailFieldInput20260612 do
+defmodule Entities.UpdateEmailHostWorkflowStepDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
 end
 
-defmodule Entities.SystemEmailFieldOutput20260612 do
+defmodule Entities.UpdateEventTypeInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
 end
 
-defmodule Entities.SystemFullNameFieldInput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.SystemFullNameFieldOutput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.SystemLocationFieldInput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.SystemLocationFieldOutput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.SystemSplitNameFieldInput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.SystemSplitNameFieldOutput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.TeamBookingLimitOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
-end
-
-defmodule Entities.TeamBookingLimitsData do
+defmodule Entities.UpdateEventTypeWorkflowDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_22.json", __MODULE__}
 end

@@ -1,166 +1,146 @@
 alias CalCom.Entities
 
-defmodule Entities.WebhookInstantMeetingAccepted do
+defmodule Entities.InputOrganizationsEventTypesController20260612DeleteCustomBookingFieldPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookOooCreated do
+defmodule Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmailByIdPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookFormSubmitted do
+defmodule Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedPhoneByIdPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookFormSubmittedNoEvent do
+defmodule Entities.InputUserOOOControllerUpdateMyOOOPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookAfterHostsCalVideoNoShow do
+defmodule Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponsePath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookAfterGuestsCalVideoNoShow do
+defmodule Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponseQuery do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialError do
+defmodule Entities.InputSchedulesController20240611GetSchedulePath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialSecretRotated do
+defmodule Entities.InputSchedulesController20240611UpdateSchedulePath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialSecretRotationFailed do
+defmodule Entities.InputSelectedCalendarsControllerDeleteSelectedCalendarQuery do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialRotationRequired do
+defmodule Entities.InputSlotsController20240904GetAvailableSlotsQuery do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookWrongAssignmentReport do
+defmodule Entities.OutputSlotsController20240904GetAvailableSlots200Data do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookRecordingReady do
+defmodule Entities.InputSlotsController20240904ReserveSlotHeaders do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookRecordingTranscriptionGenerated do
+defmodule Entities.InputSlotsController20240904GetReservedSlotPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookRoutingFormFallbackHit do
+defmodule Entities.InputTeamsEventTypesController20260612GetTeamEventTypePath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.WebhookCalendarEntryRejected do
+defmodule Entities.InputTeamsEventTypesController20260612DeleteCustomBookingFieldPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.AllowlistServicesDataServices do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerCreateTeamEventTypeWebhookPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.BookingOutput20240813BookingFieldsResponses do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerUpdateTeamEventTypeWebhookPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.BookingInsightsInputColumnFiltersItem do
+defmodule Entities.InputTeamsMembershipsControllerGetTeamMembershipsQuery do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.BookingOutput20240813Metadata do
+defmodule Entities.InputTeamsMembershipsControllerGetTeamMembershipPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.ConnectedCalendarsDataDestinationCalendarOption1 do
+defmodule Entities.InputTeamsRoutingFormsResponsesControllerCreateRoutingFormResponsePath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.DeletePrivateLinkOutputData do
+defmodule Entities.InputTeamsOOOControllerGetTeamMemberOOOPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.EventTypeHistoryAuditLog20240614DisplayJson do
+defmodule Entities.InputTeamsOOOControllerUpdateTeamMemberOOOPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.GetReservedSlotOutput20240904Data do
+defmodule Entities.InputTeamsOOOControllerDeleteTeamMemberOOOPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.InsightsRoutingRoutedToUserOutputEmail do
+defmodule Entities.InputTeamsVerifiedResourcesControllerGetVerifiedEmailByIdPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption0 do
+defmodule Entities.InputTeamsVerifiedResourcesControllerGetVerifiedPhoneByIdPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption1 do
+defmodule Entities.InputUserVerifiedResourcesControllerGetVerifiedEmailByIdPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption2 do
+defmodule Entities.InputWebhooksControllerUpdateWebhookPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption3 do
+defmodule Entities.InputUserWorkflowsControllerGetWorkflowByIdPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption4 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
-end
-
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption9 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
-end
-
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption10 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
-end
-
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption14 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
-end
-
-defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption15 do
+defmodule Entities.WebhookBookingCreatedPayload do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end

@@ -319,7 +319,7 @@
       [
         "description",
         "description",
-        "%CalCom.Rule{kind: :string, nullable: false}",
+        "%CalCom.Rule{kind: :string, nullable: true}",
         "String.t()",
         true
       ],
@@ -403,14 +403,14 @@
       [
         "event_type_id",
         "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
+        "%CalCom.Rule{kind: :number, nullable: true}",
         "number()",
         true
       ],
       [
         "event_type",
         "eventType",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.EventType}, nullable: false}",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.EventType}, nullable: true}",
         "CalCom.Entities.EventType.t()",
         true
       ],

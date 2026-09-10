@@ -1,216 +1,221 @@
 alias CalCom.Entities
 
-defmodule Entities.ResultCalendarsControllerCreateIcsFeed201 do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerCreateTeamEventTypeWebhook do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.OutputCalendarsControllerCheckIcsFeed200 do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerGetTeamEventTypeWebhooks do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultCalendarsControllerCheckIcsFeed200 do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerDeleteAllTeamEventTypeWebhooks do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCalendarsControllerGetBusyTimes do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerUpdateTeamEventTypeWebhook do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultCalendarsControllerGetBusyTimes200 do
+defmodule Entities.InputTeamsEventTypesWebhooksControllerGetTeamEventTypeWebhook do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultCalendarsControllerGetCalendars200 do
+defmodule Entities.InputTeamsMembershipsControllerCreateTeamMembership do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCalendarsControllerRedirect do
+defmodule Entities.ResultTeamsMembershipsControllerCreateTeamMembership201 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCalendarsControllerSave do
+defmodule Entities.InputTeamsMembershipsControllerGetTeamMemberships do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCalendarsControllerSyncCredentials do
+defmodule Entities.ResultTeamsMembershipsControllerGetTeamMemberships200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCalendarsControllerCheck do
+defmodule Entities.InputTeamsMembershipsControllerGetTeamMembership do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCalendarsControllerDeleteCalendarCredentials do
+defmodule Entities.ResultTeamsMembershipsControllerGetTeamMembership200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultCalendarsControllerDeleteCalendarCredentials200 do
+defmodule Entities.InputTeamsMembershipsControllerUpdateTeamMembership do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputConferencingControllerConnect do
+defmodule Entities.ResultTeamsMembershipsControllerUpdateTeamMembership200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputConferencingControllerRedirect do
+defmodule Entities.ResultTeamsMembershipsControllerDeleteTeamMembership200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputConferencingControllerSave do
+defmodule Entities.InputTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputConferencingControllerDefault do
+defmodule Entities.InputTeamsSchedulesControllerGetTeamSchedules do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputConferencingControllerDisconnect do
+defmodule Entities.InputTeamsOOOControllerGetTeamMemberOOO do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.OutputCreditsControllerGetAvailableCredits200 do
+defmodule Entities.InputTeamsOOOControllerCreateTeamMemberOOO do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultCreditsControllerGetAvailableCredits200 do
+defmodule Entities.InputTeamsOOOControllerUpdateTeamMemberOOO do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputCreditsControllerChargeCredits do
+defmodule Entities.InputTeamsOOOControllerDeleteTeamMemberOOO do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientUsersControllerGetManagedUsers do
+defmodule Entities.InputTeamsVerifiedResourcesControllerRequestEmailVerificationCode do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientUsersControllerGetManagedUsers200 do
+defmodule Entities.InputTeamsVerifiedResourcesControllerRequestPhoneVerificationCode do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientUsersControllerCreateUser do
+defmodule Entities.InputTeamsVerifiedResourcesControllerVerifyEmail do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientUsersControllerCreateUser201 do
+defmodule Entities.InputTeamsVerifiedResourcesControllerVerifyPhoneNumber do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientUsersControllerGetUserById do
+defmodule Entities.InputTeamsVerifiedResourcesControllerGetVerifiedEmailById do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientUsersControllerGetUserById200 do
+defmodule Entities.InputTeamsVerifiedResourcesControllerGetVerifiedPhoneById do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientUsersControllerUpdateUser do
+defmodule Entities.InputUserVerifiedResourcesControllerRequestEmailVerificationCode do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientUsersControllerForceRefresh do
+defmodule Entities.InputUserVerifiedResourcesControllerRequestPhoneVerificationCode do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientUsersControllerForceRefresh200 do
+defmodule Entities.InputUserVerifiedResourcesControllerVerifyEmail do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthFlowControllerRefreshTokens do
+defmodule Entities.ResultUserVerifiedResourcesControllerVerifyEmail200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientWebhooksControllerCreateOAuthClientWebhook do
+defmodule Entities.InputUserVerifiedResourcesControllerVerifyPhoneNumber do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientWebhooksControllerCreateOAuthClientWebhook201 do
+defmodule Entities.ResultUserVerifiedResourcesControllerVerifyPhoneNumber200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientWebhooksControllerGetOAuthClientWebhooks do
+defmodule Entities.InputWebhooksControllerGetWebhooks do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientWebhooksControllerGetOAuthClientWebhooks200 do
+defmodule Entities.ResultUserVerifiedResourcesControllerGetVerifiedEmails200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientWebhooksControllerDeleteAllOAuthClientWebhooks do
+defmodule Entities.ResultUserVerifiedResourcesControllerGetVerifiedPhoneNumbers200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultEventTypeWebhooksControllerDeleteAllEventTypeWebhooks200 do
+defmodule Entities.InputUserVerifiedResourcesControllerGetVerifiedEmailById do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientWebhooksControllerUpdateOAuthClientWebhook do
+defmodule Entities.InputWebhooksControllerCreateWebhook do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientWebhooksControllerGetOAuthClientWebhook do
+defmodule Entities.ResultWebhooksControllerCreateWebhook201 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuthClientsControllerCreateOAuthClient do
+defmodule Entities.ResultWebhooksControllerGetWebhooks200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientsControllerCreateOAuthClient201 do
+defmodule Entities.InputWebhooksControllerUpdateWebhook do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientsControllerGetOAuthClients200 do
+defmodule Entities.InputWebhooksControllerGetWebhook do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.InputOAuth2ControllerGetClient do
+defmodule Entities.InputUserWorkflowsControllerCreateWorkflow do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end
 
-defmodule Entities.ResultOAuthClientsControllerGetOAuthClientById200 do
+defmodule Entities.InputUserWorkflowsControllerGetWorkflowById do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
+end
+
+defmodule Entities.InputUserWorkflowsControllerUpdateWorkflow do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_37.json", __MODULE__}
 end

@@ -1,0 +1,21 @@
+{
+  "body": {
+    "data": [],
+    "pagination": {
+      "currentPage": 0,
+      "hasNextPage": false,
+      "hasPreviousPage": false,
+      "itemsPerPage": 250,
+      "remainingItems": 0,
+      "returnedItems": 0,
+      "totalItems": 0,
+      "totalPages": 0
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/organizations",
+  "parsed": true,
+  "provider": "cal_com"
+}

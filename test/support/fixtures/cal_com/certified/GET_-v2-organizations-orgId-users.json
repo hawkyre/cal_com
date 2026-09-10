@@ -1,0 +1,44 @@
+{
+  "body": {
+    "data": [
+      {
+        "allowDynamicBooking": true,
+        "appTheme": null,
+        "avatarUrl": null,
+        "bio": "",
+        "brandColor": null,
+        "createdDate": "2026-09-08T02:31:02.216Z",
+        "darkBrandColor": null,
+        "defaultScheduleId": 2335882,
+        "email": "me@hawkyre.com",
+        "emailVerified": "2026-09-08T02:31:22.196Z",
+        "hideBranding": false,
+        "id": 3209949,
+        "invitedTo": null,
+        "locale": null,
+        "metadata": {
+          "stripeCustomerId": "cus_VDgA0SJoJOqQ6y"
+        },
+        "name": "hawkyre",
+        "profile": {
+          "id": 706358,
+          "organizationId": 422850,
+          "userId": 3209949,
+          "username": "me"
+        },
+        "theme": null,
+        "timeFormat": 12,
+        "timeZone": "America/Los_Angeles",
+        "username": "hawkyre-test",
+        "verified": false,
+        "weekStart": "Sunday"
+      }
+    ],
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/users",
+  "parsed": true,
+  "provider": "cal_com"
+}

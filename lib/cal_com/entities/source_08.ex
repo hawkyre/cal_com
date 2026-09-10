@@ -1,36 +1,96 @@
 alias CalCom.Entities
 
-defmodule Entities.CreateTeamEventTypeInput20260612 do
+defmodule Entities.CreateWebhookInputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end
 
-defmodule Entities.CreateTeamEventTypeOutput20260612 do
+defmodule Entities.CrmSyncErrorOutput20240614 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end
 
-defmodule Entities.CreateTeamInput do
+defmodule Entities.CursorPaginationMeta20260501 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end
 
-defmodule Entities.CreateTeamMembershipInput do
+defmodule Entities.CustomAddressFieldInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end
 
-defmodule Entities.GetTeamMembershipOutput do
+defmodule Entities.CustomAddressFieldOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end
 
-defmodule Entities.CreateTeamOutput do
+defmodule Entities.CustomCheckboxFieldOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end
 
-defmodule Entities.CreateTeamOutputData do
+defmodule Entities.CustomCheckboxGroupFieldInput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomCheckboxGroupFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomEmailFieldInput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomEmailFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomLongTextFieldInput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomLongTextFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomMultiEmailFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomMultiSelectFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomNumberFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomPhoneFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomRadioGroupFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomSelectFieldOutput20260612 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
+end
+
+defmodule Entities.CustomShortTextFieldOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_08.json", __MODULE__}
 end

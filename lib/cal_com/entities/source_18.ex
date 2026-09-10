@@ -1,71 +1,111 @@
 alias CalCom.Entities
 
-defmodule Entities.OrgRoleOutput do
+defmodule Entities.RescheduleBookingInput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.OrgTeamMembershipsOutputResponseDto do
+defmodule Entities.RescheduleBookingOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.OrgTeamOutputDto do
+defmodule Entities.RescheduleSeatedBookingInput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.OrgTeamOutputResponseDto do
+defmodule Entities.ReserveSlotInput20240904 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.OrganizationMembershipOutput do
+defmodule Entities.ReserveSlotOutputResponse20240904 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.OutputIntegrationLocation20240614 do
+defmodule Entities.ReserveSlotOutput20240904 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.OutputUnknownLocation20240614 do
+defmodule Entities.ResetDelegationCredentialRotationOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PaginationMeta do
+defmodule Entities.ResponseSlotsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PaginationMetaDto do
+defmodule Entities.ResponseSlotsOutputData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitCustomAddressFieldInput20260612Field do
+defmodule Entities.RoutedToPerPeriodInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitCustomCheckboxGroupFieldInput20260612Field do
+defmodule Entities.Routing do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitCustomEmailFieldInput20260612Field do
+defmodule Entities.RoutingFormFieldsInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitCustomLongTextFieldInput20260612Field do
+defmodule Entities.RoutingFormOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitSystemAttendeePhoneFieldInput20260612Field do
+defmodule Entities.RoutingFormResponseOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingFormWorkflowActivationOutputDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingFormWorkflowOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingFormWorkflowStepOutputDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingFormWorkflowTriggerOutputDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingInsightsBaseInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingInsightsPaginatedInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingTraceDataOutput20240813 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
+end
+
+defmodule Entities.RoutingTraceFormOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_18.json", __MODULE__}
 end

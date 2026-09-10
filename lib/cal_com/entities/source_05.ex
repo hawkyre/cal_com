@@ -74,3 +74,33 @@ defmodule Entities.GetOrgRoleOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
 end
+
+defmodule Entities.CreateOrgRolePermissionsInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
+end
+
+defmodule Entities.CreateOrgTeamDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
+end
+
+defmodule Entities.CreateOrganizationAttributeInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
+end
+
+defmodule Entities.CreateOrganizationAttributeOptionInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
+end
+
+defmodule Entities.CreateOrganizationAttributesOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
+end
+
+defmodule Entities.CreateOrganizationInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_05.json", __MODULE__}
+end

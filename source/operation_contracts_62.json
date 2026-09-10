@@ -17,7 +17,7 @@
   "CalCom.Operations.TeamsMembershipsControllerGetTeamMemberships": {
     "input": "CalCom.Entities.InputTeamsMembershipsControllerGetTeamMemberships",
     "result": "CalCom.Entities.ResultTeamsMembershipsControllerGetTeamMemberships200.t()",
-    "contract": "%CalCom.Operation{key: :teams_memberships_controller_get_team_memberships, id: \"GET /v2/teams/{teamId}/memberships\", method: :get, path: \"/v2/teams/{teamId}/memberships\", module: CalCom.Operations.TeamsMembershipsControllerGetTeamMemberships, input_module: CalCom.Entities.InputTeamsMembershipsControllerGetTeamMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultTeamsMembershipsControllerGetTeamMemberships200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamMembershipOutput}, nullable: false}, empty?: false}]}"
+    "contract": "%CalCom.Operation{key: :teams_memberships_controller_get_team_memberships, id: \"GET /v2/teams/{teamId}/memberships\", method: :get, path: \"/v2/teams/{teamId}/memberships\", module: CalCom.Operations.TeamsMembershipsControllerGetTeamMemberships, input_module: CalCom.Entities.InputTeamsMembershipsControllerGetTeamMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultTeamsMembershipsControllerGetTeamMemberships200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgTeamMembershipsOutputResponseDto}, nullable: false}, empty?: false}]}"
   },
   "CalCom.Operations.TeamsMembershipsControllerGetTeamMembership": {
     "input": "CalCom.Entities.InputTeamsMembershipsControllerGetTeamMembership",

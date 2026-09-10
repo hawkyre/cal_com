@@ -1,31 +1,41 @@
 alias CalCom.Entities
 
-defmodule Entities.CreateRecurringSeatedBookingOutput20240813 do
+defmodule Entities.CreateTeamEventTypeInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
 end
 
-defmodule Entities.CreateRoutingFormResponseOutput do
+defmodule Entities.CreateTeamEventTypeOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
 end
 
-defmodule Entities.CreateRoutingFormResponseOutputData do
+defmodule Entities.CreateTeamInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
 end
 
-defmodule Entities.CreateScheduleInput20240611 do
+defmodule Entities.CreateTeamMembershipInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
 end
 
-defmodule Entities.CreateScheduleOutput20240611 do
+defmodule Entities.GetTeamMembershipOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
 end
 
-defmodule Entities.CreateSeatedBookingOutput20240813 do
+defmodule Entities.CreateTeamOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
+end
+
+defmodule Entities.CreateTeamOutputData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
+end
+
+defmodule Entities.GetTeamRoleOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_07.json", __MODULE__}
 end

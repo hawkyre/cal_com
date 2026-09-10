@@ -1,0 +1,69 @@
+{
+  "body": {
+    "data": {
+      "absentHost": false,
+      "attendees": [
+        {
+          "absent": false,
+          "displayEmail": "hawkyre@gmail.com",
+          "email": "hawkyre@gmail.com",
+          "language": "en",
+          "name": "Kithe Connector Test",
+          "timeZone": "America/Los_Angeles"
+        }
+      ],
+      "bookingFieldsResponses": {
+        "displayEmail": "hawkyre@gmail.com",
+        "displayGuests": [],
+        "email": "hawkyre@gmail.com",
+        "guests": [],
+        "location": {
+          "optionValue": "",
+          "value": "link"
+        },
+        "name": "Kithe Connector Test"
+      },
+      "cancellationReason": "",
+      "cancelledByEmail": "",
+      "createdAt": "2026-09-08T03:57:35.113Z",
+      "description": "",
+      "duration": 15,
+      "end": "2026-09-09T16:15:00.000Z",
+      "eventType": null,
+      "eventTypeId": null,
+      "guests": [],
+      "hosts": [
+        {
+          "displayEmail": "me@hawkyre.com",
+          "email": "me@hawkyre.com",
+          "id": 3209949,
+          "name": "hawkyre",
+          "timeZone": "America/Los_Angeles",
+          "username": "hawkyre-test"
+        }
+      ],
+      "icsUid": "eS6BZvpsXtP1LKMbr1esZM@Cal.com",
+      "id": 24927614,
+      "location": "https://example.invalid/kithe-connector-test",
+      "meetingUrl": "https://example.invalid/kithe-connector-test",
+      "metadata": {
+        "attempt": "cal-test-20260908-096",
+        "purpose": "connector-test"
+      },
+      "rating": null,
+      "rescheduledByEmail": null,
+      "rescheduledToUid": "dS4hSXi9zZfBX5RHgtq5g7",
+      "start": "2026-09-09T16:00:00.000Z",
+      "status": "cancelled",
+      "title": "Kithe connector standard test between hawkyre and Kithe Connector Test",
+      "uid": "eS6BZvpsXtP1LKMbr1esZM",
+      "updatedAt": "2026-09-08T04:00:18.890Z"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/bookings/{bookingUid}",
+  "parsed": true,
+  "provider": "cal_com"
+}

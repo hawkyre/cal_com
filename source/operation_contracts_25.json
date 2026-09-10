@@ -12,7 +12,7 @@
   "CalCom.Operations.BookingsController20260501GetBookings": {
     "input": "CalCom.Entities.InputBookingsController20260501GetBookings",
     "result": "CalCom.Entities.ResultOrganizationsBookingsControllerGetAllOrgTeamBookingsCursor200.t()",
-    "contract": "%CalCom.Operation{key: :bookings_controller_2026_05_01_get_bookings, id: \"GET /v2/bookings\", method: :get, path: \"/v2/bookings\", module: CalCom.Operations.BookingsController20260501GetBookings, input_module: CalCom.Entities.InputBookingsController20260501GetBookings, version: \"2026-05-01\", media_type: nil, page_size: 50, page_key: \"limit\", pagination: :cursor, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsBookingsControllerGetAllOrgTeamBookingsCursor200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingsOutput20260501}, nullable: false}, empty?: false}]}"
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_05_01_get_bookings, id: \"GET /v2/bookings\", method: :get, path: \"/v2/bookings\", module: CalCom.Operations.BookingsController20260501GetBookings, input_module: CalCom.Entities.InputBookingsController20260501GetBookings, version: \"2024-08-13\", media_type: nil, page_size: 50, page_key: \"limit\", pagination: :cursor, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsBookingsControllerGetAllOrgTeamBookingsCursor200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingsOutput20260501}, nullable: false}, empty?: false}]}"
   },
   "CalCom.Operations.BookingsController20260225GetBookingBySeatUid": {
     "input": "CalCom.Entities.InputBookingsController20260225GetBookingBySeatUid",

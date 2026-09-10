@@ -1,0 +1,19 @@
+{
+  "body": {
+    "data": {
+      "absent": false,
+      "displayEmail": "hawkyre@gmail.com",
+      "email": "hawkyre@gmail.com",
+      "id": 29735279,
+      "language": "en",
+      "name": "Kithe Connector Test",
+      "timeZone": "America/Los_Angeles"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/bookings/{bookingUid}/attendees/{attendeeId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

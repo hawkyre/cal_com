@@ -4,6 +4,49 @@ Every entry names the SHA-256 of the `source/openapi.json` the release was
 generated from, so a published version can be traced to its provider document.
 CI fails when the current hash is absent from this file.
 
+## Unreleased
+
+Still generated from `source/openapi.json` with SHA-256
+`44488d2fed1bfd978e3b006ca463ff43d5b5c72f028b3fa7c5620040c92c2484`; every
+change below is a live-verified correction to what that document claims, or
+tooling that found it.
+
+Live certification of the read surface found seven contract bugs — all of them
+cases where a real 200 from Cal.com was refused by the generated type — and each
+one is now recorded in `source/live_overrides.json` with the observation that
+justifies it:
+
+- `GET /v2/bookings`: the documented `cal-api-version: 2026-05-01` times out at
+  the provider (Cloudflare 524 after 125s). The operation now sends
+  `2024-08-13`, which answers the same shape in under a second.
+- `GetBookingsOutput_2026_05_01.pagination` accepts offset metadata as well as
+  the cursor metadata the document declares, because the live API answers the
+  booking list with the offset shape.
+- `PaginationMetaDto.currentPage` starts at 0, not 1.
+- `TeamOutputDto`/`OrgTeamOutputDto`: `logoUrl`, `calVideoLogo`, `appLogo`,
+  `appIconLogo`, `bio`, `theme`, `brandColor`, `darkBrandColor`, `bannerUrl` and
+  `timeFormat` are nullable.
+- Every booking variant: `description`, `eventTypeId` and `eventType` are
+  nullable, and the seated variants' `description` too.
+- `GetAllOrgMemberships.data` and `GetTeamMembershipsOutput.data` are arrays of a
+  membership, not a single membership.
+- `OrgRoleOutput`, `TeamRoleOutput` and the four role input schemas: the
+  `permissions` enum is incomplete — live roles carry `adminDataview.*`,
+  `availability.*`, `ooo.*`, `apiKey.*` and more — so the item type is a string
+  instead of a closed enum that would refuse a valid role.
+- `MembershipUserOutputDto.avatarUrl` is nullable, and the four
+  verified-resource outputs answer `200` with `data: null` for an id the account
+  does not own, so their `data` is nullable too.
+
+New tooling, all of it repo-only and not part of the published package:
+
+- `scripts/certify.exs` calls every read the account can address and records a
+  verdict per operation in `source/certification.json`, with a redacted capture
+  per parsed response.
+- `scripts/mutate.exs` does the same for mutations, inside a create → use →
+  delete envelope, and refuses to run without `MUTATE_APPLY=1`.
+- `scripts/coverage.py` prints what is certified and what is still open.
+
 ## 0.2.0 (2026-09-09)
 
 Every operation the document describes — 349, up from 199 — generated from

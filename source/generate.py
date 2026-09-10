@@ -26,6 +26,7 @@ schemas = {}
 objects = {}
 canonical_objects = {}
 pins = {}
+shape_names = {}
 
 
 def parse_args(argv):
@@ -90,20 +91,29 @@ def canonical_shape(value):
 def register(schema, name, dedupe=True):
     """Name a shape's module, sharing one module per canonical body.
 
-    A shape keeps the name recorded in `source/entity_name_pins.json`, keyed by
-    the shape's own hash, so a module released once keeps its name however the
-    inventory or registration order changes. Only shapes new to this run take
-    the name derived from the inventory.
+    Names come from `source/entity_name_pins.json`, which records two maps
+    because a module must survive both kinds of change:
+
+    * `by_name` — the declaration name a shape was registered under, so fixing
+      a field through `live_overrides.json` (which changes the shape, and so its
+      hash) corrects the module in place instead of renaming it.
+    * `by_shape` — the canonical body, so two declarations that share a shape
+      keep sharing the module they were released under, and a wider inventory
+      does not move a name.
+
+    Only a shape new to both maps takes the name the inventory gives it.
     """
     key = json.dumps(canonical_shape(schema), sort_keys=True, separators=(",", ":"))
     if dedupe and key in canonical_objects:
         return canonical_objects[key]
     bare = module_name(name)
-    name = PREFIX + pins.get(shape_hash(key), bare)
+    pinned = pins["by_name"].get(bare) or pins["by_shape"].get(shape_hash(key))
+    name = PREFIX + (pinned or bare)
     existing = objects.get(name)
     if existing is not None and canonical_shape(existing) != canonical_shape(schema):
         raise ValueError("Two shapes want the module name " + name)
     objects.setdefault(name, schema)
+    shape_names.setdefault(bare, name.removeprefix(PREFIX))
     if dedupe:
         canonical_objects[key] = name
     return name
@@ -465,6 +475,10 @@ def build(original, inventory, overrides, webhook_shapes):
     for operation_id, responses in overrides.get("operation_responses", {}).items():
         for status, schema in responses.items():
             operations[operation_id]["responses"][status]["content"]["application/json"]["schema"] = schema
+    for operation_id, parameters in overrides.get("operation_parameters", {}).items():
+        for parameter in operations[operation_id].get("parameters", []):
+            if parameter["name"] in parameters:
+                parameter["schema"] = dict(parameter.get("schema", {}), default=parameters[parameter["name"]])
     for name, fields in overrides.get("schema_properties", {}).items():
         schemas[name]["properties"].update(fields)
 
@@ -504,7 +518,8 @@ def build(original, inventory, overrides, webhook_shapes):
             index[name] = canonical_objects[key]
     files["source/source_index.json"] = json.dumps(index, indent=2) + "\n"
     files["source/entity_name_pins.json"] = json.dumps(
-        {shape_hash(key): name.removeprefix(PREFIX) for key, name in canonical_objects.items()},
+        {"by_name": shape_names,
+         "by_shape": {shape_hash(key): name.removeprefix(PREFIX) for key, name in canonical_objects.items()}},
         indent=1, sort_keys=True) + "\n"
     files[lib + "registry.ex"] = render_registry(contracts)
 
@@ -540,7 +555,7 @@ def check(files):
 
 
 def main(argv=None):
-    global PREFIX, ROOT_NS, pins
+    global PREFIX, ROOT_NS, pins, shape_names
     args = parse_args(argv)
     ROOT_NS = args.prefix
     PREFIX = ROOT_NS + ".Entities."
@@ -552,8 +567,12 @@ def main(argv=None):
         if (SOURCE / "live_overrides.json").exists() else {}
     webhook_shapes = json.loads((SOURCE / "webhook_shapes.json").read_text()) \
         if (SOURCE / "webhook_shapes.json").exists() else None
-    pins = json.loads((SOURCE / "entity_name_pins.json").read_text()) \
+    recorded = json.loads((SOURCE / "entity_name_pins.json").read_text()) \
         if (SOURCE / "entity_name_pins.json").exists() else {}
+    # The first release recorded a flat shape -> name map; read it either way.
+    pins = {"by_name": recorded.get("by_name", {}),
+            "by_shape": recorded.get("by_shape", recorded if "by_name" not in recorded else {})}
+    shape_names = dict(pins["by_name"])
 
     files = build(original, inventory, overrides, webhook_shapes)
     check(files) if args.check else write(files)

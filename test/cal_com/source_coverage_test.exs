@@ -37,6 +37,9 @@ defmodule CalCom.SourceCoverageTest do
 
   test "every selected source operation retains its exact method, route, version and response statuses" do
     original = read("openapi.json")
+    # A documented live correction outranks the source: `operation_parameters`
+    # records the version the deployed API actually answers.
+    corrections = Map.get(read("live_overrides.json"), "operation_parameters", %{})
 
     operations =
       Map.new(read("inventory.json")["operations"], fn id ->
@@ -54,7 +57,8 @@ defmodule CalCom.SourceCoverageTest do
       version = Enum.find(Map.get(source, "parameters", []), &(&1["name"] == "cal-api-version"))
 
       expected_version =
-        get_in(version || %{}, ["schema", "default"]) ||
+        Map.get(corrections, id, %{})["cal-api-version"] ||
+          get_in(version || %{}, ["schema", "default"]) ||
           get_in(version || %{}, ["schema", "example"])
 
       assert operation.version == expected_version

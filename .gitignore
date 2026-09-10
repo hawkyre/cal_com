@@ -7,3 +7,7 @@ erl_crash.dump
 *.ez
 cal_com-*.tar
 /tmp/
+# Byte-compiled generator cache: `source/` ships in the package, and a .pyc
+# bytecode file from one machine's Python has no business in a release.
+__pycache__/
+*.pyc

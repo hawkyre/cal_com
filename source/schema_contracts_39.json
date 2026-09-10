@@ -1,684 +1,1014 @@
 {
-  "CalCom.Entities.ResultInsightsControllerGetRoutedToPerPeriod200": {
+  "CalCom.Entities.WebhookAfterGuestsCalVideoNoShow": {
     "fields": [
       [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingRoutedToPerPeriodOutput}, nullable: false}",
-        "CalCom.Entities.GetInsightsRoutingRoutedToPerPeriodOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsOrganizationsControllerCreateOrganization": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"AFTER_GUESTS_CAL_VIDEO_NO_SHOW\", :AFTER_GUESTS_CAL_VIDEO_NO_SHOW}]}, nullable: false}",
+        ":AFTER_GUESTS_CAL_VIDEO_NO_SHOW",
         true
       ],
       [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
         false
       ],
       [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateOrganizationInput}, nullable: false}",
-        "CalCom.Entities.CreateOrganizationInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOrganizationsOrganizationsControllerCreateOrganization201": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateManagedOrganizationOutput}, nullable: false}",
-        "CalCom.Entities.CreateManagedOrganizationOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizations": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
-        true
-      ],
-      [
-        "query",
-        "query",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizationsQuery}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizationsQuery.t()",
-        false
-      ],
-      [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookAfterGuestsCalVideoNoShowPayload}, nullable: false}",
+        "CalCom.Entities.WebhookAfterGuestsCalVideoNoShowPayload.t()",
         false
       ]
     ],
-    "additional": "false",
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganizations200": {
+  "CalCom.Entities.WebhookDelegationCredentialError": {
     "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"DELEGATION_CREDENTIAL_ERROR\", :DELEGATION_CREDENTIAL_ERROR}]}, nullable: false}",
+        ":DELEGATION_CREDENTIAL_ERROR",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookDelegationCredentialErrorPayload}, nullable: false}",
+        "CalCom.Entities.WebhookDelegationCredentialErrorPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookDelegationCredentialSecretRotated": {
+    "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"DELEGATION_CREDENTIAL_SECRET_ROTATED\", :DELEGATION_CREDENTIAL_SECRET_ROTATED}]}, nullable: false}",
+        ":DELEGATION_CREDENTIAL_SECRET_ROTATED",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookDelegationCredentialSecretRotatedPayload}, nullable: false}",
+        "CalCom.Entities.WebhookDelegationCredentialSecretRotatedPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookDelegationCredentialSecretRotationFailed": {
+    "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"DELEGATION_CREDENTIAL_SECRET_ROTATION_FAILED\", :DELEGATION_CREDENTIAL_SECRET_ROTATION_FAILED}]}, nullable: false}",
+        ":DELEGATION_CREDENTIAL_SECRET_ROTATION_FAILED",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookDelegationCredentialSecretRotationFailedPayload}, nullable: false}",
+        "CalCom.Entities.WebhookDelegationCredentialSecretRotationFailedPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookDelegationCredentialRotationRequired": {
+    "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"DELEGATION_CREDENTIAL_ROTATION_REQUIRED\", :DELEGATION_CREDENTIAL_ROTATION_REQUIRED}]}, nullable: false}",
+        ":DELEGATION_CREDENTIAL_ROTATION_REQUIRED",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookDelegationCredentialSecretRotatedPayload}, nullable: false}",
+        "CalCom.Entities.WebhookDelegationCredentialSecretRotatedPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookWrongAssignmentReport": {
+    "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"WRONG_ASSIGNMENT_REPORT\", :WRONG_ASSIGNMENT_REPORT}]}, nullable: false}",
+        ":WRONG_ASSIGNMENT_REPORT",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookWrongAssignmentReportPayload}, nullable: false}",
+        "CalCom.Entities.WebhookWrongAssignmentReportPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookRecordingReady": {
+    "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"RECORDING_READY\", :RECORDING_READY}]}, nullable: false}",
+        ":RECORDING_READY",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookRecordingReadyPayload}, nullable: false}",
+        "CalCom.Entities.WebhookRecordingReadyPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookRecordingTranscriptionGenerated": {
+    "fields": [
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"RECORDING_TRANSCRIPTION_GENERATED\", :RECORDING_TRANSCRIPTION_GENERATED}]}, nullable: false}",
+        ":RECORDING_TRANSCRIPTION_GENERATED",
+        true
+      ],
+      [
+        "created_at",
+        "createdAt",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.WebhookRecordingTranscriptionGeneratedPayload}, nullable: false}",
+        "CalCom.Entities.WebhookRecordingTranscriptionGeneratedPayload.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookRoutingFormFallbackHit": {
+    "fields": [
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
+        false
+      ],
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"ROUTING_FORM_FALLBACK_HIT\", :ROUTING_FORM_FALLBACK_HIT}]}, nullable: false}",
+        ":ROUTING_FORM_FALLBACK_HIT",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.WebhookCalendarEntryRejected": {
+    "fields": [
+      [
+        "payload",
+        "payload",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
+        false
+      ],
+      [
+        "trigger_event",
+        "triggerEvent",
+        "%CalCom.Rule{kind: {:enum, [{\"CALENDAR_ENTRY_REJECTED\", :CALENDAR_ENTRY_REJECTED}]}, nullable: false}",
+        ":CALENDAR_ENTRY_REJECTED",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.AllowlistServicesDataServices": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: {:object, CalCom.Entities.AllowlistServiceOutput}, nullable: false}",
+    "additional_type": "CalCom.Entities.AllowlistServiceOutput.t()"
+  },
+  "CalCom.Entities.BookingOutput20240813BookingFieldsResponses": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.BookingInsightsInputColumnFiltersItem": {
+    "fields": [
+      [
+        "id",
+        "id",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
       [
         "value",
         "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetManagedOrganizationsOutput}, nullable: false}",
-        "CalCom.Entities.GetManagedOrganizationsOutput.t()",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.BookingInsightsInputColumnFiltersItemValue}, nullable: false}",
+        "CalCom.Entities.BookingInsightsInputColumnFiltersItemValue.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.BookingOutput20240813Metadata": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: :string, nullable: false}",
+    "additional_type": "String.t()"
+  },
+  "CalCom.Entities.ConnectedCalendarsDataDestinationCalendarOption1": {
+    "fields": [],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.DeletePrivateLinkOutputData": {
+    "fields": [
+      [
+        "link_id",
+        "linkId",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "message",
+        "message",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.EventTypeHistoryAuditLog20240614DisplayJson": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.GetReservedSlotOutput20240904Data": {
+    "fields": [
+      [
+        "reservation_uid",
+        "reservationUid",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "event_type_id",
+        "eventTypeId",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "slot_start",
+        "slotStart",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        true
+      ],
+      [
+        "slot_end",
+        "slotEnd",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        true
+      ],
+      [
+        "slot_duration",
+        "slotDuration",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "reservation_until",
+        "reservationUntil",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        true
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InsightsRoutingRoutedToUserOutputEmail": {
+    "fields": [],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption0": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "variant",
+        "variant",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption1": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "variant",
+        "variant",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "first_name_label",
+        "firstNameLabel",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "first_name_placeholder",
+        "firstNamePlaceholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "last_name_label",
+        "lastNameLabel",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "last_name_placeholder",
+        "lastNamePlaceholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "last_name_required",
+        "lastNameRequired",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption2": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "required",
+        "required",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "hidden",
+        "hidden",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "exclude_emails",
+        "excludeEmails",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false}",
+        "[String.t()]",
+        false
+      ],
+      [
+        "require_emails",
+        "requireEmails",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false}",
+        "[String.t()]",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption3": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption4": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "required",
+        "required",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "hidden",
+        "hidden",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption9": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "required",
+        "required",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "hidden",
+        "hidden",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "type",
+        "type",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "exclude_emails",
+        "excludeEmails",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false}",
+        "[String.t()]",
+        false
+      ],
+      [
+        "require_emails",
+        "requireEmails",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false}",
+        "[String.t()]",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption10": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "required",
+        "required",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "hidden",
+        "hidden",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "type",
+        "type",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption14": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "required",
+        "required",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "hidden",
+        "hidden",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "type",
+        "type",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "min_length",
+        "minLength",
+        "%CalCom.Rule{kind: :number, nullable: false, minimum: 0, maximum: 1000}",
+        "number()",
+        false
+      ],
+      [
+        "max_length",
+        "maxLength",
+        "%CalCom.Rule{kind: :number, nullable: false, minimum: 0, maximum: 1000}",
+        "number()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption15": {
+    "fields": [
+      [
+        "slug",
+        "slug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "label",
+        "label",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "required",
+        "required",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "hidden",
+        "hidden",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "placeholder",
+        "placeholder",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ],
+      [
+        "disable_on_prefill",
+        "disableOnPrefill",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
+      ],
+      [
+        "options",
+        "options",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false}",
+        "[String.t()]",
+        false
+      ],
+      [
+        "type",
+        "type",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.UnifiedCalendarEventOutputStart": {
+    "fields": [
+      [
+        "time",
+        "time",
+        "%CalCom.Rule{kind: :datetime, nullable: false}",
+        "DateTime.t()",
+        false
+      ],
+      [
+        "time_zone",
+        "timeZone",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath": {
+    "fields": [
+      [
+        "org_id",
+        "orgId",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganization": {
+  "CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMembershipsQuery": {
     "fields": [
       [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizationPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizationPath.t()",
-        true
+        "take",
+        "take",
+        "%CalCom.Rule{kind: :number, nullable: false, minimum: 1, maximum: 250}",
+        "number()",
+        false
       ],
       [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        "skip",
+        "skip",
+        "%CalCom.Rule{kind: :number, nullable: false, minimum: 0}",
+        "number()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200": {
+  "CalCom.Entities.InputOrganizationsAttributesControllerGetOrganizationAttributePath": {
     "fields": [
       [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetManagedOrganizationOutput}, nullable: false}",
-        "CalCom.Entities.GetManagedOrganizationOutput.t()",
+        "org_id",
+        "orgId",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
+        true
+      ],
+      [
+        "attribute_id",
+        "attributeId",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsOrganizationsControllerUpdateOrganization": {
+  "CalCom.Entities.InputOrganizationsAttributesOptionsControllerDeleteOrganizationAttributeOptionPath": {
     "fields": [
       [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsOrganizationsControllerUpdateOrganizationPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsOrganizationsControllerUpdateOrganizationPath.t()",
+        "org_id",
+        "orgId",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
         true
       ],
       [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        "attribute_id",
+        "attributeId",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "option_id",
+        "optionId",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsAttributesOptionsControllerGetOrganizationAttributeAssignedOptionsQuery": {
+    "fields": [
+      [
+        "skip",
+        "skip",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
         false
       ],
       [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateOrganizationInput}, nullable: false}",
-        "CalCom.Entities.UpdateOrganizationInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultMeControllerGetMe200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetMeOutput}, nullable: false}",
-        "CalCom.Entities.GetMeOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputMeControllerUpdateMe": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateManagedUserInput}, nullable: false}",
-        "CalCom.Entities.UpdateManagedUserInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultMeControllerUpdateMe200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetMeOutput}, nullable: false}",
-        "CalCom.Entities.GetMeOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultMeControllerGetMyBookingLimits200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingLimitsOutput}, nullable: false}",
-        "CalCom.Entities.GetBookingLimitsOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputMeControllerUpdateMyBookingLimits": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateBookingLimitsInput}, nullable: false}",
-        "CalCom.Entities.UpdateBookingLimitsInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultMeControllerUpdateMyBookingLimits200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingLimitsOutput}, nullable: false}",
-        "CalCom.Entities.GetBookingLimitsOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultMeControllerGetMyTeamBookingLimits200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamBookingLimitsOutput}, nullable: false}",
-        "CalCom.Entities.GetTeamBookingLimitsOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputMeControllerUpdateMyTeamBookingLimit": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypesPath}, nullable: false}",
-        "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypesPath.t()",
-        true
-      ],
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateBookingLimitsInput}, nullable: false}",
-        "CalCom.Entities.UpdateBookingLimitsInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultMeControllerUpdateMyTeamBookingLimit200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateTeamBookingLimitOutput}, nullable: false}",
-        "CalCom.Entities.UpdateTeamBookingLimitOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputTeamsControllerGetTeam": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypesPath}, nullable: false}",
-        "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypesPath.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputNotificationsSubscriptionsControllerRegister": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RegisterAppPushSubscriptionInput}, nullable: false}",
-        "CalCom.Entities.RegisterAppPushSubscriptionInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultNotificationsSubscriptionsControllerRegister201": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.AppPushSubscriptionResponseDto}, nullable: false}",
-        "CalCom.Entities.AppPushSubscriptionResponseDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputNotificationsSubscriptionsControllerRemove": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionInput}, nullable: false}",
-        "CalCom.Entities.RemoveAppPushSubscriptionInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultNotificationsSubscriptionsControllerRemove200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionResponseDto}, nullable: false}",
-        "CalCom.Entities.RemoveAppPushSubscriptionResponseDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerCreateSlackLinkIntent201": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.ChatPushLinkIntentResponseDto}, nullable: false}",
-        "CalCom.Entities.ChatPushLinkIntentResponseDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputNotificationsChatSubscriptionsControllerRemoveSlack": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RemoveSlackSubscriptionInput}, nullable: false}",
-        "CalCom.Entities.RemoveSlackSubscriptionInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerRemoveSlack200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionResponseDto}, nullable: false}",
-        "CalCom.Entities.RemoveAppPushSubscriptionResponseDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputNotificationsChatSubscriptionsControllerRemoveTelegram": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RemoveChatSubscriptionInput}, nullable: false}",
-        "CalCom.Entities.RemoveChatSubscriptionInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerRemoveTelegram200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionResponseDto}, nullable: false}",
-        "CalCom.Entities.RemoveAppPushSubscriptionResponseDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOAuth2ControllerGetClient200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2ClientResponseDto}, nullable: false}",
-        "CalCom.Entities.OAuth2ClientResponseDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOAuth2ControllerToken": {
-    "fields": [
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:one_of, [%CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2ExchangeConfidentialInput}, nullable: false}, %CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2ExchangePublicInput}, nullable: false}, %CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2RefreshConfidentialInput}, nullable: false}, %CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2RefreshPublicInput}, nullable: false}]}, nullable: false}",
-        "CalCom.Entities.OAuth2ExchangeConfidentialInput.t() | CalCom.Entities.OAuth2ExchangePublicInput.t() | CalCom.Entities.OAuth2RefreshConfidentialInput.t() | CalCom.Entities.OAuth2RefreshPublicInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOAuth2ControllerToken200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.OAuth2TokensDto}, nullable: false}",
-        "CalCom.Entities.OAuth2TokensDto.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612CreateTeamEventType": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsTeamsControllerGetTeamPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsTeamsControllerGetTeamPath.t()",
-        true
-      ],
-      [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        "take",
+        "take",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
         false
       ],
       [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateTeamEventTypeInput20260612}, nullable: false}",
-        "CalCom.Entities.CreateTeamEventTypeInput20260612.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOrganizationsEventTypesController20260612CreateTeamEventType201": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateTeamEventTypeOutput20260612}, nullable: false}",
-        "CalCom.Entities.CreateTeamEventTypeOutput20260612.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamEventTypes": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsTeamsControllerGetTeamPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsTeamsControllerGetTeamPath.t()",
-        true
-      ],
-      [
-        "query",
-        "query",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamEventTypesQuery}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamEventTypesQuery.t()",
+        "assigned_option_ids",
+        "assignedOptionIds",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false, min_items: 1}",
+        "[String.t()]",
         false
       ],
       [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        "team_ids",
+        "teamIds",
+        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :number, nullable: false}}, nullable: false, min_items: 1}",
+        "[number()]",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200": {
+  "CalCom.Entities.InputOrganizationsAttributesOptionsControllerGetOrganizationAttributeAssignedOptionsBySlugPath": {
     "fields": [
       [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypesOutput20260612}, nullable: false}",
-        "CalCom.Entities.GetTeamEventTypesOutput20260612.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventType200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypeOutput20260612}, nullable: false}",
-        "CalCom.Entities.GetTeamEventTypeOutput20260612.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612UpdateTeamEventType": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinksPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinksPath.t()",
+        "org_id",
+        "orgId",
+        "%CalCom.Rule{kind: :number, nullable: false}",
+        "number()",
         true
       ],
       [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
-        false
-      ],
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateTeamEventTypeInput20260612}, nullable: false}",
-        "CalCom.Entities.UpdateTeamEventTypeInput20260612.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOrganizationsEventTypesController20260612UpdateTeamEventType200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateTeamEventTypeOutput20260612}, nullable: false}",
-        "CalCom.Entities.CreateTeamEventTypeOutput20260612.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOrganizationsEventTypesController20260612DeleteTeamEventType200": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.DeleteTeamEventTypeOutput}, nullable: false}",
-        "CalCom.Entities.DeleteTeamEventTypeOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612CreatePhoneCall": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinksPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinksPath.t()",
-        true
-      ],
-      [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
-        false
-      ],
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreatePhoneCallInput}, nullable: false}",
-        "CalCom.Entities.CreatePhoneCallInput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.ResultOrganizationsEventTypesController20260612CreatePhoneCall201": {
-    "fields": [
-      [
-        "value",
-        "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreatePhoneCallOutput}, nullable: false}",
-        "CalCom.Entities.CreatePhoneCallOutput.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypes": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
-        true
-      ],
-      [
-        "query",
-        "query",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypesQuery}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypesQuery.t()",
-        false
-      ],
-      [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
-        false
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612ReplaceBookingFields": {
-    "fields": [
-      [
-        "path",
-        "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinksPath}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinksPath.t()",
-        true
-      ],
-      [
-        "headers",
-        "headers",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
-        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
-        false
-      ],
-      [
-        "body",
-        "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsInput20260612}, nullable: false}",
-        "CalCom.Entities.BookingFieldsInput20260612.t()",
+        "attribute_slug",
+        "attributeSlug",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
         true
       ]
     ],

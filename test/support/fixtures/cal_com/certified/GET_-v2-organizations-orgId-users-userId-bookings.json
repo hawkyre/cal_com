@@ -1,0 +1,425 @@
+{
+  "body": {
+    "data": [
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "hawkyre@gmail.com",
+          "displayGuests": [],
+          "email": "hawkyre@gmail.com",
+          "guests": [],
+          "location": {
+            "optionValue": "",
+            "value": "link"
+          },
+          "name": "Kithe Connector Test"
+        },
+        "cancellationReason": "",
+        "cancelledByEmail": "",
+        "createdAt": "2026-09-08T03:57:35.113Z",
+        "description": "",
+        "duration": 15,
+        "end": "2026-09-09T16:15:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "eS6BZvpsXtP1LKMbr1esZM@Cal.com",
+        "id": 24927614,
+        "location": "https://example.invalid/kithe-connector-test",
+        "meetingUrl": "https://example.invalid/kithe-connector-test",
+        "metadata": {
+          "attempt": "cal-test-20260908-096",
+          "purpose": "connector-test"
+        },
+        "rating": null,
+        "rescheduledByEmail": null,
+        "rescheduledToUid": "dS4hSXi9zZfBX5RHgtq5g7",
+        "start": "2026-09-09T16:00:00.000Z",
+        "status": "cancelled",
+        "title": "Kithe connector standard test between hawkyre and Kithe Connector Test",
+        "uid": "eS6BZvpsXtP1LKMbr1esZM",
+        "updatedAt": "2026-09-08T04:00:18.890Z"
+      },
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "hawkyre@gmail.com",
+          "displayGuests": [],
+          "email": "hawkyre@gmail.com",
+          "guests": [],
+          "location": {
+            "optionValue": "",
+            "value": "link"
+          },
+          "name": "Kithe Connector Test",
+          "rescheduleReason": "Kithe connector lifecycle test"
+        },
+        "cancellationReason": "Kithe connector test",
+        "cancelledByEmail": "me@hawkyre.com",
+        "createdAt": "2026-09-08T04:00:19.716Z",
+        "description": "",
+        "duration": 15,
+        "end": "2026-09-09T16:30:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "eS6BZvpsXtP1LKMbr1esZM@Cal.com",
+        "id": 24927669,
+        "location": "https://example.invalid/kithe-connector-test",
+        "meetingUrl": "https://example.invalid/kithe-connector-test",
+        "metadata": {
+          "attempt": "cal-test-20260908-096",
+          "purpose": "connector-test"
+        },
+        "rating": null,
+        "rescheduledByEmail": null,
+        "rescheduledFromUid": "eS6BZvpsXtP1LKMbr1esZM",
+        "reschedulingReason": "Kithe connector lifecycle test",
+        "start": "2026-09-09T16:15:00.000Z",
+        "status": "cancelled",
+        "title": "Kithe connector standard test between hawkyre and Kithe Connector Test",
+        "uid": "dS4hSXi9zZfBX5RHgtq5g7",
+        "updatedAt": "2026-09-08T04:02:20.779Z"
+      },
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "hawkyre@gmail.com",
+          "displayGuests": [],
+          "email": "hawkyre@gmail.com",
+          "guests": [],
+          "location": {
+            "optionValue": "https://example.invalid/kithe-connector-test-updated",
+            "value": "link"
+          },
+          "name": "Kithe Connector Test"
+        },
+        "cancellationReason": "Kithe connector test complete",
+        "cancelledByEmail": "",
+        "createdAt": "2026-09-08T04:01:39.703Z",
+        "description": "",
+        "duration": 15,
+        "end": "2026-09-09T16:45:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "uvJaFTtQ7qtqvnHcxzP3PN@Cal.com",
+        "id": 24927700,
+        "location": "https://example.invalid/kithe-connector-test-updated",
+        "meetingUrl": "https://example.invalid/kithe-connector-test-updated",
+        "metadata": {
+          "purpose": "connector-test-confirm"
+        },
+        "rating": null,
+        "rescheduledByEmail": null,
+        "start": "2026-09-09T16:30:00.000Z",
+        "status": "cancelled",
+        "title": "Kithe connector approval test between hawkyre and Kithe Connector Test",
+        "uid": "uvJaFTtQ7qtqvnHcxzP3PN",
+        "updatedAt": "2026-09-08T04:11:03.035Z"
+      },
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "hawkyre@gmail.com",
+          "displayGuests": [],
+          "email": "hawkyre@gmail.com",
+          "guests": [],
+          "location": {
+            "optionValue": "",
+            "value": "link"
+          },
+          "name": "Kithe Connector Test"
+        },
+        "cancellationReason": "",
+        "cancelledByEmail": "",
+        "createdAt": "2026-09-08T04:01:42.754Z",
+        "description": "",
+        "duration": 15,
+        "end": "2026-09-09T17:00:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "sEHiJyFzhkvk2ZUZws51U5@Cal.com",
+        "id": 24927701,
+        "location": "https://example.invalid/kithe-connector-test",
+        "meetingUrl": "https://example.invalid/kithe-connector-test",
+        "metadata": {
+          "purpose": "connector-test-decline"
+        },
+        "rating": null,
+        "rescheduledByEmail": null,
+        "start": "2026-09-09T16:45:00.000Z",
+        "status": "rejected",
+        "title": "Kithe connector approval test between hawkyre and Kithe Connector Test",
+        "uid": "sEHiJyFzhkvk2ZUZws51U5",
+        "updatedAt": "2026-09-08T04:02:26.889Z"
+      },
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "unknown",
+          "displayGuests": [],
+          "email": "unknown",
+          "guests": [],
+          "name": "unknown",
+          "rescheduledReason": "unknown"
+        },
+        "cancellationReason": "Kithe connector seat test complete",
+        "cancelledByEmail": "",
+        "createdAt": "2026-09-08T04:02:30.479Z",
+        "description": null,
+        "duration": 15,
+        "end": "2026-09-09T17:15:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "wNyqprpqHxip4mK8ktAmH2@Cal.com",
+        "id": 24927710,
+        "location": "https://example.invalid/kithe-connector-test",
+        "meetingUrl": "https://example.invalid/kithe-connector-test",
+        "metadata": {
+          "purpose": "connector-test-seated"
+        },
+        "rating": null,
+        "rescheduledByEmail": null,
+        "reschedulingReason": "unknown",
+        "start": "2026-09-09T17:00:00.000Z",
+        "status": "cancelled",
+        "title": "Kithe connector seated test with hawkyre",
+        "uid": "9ft9mwbNCEM6rE8r59aQQm",
+        "updatedAt": "2026-09-08T04:11:06.209Z"
+      },
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "hawkyre@gmail.com",
+          "displayGuests": [],
+          "email": "hawkyre@gmail.com",
+          "guests": [],
+          "location": {
+            "optionValue": "",
+            "value": "link"
+          },
+          "name": "Kithe Connector Test"
+        },
+        "cancellationReason": "Kithe connector recurring test complete",
+        "cancelledByEmail": "",
+        "createdAt": "2026-09-08T04:02:34.028Z",
+        "description": "",
+        "duration": 15,
+        "end": "2026-09-09T17:30:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "2CntncJTHMXHGTUgMzPguX@Cal.com",
+        "id": 24927711,
+        "location": "https://example.invalid/kithe-connector-test",
+        "meetingUrl": "https://example.invalid/kithe-connector-test",
+        "metadata": {
+          "purpose": "connector-test-recurring"
+        },
+        "rating": null,
+        "recurringBookingUid": "57afb822-b198-4531-ac83-2673f72552e5",
+        "start": "2026-09-09T17:15:00.000Z",
+        "status": "cancelled",
+        "title": "Kithe connector recurring test between hawkyre and Kithe Connector Test",
+        "uid": "2CntncJTHMXHGTUgMzPguX",
+        "updatedAt": "2026-09-08T04:11:09.212Z"
+      },
+      {
+        "absentHost": false,
+        "attendees": [
+          {
+            "absent": false,
+            "displayEmail": "hawkyre@gmail.com",
+            "email": "hawkyre@gmail.com",
+            "language": "en",
+            "name": "Kithe Connector Test",
+            "timeZone": "America/Los_Angeles"
+          }
+        ],
+        "bookingFieldsResponses": {
+          "displayEmail": "hawkyre@gmail.com",
+          "displayGuests": [],
+          "email": "hawkyre@gmail.com",
+          "guests": [],
+          "location": {
+            "optionValue": "",
+            "value": "link"
+          },
+          "name": "Kithe Connector Test"
+        },
+        "cancellationReason": "Kithe connector recurring test complete",
+        "cancelledByEmail": "",
+        "createdAt": "2026-09-08T04:02:34.509Z",
+        "description": "",
+        "duration": 15,
+        "end": "2026-09-16T17:30:00.000Z",
+        "eventType": null,
+        "eventTypeId": null,
+        "guests": [],
+        "hosts": [
+          {
+            "displayEmail": "me@hawkyre.com",
+            "email": "me@hawkyre.com",
+            "id": 3209949,
+            "name": "hawkyre",
+            "timeZone": "America/Los_Angeles",
+            "username": "hawkyre-test"
+          }
+        ],
+        "icsUid": "uugqAAFwndREomwkEoMss6@Cal.com",
+        "id": 24927712,
+        "location": "https://example.invalid/kithe-connector-test",
+        "meetingUrl": "https://example.invalid/kithe-connector-test",
+        "metadata": {
+          "purpose": "connector-test-recurring"
+        },
+        "rating": null,
+        "recurringBookingUid": "57afb822-b198-4531-ac83-2673f72552e5",
+        "start": "2026-09-16T17:15:00.000Z",
+        "status": "cancelled",
+        "title": "Kithe connector recurring test between hawkyre and Kithe Connector Test",
+        "uid": "uugqAAFwndREomwkEoMss6",
+        "updatedAt": "2026-09-08T04:11:09.212Z"
+      }
+    ],
+    "pagination": {
+      "currentPage": 1,
+      "hasNextPage": false,
+      "hasPreviousPage": false,
+      "itemsPerPage": 100,
+      "remainingItems": 0,
+      "returnedItems": 7,
+      "totalItems": 7,
+      "totalPages": 1
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/users/{userId}/bookings",
+  "parsed": true,
+  "provider": "cal_com"
+}

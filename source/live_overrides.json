@@ -162,26 +162,6 @@
         ]
       }
     },
-    "BookingOutput_2024_08_13": {
-      "rescheduledByEmail": {
-        "type": "string",
-        "format": "email",
-        "example": "rescheduler@example.com",
-        "nullable": true
-      },
-      "rating": {
-        "type": "number",
-        "example": 4,
-        "nullable": true
-      }
-    },
-    "RecurringBookingOutput_2024_08_13": {
-      "rating": {
-        "type": "number",
-        "example": 4,
-        "nullable": true
-      }
-    },
     "CreateSeatedBookingOutput_2024_08_13": {
       "description": {
         "type": "string",
@@ -198,6 +178,16 @@
         "type": "number",
         "example": 4,
         "nullable": true
+      },
+      "eventTypeId": {
+        "type": "number",
+        "nullable": true,
+        "description": "The source marks the deprecated id required, but a booking whose event type was deleted answers with an explicit null."
+      },
+      "eventType": {
+        "$ref": "#/components/schemas/EventType",
+        "nullable": true,
+        "description": "The source marks the event type required, but a booking whose event type was deleted answers with an explicit null."
       }
     },
     "GetSeatedBookingOutput_2024_08_13": {
@@ -216,7 +206,359 @@
         "type": "number",
         "example": 4,
         "nullable": true
+      },
+      "eventTypeId": {
+        "type": "number",
+        "nullable": true,
+        "description": "The source marks the deprecated id required, but a booking whose event type was deleted answers with an explicit null."
+      },
+      "eventType": {
+        "$ref": "#/components/schemas/EventType",
+        "nullable": true,
+        "description": "The source marks the event type required, but a booking whose event type was deleted answers with an explicit null."
       }
+    },
+    "OrgTeamOutputDto": {
+      "parentId": {
+        "type": "number",
+        "nullable": true,
+        "description": "Null on the organization row itself, which the source types as a plain number."
+      },
+      "logoUrl": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded a logo answer with an explicit null, which the source types as a plain string."
+      },
+      "calVideoLogo": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded a Cal Video logo answer with an explicit null, which the source types as a plain string."
+      },
+      "appLogo": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded an app logo answer with an explicit null, which the source types as a plain string."
+      },
+      "appIconLogo": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded an app icon answer with an explicit null, which the source types as a plain string."
+      },
+      "bio": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a bio answer with an explicit null, which the source types as a plain string."
+      },
+      "theme": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams on the default theme answer with an explicit null, which the source types as a plain string."
+      },
+      "brandColor": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a brand colour answer with an explicit null, which the source types as a plain string."
+      },
+      "darkBrandColor": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a dark brand colour answer with an explicit null, which the source types as a plain string."
+      },
+      "bannerUrl": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a banner answer with an explicit null, which the source types as a plain string."
+      },
+      "timeFormat": {
+        "type": "number",
+        "nullable": true,
+        "description": "Live teams that follow the account time format answer with an explicit null, which the source types as a plain number."
+      }
+    },
+    "TeamOutputDto": {
+      "parentId": {
+        "type": "number",
+        "nullable": true,
+        "description": "Null on the organization row itself, which the source types as a plain number."
+      },
+      "logoUrl": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded a logo answer with an explicit null, which the source types as a plain string."
+      },
+      "calVideoLogo": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded a Cal Video logo answer with an explicit null, which the source types as a plain string."
+      },
+      "appLogo": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded an app logo answer with an explicit null, which the source types as a plain string."
+      },
+      "appIconLogo": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams that never uploaded an app icon answer with an explicit null, which the source types as a plain string."
+      },
+      "bio": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a bio answer with an explicit null, which the source types as a plain string."
+      },
+      "theme": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams on the default theme answer with an explicit null, which the source types as a plain string."
+      },
+      "brandColor": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a brand colour answer with an explicit null, which the source types as a plain string."
+      },
+      "darkBrandColor": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a dark brand colour answer with an explicit null, which the source types as a plain string."
+      },
+      "bannerUrl": {
+        "type": "string",
+        "nullable": true,
+        "description": "Live teams without a banner answer with an explicit null, which the source types as a plain string."
+      },
+      "timeFormat": {
+        "type": "number",
+        "nullable": true,
+        "description": "Live teams that follow the account time format answer with an explicit null, which the source types as a plain number."
+      }
+    },
+    "PaginationMetaDto": {
+      "currentPage": {
+        "type": "number",
+        "minimum": 0,
+        "description": "The source documents page numbers from 1, but an unpaged request answers with currentPage 0."
+      }
+    },
+    "BookingOutput_2024_08_13": {
+      "description": {
+        "type": "string",
+        "example": "Learn how to integrate scheduling into marketplace.",
+        "nullable": true,
+        "description": "The source marks the description required, but a booking created without one answers with an explicit null."
+      },
+      "rescheduledByEmail": {
+        "type": "string",
+        "format": "email",
+        "example": "rescheduler@example.com",
+        "nullable": true
+      },
+      "rating": {
+        "type": "number",
+        "example": 4,
+        "nullable": true
+      },
+      "eventTypeId": {
+        "type": "number",
+        "nullable": true,
+        "description": "The source marks the deprecated id required, but a booking whose event type was deleted answers with an explicit null."
+      },
+      "eventType": {
+        "$ref": "#/components/schemas/EventType",
+        "nullable": true,
+        "description": "The source marks the event type required, but a booking whose event type was deleted answers with an explicit null."
+      }
+    },
+    "RecurringBookingOutput_2024_08_13": {
+      "description": {
+        "type": "string",
+        "example": "Learn how to integrate scheduling into marketplace.",
+        "nullable": true,
+        "description": "The source marks the description required, but a booking created without one answers with an explicit null."
+      },
+      "rating": {
+        "type": "number",
+        "example": 4,
+        "nullable": true
+      },
+      "eventTypeId": {
+        "type": "number",
+        "nullable": true,
+        "description": "The source marks the deprecated id required, but a booking whose event type was deleted answers with an explicit null."
+      },
+      "eventType": {
+        "$ref": "#/components/schemas/EventType",
+        "nullable": true,
+        "description": "The source marks the event type required, but a booking whose event type was deleted answers with an explicit null."
+      }
+    },
+    "GetRecurringSeatedBookingOutput_2024_08_13": {
+      "description": {
+        "type": "string",
+        "example": "Learn how to integrate scheduling into marketplace.",
+        "nullable": true,
+        "description": "The source marks the description required, but a booking created without one answers with an explicit null."
+      },
+      "eventTypeId": {
+        "type": "number",
+        "nullable": true,
+        "description": "The source marks the deprecated id required, but a booking whose event type was deleted answers with an explicit null."
+      },
+      "eventType": {
+        "$ref": "#/components/schemas/EventType",
+        "nullable": true,
+        "description": "The source marks the event type required, but a booking whose event type was deleted answers with an explicit null."
+      }
+    },
+    "OrgRoleOutput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 94-value enum, but live organization roles carry values that enum omits (`adminDataview.*`, `availability.*`, `ooo.*`, `apiKey.*`, `team.manage`, `booking.manage`, `routingForm.manage` and more), so the contract accepts any string instead of refusing a valid role."
+        }
+      }
+    },
+    "GetBookingsOutput_2026_05_01": {
+      "pagination": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CursorPaginationMeta_2026_05_01"
+          },
+          {
+            "$ref": "#/components/schemas/PaginationMetaDto"
+          }
+        ],
+        "description": "The source declares cursor metadata, but the live API answers the booking list with the offset metadata the other paginated endpoints use. Both shapes are accepted because the path carries no cal-api-version of its own."
+      }
+    },
+    "MembershipUserOutputDto": {
+      "avatarUrl": {
+        "type": "string",
+        "nullable": true,
+        "description": "A member who never uploaded an avatar answers with an explicit null, which the source types as a plain string."
+      }
+    },
+    "UserVerifiedEmailOutput": {
+      "data": {
+        "$ref": "#/components/schemas/UserVerifiedEmailOutputData",
+        "nullable": true,
+        "description": "An id the account does not own answers 200 with `data: null` instead of 404, which the source types as a required object."
+      }
+    },
+    "UserVerifiedPhoneOutput": {
+      "data": {
+        "$ref": "#/components/schemas/UserVerifiedPhoneOutputData",
+        "nullable": true,
+        "description": "An id the account does not own answers 200 with `data: null` instead of 404, which the source types as a required object."
+      }
+    },
+    "TeamVerifiedEmailOutput": {
+      "data": {
+        "$ref": "#/components/schemas/TeamVerifiedEmailOutputData",
+        "nullable": true,
+        "description": "An id the team does not own answers 200 with `data: null` instead of 404, which the source types as a required object."
+      }
+    },
+    "TeamVerifiedPhoneOutput": {
+      "data": {
+        "$ref": "#/components/schemas/TeamVerifiedPhoneOutputData",
+        "nullable": true,
+        "description": "An id the team does not own answers 200 with `data: null` instead of 404, which the source types as a required object."
+      }
+    },
+    "GetAllOrgMemberships": {
+      "data": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OrganizationMembershipOutput"
+        },
+        "description": "The source types this as a single membership object; the list endpoint answers with an array of them."
+      }
+    },
+    "GetTeamMembershipsOutput": {
+      "data": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TeamMembershipOutput"
+        },
+        "description": "The source types this as a single membership object; the list endpoint answers with an array of them."
+      }
+    },
+    "CreateOrgRoleInput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 94-value enum, but live organization roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
+        }
+      }
+    },
+    "UpdateOrgRoleInput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 94-value enum, but live organization roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
+        }
+      }
+    },
+    "CreateOrgRolePermissionsInput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 94-value enum, but live organization roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
+        }
+      }
+    },
+    "TeamRoleOutput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 53-value enum, but live roles carry values that enum omits, so the contract accepts any string instead of refusing a valid role."
+        }
+      }
+    },
+    "CreateTeamRoleInput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 53-value enum, but live roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
+        }
+      }
+    },
+    "UpdateTeamRoleInput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 53-value enum, but live roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
+        }
+      }
+    },
+    "CreateTeamRolePermissionsInput": {
+      "permissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "booking.read",
+          "description": "Permission in `resource.action` form. The source closes this to a 53-value enum, but live roles carry values that enum omits, so the contract accepts any string instead of refusing a valid request."
+        }
+      }
+    }
+  },
+  "operation_parameters": {
+    "GET /v2/bookings": {
+      "cal-api-version": "2024-08-13"
     }
   },
   "operation_responses": {

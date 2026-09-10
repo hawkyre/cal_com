@@ -1,0 +1,15 @@
+{
+  "body": {
+    "data": {
+      "formSubmission": null,
+      "groups": [],
+      "steps": []
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/bookings/{bookingUid}/routing-trace",
+  "parsed": true,
+  "provider": "cal_com"
+}

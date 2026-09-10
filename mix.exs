@@ -38,7 +38,10 @@ defmodule CalCom.MixProject do
       {:typed_ecto_schema, "~> 0.4"},
       {:jason, "~> 1.2"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
+      # Dev only, for `scripts/certify.exs`: the package itself stays
+      # transport-free, but certifying it against the live API needs a client.
+      {:req, "~> 0.5", only: :dev, runtime: false}
     ]
   end
 

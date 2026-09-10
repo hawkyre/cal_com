@@ -94,6 +94,11 @@ defmodule CalCom.Pagination do
       {false, nil} ->
         nil
 
+      # Cal.com's organization booking list documents a cursor and answers with
+      # offset metadata: an explicit "no next page" is the stop a walk needs.
+      {nil, nil} when meta.has_next_page == false ->
+        nil
+
       {true, cursor} when is_binary(cursor) and byte_size(cursor) > 0 ->
         if MapSet.member?(state.seen_cursors, cursor) do
           invalid("provider repeated a cursor")

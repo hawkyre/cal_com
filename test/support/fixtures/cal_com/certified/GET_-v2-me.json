@@ -1,0 +1,28 @@
+{
+  "body": {
+    "data": {
+      "avatarUrl": null,
+      "bio": "",
+      "defaultScheduleId": 2335882,
+      "email": "me@hawkyre.com",
+      "id": 3209949,
+      "locale": null,
+      "name": "hawkyre",
+      "organization": {
+        "id": 422850,
+        "isPlatform": false
+      },
+      "organizationId": 422850,
+      "timeFormat": 12,
+      "timeZone": "America/Los_Angeles",
+      "username": "hawkyre-test",
+      "weekStart": "Sunday"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/me",
+  "parsed": true,
+  "provider": "cal_com"
+}

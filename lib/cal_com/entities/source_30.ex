@@ -1,66 +1,171 @@
 alias CalCom.Entities
 
-defmodule Entities.WorkflowEmailAddressStepDto do
+defmodule Entities.ResultOrganizationsTeamsRolesControllerGetRole200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowEmailAttendeeStepDto do
+defmodule Entities.InputOrganizationsTeamsRolesControllerUpdateRole do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowEmailHostStepDto do
+defmodule Entities.ResultOrganizationsTeamsRolesControllerUpdateRole200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowFormActivationDto do
+defmodule Entities.ResultOrganizationsTeamsRolesControllerDeleteRole200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowMessageOutputDto do
+defmodule Entities.InputOrganizationsTeamsRolesPermissionsControllerAddPermissions do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowPhoneAttendeeStepDto do
+defmodule Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowPhoneNumberStepDto do
+defmodule Entities.InputOrganizationsTeamsRolesPermissionsControllerRemovePermissions do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowPhoneWhatsAppAttendeeStepDto do
+defmodule Entities.InputOrganizationsTeamsRolesPermissionsControllerRemovePermission do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowPhoneWhatsAppNumberStepDto do
+defmodule Entities.InputOrganizationsTeamsRoutingFormsControllerGetTeamRoutingForms do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowTriggerOffsetDto do
+defmodule Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerGetRoutingFormResponses do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkflowTriggerOffsetOutputDto do
+defmodule Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.WorkspacePlatformDto do
+defmodule Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerUpdateRoutingFormResponse do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end
 
-defmodule Entities.CalendarEventOwner do
+defmodule Entities.InputOrganizationsTeamsSchedulesControllerGetTeamSchedules do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsStripeControllerGetTeamStripeConnectUrl do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationsStripeControllerGetTeamStripeConnectUrl200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationsStripeControllerCheckTeamStripeConnection200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsStripeControllerSave do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationsStripeControllerSave200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsTeamsSchedulesControllerGetUserSchedules do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationTeamWorkflowsControllerCreateEventTypeWorkflow do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflows200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationTeamWorkflowsControllerCreateFormWorkflow do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationTeamWorkflowsControllerGetWorkflowById do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationTeamWorkflowsControllerUpdateWorkflow do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationTeamWorkflowsControllerUpdateRoutingFormWorkflow do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsUsersControllerGetOrganizationsUsers do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationsUsersControllerGetOrganizationsUsers200 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsUsersControllerCreateOrganizationUser do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.ResultOrganizationsUsersControllerCreateOrganizationUser201 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsUsersControllerUpdateOrganizationUser do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
+end
+
+defmodule Entities.InputOrganizationsUsersControllerDeleteOrganizationUser do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_30.json", __MODULE__}
 end

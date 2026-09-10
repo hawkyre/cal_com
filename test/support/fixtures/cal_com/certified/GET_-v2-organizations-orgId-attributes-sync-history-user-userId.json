@@ -1,0 +1,14 @@
+{
+  "body": {
+    "data": [],
+    "meta": {
+      "hasMore": false
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/attributes/sync-history/user/{userId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

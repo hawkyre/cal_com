@@ -1,0 +1,34 @@
+{
+  "body": {
+    "data": [
+      {
+        "accepted": true,
+        "attributes": [],
+        "createdAt": "2026-09-10T01:57:24.746Z",
+        "customRoleId": "owner_role",
+        "disableImpersonation": false,
+        "id": 2508055,
+        "role": "OWNER",
+        "teamId": 422850,
+        "updatedAt": "2026-09-10T01:57:24.748Z",
+        "user": {
+          "avatarUrl": null,
+          "bio": "",
+          "email": "me@hawkyre.com",
+          "metadata": {
+            "stripeCustomerId": "cus_VDgA0SJoJOqQ6y"
+          },
+          "name": "hawkyre",
+          "username": "hawkyre-test"
+        },
+        "userId": 3209949
+      }
+    ],
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "GET /v2/organizations/{orgId}/memberships",
+  "parsed": true,
+  "provider": "cal_com"
+}
