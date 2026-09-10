@@ -6,7 +6,7 @@
         "isActiveOnAllEventTypes": false
       },
       "id": 446713,
-      "name": "Kithe cert team workflow TL51DWM",
+      "name": "Kithe cert team workflow (edited) TL51DXN",
       "steps": [
         {
           "action": "email_host",
@@ -39,8 +39,8 @@
     "status": "success"
   },
   "captured_on": "2026-09-10",
-  "http_status": 201,
-  "operation": "POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
   "parsed": true,
   "provider": "cal_com"
 }

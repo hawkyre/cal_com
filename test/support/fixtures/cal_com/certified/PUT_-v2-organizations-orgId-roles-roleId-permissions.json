@@ -1,0 +1,14 @@
+{
+  "body": {
+    "data": [
+      "booking.read",
+      "eventType.read"
+    ],
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions",
+  "parsed": true,
+  "provider": "cal_com"
+}

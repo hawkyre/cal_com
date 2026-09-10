@@ -1,14 +1,13 @@
 {
   "body": {
     "data": {
-      "id": 7014572,
-      "title": "Kithe certification team event"
+      "sent": true
     },
     "status": "success"
   },
   "captured_on": "2026-09-10",
   "http_status": 200,
-  "operation": "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
+  "operation": "POST /v2/bookings/verification/email/send-code",
   "parsed": true,
   "provider": "cal_com"
 }

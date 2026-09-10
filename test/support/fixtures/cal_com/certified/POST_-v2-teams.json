@@ -2,7 +2,7 @@
   "body": {
     "data": {
       "message": "Your team will be created once we receive your payment. Please complete the payment using the payment link.",
-      "paymentLink": "https://checkout.stripe.com/c/pay/cs_live_b1EoVICIduSFxGYMA7qWHeiBWYA01j26961C1Qeob1tRbsJYJZKf8b0O0B#fid1d2BpamRhQ2prcSc%2FJ0xrcWB3JyknZ2p3YWB3VnF8aWAnPydhYGNkcGlxJykndnBndmZ3bHVxbGprUGtsdHBga2B2dkBrZGdpYGEnP2NkaXZgKSdicGRmZGhqaWBTZHdsZGtxJz8nZmprcXdqaScpJ2R1bE5gfCc%2FJ3VuWmlsc2BaMDRMdnBUYE09UEFsckxjcW5qfUdTPGhHUl9odDxBcnRHYG1cMlRdUUBqd3BQNUpyVjJjUWI9TkNcRkpzfDxvXUp9PTNQTWY3Qm9yRm1LQDxufVdzZjE8QWg1NX1XPXZ0YHBSJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJjc8Nzw3PCcpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl",
+      "paymentLink": "https://checkout.stripe.com/c/pay/cs_live_b1y8XcS2pi6G4bA2MM659q4OT7WzqJ5n28GnLBaLhYDUhpskspbyeZO8rT#fid1d2BpamRhQ2prcSc%2FJ0xrcWB3JyknZ2p3YWB3VnF8aWAnPydhYGNkcGlxJykndnBndmZ3bHVxbGprUGtsdHBga2B2dkBrZGdpYGEnP2NkaXZgKSdicGRmZGhqaWBTZHdsZGtxJz8nZmprcXdqaScpJ2R1bE5gfCc%2FJ3VuWmlsc2BaMDRMdnBUYE09UEFsckxjcW5qfUdTPGhHUl9odDxBcnRHYG1cMlRdUUBqd3BQNUpyVjJjUWI9TkNcRkpzfDxvXUp9PTNQTWY3Qm9yRm1LQDxufVdzZjE8QWg1NX1XPXZ0YHBSJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJjc8Nzw3PCcpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl",
       "pendingTeam": {
         "appIconLogo": null,
         "appLogo": null,
@@ -13,13 +13,13 @@
         "darkBrandColor": null,
         "hideBookATeamMember": false,
         "hideBranding": false,
-        "id": 423064,
+        "id": 423092,
         "isOrganization": false,
         "isPrivate": true,
         "logoUrl": null,
-        "name": "Kithe certification TL50PVS",
+        "name": "Kithe certification TL51BM1",
         "parentId": null,
-        "slug": "kithe-cert-TL50PVT",
+        "slug": "kithe-cert-TL51BM2",
         "theme": null,
         "timeFormat": null,
         "timeZone": "Europe/London",

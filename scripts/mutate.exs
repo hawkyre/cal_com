@@ -294,6 +294,9 @@ defmodule Mutate do
       team_admin() ++
       org_users() ++
       memberships() ++
+      org_role_permissions() ++
+      team_edits() ++
+      attempts() ++
       attributes_with_options() ++
       attribute_options() ++
       account_settings() ++
@@ -334,9 +337,17 @@ defmodule Mutate do
   defp merge_part(operation, part, overrides) do
     base =
       case Enum.find(operation.input_module.fields(), &(&1.wire == part)) do
-        %{rule: %{kind: {:object, module}}} -> Inputs.required_fields(module)
-        %{rule: %{kind: {:one_of, [rule | _rest]}}} -> Inputs.sample(rule)
-        _none -> %{}
+        %{rule: %{kind: {:object, module}}} ->
+          Inputs.required_fields(module)
+
+        # A body that is a union has to be sampled through the union: taking its
+        # first arm directly leaves required fields of the chosen arm unset, and
+        # an empty body matches none of them.
+        %{rule: %{kind: {union, _rules}}} = field when union in [:one_of, :any_of] ->
+          Inputs.sample(field.rule)
+
+        _none ->
+          %{}
       end
 
     # A union whose first variant samples to a scalar leaves nothing to merge
@@ -1672,6 +1683,409 @@ defmodule Mutate do
          end)
        end}
     ]
+  end
+
+  # ---------------------------------------------------------------------------
+  # Operations whose fixture this account does not have
+  # ---------------------------------------------------------------------------
+  #
+  # Each is still called once, with the best input the contract can build and the
+  # ids the account owns. What comes back is the evidence: a classified refusal
+  # names what the provider wanted, which is worth more than an empty cell.
+
+  @spec attempts() :: [{String.t(), String.t(), fun()}]
+  defp attempts do
+    org_only = fn id, proves ->
+      {id, proves,
+       fn credentials, ids ->
+         each(ids, "orgId", fn org_id ->
+           Ledger.call(credentials, id, params(id, path: %{"orgId" => org_id}))
+         end)
+       end}
+    end
+
+    [
+      org_only.("POST /v2/organizations/{orgId}/teams", "asks the provider to create a team"),
+      org_only.(
+        "POST /v2/organizations/{orgId}/organizations",
+        "asks the provider to create a managed organization"
+      ),
+      {"POST /v2/organizations/{orgId}/delegation-credentials", "creates a delegation credential",
+       fn credentials, ids ->
+         each(ids, "orgId", fn org_id ->
+           # This one really creates something, so the delete is tracked: a
+           # credential left behind would be a live credential on the account.
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/organizations/{orgId}/delegation-credentials",
+               params("POST /v2/organizations/{orgId}/delegation-credentials",
+                 path: %{"orgId" => org_id}
+               )
+             )
+
+           Ledger.track(
+             "DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}",
+             %{
+               "orgId" => org_id,
+               "credentialId" => Ledger.created_id(created, :id)
+             }
+           )
+         end)
+       end},
+      org_only.("POST /v2/organizations/{orgId}/bookings/report", "asks for a bookings report"),
+      {"POST /v2/calendars/ics-feed/save", "saves an ICS feed calendar",
+       fn credentials, _ids ->
+         Ledger.call(
+           credentials,
+           "POST /v2/calendars/ics-feed/save",
+           params("POST /v2/calendars/ics-feed/save",
+             body: %{"urls" => ["https://example.invalid/calendar.ics"]}
+           )
+         )
+       end},
+      {"POST /v2/bookings/verification/email/send-code",
+       "asks the provider to mail a booking verification code",
+       fn credentials, _ids ->
+         Ledger.call(
+           credentials,
+           "POST /v2/bookings/verification/email/send-code",
+           params("POST /v2/bookings/verification/email/send-code",
+             body: %{"email" => System.get_env("CALCOM_VERIFY_EMAIL", @attendee["email"])}
+           )
+         )
+       end},
+      {"POST /v2/bookings/verification/email/verify-code", "checks the booking verification code",
+       fn credentials, _ids ->
+         Ledger.call(
+           credentials,
+           "POST /v2/bookings/verification/email/verify-code",
+           params("POST /v2/bookings/verification/email/verify-code",
+             body: %{
+               "email" => System.get_env("CALCOM_VERIFY_EMAIL", @attendee["email"]),
+               "code" => System.get_env("CALCOM_EMAIL_CODE", "000000")
+             }
+           )
+         )
+       end}
+    ] ++ delegation_credential_attempts() ++ routing_form_attempts() ++ phone_call_attempts()
+  end
+
+  # A credential id this account does not own: the probe proves the route and the
+  # refusal, which is as far as an account with no delegated credentials can go.
+  @spec delegation_credential_attempts() :: [{String.t(), String.t(), fun()}]
+  defp delegation_credential_attempts do
+    for {id, proves} <- [
+          {"PATCH /v2/organizations/{orgId}/delegation-credentials/{credentialId}",
+           "edits a delegation credential"},
+          {"DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}",
+           "deletes a delegation credential"},
+          {"POST /v2/organizations/{orgId}/delegation-credentials/{credentialId}/reset-rotation",
+           "resets a delegation credential's rotation"}
+        ] do
+      {id, proves,
+       fn credentials, ids ->
+         each(ids, "orgId", fn org_id ->
+           Ledger.call(
+             credentials,
+             id,
+             params(id, path: %{"orgId" => org_id, "credentialId" => "none"})
+           )
+         end)
+       end}
+    end
+  end
+
+  @spec routing_form_attempts() :: [{String.t(), String.t(), fun()}]
+  defp routing_form_attempts do
+    for {id, proves} <- [
+          {"POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses",
+           "creates a routing form response"},
+          {"POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses",
+           "creates a routing form response on a team route"},
+          {"POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses",
+           "creates a routing form response through the user route"},
+          {"POST /v2/routing-forms/{routingFormId}/calculate-slots",
+           "computes slots for a routing form"}
+        ] do
+      {id, proves,
+       fn credentials, ids ->
+         each(ids, "orgId", fn org_id ->
+           # Each route declares exactly the path keys it has; sending one it
+           # does not declare fails the client's own contract before the call.
+           path =
+             cond do
+               String.contains?(id, "organizations/{orgId}/teams/{teamId}") ->
+                 %{
+                   "orgId" => org_id,
+                   "teamId" => team_fixture(credentials),
+                   "routingFormId" => "none"
+                 }
+
+               String.contains?(id, "teams/{teamId}") ->
+                 %{"teamId" => team_fixture(credentials), "routingFormId" => "none"}
+
+               String.contains?(id, "organizations/{orgId}") ->
+                 %{"orgId" => org_id, "routingFormId" => "none"}
+
+               true ->
+                 %{"routingFormId" => "none"}
+             end
+
+           Ledger.call(credentials, id, params(id, path: path))
+         end)
+       end}
+    end
+  end
+
+  @spec phone_call_attempts() :: [{String.t(), String.t(), fun()}]
+  defp phone_call_attempts do
+    [
+      {"POST /v2/teams/{teamId}/event-types/{eventTypeId}/create-phone-call",
+       "asks the provider to create a phone-call event type",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn _team_id, event_type_id ->
+           Ledger.call(
+             credentials,
+             "POST /v2/teams/{teamId}/event-types/{eventTypeId}/create-phone-call",
+             params("POST /v2/teams/{teamId}/event-types/{eventTypeId}/create-phone-call",
+               path: event_type_path(credentials, event_type_id)
+             )
+           )
+         end)
+       end},
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call",
+       "asks the provider to create a phone-call event type through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           Ledger.call(
+             credentials,
+             "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call",
+             params(
+               "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call",
+               path: path
+             )
+           )
+         end)
+       end}
+    ]
+  end
+
+  @spec event_type_path(Credentials.t(), term()) :: map()
+  defp event_type_path(credentials, event_type_id) do
+    %{"teamId" => team_fixture(credentials), "eventTypeId" => event_type_id}
+  end
+
+  # ---------------------------------------------------------------------------
+  # Role permissions and team edits
+  # ---------------------------------------------------------------------------
+
+  # The organization route's role fixture carries `orgId` and `roleId` only: the
+  # team-scoped path a team role uses has a third key its contract refuses.
+  @spec with_org_role(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_org_role(credentials, fun) do
+    with_org_id(credentials, fn org_id ->
+      created =
+        Ledger.call(
+          credentials,
+          "POST /v2/organizations/{orgId}/roles",
+          params("POST /v2/organizations/{orgId}/roles",
+            path: %{"orgId" => org_id},
+            body: %{"name" => "Kithe cert role " <> suffix(), "permissions" => ["booking.read"]}
+          )
+        )
+
+      case Ledger.created_id(created, :id) do
+        nil ->
+          :ok
+
+        role_id ->
+          path = %{"orgId" => org_id, "roleId" => role_id}
+          Ledger.track("DELETE /v2/organizations/{orgId}/roles/{roleId}", path)
+          fun.(path, role_id)
+      end
+    end)
+  end
+
+  @spec org_role_permissions() :: [{String.t(), String.t(), fun()}]
+  defp org_role_permissions do
+    grant = fn credentials, path, role_id ->
+      Ledger.call(
+        credentials,
+        "POST /v2/organizations/{orgId}/roles/{roleId}/permissions",
+        params("POST /v2/organizations/{orgId}/roles/{roleId}/permissions",
+          path: Map.put(path, "roleId", role_id),
+          body: %{"permissions" => ["booking.read"]}
+        )
+      )
+    end
+
+    [
+      {"PUT /v2/organizations/{orgId}/roles/{roleId}/permissions",
+       "replaces the permissions of the role this run created",
+       fn credentials, _ids ->
+         with_org_role(credentials, fn path, role_id ->
+           Ledger.call(
+             credentials,
+             "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions",
+             params("PUT /v2/organizations/{orgId}/roles/{roleId}/permissions",
+               path: Map.put(path, "roleId", role_id),
+               body: %{"permissions" => ["booking.read", "eventType.read"]}
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions",
+       "clears every permission of the role this run created",
+       fn credentials, _ids ->
+         with_org_role(credentials, fn path, role_id ->
+           grant.(credentials, path, role_id)
+
+           Ledger.call(
+             credentials,
+             "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions",
+             params("DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions",
+               path: Map.put(path, "roleId", role_id)
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions/{permission}",
+       "removes one permission from the role this run created",
+       fn credentials, _ids ->
+         with_org_role(credentials, fn path, role_id ->
+           grant.(credentials, path, role_id)
+
+           Ledger.call(
+             credentials,
+             "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions/{permission}",
+             %{
+               "path" => Map.put(path, "roleId", role_id) |> Map.put("permission", "booking.read")
+             }
+           )
+         end)
+       end},
+      {"DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}",
+       "removes one permission from the team role this run created",
+       fn credentials, _ids ->
+         with_team_role(credentials, fn path, role_id ->
+           Ledger.call(
+             credentials,
+             "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+             params("POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions",
+               path: Map.put(path, "roleId", role_id),
+               body: %{"permissions" => ["booking.read"]}
+             )
+           )
+
+           Ledger.call(
+             credentials,
+             "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}",
+             %{
+               "path" => Map.put(path, "roleId", role_id) |> Map.put("permission", "booking.read")
+             }
+           )
+         end)
+       end}
+    ]
+  end
+
+  @spec team_edits() :: [{String.t(), String.t(), fun()}]
+  defp team_edits do
+    [
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}",
+       "edits a team this account owns, then puts its name back",
+       fn credentials, _ids ->
+         with_team_admin(credentials, fn org_id, team_id ->
+           # The name it already has goes back in the same scenario, so the team
+           # is left exactly as it was found.
+           name = team_name(credentials, team_id)
+
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/teams/{teamId}",
+             params("PATCH /v2/organizations/{orgId}/teams/{teamId}",
+               path: team_admin_path(org_id, team_id),
+               body: %{"name" => name || "Team1"}
+             )
+           )
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
+       "edits a team event type this run created, through the organization route",
+       fn credentials, _ids ->
+         with_org_team_event_type(credentials, fn path ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
+             params("PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
+               path: path,
+               body: %{"title" => "Kithe certification team event (edited)"}
+             )
+           )
+         end)
+       end},
+      {"PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+       "edits the team workflow this run created",
+       fn credentials, _ids ->
+         with_team_workflow(credentials, fn path, workflow_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+             params("PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+               path: Map.put(path, "workflowId", workflow_id),
+               body: %{"name" => "Kithe cert team workflow (edited) " <> suffix()}
+             )
+           )
+         end)
+       end}
+    ]
+  end
+
+  @spec team_name(Credentials.t(), term()) :: String.t() | nil
+  defp team_name(credentials, team_id) do
+    case Ledger.call(credentials, "GET /v2/teams", %{})[:capture] do
+      {%{} = typed, _package} ->
+        typed.value.data
+        |> List.wrap()
+        |> Enum.find(&(Map.get(&1, :id) == team_id))
+        |> then(&(&1 && Map.get(&1, :name)))
+
+      _none ->
+        nil
+    end
+  end
+
+  @spec team_workflow(Credentials.t(), map()) :: map()
+  defp team_workflow(credentials, path) do
+    Ledger.call(
+      credentials,
+      "POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+      params("POST /v2/organizations/{orgId}/teams/{teamId}/workflows",
+        path: path,
+        body: %{"name" => "Kithe cert team workflow " <> suffix()}
+      )
+    )
+  end
+
+  @spec with_team_workflow(Credentials.t(), (map(), term() -> any())) :: any()
+  defp with_team_workflow(credentials, fun) do
+    with_team_admin(credentials, fn org_id, team_id ->
+      path = team_admin_path(org_id, team_id)
+
+      case Ledger.created_id(team_workflow(credentials, path), :id) do
+        nil ->
+          :ok
+
+        workflow_id ->
+          Ledger.track(
+            "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}",
+            Map.put(path, "workflowId", workflow_id)
+          )
+
+          fun.(path, workflow_id)
+      end
+    end)
   end
 
   # ---------------------------------------------------------------------------

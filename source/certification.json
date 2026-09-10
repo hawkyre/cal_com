@@ -97,8 +97,8 @@
     },
     "DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/memberships/{membershipId}": {
       "reason": "would remove a membership the account already has",
@@ -115,13 +115,13 @@
     },
     "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 204,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions/{permission}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 204,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}": {
       "fields": [],
@@ -165,8 +165,8 @@
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 204,
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
       "fields": [],
@@ -1307,8 +1307,9 @@
     },
     "PATCH /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
     },
     "PATCH /v2/organizations/{orgId}/memberships/{membershipId}": {
       "fields": [],
@@ -1331,13 +1332,13 @@
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
@@ -1366,8 +1367,8 @@
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
       "fields": [],
@@ -1462,13 +1463,14 @@
     },
     "POST /v2/bookings/verification/email/send-code": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "POST /v2/bookings/verification/email/verify-code": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/bookings/{bookingUid}/attendees": {
       "fields": [],
@@ -1525,8 +1527,9 @@
     },
     "POST /v2/calendars/ics-feed/save": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/calendars/{calendar}/credentials": {
       "reason": "needs a third-party calendar OAuth grant",
@@ -1686,18 +1689,20 @@
     },
     "POST /v2/organizations/{orgId}/bookings/report": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/delegation-credentials": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/delegation-credentials/{credentialId}/reset-rotation": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/memberships": {
       "reason": "would invite a real person to the organization",
@@ -1705,8 +1710,9 @@
     },
     "POST /v2/organizations/{orgId}/organizations": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/roles": {
       "fields": [],
@@ -1720,13 +1726,14 @@
     },
     "POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/connect": {
       "reason": "needs a Zoom or Google Meet OAuth grant",
@@ -1747,8 +1754,9 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 500,
+      "reason": "{:http, 500}",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
       "fields": [],
@@ -1777,8 +1785,9 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/request": {
       "fields": [],
@@ -1837,8 +1846,9 @@
     },
     "POST /v2/routing-forms/{routingFormId}/calculate-slots": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/schedules": {
       "fields": [],
@@ -1863,8 +1873,9 @@
     },
     "POST /v2/teams/{teamId}/event-types": {
       "fields": [],
-      "http": 201,
-      "status": "verified"
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "reason": "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\"",
@@ -1890,8 +1901,9 @@
     },
     "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
     },
     "POST /v2/teams/{teamId}/users/{userId}/ooo": {
       "fields": [],
@@ -1963,8 +1975,8 @@
     },
     "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
@@ -1982,5 +1994,5 @@
       "status": "verified"
     }
   },
-  "writes_generated_at": "2026-09-10T07:33:57.068995Z"
+  "writes_generated_at": "2026-09-10T07:47:50.218939Z"
 }

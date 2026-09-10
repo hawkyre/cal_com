@@ -2,16 +2,16 @@
   "body": {
     "data": {
       "color": null,
-      "createdAt": "2026-09-10T07:29:01.447Z",
+      "createdAt": "2026-09-10T07:40:57.815Z",
       "description": null,
-      "id": "631b1e16-74a6-4699-8676-f350e88367b0",
-      "name": "Kithe cert team role TL50SC29",
+      "id": "d7ea7a08-7463-4d81-88ab-423769085c34",
+      "name": "Kithe cert team role TL51C88",
       "permissions": [
         "booking.read"
       ],
       "teamId": 422851,
       "type": "CUSTOM",
-      "updatedAt": "2026-09-10T07:29:01.447Z"
+      "updatedAt": "2026-09-10T07:40:57.815Z"
     },
     "status": "success"
   },

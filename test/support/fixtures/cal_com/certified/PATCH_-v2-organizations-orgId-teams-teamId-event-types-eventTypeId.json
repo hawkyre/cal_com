@@ -11,7 +11,7 @@
       "recurrence": null,
       "parentEventTypeId": null,
       "lengthInMinutes": 15,
-      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL51FEP",
+      "bookingUrl": "https://hawk-labs.cal.com/team1/kithe-team-cert-TL51DTL",
       "seats": {
         "disabled": true
       },
@@ -25,7 +25,7 @@
       "disableGuests": false,
       "showOptimizedSlots": false,
       "description": "",
-      "id": 7014602,
+      "id": 7014587,
       "teamId": 422851,
       "confirmationPolicy": {
         "disabled": true
@@ -139,20 +139,20 @@
       "calVideoSettings": {
         "sendTranscriptionEmails": true
       },
-      "slug": "kithe-team-cert-TL51FEP",
+      "slug": "kithe-team-cert-TL51DTL",
       "bookingWindow": {
         "disabled": true
       },
       "interfaceLanguage": null,
       "schedulingType": "collective",
       "metadata": {},
-      "title": "Kithe certification team event"
+      "title": "Kithe certification team event (edited)"
     },
     "status": "success"
   },
   "captured_on": "2026-09-10",
-  "http_status": 201,
-  "operation": "POST /v2/organizations/{orgId}/teams/{teamId}/event-types",
+  "http_status": 200,
+  "operation": "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}",
   "parsed": true,
   "provider": "cal_com"
 }
