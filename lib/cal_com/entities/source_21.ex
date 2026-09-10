@@ -1,30 +1,5 @@
 alias CalCom.Entities
 
-defmodule Entities.TeamMembershipChangeOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.TeamMembershipOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.TeamRoleOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.TeamVerifiedEmailOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
-defmodule Entities.TeamVerifiedEmailOutputData do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
-end
-
 defmodule Entities.TeamVerifiedEmailsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
@@ -106,6 +81,11 @@ defmodule Entities.UpdateDelegationCredentialInput do
 end
 
 defmodule Entities.UpdateEmailAddressWorkflowStepDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
+end
+
+defmodule Entities.UpdateEmailAttendeeWorkflowStepDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_21.json", __MODULE__}
 end

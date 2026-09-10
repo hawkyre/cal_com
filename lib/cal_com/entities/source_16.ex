@@ -109,3 +109,13 @@ defmodule Entities.PartialOmitSystemSplitNameFieldInput20260612Field do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_16.json", __MODULE__}
 end
+
+defmodule Entities.PathsWorkflowStepOutputDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_16.json", __MODULE__}
+end
+
+defmodule Entities.PendingSecretDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_16.json", __MODULE__}
+end

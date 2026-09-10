@@ -60,41 +60,6 @@ defmodule Entities.BookingOutput20240813BookingFieldsResponses do
   use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
 end
 
-defmodule Entities.BookingInsightsInputColumnFiltersItem do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
-defmodule Entities.BookingOutput20240813Metadata do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
-defmodule Entities.ConnectedCalendarsDataDestinationCalendarOption1 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
-defmodule Entities.DeletePrivateLinkOutputData do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
-defmodule Entities.EventTypeHistoryAuditLog20240614DisplayJson do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
-defmodule Entities.GetReservedSlotOutput20240904Data do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
-defmodule Entities.InsightsRoutingRoutedToUserOutputEmail do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
-end
-
 defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption0 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
@@ -136,6 +101,41 @@ defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption14 do
 end
 
 defmodule Entities.PatchBookingFieldsInput20260612BookingFieldsItemOption15 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.BookingInsightsInputColumnFiltersItem do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.BookingOutput20240813Metadata do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.ConnectedCalendarsDataDestinationCalendarOption1 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.DeletePrivateLinkOutputData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.EventTypeHistoryAuditLog20240614DisplayJson do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.GetReservedSlotOutput20240904Data do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
+end
+
+defmodule Entities.InsightsRoutingRoutedToUserOutputEmail do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_39.json", __MODULE__}
 end

@@ -1,10 +1,5 @@
 alias CalCom.Entities
 
-defmodule Entities.UpdateFormWorkflowDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_23.json", __MODULE__}
-end
-
 defmodule Entities.UpdateManagedUserInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_23.json", __MODULE__}
@@ -76,6 +71,21 @@ defmodule Entities.UpdatePhoneNumberWorkflowStepDto do
 end
 
 defmodule Entities.UpdatePhoneWhatsAppNumberWorkflowStepDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_23.json", __MODULE__}
+end
+
+defmodule Entities.UpdatePrivateLinkBody do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_23.json", __MODULE__}
+end
+
+defmodule Entities.UpdateRoutingFormResponseInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_23.json", __MODULE__}
+end
+
+defmodule Entities.UpdateRoutingFormResponseOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_23.json", __MODULE__}
 end
