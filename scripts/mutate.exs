@@ -263,6 +263,7 @@ defmodule Mutate do
       roles() ++
       organization_webhooks() ++
       event_type_children() ++
+      team_scoped() ++
       account_settings() ++
       insights() ++
       bookings() ++
@@ -1419,6 +1420,235 @@ defmodule Mutate do
 
         fun.(webhook_id)
     end
+  end
+
+  # ---------------------------------------------------------------------------
+  # Team-scoped resources, built under an event type on a team the account owns
+  # ---------------------------------------------------------------------------
+
+  # `POST /v2/teams` is payment-gated, so the fixture parent is a team the
+  # account already owns. Only children are created, and every one is deleted.
+  @spec team_fixture(Credentials.t()) :: term()
+  defp team_fixture(credentials) do
+    case Process.get(:certify_team_fixture) do
+      nil ->
+        id =
+          case Ledger.call(credentials, "GET /v2/teams", %{})[:capture] do
+            {%{} = typed, _package} ->
+              # The organization itself is listed first and answers 403 for a
+              # child event type, so it is excluded by its own id.
+              typed.value.data
+              |> List.wrap()
+              |> Enum.map(&Map.get(&1, :id))
+              |> Enum.reject(&(&1 == organization_id(credentials)))
+              |> List.first()
+
+            _none ->
+              nil
+          end
+
+        Process.put(:certify_team_fixture, id)
+        id
+
+      id ->
+        id
+    end
+  end
+
+  @spec organization_id(Credentials.t()) :: term()
+  defp organization_id(credentials) do
+    case Client.call(credentials, "GET /v2/me", %{}) do
+      {:ok, me} -> me.value.data.organization_id
+      _error -> nil
+    end
+  end
+
+  @spec team_user_id(Credentials.t()) :: term()
+  defp team_user_id(credentials) do
+    case Process.get(:certify_user_id) do
+      nil ->
+        {:ok, me} = Client.call(credentials, "GET /v2/me", %{})
+        id = me.value.data.id
+        Process.put(:certify_user_id, id)
+        id
+
+      id ->
+        id
+    end
+  end
+
+  # A team event type needs a scheduling type; without one the provider answers
+  # 400 and lists ROUND_ROBIN, COLLECTIVE and MANAGED.
+  @spec team_event_type(Credentials.t(), term()) :: map()
+  defp team_event_type(credentials, team_id) do
+    Ledger.call(
+      credentials,
+      "POST /v2/teams/{teamId}/event-types",
+      params("POST /v2/teams/{teamId}/event-types",
+        path: %{"teamId" => team_id},
+        body: %{
+          "title" => "Kithe certification team event",
+          "slug" => slug("kithe-team-cert"),
+          "lengthInMinutes" => 15,
+          "schedulingType" => "ROUND_ROBIN",
+          "hosts" => [%{"userId" => team_user_id(credentials), "isFixed" => true}]
+        }
+      )
+    )
+  end
+
+  @spec with_team_event_type(Credentials.t(), (term(), term() -> any())) :: any()
+  defp with_team_event_type(credentials, fun) do
+    case team_fixture(credentials) do
+      nil ->
+        :ok
+
+      team_id ->
+        case Ledger.created_id(team_event_type(credentials, team_id), :id) do
+          nil ->
+            :ok
+
+          event_type_id ->
+            Ledger.track("DELETE /v2/teams/{teamId}/event-types/{eventTypeId}", %{
+              "teamId" => team_id,
+              "eventTypeId" => event_type_id
+            })
+
+            fun.(team_id, event_type_id)
+        end
+    end
+  end
+
+  @spec team_path(term(), term()) :: map()
+  defp team_path(team_id, event_type_id),
+    do: %{"teamId" => team_id, "eventTypeId" => event_type_id}
+
+  @spec team_webhook(Credentials.t(), map()) :: map()
+  defp team_webhook(credentials, path) do
+    Ledger.call(
+      credentials,
+      "POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
+      params("POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
+        path: path,
+        body: %{
+          "active" => true,
+          "subscriberUrl" => subscriber(),
+          "triggers" => ["BOOKING_CREATED"]
+        }
+      )
+    )
+  end
+
+  @spec team_scoped() :: [{String.t(), String.t(), fun()}]
+  defp team_scoped do
+    [
+      {"POST /v2/teams/{teamId}/event-types",
+       "creates a team event type on a team this account owns",
+       fn credentials, _ids -> with_team_event_type(credentials, fn _team, _event -> :ok end) end},
+      {"PATCH /v2/teams/{teamId}/event-types/{eventTypeId}",
+       "edits the team event type this run created",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}",
+             params("PATCH /v2/teams/{teamId}/event-types/{eventTypeId}",
+               path: team_path(team_id, event_type_id),
+               body: %{"title" => "Kithe certification team event (edited)"}
+             )
+           )
+         end)
+       end},
+      {"DELETE /v2/teams/{teamId}/event-types/{eventTypeId}",
+       "deletes a team event type this run created",
+       fn credentials, _ids ->
+         case team_fixture(credentials) do
+           nil ->
+             :ok
+
+           team_id ->
+             case Ledger.created_id(team_event_type(credentials, team_id), :id) do
+               nil ->
+                 :ok
+
+               event_type_id ->
+                 Ledger.call(
+                   credentials,
+                   "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}",
+                   %{"path" => team_path(team_id, event_type_id)}
+                 )
+             end
+         end
+       end},
+      {"POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
+       "adds a webhook to a team event type this run created",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           path = team_path(team_id, event_type_id)
+           created = team_webhook(credentials, path)
+
+           Ledger.track(
+             "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+             Map.put(path, "webhookId", Ledger.created_id(created, :id))
+           )
+         end)
+       end},
+      {"PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+       "edits a webhook this run created on a team event type",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           path = team_path(team_id, event_type_id)
+
+           case Ledger.created_id(team_webhook(credentials, path), :id) do
+             nil ->
+               :ok
+
+             webhook_id ->
+               Ledger.call(
+                 credentials,
+                 "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+                 params("PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+                   path: Map.put(path, "webhookId", webhook_id),
+                   body: %{"active" => false}
+                 )
+               )
+           end
+         end)
+       end},
+      {"DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+       "deletes a webhook this run created on a team event type",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           path = team_path(team_id, event_type_id)
+
+           case Ledger.created_id(team_webhook(credentials, path), :id) do
+             nil ->
+               :ok
+
+             webhook_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}",
+                 %{"path" => Map.put(path, "webhookId", webhook_id)}
+               )
+           end
+         end)
+       end},
+      {"DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
+       "deletes every webhook of a team event type this run created",
+       fn credentials, _ids ->
+         with_team_event_type(credentials, fn team_id, event_type_id ->
+           path = team_path(team_id, event_type_id)
+           team_webhook(credentials, path)
+
+           Ledger.call(
+             credentials,
+             "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks",
+             params("DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks", path: path)
+           )
+         end)
+       end}
+    ]
   end
 
   # ---------------------------------------------------------------------------

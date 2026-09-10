@@ -1070,7 +1070,6 @@
       "status": "refused"
     },
     "GET /v2/teams": {
-      "fields": [],
       "http": 200,
       "status": "verified"
     },
@@ -1819,9 +1818,8 @@
       "status": "verified"
     },
     "POST /v2/teams/{teamId}/event-types": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
+      "reason": "the sweep could not build an input the contract accepts",
+      "status": "write"
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
@@ -1935,5 +1933,5 @@
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T06:01:37.125457Z"
+  "writes_generated_at": "2026-09-10T06:07:02.511107Z"
 }
