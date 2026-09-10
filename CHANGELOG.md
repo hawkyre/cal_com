@@ -47,9 +47,7 @@ New tooling, all of it repo-only and not part of the published package:
   delete envelope, and refuses to run without `MUTATE_APPLY=1`.
 - `scripts/coverage.py` prints what is certified and what is still open.
 
-Mutations then found two more contract bugs, both fixed the same way:
-
-- `GetEventTypeWorkflowOutput.data` is a single workflow object, not an array.
+Mutations then found two more contract bugs, both fixed the same way:- `GetEventTypeWorkflowOutput.data` is a single workflow object, not an array.
   `POST /v2/workflows`, `GET /v2/workflows/{workflowId}` and
   `PATCH /v2/workflows/{workflowId}` all answer one object; the list endpoints
   have their own envelope. That envelope now has its own module name

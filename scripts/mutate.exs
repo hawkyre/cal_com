@@ -1056,6 +1056,10 @@ defmodule Mutate do
     ]
   end
 
+  # `POST /v2/teams` is payment-gated on this plan: it answers 201 with a
+  # `pendingTeam` and a Stripe payment link, and the team exists only once the
+  # payment completes. Nothing is created, so nothing is tracked for cleanup.
+  # The team-scoped scenarios therefore address a team the account already has.
   @spec team(Credentials.t()) :: map()
   defp team(credentials) do
     Ledger.call(
