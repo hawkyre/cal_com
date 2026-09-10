@@ -5,381 +5,35 @@
   },
   "generated_at": "2026-09-10T05:11:28.817465Z",
   "operations": {
-    "DELETE /v2/conferencing/{app}/disconnect": {
-      "reason": "needs a connected conferencing app",
-      "status": "declined"
-    },
-    "DELETE /v2/event-types/{eventTypeId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/event-types/{eventTypeId}/webhooks": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/me/booking-limits": {
-      "http": 204,
-      "status": "verified"
-    },
-    "DELETE /v2/me/ooo/{oooId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/me/team-booking-limits/{teamId}": {
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "DELETE /v2/notifications/subscriptions/app-push": {
-      "reason": "needs a device push token for this account",
-      "status": "declined"
-    },
-    "DELETE /v2/notifications/subscriptions/slack": {
-      "reason": "needs a Slack workspace to unlink",
-      "status": "declined"
-    },
-    "DELETE /v2/notifications/subscriptions/telegram": {
-      "reason": "needs a Telegram account to unlink",
-      "status": "declined"
-    },
-    "DELETE /v2/oauth-clients/{clientId}": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
-    },
-    "DELETE /v2/oauth-clients/{clientId}/users/{userId}": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
-    },
-    "DELETE /v2/oauth-clients/{clientId}/webhooks": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
-    },
-    "DELETE /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/attributes/{attributeId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/memberships/{membershipId}": {
-      "reason": "would remove a membership the account already has",
-      "status": "declined"
-    },
-    "DELETE /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
-      "reason": "would delete a managed organization the account already has",
-      "status": "declined"
-    },
-    "DELETE /v2/organizations/{orgId}/roles/{roleId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions/{permission}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/disconnect": {
-      "reason": "needs a connected conferencing app",
-      "status": "declined"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/users/{userId}": {
-      "reason": "would remove a member the account already has",
-      "status": "declined"
-    },
-    "DELETE /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/organizations/{orgId}/webhooks/{webhookId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/schedules/{scheduleId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/selected-calendars": {
-      "http": 500,
-      "reason": "{:http, 500}",
-      "status": "refused"
-    },
-    "DELETE /v2/slots/reservations/{uid}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "DELETE /v2/teams/{teamId}": {
+    "POST /v2/insights/bookings/members": {
       "http": 403,
       "reason": ":forbidden",
       "status": "refused"
     },
-    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "DELETE /v2/webhooks/{webhookId}": {
+    "GET /v2/event-types/{eventTypeId}/booking-fields": {
       "http": 200,
       "status": "verified"
     },
-    "DELETE /v2/workflows/{workflowId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/allowlists": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
+    "POST /v2/insights/bookings/kpi-stats": {
+      "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
-    "GET /v2/allowlists/{service}": {
+    "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
       "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no service on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/auth/oauth2/clients/{clientId}": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no clientId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/bookings": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/bookings/by-seat/{seatUid}": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no seatUid on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/bookings/verification/email/check": {
-      "fields": [],
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "GET /v2/bookings/{bookingUid}": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
     "GET /v2/bookings/{bookingUid}/attendees": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/bookings/{bookingUid}/attendees/{attendeeId}": {
-      "fields": [],
-      "http": 200,
+    "POST /v2/workflows": {
+      "http": 201,
       "status": "verified"
     },
-    "GET /v2/bookings/{bookingUid}/calendar-links": {
-      "fields": [],
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "GET /v2/bookings/{bookingUid}/conferencing-sessions": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/bookings/{bookingUid}/recordings": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/bookings/{bookingUid}/references": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/bookings/{bookingUid}/routing-trace": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/bookings/{bookingUid}/transcripts": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/calendars": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/calendars/busy-times": {
-      "fields": [],
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "GET /v2/calendars/ics-feed/check": {
-      "fields": [],
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "GET /v2/calendars/{calendar}/check": {
-      "fields": [],
-      "http": 400,
-      "probe": {
-        "http": 400,
-        "reason": "{:http, 400}",
-        "status": "refused"
-      },
-      "reason": "no calendar on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/calendars/{calendar}/connect": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no calendar on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/calendars/{calendar}/event/{eventUid}": {
+    "GET /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
       "http": 404,
       "probe": {
@@ -387,8 +41,12 @@
         "reason": ":not_found",
         "status": "refused"
       },
-      "reason": "no eventUid, calendar on this account",
+      "reason": "no webhookId on this account",
       "status": "unreachable"
+    },
+    "PUT /v2/event-types/{eventTypeId}/booking-fields": {
+      "reason": "the sweep could not build an input the contract accepts",
+      "status": "write"
     },
     "GET /v2/calendars/{calendar}/save": {
       "fields": [],
@@ -401,84 +59,211 @@
       "reason": "no calendar on this account",
       "status": "unreachable"
     },
-    "GET /v2/conferencing": {
+    "GET /v2/events": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/notifications/subscriptions/slack/link-intents": {
+      "reason": "needs a Slack workspace to link",
+      "status": "declined"
+    },
+    "GET /v2/slots": {
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/verify": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/bookings/{bookingUid}/decline": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/calendars/{calendar}/credentials": {
+      "reason": "needs a third-party calendar OAuth grant",
+      "status": "declined"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/schedules": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
+      "fields": [],
+      "http": 403,
+      "probe": {
+        "http": 403,
+        "reason": ":forbidden",
+        "status": "refused"
+      },
+      "reason": "no managedOrganizationId on this account",
+      "status": "unreachable"
+    },
+    "GET /v2/allowlists/{service}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no service on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/teams/{teamId}/users/{userId}/ooo": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/teams/{teamId}/schedules": {
       "fields": [],
       "http": 200,
       "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/users/{userId}/schedules": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/schedules": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/calendars/{calendar}/connect": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no calendar on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/organizations/{orgId}/users/{userId}/ooo": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/oauth/callback": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no app on this account",
+      "status": "unreachable"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/oauth-clients/{clientId}/users": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/users": {
+      "reason": "would invite a real person to the organization",
+      "status": "declined"
+    },
+    "GET /v2/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
     "GET /v2/conferencing/default": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/conferencing/{app}/oauth/auth-url": {
-      "fields": [],
-      "http": 400,
-      "probe": {
-        "http": 400,
-        "reason": "{:http, 400}",
-        "status": "refused"
-      },
-      "reason": "no app on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/conferencing/{app}/oauth/callback": {
-      "fields": [],
-      "http": 400,
-      "probe": {
-        "http": 400,
-        "reason": "{:http, 400}",
-        "status": "refused"
-      },
-      "reason": "no app on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/credits/available": {
+    "GET /v2/schedules": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/event-types": {
-      "fields": [],
+    "PATCH /v2/organizations/{orgId}/roles/{roleId}": {
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/event-types/{eventTypeId}": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
+    "POST /v2/notifications/subscriptions/app-push": {
+      "reason": "needs a device push token for this account",
+      "status": "declined"
     },
-    "GET /v2/event-types/{eventTypeId}/booking-fields": {
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/event-types/{eventTypeId}/crm-sync-errors": {
+    "DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "GET /v2/event-types/{eventTypeId}/history": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/users/{userId}/schedules": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/event-types/{eventTypeId}/private-links": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/event-types/{eventTypeId}/scheduling-config": {
-      "fields": [],
-      "http": 422,
-      "reason": "{:http, 422}",
+      "http": 404,
+      "reason": ":not_found",
       "status": "refused"
     },
-    "GET /v2/event-types/{eventTypeId}/webhooks": {
+    "DELETE /v2/selected-calendars": {
+      "http": 500,
+      "reason": "{:http, 500}",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/organizations": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/request": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/verified-resources/emails": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/routing-forms": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "GET /v2/webhooks/{webhookId}": {
       "fields": [],
       "http": 404,
       "probe": {
@@ -489,47 +274,110 @@
       "reason": "no webhookId on this account",
       "status": "unreachable"
     },
-    "GET /v2/events": {
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "GET /v2/events/{uuid}": {
+    "GET /v2/teams/{teamId}/verified-resources/phones/{id}": {
       "fields": [],
-      "http": 400,
+      "http": 200,
       "probe": {
-        "http": 400,
-        "reason": "{:http, 400}",
-        "status": "refused"
+        "http": 200,
+        "status": "verified"
       },
-      "reason": "no uuid on this account",
+      "reason": "no id on this account",
       "status": "unreachable"
     },
-    "GET /v2/me": {
+    "POST /v2/organizations/{orgId}/teams/{teamId}/event-types": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/webhooks/{webhookId}": {
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/me/booking-limits": {
+    "POST /v2/organizations/{orgId}/attributes/options/{userId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/webhooks": {
+      "http": 201,
+      "status": "verified"
+    },
+    "DELETE /v2/me/booking-limits": {
+      "http": 204,
+      "status": "verified"
+    },
+    "GET /v2/webhooks": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/me/ooo": {
+    "GET /v2/organizations/{orgId}/memberships": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/me/team-booking-limits": {
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/organizations/{orgId}/attributes/{attributeId}": {
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/oauth-clients": {
+    "POST /v2/bookings/{bookingUid}/reschedule": {
       "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/insights/routings/forms-by-status": {
       "http": 403,
       "reason": ":forbidden",
       "status": "refused"
+    },
+    "POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/calendars/ics-feed/save": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/slots/reservations/{uid}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/attributes/{attributeId}": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no attributeId on this account",
+      "status": "unreachable"
+    },
+    "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/bookings/verification/email/verify-code": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
     "GET /v2/oauth-clients/{clientId}": {
       "fields": [],
@@ -542,61 +390,155 @@
       "reason": "no clientId on this account",
       "status": "unreachable"
     },
-    "GET /v2/oauth-clients/{clientId}/users": {
+    "GET /v2/organizations/{orgId}/users/{userId}/schedules": {
       "fields": [],
-      "http": 401,
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/insights/routings/form-responses": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "DELETE /v2/notifications/subscriptions/telegram": {
+      "reason": "needs a Telegram account to unlink",
+      "status": "declined"
+    },
+    "POST /v2/selected-calendars": {
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PATCH /v2/schedules/{scheduleId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "PATCH /v2/me/team-booking-limits/{teamId}": {
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "GET /v2/verified-resources/phones/{id}": {
+      "fields": [],
+      "http": 200,
       "probe": {
-        "http": 401,
-        "reason": ":unauthorized",
-        "status": "refused"
+        "http": 200,
+        "status": "verified"
       },
-      "reason": "no clientId on this account",
+      "reason": "no id on this account",
       "status": "unreachable"
     },
-    "GET /v2/oauth-clients/{clientId}/users/{userId}": {
+    "GET /v2/organizations/{orgId}/ooo": {
       "fields": [],
-      "http": 401,
-      "probe": {
-        "http": 401,
-        "reason": ":unauthorized",
-        "status": "refused"
-      },
-      "reason": "no clientId on this account",
-      "status": "unreachable"
+      "http": 200,
+      "status": "verified"
     },
-    "GET /v2/oauth-clients/{clientId}/webhooks": {
+    "PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
       "fields": [],
-      "http": 401,
-      "probe": {
-        "http": 401,
-        "reason": ":unauthorized",
-        "status": "refused"
-      },
-      "reason": "no clientId on this account",
-      "status": "unreachable"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "GET /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
+    "GET /v2/bookings/{bookingUid}/conferencing-sessions": {
       "fields": [],
-      "http": 401,
-      "probe": {
-        "http": 401,
-        "reason": ":unauthorized",
-        "status": "refused"
-      },
-      "reason": "no clientId, webhookId on this account",
-      "status": "unreachable"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/bookings/{bookingUid}/confirm": {
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
     "GET /v2/organizations/{orgId}/attributes": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/attributes/assignments/{userId}/history": {
+    "POST /v2/organizations/{orgId}/bookings/report": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/workflows/{workflowId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/teams/{teamId}/event-types": {
+      "http": 201,
+      "reason": ":invalid_body \"value\"",
+      "status": "shape_mismatch",
+      "fields": [
+        {
+          "path": "value.data",
+          "why": "no variant accepted it; closest is variant 1"
+        },
+        {
+          "path": "value.data",
+          "why": "contract wants an array, response has an object"
+        }
+      ]
+    },
+    "DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/organizations/{orgId}/users/{userId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/attributes/options/{userId}": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/attributes/options/{userId}": {
+    "GET /v2/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/insights/routings/routed-to-per-period": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/organizations/{orgId}/memberships/{membershipId}": {
+      "reason": "would remove a membership the account already has",
+      "status": "declined"
+    },
+    "GET /v2/organizations/{orgId}/memberships/{membershipId}": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/teams/{teamId}/users/{userId}/ooo": {
       "fields": [],
       "http": 200,
       "status": "verified"
@@ -611,88 +553,105 @@
       "reason": "no attributeSlug on this account",
       "status": "unreachable"
     },
-    "GET /v2/organizations/{orgId}/attributes/sync-history": {
+    "POST /v2/insights/bookings/event-trends": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "DELETE /v2/oauth-clients/{clientId}/webhooks": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/bookings/{bookingUid}/attendees/{attendeeId}": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/attributes/sync-history/user/{userId}": {
-      "fields": [],
+    "PATCH /v2/me/ooo/{oooId}": {
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/attributes/{attributeId}": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no attributeId on this account",
-      "status": "unreachable"
+    "POST /v2/credits/charge": {
+      "reason": "charges real money",
+      "status": "declined"
     },
-    "GET /v2/organizations/{orgId}/attributes/{attributeId}/options": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no attributeId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/attributes/{attributeId}/options/assigned": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no attributeId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/bookings": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/delegation-credentials": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/check": {
       "fields": [],
       "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no credentialId on this account",
-      "status": "unreachable"
+      "reason": ":not_found",
+      "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/memberships": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/bookings/{bookingUid}/references": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/insights/routings/form-field-options": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PUT /v2/destination-calendars": {
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/oauth-clients/{clientId}": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
+    },
+    "DELETE /v2/organizations/{orgId}/roles/{roleId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/teams/{teamId}/verified-resources/emails": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/memberships/{membershipId}": {
+    "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/request": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "GET /v2/organizations/{orgId}/ooo": {
+    "DELETE /v2/notifications/subscriptions/slack": {
+      "reason": "needs a Slack workspace to unlink",
+      "status": "declined"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/connect": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/organizations": {
+    "POST /v2/verified-resources/phones/verification-code/request": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "GET /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
+    "POST /v2/bookings/{bookingUid}/reassign": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/webhooks/{webhookId}": {
       "fields": [],
       "http": 403,
       "probe": {
@@ -700,27 +659,343 @@
         "reason": ":forbidden",
         "status": "refused"
       },
-      "reason": "no managedOrganizationId on this account",
+      "reason": "no webhookId on this account",
       "status": "unreachable"
     },
-    "GET /v2/organizations/{orgId}/roles": {
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/teams/{teamId}/invite": {
+      "reason": "would email an invite to a real person",
+      "status": "declined"
+    },
+    "GET /v2/calendars/{calendar}/event/{eventUid}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no eventUid, calendar on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/routing-forms/{routingFormId}/calculate-slots": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/default": {
+      "reason": "needs a connected conferencing app",
+      "status": "declined"
+    },
+    "DELETE /v2/teams/{teamId}": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/roles/{roleId}": {
+    "GET /v2/bookings/{bookingUid}/routing-trace": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/oauth-clients/{clientId}/webhooks": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
+    },
+    "GET /v2/event-types/{eventTypeId}/scheduling-config": {
+      "fields": [],
+      "http": 422,
+      "reason": "{:http, 422}",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/workflows": {
       "fields": [],
       "http": 404,
       "reason": ":not_found",
       "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/webhooks": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/oauth-clients/{clientId}/users": {
+      "fields": [],
+      "http": 401,
+      "probe": {
+        "http": 401,
+        "reason": ":unauthorized",
+        "status": "refused"
+      },
+      "reason": "no clientId on this account",
+      "status": "unreachable"
+    },
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no workflowId on this account",
+      "status": "unreachable"
+    },
+    "PATCH /v2/slots/reservations/{uid}": {
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/organizations/{orgId}/delegation-credentials": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
       "fields": [],
       "http": 404,
       "reason": ":not_found",
       "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/routing-forms": {
+    "GET /v2/teams/{teamId}/bookings": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/slots/reservations": {
+      "http": 201,
+      "status": "verified"
+    },
+    "POST /v2/notifications/subscriptions/telegram/link-intents": {
+      "reason": "needs a Telegram account to link",
+      "status": "declined"
+    },
+    "GET /v2/events/{uuid}": {
+      "fields": [],
+      "http": 400,
+      "probe": {
+        "http": 400,
+        "reason": "{:http, 400}",
+        "status": "refused"
+      },
+      "reason": "no uuid on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/memberships": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/calendars/{calendar}/disconnect": {
+      "reason": "needs a connected third-party calendar",
+      "status": "declined"
+    },
+    "PATCH /v2/webhooks/{webhookId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/bookings/by-seat/{seatUid}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no seatUid on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/oauth/{clientId}/refresh": {
+      "reason": "needs a platform OAuth client this account does not have",
+      "status": "declined"
+    },
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/verified-resources/phones": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/organizations/{orgId}/attributes/{attributeId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/users/{userId}/bookings": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/oauth/auth-url": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no app on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/verify": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/organizations/{orgId}/users/{userId}": {
+      "reason": "would remove a member the account already has",
+      "status": "declined"
+    },
+    "POST /v2/organizations/{orgId}/roles": {
+      "http": 201,
+      "status": "verified"
+    },
+    "GET /v2/oauth-clients/{clientId}/users/{userId}": {
+      "fields": [],
+      "http": 401,
+      "probe": {
+        "http": 401,
+        "reason": ":unauthorized",
+        "status": "refused"
+      },
+      "reason": "no clientId on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/insights/bookings/average-duration": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "POST /v2/insights/routings/form-response-headers": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/users/{userId}/conferencing": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/event-types/{eventTypeId}": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/me/ooo/{oooId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/teams/{teamId}/verified-resources/emails/{id}": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no id on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/teams/{teamId}/verified-resources/phones/verification-code/verify": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/bookings/block": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/conferencing/{app}/oauth/callback": {
+      "fields": [],
+      "http": 400,
+      "probe": {
+        "http": 400,
+        "reason": "{:http, 400}",
+        "status": "refused"
+      },
+      "reason": "no app on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/invite": {
+      "reason": "would email an invite to a real person",
+      "status": "declined"
+    },
+    "POST /v2/bookings/{bookingUid}/guests": {
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/bookings/{bookingUid}/calendar-links": {
+      "fields": [],
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "POST /v2/verified-resources/phones/verification-code/verify": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/event-types/{eventTypeId}/crm-sync-errors": {
       "fields": [],
       "http": 200,
       "status": "verified"
@@ -736,166 +1011,38 @@
       "reason": "no routingFormId on this account",
       "status": "unreachable"
     },
-    "GET /v2/organizations/{orgId}/schedules": {
+    "PATCH /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
+    },
+    "GET /v2/teams": {
+      "http": 200,
+      "status": "verified",
+      "fields": []
+    },
+    "GET /v2/teams/{teamId}/verified-resources/phones": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/teams": {
+    "GET /v2/stripe/connect": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/teams/event-types": {
+    "GET /v2/me/team-booking-limits": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/teams/me": {
-      "fields": [],
+    "POST /v2/organizations/{orgId}/roles/{roleId}/permissions": {
       "http": 200,
       "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/bookings": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/bookings/{bookingUid}/references": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/default": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/oauth/auth-url": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no app on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/oauth/callback": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no app on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/memberships": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/roles": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/routing-forms": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no routingFormId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/schedules": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/check": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/connect": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/save": {
       "fields": [],
@@ -903,51 +1050,24 @@
       "reason": ":not_found",
       "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/users/{userId}/schedules": {
+    "POST /v2/organizations/{orgId}/memberships": {
+      "reason": "would invite a real person to the organization",
+      "status": "declined"
+    },
+    "POST /v2/webhooks": {
+      "http": 201,
+      "status": "verified"
+    },
+    "GET /v2/bookings/{bookingUid}/recordings": {
       "fields": [],
       "http": 404,
       "reason": ":not_found",
       "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails": {
+    "GET /v2/calendars": {
       "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/{id}": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no id on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/{id}": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no id on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/workflows": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
+      "http": 200,
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form": {
       "fields": [],
@@ -955,268 +1075,44 @@
       "reason": ":not_found",
       "status": "refused"
     },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
+    "GET /v2/event-types/{eventTypeId}/private-links": {
       "fields": [],
-      "http": 404,
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/oauth-clients/{clientId}/webhooks": {
+      "fields": [],
+      "http": 401,
       "probe": {
-        "http": 404,
-        "reason": ":not_found",
+        "http": 401,
+        "reason": ":unauthorized",
         "status": "refused"
       },
-      "reason": "no workflowId on this account",
+      "reason": "no clientId on this account",
       "status": "unreachable"
     },
-    "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no workflowId on this account",
-      "status": "unreachable"
+    "DELETE /v2/oauth-clients/{clientId}": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
     },
-    "GET /v2/organizations/{orgId}/users": {
+    "POST /v2/conferencing/{app}/connect": {
+      "reason": "needs a Zoom or Google Meet OAuth grant",
+      "status": "declined"
+    },
+    "GET /v2/me/booking-limits": {
       "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "GET /v2/organizations/{orgId}/users/{userId}/bookings": {
+    "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "GET /v2/organizations/{orgId}/users/{userId}/conferencing": {
+    "PATCH /v2/teams/{teamId}/memberships/{membershipId}": {
       "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/users/{userId}/ooo": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/users/{userId}/schedules": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/webhooks": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/organizations/{orgId}/webhooks/{webhookId}": {
-      "fields": [],
-      "http": 403,
-      "probe": {
-        "http": 403,
-        "reason": ":forbidden",
-        "status": "refused"
-      },
-      "reason": "no webhookId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/schedules": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/schedules/default": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/schedules/{scheduleId}": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/slots": {
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/slots/reservations/{uid}": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no uid on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/stripe/check": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/stripe/connect": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/stripe/save": {
-      "fields": [],
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "GET /v2/teams": {
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/bookings": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/event-types": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/event-types/{eventTypeId}": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
-      "fields": [],
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "GET /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no webhookId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/teams/{teamId}/memberships": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/schedules": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/users/{userId}/ooo": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/verified-resources/emails": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/verified-resources/emails/{id}": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no id on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/teams/{teamId}/verified-resources/phones": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/teams/{teamId}/verified-resources/phones/{id}": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no id on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/verified-resources/emails": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/verified-resources/emails/{id}": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no id on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/verified-resources/phones": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/verified-resources/phones/{id}": {
-      "fields": [],
-      "http": 200,
-      "probe": {
-        "http": 200,
-        "status": "verified"
-      },
-      "reason": "no id on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/webhooks": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
-    },
-    "GET /v2/webhooks/{webhookId}": {
-      "fields": [],
-      "http": 404,
-      "probe": {
-        "http": 404,
-        "reason": ":not_found",
-        "status": "refused"
-      },
-      "reason": "no webhookId on this account",
-      "status": "unreachable"
-    },
-    "GET /v2/workflows": {
-      "fields": [],
-      "http": 200,
-      "status": "verified"
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
     "GET /v2/workflows/{workflowId}": {
       "fields": [],
@@ -1233,150 +1129,219 @@
       "http": 200,
       "status": "verified"
     },
-    "PATCH /v2/calendars/{calendar}/events/{eventUid}": {
-      "reason": "needs a synced event in a connected calendar",
-      "status": "declined"
-    },
-    "PATCH /v2/event-types/{eventTypeId}": {
+    "POST /v2/bookings/{bookingUid}/request-reschedule": {
       "http": 200,
       "status": "verified"
     },
-    "PATCH /v2/event-types/{eventTypeId}/booking-fields": {
-      "reason": "the sweep could not build an input the contract accepts",
-      "status": "write"
+    "POST /v2/event-types/{eventTypeId}/webhooks": {
+      "http": 201,
+      "status": "verified"
     },
-    "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}": {
+    "POST /v2/verified-resources/emails/verification-code/verify": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
+    "POST /v2/schedules": {
+      "http": 201,
+      "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/workflows": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PATCH /v2/me": {
+    "GET /v2/bookings/{bookingUid}": {
+      "fields": [],
       "http": 200,
       "status": "verified"
-    },
-    "PATCH /v2/me/booking-limits": {
-      "http": 200,
-      "status": "verified"
-    },
-    "PATCH /v2/me/ooo/{oooId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "PATCH /v2/me/team-booking-limits/{teamId}": {
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "PATCH /v2/oauth-clients/{clientId}": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
     },
     "PATCH /v2/oauth-clients/{clientId}/users/{userId}": {
       "reason": "needs a platform OAuth client",
       "status": "declined"
     },
-    "PATCH /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
+    "GET /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/credits/available": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/oauth-clients": {
+      "reason": "OAuth clients are a platform feature; this account answered forbidden",
+      "status": "declined"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/organizations/{orgId}/webhooks/{webhookId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/users": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/roles": {
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
       "reason": "needs a platform OAuth client",
       "status": "declined"
     },
-    "PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
+    "GET /v2/bookings/{bookingUid}/transcripts": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/bookings": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/bookings/{bookingUid}/reassign/{userId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PATCH /v2/organizations/{orgId}/attributes/{attributeId}": {
+    "GET /v2/workflows": {
+      "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
-      "reason": "would edit a managed organization the account already has",
+    "POST /v2/auth/oauth2/token": {
+      "reason": "needs an OAuth client id and secret from a platform account",
       "status": "declined"
     },
-    "PATCH /v2/organizations/{orgId}/roles/{roleId}": {
+    "POST /v2/bookings/verification/email/send-code": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/conferencing/{app}/default": {
+      "reason": "needs a connected conferencing app",
+      "status": "declined"
+    },
+    "GET /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
+      "fields": [],
+      "http": 401,
+      "probe": {
+        "http": 401,
+        "reason": ":unauthorized",
+        "status": "refused"
+      },
+      "reason": "no clientId, webhookId on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/bookings": {
+      "http": 409,
+      "reason": "{:http, 409}",
+      "status": "refused"
+    },
+    "POST /v2/event-types/{eventTypeId}/booking-fields": {
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/me/ooo": {
+      "fields": [],
       "http": 200,
       "status": "verified"
     },
-    "PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no routingFormId on this account",
+      "status": "unreachable"
+    },
+    "GET /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PATCH /v2/me": {
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/oauth-clients/{clientId}/users/{userId}/force-refresh": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/{id}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no id on this account",
+      "status": "unreachable"
+    },
+    "GET /v2/organizations/{orgId}/attributes/{attributeId}/options/assigned": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no attributeId on this account",
+      "status": "unreachable"
+    },
+    "GET /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}": {
+    "GET /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no webhookId on this account",
+      "status": "unreachable"
     },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/users/{userId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
+    "POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
@@ -1385,21 +1350,46 @@
       "http": 200,
       "status": "verified"
     },
-    "PATCH /v2/schedules/{scheduleId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "PATCH /v2/slots/reservations/{uid}": {
+    "DELETE /v2/me/team-booking-limits/{teamId}": {
       "http": 404,
       "reason": ":not_found",
       "status": "refused"
     },
-    "PATCH /v2/teams/{teamId}": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
-    "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}": {
+    "PATCH /v2/me/booking-limits": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/conferencing": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no credentialId on this account",
+      "status": "unreachable"
+    },
+    "DELETE /v2/conferencing/{app}/disconnect": {
+      "reason": "needs a connected conferencing app",
+      "status": "declined"
+    },
+    "GET /v2/event-types/{eventTypeId}/history": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
@@ -1409,232 +1399,7 @@
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/teams/{teamId}/memberships/{membershipId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "PATCH /v2/webhooks/{webhookId}": {
-      "http": 200,
-      "status": "verified"
-    },
-    "PATCH /v2/workflows/{workflowId}": {
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "POST /v2/api-keys/refresh": {
-      "reason": "rotating the key would invalidate the credential this sweep is using",
-      "status": "declined"
-    },
-    "POST /v2/auth/oauth2/token": {
-      "reason": "needs an OAuth client id and secret from a platform account",
-      "status": "declined"
-    },
-    "POST /v2/bookings": {
-      "http": 409,
-      "reason": "{:http, 409}",
-      "status": "refused"
-    },
-    "POST /v2/bookings/verification/email/send-code": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/bookings/verification/email/verify-code": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/bookings/{bookingUid}/attendees": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/bookings/{bookingUid}/cancel": {
-      "http": 200,
-      "status": "verified"
-    },
-    "POST /v2/bookings/{bookingUid}/confirm": {
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "POST /v2/bookings/{bookingUid}/decline": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/bookings/{bookingUid}/guests": {
-      "http": 200,
-      "status": "verified"
-    },
-    "POST /v2/bookings/{bookingUid}/mark-absent": {
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "POST /v2/bookings/{bookingUid}/reassign": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/bookings/{bookingUid}/reassign/{userId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/bookings/{bookingUid}/request-reschedule": {
-      "http": 200,
-      "status": "verified"
-    },
-    "POST /v2/bookings/{bookingUid}/reschedule": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/calendars/ics-feed/save": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/calendars/{calendar}/credentials": {
-      "reason": "needs a third-party calendar OAuth grant",
-      "status": "declined"
-    },
-    "POST /v2/calendars/{calendar}/disconnect": {
-      "reason": "needs a connected third-party calendar",
-      "status": "declined"
-    },
-    "POST /v2/conferencing/{app}/connect": {
-      "reason": "needs a Zoom or Google Meet OAuth grant",
-      "status": "declined"
-    },
-    "POST /v2/conferencing/{app}/default": {
-      "reason": "needs a connected conferencing app",
-      "status": "declined"
-    },
-    "POST /v2/credits/charge": {
-      "reason": "charges real money",
-      "status": "declined"
-    },
-    "POST /v2/event-types": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/event-types/{eventTypeId}/booking-fields": {
-      "http": 400,
-      "reason": "{:http, 400}",
-      "status": "refused"
-    },
-    "POST /v2/event-types/{eventTypeId}/private-links": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/event-types/{eventTypeId}/webhooks": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/insights/bookings/average-duration": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/bookings/event-trends": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/bookings/kpi-stats": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/bookings/members": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/routings/failed-bookings-by-field": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/routings/form-field-options": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/routings/form-response-headers": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/routings/form-responses": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/routings/forms-by-status": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/insights/routings/routed-to-per-period": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/me/ooo": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/notifications/subscriptions/app-push": {
-      "reason": "needs a device push token for this account",
-      "status": "declined"
-    },
-    "POST /v2/notifications/subscriptions/slack/link-intents": {
-      "reason": "needs a Slack workspace to link",
-      "status": "declined"
-    },
-    "POST /v2/notifications/subscriptions/telegram/link-intents": {
-      "reason": "needs a Telegram account to link",
-      "status": "declined"
-    },
-    "POST /v2/oauth-clients": {
-      "reason": "OAuth clients are a platform feature; this account answered forbidden",
-      "status": "declined"
-    },
-    "POST /v2/oauth-clients/{clientId}/users": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
-    },
-    "POST /v2/oauth-clients/{clientId}/users/{userId}/force-refresh": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
-    },
-    "POST /v2/oauth-clients/{clientId}/webhooks": {
-      "reason": "needs a platform OAuth client",
-      "status": "declined"
-    },
-    "POST /v2/oauth/{clientId}/refresh": {
-      "reason": "needs a platform OAuth client this account does not have",
-      "status": "declined"
-    },
-    "POST /v2/organizations/{orgId}/attributes": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/organizations/{orgId}/attributes/options/{userId}": {
+    "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
@@ -1643,64 +1408,365 @@
       "http": 201,
       "status": "verified"
     },
-    "POST /v2/organizations/{orgId}/bookings/block": {
+    "PATCH /v2/event-types/{eventTypeId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/bookings/report": {
+    "GET /v2/schedules/default": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/delegation-credentials": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/{id}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no id on this account",
+      "status": "unreachable"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "GET /v2/slots/reservations/{uid}": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no uid on this account",
+      "status": "unreachable"
+    },
+    "DELETE /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
+      "reason": "would delete a managed organization the account already has",
+      "status": "declined"
+    },
+    "GET /v2/auth/oauth2/clients/{clientId}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no clientId on this account",
+      "status": "unreachable"
+    },
+    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
+    },
+    "GET /v2/stripe/save": {
+      "fields": [],
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "GET /v2/calendars/busy-times": {
+      "fields": [],
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/disconnect": {
+      "reason": "needs a connected conferencing app",
+      "status": "declined"
+    },
+    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/notifications/subscriptions/app-push": {
+      "reason": "needs a device push token for this account",
+      "status": "declined"
+    },
+    "GET /v2/me": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/stripe/check": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/users/{userId}/conferencing/default": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
+      "fields": [],
+      "http": 404,
+      "probe": {
+        "http": 404,
+        "reason": ":not_found",
+        "status": "refused"
+      },
+      "reason": "no workflowId on this account",
+      "status": "unreachable"
     },
     "POST /v2/organizations/{orgId}/delegation-credentials/{credentialId}/reset-rotation": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/memberships": {
-      "reason": "would invite a real person to the organization",
-      "status": "declined"
+    "GET /v2/organizations/{orgId}/teams/me": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/conferencing/{app}/oauth/auth-url": {
+      "fields": [],
+      "http": 400,
+      "probe": {
+        "http": 400,
+        "reason": "{:http, 400}",
+        "status": "refused"
+      },
+      "reason": "no app on this account",
+      "status": "unreachable"
+    },
+    "DELETE /v2/event-types/{eventTypeId}/webhooks": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/calendars/{calendar}/check": {
+      "fields": [],
+      "http": 400,
+      "probe": {
+        "http": 400,
+        "reason": "{:http, 400}",
+        "status": "refused"
+      },
+      "reason": "no calendar on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/verify": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/insights/routings/failed-bookings-by-field": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/request": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/schedules/{scheduleId}": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/roles/{roleId}": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "GET /v2/verified-resources/emails/{id}": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no id on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/event-types/{eventTypeId}/private-links": {
+      "http": 201,
+      "status": "verified"
+    },
+    "GET /v2/teams/{teamId}": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "PATCH /v2/teams/{teamId}": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "GET /v2/organizations/{orgId}/roles": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/me/ooo": {
+      "http": 201,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/teams/event-types": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/attributes": {
+      "http": 201,
+      "status": "verified"
+    },
+    "PATCH /v2/organizations/{orgId}/memberships/{membershipId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/teams/{teamId}/memberships": {
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "GET /v2/event-types": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/bookings": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/bookings/{bookingUid}/references": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
     },
     "POST /v2/organizations/{orgId}/organizations": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/roles": {
-      "http": 201,
-      "status": "verified"
+    "GET /v2/bookings/verification/email/check": {
+      "fields": [],
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
-    "POST /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/memberships": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PATCH /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
+      "reason": "would edit a managed organization the account already has",
+      "status": "declined"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "DELETE /v2/schedules/{scheduleId}": {
       "http": 200,
       "status": "verified"
     },
-    "POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses": {
+    "GET /v2/calendars/ics-feed/check": {
+      "fields": [],
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "POST /v2/api-keys/refresh": {
+      "reason": "rotating the key would invalidate the credential this sweep is using",
+      "status": "declined"
+    },
+    "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/teams": {
+    "POST /v2/bookings/{bookingUid}/cancel": {
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/oauth-clients/{clientId}/users/{userId}": {
+      "reason": "needs a platform OAuth client",
+      "status": "declined"
+    },
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/connect": {
-      "reason": "needs a Zoom or Google Meet OAuth grant",
-      "status": "declined"
+    "PATCH /v2/workflows/{workflowId}": {
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
     },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/default": {
-      "reason": "needs a connected conferencing app",
-      "status": "declined"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/event-types": {
+    "GET /v2/event-types/{eventTypeId}/webhooks": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/delegation-credentials": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "PATCH /v2/event-types/{eventTypeId}/booking-fields": {
+      "reason": "the sweep could not build an input the contract accepts",
       "status": "write"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
@@ -1708,159 +1774,46 @@
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
+    "GET /v2/organizations/{orgId}/attributes/sync-history": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions/{permission}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/roles": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/invite": {
-      "reason": "would email an invite to a real person",
-      "status": "declined"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/memberships": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/roles": {
       "http": 404,
       "reason": ":not_found",
       "status": "refused"
     },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+    "GET /v2/organizations/{orgId}/bookings": {
       "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/workflows": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/users": {
-      "reason": "would invite a real person to the organization",
+    "PATCH /v2/calendars/{calendar}/events/{eventUid}": {
+      "reason": "needs a synced event in a connected calendar",
       "status": "declined"
     },
-    "POST /v2/organizations/{orgId}/users/{userId}/conferencing/default": {
+    "GET /v2/organizations/{orgId}/users/{userId}/ooo": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/verified-resources/emails/verification-code/request": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/organizations/{orgId}/users/{userId}/ooo": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/users/{userId}/schedules": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/organizations/{orgId}/webhooks": {
+    "POST /v2/bookings/{bookingUid}/attendees": {
       "http": 201,
       "status": "verified"
     },
-    "POST /v2/routing-forms/{routingFormId}/calculate-slots": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/schedules": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/selected-calendars": {
-      "http": 404,
-      "reason": ":not_found",
-      "status": "refused"
-    },
-    "POST /v2/slots/reservations": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/teams": {
-      "http": 201,
-      "status": "verified"
-    },
-    "POST /v2/teams/{teamId}/event-types": {
-      "reason": "the sweep could not build an input the contract accepts",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/invite": {
-      "reason": "would email an invite to a real person",
-      "status": "declined"
-    },
-    "POST /v2/teams/{teamId}/memberships": {
-      "http": 403,
-      "reason": ":forbidden",
-      "status": "refused"
-    },
-    "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/users/{userId}/ooo": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/verify": {
+    "DELETE /v2/organizations/{orgId}/teams/{teamId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
@@ -1870,68 +1823,127 @@
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "POST /v2/teams/{teamId}/verified-resources/phones/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/verified-resources/emails/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/verified-resources/emails/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/verified-resources/phones/verification-code/request": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/verified-resources/phones/verification-code/verify": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
-    },
-    "POST /v2/webhooks": {
+    "POST /v2/teams": {
       "http": 201,
       "status": "verified"
     },
-    "POST /v2/workflows": {
-      "http": 201,
+    "GET /v2/organizations/{orgId}/attributes/sync-history/user/{userId}": {
+      "fields": [],
+      "http": 200,
       "status": "verified"
     },
-    "PUT /v2/destination-calendars": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/routing-forms": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
       "status": "refused"
     },
-    "PUT /v2/event-types/{eventTypeId}/booking-fields": {
-      "reason": "the sweep could not build an input the contract accepts",
-      "status": "write"
+    "GET /v2/teams/{teamId}/event-types": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
     },
-    "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+    "POST /v2/bookings/{bookingUid}/mark-absent": {
+      "http": 400,
+      "reason": "{:http, 400}",
+      "status": "refused"
+    },
+    "POST /v2/event-types": {
+      "http": 201,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/attributes/assignments/{userId}/history": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/connect": {
+      "reason": "needs a Zoom or Google Meet OAuth grant",
+      "status": "declined"
+    },
+    "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+    "PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+    "GET /v2/teams/{teamId}/memberships": {
+      "fields": [],
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/oauth-clients": {
+      "fields": [],
+      "http": 403,
+      "reason": ":forbidden",
+      "status": "refused"
+    },
+    "POST /v2/organizations/{orgId}/teams": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     },
-    "PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+    "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/default": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/allowlists": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "DELETE /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+      "fields": [],
+      "http": 404,
+      "reason": ":not_found",
+      "status": "refused"
+    },
+    "DELETE /v2/event-types/{eventTypeId}": {
+      "http": 200,
+      "status": "verified"
+    },
+    "GET /v2/organizations/{orgId}/attributes/{attributeId}/options": {
+      "fields": [],
+      "http": 200,
+      "probe": {
+        "http": 200,
+        "status": "verified"
+      },
+      "reason": "no attributeId on this account",
+      "status": "unreachable"
+    },
+    "POST /v2/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
+      "fields": [],
+      "reason": "mutation: the read pass skips it",
+      "status": "write"
+    },
+    "DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
       "fields": [],
       "reason": "mutation: the read pass skips it",
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T06:07:02.511107Z"
+  "writes_generated_at": "2026-09-10T06:14:21.294940Z"
 }
