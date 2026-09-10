@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.InsightsControllerGetRoutingFormHeaders do
+defmodule Operations.OrganizationsTeamsRolesControllerUpdateRole do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_15.json", __MODULE__}
 end
 
-defmodule Operations.InsightsControllerGetFailedBookingsByField do
+defmodule Operations.OrganizationsTeamsRolesControllerDeleteRole do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_15.json", __MODULE__}
 end
 
-defmodule Operations.InsightsControllerGetRoutedToPerPeriod do
+defmodule Operations.OrganizationsTeamsRolesPermissionsControllerAddPermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_15.json", __MODULE__}
 end
 
-defmodule Operations.MeControllerGetMe do
+defmodule Operations.OrganizationsTeamsRolesPermissionsControllerListPermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_15.json", __MODULE__}
 end
 
-defmodule Operations.MeControllerGetMyBookingLimits do
+defmodule Operations.OrganizationsTeamsRolesPermissionsControllerSetPermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_15.json", __MODULE__}
 end

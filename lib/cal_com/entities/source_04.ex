@@ -1,51 +1,41 @@
 alias CalCom.Entities
 
-defmodule Entities.CreateOutOfOfficeEntryDto do
+defmodule Entities.CreateEventTypeInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreatePrivateLinkInput do
+defmodule Entities.CreateEventTypeOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreatePrivateLinkOutput do
+defmodule Entities.CreateEventTypeWorkflowDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreateRecurringBookingInput20240813 do
+defmodule Entities.CreateFormWorkflowDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreateRecurringSeatedBookingOutput20240813 do
+defmodule Entities.CreateGoogleDelegationCredentialInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreateRoutingFormResponseOutput do
+defmodule Entities.CreateIcsFeedInputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreateRoutingFormResponseOutputData do
+defmodule Entities.CreateIcsFeedOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end
 
-defmodule Entities.CreateScheduleInput20240611 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
-end
-
-defmodule Entities.CreateScheduleOutput20240611 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
-end
-
-defmodule Entities.CreateSeatedBookingOutput20240813 do
+defmodule Entities.CreateIcsFeedOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_04.json", __MODULE__}
 end

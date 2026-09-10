@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.NotificationsSubscriptionsControllerRemove": {
+    "input": "CalCom.Entities.InputNotificationsSubscriptionsControllerRemove",
+    "result": "CalCom.Entities.ResultNotificationsSubscriptionsControllerRemove200.t()",
+    "contract": "%CalCom.Operation{key: :notifications_subscriptions_controller_remove, id: \"DELETE /v2/notifications/subscriptions/app-push\", method: :delete, path: \"/v2/notifications/subscriptions/app-push\", module: CalCom.Operations.NotificationsSubscriptionsControllerRemove, input_module: CalCom.Entities.InputNotificationsSubscriptionsControllerRemove, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultNotificationsSubscriptionsControllerRemove200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.NotificationsChatSubscriptionsControllerCreateSlackLinkIntent": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerCreateSlackLinkIntent201.t()",
+    "contract": "%CalCom.Operation{key: :notifications_chat_subscriptions_controller_create_slack_link_intent, id: \"POST /v2/notifications/subscriptions/slack/link-intents\", method: :post, path: \"/v2/notifications/subscriptions/slack/link-intents\", module: CalCom.Operations.NotificationsChatSubscriptionsControllerCreateSlackLinkIntent, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultNotificationsChatSubscriptionsControllerCreateSlackLinkIntent201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ChatPushLinkIntentResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.NotificationsChatSubscriptionsControllerCreateTelegramLinkIntent": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerCreateSlackLinkIntent201.t()",
+    "contract": "%CalCom.Operation{key: :notifications_chat_subscriptions_controller_create_telegram_link_intent, id: \"POST /v2/notifications/subscriptions/telegram/link-intents\", method: :post, path: \"/v2/notifications/subscriptions/telegram/link-intents\", module: CalCom.Operations.NotificationsChatSubscriptionsControllerCreateTelegramLinkIntent, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultNotificationsChatSubscriptionsControllerCreateSlackLinkIntent201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ChatPushLinkIntentResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.NotificationsChatSubscriptionsControllerRemoveSlack": {
+    "input": "CalCom.Entities.InputNotificationsChatSubscriptionsControllerRemoveSlack",
+    "result": "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerRemoveSlack200.t()",
+    "contract": "%CalCom.Operation{key: :notifications_chat_subscriptions_controller_remove_slack, id: \"DELETE /v2/notifications/subscriptions/slack\", method: :delete, path: \"/v2/notifications/subscriptions/slack\", module: CalCom.Operations.NotificationsChatSubscriptionsControllerRemoveSlack, input_module: CalCom.Entities.InputNotificationsChatSubscriptionsControllerRemoveSlack, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultNotificationsChatSubscriptionsControllerRemoveSlack200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.NotificationsChatSubscriptionsControllerRemoveTelegram": {
+    "input": "CalCom.Entities.InputNotificationsChatSubscriptionsControllerRemoveTelegram",
+    "result": "CalCom.Entities.ResultNotificationsChatSubscriptionsControllerRemoveTelegram200.t()",
+    "contract": "%CalCom.Operation{key: :notifications_chat_subscriptions_controller_remove_telegram, id: \"DELETE /v2/notifications/subscriptions/telegram\", method: :delete, path: \"/v2/notifications/subscriptions/telegram\", module: CalCom.Operations.NotificationsChatSubscriptionsControllerRemoveTelegram, input_module: CalCom.Entities.InputNotificationsChatSubscriptionsControllerRemoveTelegram, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultNotificationsChatSubscriptionsControllerRemoveTelegram200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.RemoveAppPushSubscriptionResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

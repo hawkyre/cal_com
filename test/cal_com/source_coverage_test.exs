@@ -24,6 +24,17 @@ defmodule CalCom.SourceCoverageTest do
     end
   end
 
+  test "the inventory is every operation the document describes" do
+    document = document_operations()
+    inventory = Enum.sort(read("inventory.json")["operations"])
+
+    assert inventory == document
+
+    # The comparison must bite: one operation short is not the document.
+    [_first | incomplete] = document
+    refute Enum.sort(incomplete) == document
+  end
+
   test "every selected source operation retains its exact method, route, version and response statuses" do
     original = read("openapi.json")
 
@@ -77,6 +88,19 @@ defmodule CalCom.SourceCoverageTest do
       expected = shape["properties"] |> Map.keys() |> Enum.sort()
       assert Enum.sort(Enum.map(typed.__struct__.fields(), & &1.wire)) == expected
     end
+  end
+
+  @spec document_operations() :: [String.t()]
+  defp document_operations do
+    read("openapi.json")["paths"]
+    |> Enum.flat_map(fn {route, methods} ->
+      for {method, operation} <- methods,
+          method in ["get", "post", "put", "patch", "delete"],
+          is_map(operation),
+          Map.has_key?(operation, "operationId"),
+          do: "#{String.upcase(method)} #{route}"
+    end)
+    |> Enum.sort()
   end
 
   @spec object?(map()) :: boolean()

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.StripeControllerRedirect": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOrganizationsStripeControllerGetTeamStripeConnectUrl200.t()",
+    "contract": "%CalCom.Operation{key: :stripe_controller_redirect, id: \"GET /v2/stripe/connect\", method: :get, path: \"/v2/stripe/connect\", module: CalCom.Operations.StripeControllerRedirect, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsStripeControllerGetTeamStripeConnectUrl200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.StripConnectOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.StripeControllerSave": {
+    "input": "CalCom.Entities.InputStripeControllerSave",
+    "result": "CalCom.Entities.ResultOrganizationsStripeControllerSave200.t()",
+    "contract": "%CalCom.Operation{key: :stripe_controller_save, id: \"GET /v2/stripe/save\", method: :get, path: \"/v2/stripe/save\", module: CalCom.Operations.StripeControllerSave, input_module: CalCom.Entities.InputStripeControllerSave, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsStripeControllerSave200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.StripCredentialsSaveOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.StripeControllerCheck": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOrganizationsStripeControllerCheckTeamStripeConnection200.t()",
+    "contract": "%CalCom.Operation{key: :stripe_controller_check, id: \"GET /v2/stripe/check\", method: :get, path: \"/v2/stripe/check\", module: CalCom.Operations.StripeControllerCheck, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsStripeControllerCheckTeamStripeConnection200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsEventTypesController20260612CreateTeamEventType": {
+    "input": "CalCom.Entities.InputTeamsEventTypesController20260612CreateTeamEventType",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612CreateTeamEventType201.t()",
+    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_create_team_event_type, id: \"POST /v2/teams/{teamId}/event-types\", method: :post, path: \"/v2/teams/{teamId}/event-types\", module: CalCom.Operations.TeamsEventTypesController20260612CreateTeamEventType, input_module: CalCom.Entities.InputTeamsEventTypesController20260612CreateTeamEventType, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612CreateTeamEventType201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateTeamEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsEventTypesController20260612GetTeamEventTypes": {
+    "input": "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypes",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200.t()",
+    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_get_team_event_types, id: \"GET /v2/teams/{teamId}/event-types\", method: :get, path: \"/v2/teams/{teamId}/event-types\", module: CalCom.Operations.TeamsEventTypesController20260612GetTeamEventTypes, input_module: CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypes, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612GetTeamEventTypes200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamEventTypesOutput20260612}, nullable: false}, empty?: false}]}"
+  }
+}

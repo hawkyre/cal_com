@@ -1,27 +1,27 @@
 {
-  "CalCom.Operations.BookingRoutingTraceController20240813GetBookingRoutingTrace": {
-    "input": "CalCom.Entities.InputBookingsController20260225GetCalendarLinks",
-    "result": "CalCom.Entities.ResultBookingRoutingTraceController20240813GetBookingRoutingTrace200.t()",
-    "contract": "%CalCom.Operation{key: :booking_routing_trace_controller_2024_08_13_get_booking_routing_trace, id: \"GET /v2/bookings/{bookingUid}/routing-trace\", method: :get, path: \"/v2/bookings/{bookingUid}/routing-trace\", module: CalCom.Operations.BookingRoutingTraceController20240813GetBookingRoutingTrace, input_module: CalCom.Entities.InputBookingsController20260225GetCalendarLinks, version: \"2024-08-13\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingRoutingTraceController20240813GetBookingRoutingTrace200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingRoutingTraceOutput20240813}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsControllerGetTeam": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsControllerGetTeam",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_controller_get_team, id: \"GET /v2/organizations/{orgId}/teams/{teamId}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}\", module: CalCom.Operations.OrganizationsTeamsControllerGetTeam, input_module: CalCom.Entities.InputOrganizationsTeamsControllerGetTeam, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgTeamOutputResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.CalendarsControllerCheckIcsFeed": {
-    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
-    "result": "CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200.t()",
-    "contract": "%CalCom.Operation{key: :calendars_controller_check_ics_feed, id: \"GET /v2/calendars/ics-feed/check\", method: :get, path: \"/v2/calendars/ics-feed/check\", module: CalCom.Operations.CalendarsControllerCheckIcsFeed, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCalendarsControllerCheckIcsFeed200}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsControllerDeleteTeam": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsControllerDeleteTeam",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_controller_delete_team, id: \"DELETE /v2/organizations/{orgId}/teams/{teamId}\", method: :delete, path: \"/v2/organizations/{orgId}/teams/{teamId}\", module: CalCom.Operations.OrganizationsTeamsControllerDeleteTeam, input_module: CalCom.Entities.InputOrganizationsTeamsControllerDeleteTeam, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgTeamOutputResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.CalendarsControllerGetBusyTimes": {
-    "input": "CalCom.Entities.InputCalendarsControllerGetBusyTimes",
-    "result": "CalCom.Entities.ResultCalendarsControllerGetBusyTimes200.t()",
-    "contract": "%CalCom.Operation{key: :calendars_controller_get_busy_times, id: \"GET /v2/calendars/busy-times\", method: :get, path: \"/v2/calendars/busy-times\", module: CalCom.Operations.CalendarsControllerGetBusyTimes, input_module: CalCom.Entities.InputCalendarsControllerGetBusyTimes, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerGetBusyTimes200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBusyTimesOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsControllerUpdateTeam": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsControllerUpdateTeam",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_controller_update_team, id: \"PATCH /v2/organizations/{orgId}/teams/{teamId}\", method: :patch, path: \"/v2/organizations/{orgId}/teams/{teamId}\", module: CalCom.Operations.OrganizationsTeamsControllerUpdateTeam, input_module: CalCom.Entities.InputOrganizationsTeamsControllerUpdateTeam, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsControllerGetTeam200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OrgTeamOutputResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.CalendarsControllerGetCalendars": {
-    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
-    "result": "CalCom.Entities.ResultCalendarsControllerGetCalendars200.t()",
-    "contract": "%CalCom.Operation{key: :calendars_controller_get_calendars, id: \"GET /v2/calendars\", method: :get, path: \"/v2/calendars\", module: CalCom.Operations.CalendarsControllerGetCalendars, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerGetCalendars200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ConnectedCalendarsOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsBookingsControllerGetAllOrgTeamBookings": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_bookings_controller_get_all_org_team_bookings, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/bookings\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/bookings\", module: CalCom.Operations.OrganizationsTeamsBookingsControllerGetAllOrgTeamBookings, input_module: CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings, version: nil, media_type: nil, page_size: 100, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetAllOrgTeamBookings200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingsOutput20240813}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.CalendarsControllerCheck": {
-    "input": "CalCom.Entities.InputCalendarsControllerCheck",
-    "result": "CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200.t()",
-    "contract": "%CalCom.Operation{key: :calendars_controller_check, id: \"GET /v2/calendars/{calendar}/check\", method: :get, path: \"/v2/calendars/{calendar}/check\", module: CalCom.Operations.CalendarsControllerCheck, input_module: CalCom.Entities.InputCalendarsControllerCheck, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCalendarsControllerCheckIcsFeed200}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsBookingsControllerGetBookingReferences": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetBookingReferences",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetBookingReferences200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_bookings_controller_get_booking_references, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/bookings/{bookingUid}/references\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/bookings/{bookingUid}/references\", module: CalCom.Operations.OrganizationsTeamsBookingsControllerGetBookingReferences, input_module: CalCom.Entities.InputOrganizationsTeamsBookingsControllerGetBookingReferences, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsBookingsControllerGetBookingReferences200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingReferencesOutput20240813}, nullable: false}, empty?: false}]}"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.EventTypeWebhooksControllerGetEventTypeWebhooks": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhooks",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerGetEventTypeWebhooks200.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_get_event_type_webhooks, id: \"GET /v2/event-types/{eventTypeId}/webhooks\", method: :get, path: \"/v2/event-types/{eventTypeId}/webhooks\", module: CalCom.Operations.EventTypeWebhooksControllerGetEventTypeWebhooks, input_module: CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhooks, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerGetEventTypeWebhooks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhooksOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypeWebhooksControllerDeleteAllEventTypeWebhooks": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerDeleteAllEventTypeWebhooks200.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_delete_all_event_type_webhooks, id: \"DELETE /v2/event-types/{eventTypeId}/webhooks\", method: :delete, path: \"/v2/event-types/{eventTypeId}/webhooks\", module: CalCom.Operations.EventTypeWebhooksControllerDeleteAllEventTypeWebhooks, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerDeleteAllEventTypeWebhooks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteManyWebhooksOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypeWebhooksControllerUpdateEventTypeWebhook": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerUpdateEventTypeWebhook",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_update_event_type_webhook, id: \"PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}\", method: :patch, path: \"/v2/event-types/{eventTypeId}/webhooks/{webhookId}\", module: CalCom.Operations.EventTypeWebhooksControllerUpdateEventTypeWebhook, input_module: CalCom.Entities.InputEventTypeWebhooksControllerUpdateEventTypeWebhook, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypeWebhooksControllerGetEventTypeWebhook": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_get_event_type_webhook, id: \"GET /v2/event-types/{eventTypeId}/webhooks/{webhookId}\", method: :get, path: \"/v2/event-types/{eventTypeId}/webhooks/{webhookId}\", module: CalCom.Operations.EventTypeWebhooksControllerGetEventTypeWebhook, input_module: CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypeWebhooksControllerDeleteEventTypeWebhook": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_delete_event_type_webhook, id: \"DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}\", method: :delete, path: \"/v2/event-types/{eventTypeId}/webhooks/{webhookId}\", module: CalCom.Operations.EventTypeWebhooksControllerDeleteEventTypeWebhook, input_module: CalCom.Entities.InputEventTypeWebhooksControllerGetEventTypeWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

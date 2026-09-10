@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.WebhooksControllerCreateWebhook do
+defmodule Operations.OrganizationsUsersOOOControllerUpdateOrganizationUserOOO do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_22.json", __MODULE__}
 end
 
-defmodule Operations.WebhooksControllerGetWebhooks do
+defmodule Operations.OrganizationsUsersOOOControllerDeleteOrganizationUserOOO do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_22.json", __MODULE__}
 end
 
-defmodule Operations.WebhooksControllerUpdateWebhook do
+defmodule Operations.OrganizationsUsersOOOControllerGetOrganizationUsersOOO do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_22.json", __MODULE__}
 end
 
-defmodule Operations.WebhooksControllerGetWebhook do
+defmodule Operations.OrganizationsSchedulesControllerCreateUserSchedule do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_22.json", __MODULE__}
 end
 
-defmodule Operations.WebhooksControllerDeleteWebhook do
+defmodule Operations.OrganizationsSchedulesControllerGetUserSchedules do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_22.json", __MODULE__}
 end

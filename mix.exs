@@ -1,7 +1,7 @@
 defmodule CalCom.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.2.0"
   @source_url "https://github.com/hawkyre/cal_com"
 
   def project do
@@ -9,6 +9,7 @@ defmodule CalCom.MixProject do
       app: :cal_com,
       version: @version,
       elixir: "~> 1.17",
+      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
@@ -16,6 +17,11 @@ defmodule CalCom.MixProject do
       dialyzer: [plt_add_apps: [:mix, :dialyxir]]
     ]
   end
+
+  # Test support compiles with lib so a synthetic schema is defined before
+  # protocol consolidation; a schema defined inside a test file warns.
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_env), do: ["lib"]
 
   # The package is a pure library: it builds requests and parses responses and
   # never opens a socket, so it starts no supervision tree of its own. It needs

@@ -1,10 +1,8 @@
 """Render the Cal.com client from the checked-in spec. This command writes files.
 
-The package's own tooling policy governs this generator, not Kithe's rule
-against scripted edits: regeneration is one command, and the source hash in
-`source/SOURCE_HASH` must match `source/openapi.json` before anything is
-written, so a spec refresh cannot happen without an explicit hash update in
-the same commit.
+Regeneration is one command, and the source hash in `source/SOURCE_HASH` must
+match `source/openapi.json` before anything is written, so a spec refresh cannot
+happen without an explicit hash update in the same commit.
 """
 from __future__ import annotations
 
@@ -27,6 +25,7 @@ ROOT_NS = ""
 schemas = {}
 objects = {}
 canonical_objects = {}
+pins = {}
 
 
 def parse_args(argv):
@@ -88,14 +87,31 @@ def canonical_shape(value):
             for key, item in value.items() if key not in annotations}
 
 
-def register(schema, name):
+def register(schema, name, dedupe=True):
+    """Name a shape's module, sharing one module per canonical body.
+
+    A shape keeps the name recorded in `source/entity_name_pins.json`, keyed by
+    the shape's own hash, so a module released once keeps its name however the
+    inventory or registration order changes. Only shapes new to this run take
+    the name derived from the inventory.
+    """
     key = json.dumps(canonical_shape(schema), sort_keys=True, separators=(",", ":"))
-    if key in canonical_objects:
+    if dedupe and key in canonical_objects:
         return canonical_objects[key]
-    name = PREFIX + module_name(name)
+    bare = module_name(name)
+    name = PREFIX + pins.get(shape_hash(key), bare)
+    existing = objects.get(name)
+    if existing is not None and canonical_shape(existing) != canonical_shape(schema):
+        raise ValueError("Two shapes want the module name " + name)
     objects.setdefault(name, schema)
-    canonical_objects[key] = name
+    if dedupe:
+        canonical_objects[key] = name
     return name
+
+
+def shape_hash(key):
+    """A short, stable identity for one canonical shape."""
+    return hashlib.sha256(key.encode()).hexdigest()[:16]
 
 
 def merge_all(schema):
@@ -487,6 +503,9 @@ def build(original, inventory, overrides, webhook_shapes):
             key = json.dumps(canonical_shape(schema), sort_keys=True, separators=(",", ":"))
             index[name] = canonical_objects[key]
     files["source/source_index.json"] = json.dumps(index, indent=2) + "\n"
+    files["source/entity_name_pins.json"] = json.dumps(
+        {shape_hash(key): name.removeprefix(PREFIX) for key, name in canonical_objects.items()},
+        indent=1, sort_keys=True) + "\n"
     files[lib + "registry.ex"] = render_registry(contracts)
 
     if webhook_shapes is not None:
@@ -521,7 +540,7 @@ def check(files):
 
 
 def main(argv=None):
-    global PREFIX, ROOT_NS
+    global PREFIX, ROOT_NS, pins
     args = parse_args(argv)
     ROOT_NS = args.prefix
     PREFIX = ROOT_NS + ".Entities."
@@ -533,6 +552,8 @@ def main(argv=None):
         if (SOURCE / "live_overrides.json").exists() else {}
     webhook_shapes = json.loads((SOURCE / "webhook_shapes.json").read_text()) \
         if (SOURCE / "webhook_shapes.json").exists() else None
+    pins = json.loads((SOURCE / "entity_name_pins.json").read_text()) \
+        if (SOURCE / "entity_name_pins.json").exists() else {}
 
     files = build(original, inventory, overrides, webhook_shapes)
     check(files) if args.check else write(files)

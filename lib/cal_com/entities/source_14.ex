@@ -1,116 +1,146 @@
 alias CalCom.Entities
 
-defmodule Entities.ReserveSlotOutputResponse20240904 do
+defmodule Entities.GetDelegationCredentialOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.ReserveSlotOutput20240904 do
+defmodule Entities.GetDelegationCredentialsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.ResponseSlotsOutput do
+defmodule Entities.GetEventTypeHistoryOutput20240614 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.ResponseSlotsOutputData do
+defmodule Entities.GetEventTypeOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutedToPerPeriodInput do
+defmodule Entities.GetEventTypeWorkflowOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.Routing do
+defmodule Entities.GetEventTypesOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormFieldsInput do
+defmodule Entities.GetInsightsRoutingFailedBookingsByFieldOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormOutput do
+defmodule Entities.GetInsightsRoutingFormFieldOptionsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormResponseOutput do
+defmodule Entities.GetInsightsRoutingFormResponsesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormWorkflowActivationOutputDto do
+defmodule Entities.GetInsightsRoutingFormsByStatusOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormWorkflowOutput do
+defmodule Entities.GetInsightsRoutingRoutedToPerPeriodOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormWorkflowStepOutputDto do
+defmodule Entities.GetManagedOrganizationOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingFormWorkflowTriggerOutputDto do
+defmodule Entities.GetManagedOrganizationsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingInsightsBaseInput do
+defmodule Entities.GetManagedUserOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingInsightsPaginatedInput do
+defmodule Entities.GetManagedUsersOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceDataOutput20240813 do
+defmodule Entities.GetMeOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceFormOutput20240813 do
+defmodule Entities.GetOAuthClientResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceFormResponseOutput20240813 do
+defmodule Entities.GetOAuthClientsResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceFormSubmissionOutput20240813 do
+defmodule Entities.GetOptionUserOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceGroupOutput20240813 do
+defmodule Entities.GetOptionUserOutputData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.RoutingTraceStepOutput20240813 do
+defmodule Entities.GetOrgRolePermissionsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.ScheduleAvailabilityInput20240611 do
+defmodule Entities.GetOrgUsersWithProfileOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end
 
-defmodule Entities.ScheduleOutput20240611 do
+defmodule Entities.GetOrganizationAttributesOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
+end
+
+defmodule Entities.GetOrganizationUserOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
+end
+
+defmodule Entities.GetOrganizationUsersResponseDTO do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
+end
+
+defmodule Entities.GetPrivateLinksOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
+end
+
+defmodule Entities.GetRecurringSeatedBookingOutput20240813 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
+end
+
+defmodule Entities.GetReservedSlotOutput20240904 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
+end
+
+defmodule Entities.GetRoutingFormResponsesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_14.json", __MODULE__}
 end

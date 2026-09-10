@@ -22,7 +22,7 @@ Depend on it by git ref:
 ```elixir
 def deps do
   [
-    {:cal_com, git: "git@github.com:hawkyre/cal_com.git", tag: "v0.1.0"}
+    {:cal_com, git: "git@github.com:hawkyre/cal_com.git", tag: "v0.2.0"}
   ]
 end
 ```
@@ -102,12 +102,18 @@ SHA-256 of `source/openapi.json` differs, printing both hashes. A spec refresh
 therefore cannot land without updating the hash in the same commit. The
 operations generated are exactly the ones listed in `source/inventory.json`.
 
+`source/entity_name_pins.json` maps each shape's hash to its module name. A
+shape that already has a module keeps that name whatever the inventory or the
+registration order does, so widening the inventory adds modules instead of
+renaming them. A brand-new shape takes the name the inventory gives it and is
+pinned on the next write.
+
 ## Compile cost
 
-The package compiles 94 files that define 199 operations and 833 entity
-modules: about 20 seconds of wall time on a 20-core machine, roughly three
-minutes of CPU, paid once per build volume. Incremental builds after that
-touch only what changed; a fresh `_build` pays the whole cost again.
+The package compiles 139 files that define 349 operations and 1242 entity
+modules: about 31 seconds of wall time on a 20-core machine, roughly five
+minutes of CPU, paid once per build volume. Incremental builds after that touch
+only what changed; a fresh `_build` pays the whole cost again.
 
 ## Releasing
 

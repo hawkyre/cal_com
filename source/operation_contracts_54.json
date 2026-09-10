@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.UserOOOControllerDeleteMyOOO": {
+    "input": "CalCom.Entities.InputUserOOOControllerDeleteMyOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :user_ooo_controller_delete_my_ooo, id: \"DELETE /v2/me/ooo/{oooId}\", method: :delete, path: \"/v2/me/ooo/{oooId}\", module: CalCom.Operations.UserOOOControllerDeleteMyOOO, input_module: CalCom.Entities.InputUserOOOControllerDeleteMyOOO, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.RoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse": {
+    "input": "CalCom.Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse",
+    "result": "CalCom.Entities.ResultRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse200.t()",
+    "contract": "%CalCom.Operation{key: :routing_forms_controller_calculate_slots_based_on_routing_form_response, id: \"POST /v2/routing-forms/{routingFormId}/calculate-slots\", method: :post, path: \"/v2/routing-forms/{routingFormId}/calculate-slots\", module: CalCom.Operations.RoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse, input_module: CalCom.Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponse200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ResponseSlotsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611CreateSchedule": {
+    "input": "CalCom.Entities.InputSchedulesController20240611CreateSchedule",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerCreateUserSchedule201.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_create_schedule, id: \"POST /v2/schedules\", method: :post, path: \"/v2/schedules\", module: CalCom.Operations.SchedulesController20240611CreateSchedule, input_module: CalCom.Entities.InputSchedulesController20240611CreateSchedule, version: \"2024-06-11\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsSchedulesControllerCreateUserSchedule201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611GetSchedules": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_get_schedules, id: \"GET /v2/schedules\", method: :get, path: \"/v2/schedules\", module: CalCom.Operations.SchedulesController20240611GetSchedules, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: \"2024-06-11\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulesOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.SchedulesController20240611GetDefaultSchedule": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultSchedulesController20240611GetDefaultSchedule200.t()",
+    "contract": "%CalCom.Operation{key: :schedules_controller_2024_06_11_get_default_schedule, id: \"GET /v2/schedules/default\", method: :get, path: \"/v2/schedules/default\", module: CalCom.Operations.SchedulesController20240611GetDefaultSchedule, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: \"2024-06-11\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultSchedulesController20240611GetDefaultSchedule200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetDefaultScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.InsightsControllerGetRoutedToPerPeriod": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutedToPerPeriod",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutedToPerPeriod200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routed_to_per_period, id: \"POST /v2/insights/routings/routed-to-per-period\", method: :post, path: \"/v2/insights/routings/routed-to-per-period\", module: CalCom.Operations.InsightsControllerGetRoutedToPerPeriod, input_module: CalCom.Entities.InputInsightsControllerGetRoutedToPerPeriod, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutedToPerPeriod200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingRoutedToPerPeriodOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsOrganizationsControllerCreateOrganization": {
+    "input": "CalCom.Entities.InputOrganizationsOrganizationsControllerCreateOrganization",
+    "result": "CalCom.Entities.ResultOrganizationsOrganizationsControllerCreateOrganization201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_organizations_controller_create_organization, id: \"POST /v2/organizations/{orgId}/organizations\", method: :post, path: \"/v2/organizations/{orgId}/organizations\", module: CalCom.Operations.OrganizationsOrganizationsControllerCreateOrganization, input_module: CalCom.Entities.InputOrganizationsOrganizationsControllerCreateOrganization, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsOrganizationsControllerCreateOrganization201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateManagedOrganizationOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsOrganizationsControllerGetOrganizations": {
+    "input": "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizations",
+    "result": "CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganizations200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_organizations_controller_get_organizations, id: \"GET /v2/organizations/{orgId}/organizations\", method: :get, path: \"/v2/organizations/{orgId}/organizations\", module: CalCom.Operations.OrganizationsOrganizationsControllerGetOrganizations, input_module: CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganizations, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganizations200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetManagedOrganizationsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsOrganizationsControllerGetOrganization": {
+    "input": "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganization",
+    "result": "CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_organizations_controller_get_organization, id: \"GET /v2/organizations/{orgId}/organizations/{managedOrganizationId}\", method: :get, path: \"/v2/organizations/{orgId}/organizations/{managedOrganizationId}\", module: CalCom.Operations.OrganizationsOrganizationsControllerGetOrganization, input_module: CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganization, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetManagedOrganizationOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsOrganizationsControllerUpdateOrganization": {
+    "input": "CalCom.Entities.InputOrganizationsOrganizationsControllerUpdateOrganization",
+    "result": "CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_organizations_controller_update_organization, id: \"PATCH /v2/organizations/{orgId}/organizations/{managedOrganizationId}\", method: :patch, path: \"/v2/organizations/{orgId}/organizations/{managedOrganizationId}\", module: CalCom.Operations.OrganizationsOrganizationsControllerUpdateOrganization, input_module: CalCom.Entities.InputOrganizationsOrganizationsControllerUpdateOrganization, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetManagedOrganizationOutput}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -1,853 +1,668 @@
 {
-  "CalCom.Entities.InputRoutingFormsControllerCalculateSlotsBasedOnRoutingFormResponseQuery": {
+  "CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentials": {
     "fields": [
       [
-        "start",
-        "start",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
         true
       ],
       [
-        "end",
-        "end",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "time_zone",
-        "timeZone",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "query",
+        "query",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentialsQuery}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentialsQuery.t()",
         false
       ],
       [
-        "duration",
-        "duration",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        false
-      ],
-      [
-        "format",
-        "format",
-        "%CalCom.Rule{kind: {:enum, [{\"range\", :range}, {\"time\", :time}]}, nullable: false}",
-        ":range | :time",
-        false
-      ],
-      [
-        "booking_uid_to_reschedule",
-        "bookingUidToReschedule",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "reschedule_with_same_host",
-        "rescheduleWithSameHost",
-        "%CalCom.Rule{kind: :boolean, nullable: false}",
-        "boolean()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputSchedulesController20240611GetSchedulePath": {
+  "CalCom.Entities.ResultOrganizationsDelegationCredentialControllerGetDelegationCredentials200": {
     "fields": [
       [
-        "schedule_id",
-        "scheduleId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetDelegationCredentialsOutput}, nullable: false}",
+        "CalCom.Entities.GetDelegationCredentialsOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputSlotsController20240904GetAvailableSlotsQuery": {
+  "CalCom.Entities.InputOrganizationsDelegationCredentialControllerCreateDelegationCredential": {
     "fields": [
       [
-        "booking_uid_to_reschedule",
-        "bookingUidToReschedule",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "start",
-        "start",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
         true
       ],
       [
-        "end",
-        "end",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
+      ],
+      [
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:any_of, [%CalCom.Rule{kind: {:object, CalCom.Entities.CreateGoogleDelegationCredentialInput}, nullable: false}, %CalCom.Rule{kind: {:object, CalCom.Entities.CreateMicrosoftDelegationCredentialInput}, nullable: false}]}, nullable: false}",
+        "CalCom.Alternatives.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsDelegationCredentialControllerCreateDelegationCredential201": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateDelegationCredentialOutput}, nullable: false}",
+        "CalCom.Entities.CreateDelegationCredentialOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredential": {
+    "fields": [
+      [
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentialPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentialPath.t()",
         true
       ],
       [
-        "organization_slug",
-        "organizationSlug",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "team_slug",
-        "teamSlug",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "username",
-        "username",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "event_type_slug",
-        "eventTypeSlug",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        false
-      ],
-      [
-        "usernames",
-        "usernames",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "format",
-        "format",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "duration",
-        "duration",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        false
-      ],
-      [
-        "time_zone",
-        "timeZone",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.OutputSlotsController20240904GetAvailableSlots200Data": {
-    "fields": [],
-    "additional": "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: {:object, CalCom.Entities.OutputSlotsController20240904GetAvailableSlots200DataAdditionalItem}, nullable: false}}, nullable: false}",
-    "additional_type": "[CalCom.Entities.OutputSlotsController20240904GetAvailableSlots200DataAdditionalItem.t()]"
-  },
-  "CalCom.Entities.InputSlotsController20240904GetReservedSlotPath": {
+  "CalCom.Entities.ResultOrganizationsDelegationCredentialControllerGetDelegationCredential200": {
     "fields": [
       [
-        "uid",
-        "uid",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetDelegationCredentialOutput}, nullable: false}",
+        "CalCom.Entities.GetDelegationCredentialOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypesPath": {
+  "CalCom.Entities.InputOrganizationsDelegationCredentialControllerUpdateDelegationCredential": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventTypePath": {
-    "fields": [
-      [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentialPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsDelegationCredentialControllerGetDelegationCredentialPath.t()",
         true
       ],
       [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputTeamsEventTypesWebhooksControllerCreateTeamEventTypeWebhookPath": {
-    "fields": [
-      [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputTeamsEventTypesWebhooksControllerUpdateTeamEventTypeWebhookPath": {
-    "fields": [
-      [
-        "webhook_id",
-        "webhookId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputTeamsMembershipsControllerGetTeamMembershipsQuery": {
-    "fields": [
-      [
-        "take",
-        "take",
-        "%CalCom.Rule{kind: :number, nullable: false, minimum: 1, maximum: 250}",
-        "number()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ],
       [
-        "skip",
-        "skip",
-        "%CalCom.Rule{kind: :number, nullable: false, minimum: 0}",
-        "number()",
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateDelegationCredentialInput}, nullable: false}",
+        "CalCom.Entities.UpdateDelegationCredentialInput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsDelegationCredentialControllerUpdateDelegationCredential200": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateDelegationCredentialOutput}, nullable: false}",
+        "CalCom.Entities.CreateDelegationCredentialOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsDelegationCredentialControllerDeleteDelegationCredential200": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateDelegationCredentialOutput}, nullable: false}",
+        "CalCom.Entities.CreateDelegationCredentialOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsDelegationCredentialControllerResetDelegationCredentialRotation200": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.ResetDelegationCredentialRotationOutput}, nullable: false}",
+        "CalCom.Entities.ResetDelegationCredentialRotationOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMemberships": {
+    "fields": [
+      [
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
+        true
+      ],
+      [
+        "query",
+        "query",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMembershipsQuery}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMembershipsQuery.t()",
         false
       ],
       [
-        "emails",
-        "emails",
-        "%CalCom.Rule{kind: {:array, %CalCom.Rule{kind: :string, nullable: false}}, nullable: false, min_items: 1, max_items: 20}",
-        "[String.t()]",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsMembershipsControllerGetTeamMembershipPath": {
+  "CalCom.Entities.ResultOrganizationsMembershipsControllerGetAllMemberships200": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "membership_id",
-        "membershipId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}",
+        "CalCom.Entities.GetAllOrgMemberships.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsOOOControllerGetTeamMemberOOOPath": {
+  "CalCom.Entities.InputOrganizationsMembershipsControllerCreateMembership": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
         true
       ],
       [
-        "user_id",
-        "userId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
+      ],
+      [
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:one_of, [%CalCom.Rule{kind: {:object, CalCom.Entities.CreateOrgMembershipDto}, nullable: false}, %CalCom.Rule{kind: {:object, CalCom.Entities.CreateOrgMembershipByEmailDto}, nullable: false}]}, nullable: false}",
+        "CalCom.Entities.CreateOrgMembershipDto.t() | CalCom.Entities.CreateOrgMembershipByEmailDto.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputWebhooksControllerUpdateWebhookPath": {
+  "CalCom.Entities.ResultOrganizationsMembershipsControllerCreateMembership201": {
     "fields": [
       [
-        "webhook_id",
-        "webhookId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}",
+        "CalCom.Entities.GetAllOrgMemberships.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputUserWorkflowsControllerGetWorkflowByIdPath": {
+  "CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembership": {
     "fields": [
       [
-        "workflow_id",
-        "workflowId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponseQuery": {
-    "fields": [
-      [
-        "start",
-        "start",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembershipPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembershipPath.t()",
         true
       ],
       [
-        "end",
-        "end",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "time_zone",
-        "timeZone",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "duration",
-        "duration",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        false
-      ],
-      [
-        "format",
-        "format",
-        "%CalCom.Rule{kind: {:enum, [{\"range\", :range}, {\"time\", :time}]}, nullable: false}",
-        ":range | :time",
-        false
-      ],
-      [
-        "booking_uid_to_reschedule",
-        "bookingUidToReschedule",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        false
-      ],
-      [
-        "reschedule_with_same_host",
-        "rescheduleWithSameHost",
-        "%CalCom.Rule{kind: :boolean, nullable: false}",
-        "boolean()",
-        false
-      ],
-      [
-        "queue_response",
-        "queueResponse",
-        "%CalCom.Rule{kind: :boolean, nullable: false}",
-        "boolean()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerUpdateRoutingFormResponsePath": {
+  "CalCom.Entities.ResultOrganizationsMembershipsControllerGetOrgMembership200": {
     "fields": [
       [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "routing_form_id",
-        "routingFormId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "response_id",
-        "responseId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}",
+        "CalCom.Entities.GetAllOrgMemberships.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerCreateRoutingFormResponsePath": {
+  "CalCom.Entities.ResultOrganizationsMembershipsControllerDeleteMembership200": {
     "fields": [
       [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "routing_form_id",
-        "routingFormId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}",
+        "CalCom.Entities.GetAllOrgMemberships.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsTeamsRoutingFormsResponsesControllerUpdateRoutingFormResponsePath": {
+  "CalCom.Entities.InputOrganizationsMembershipsControllerUpdateMembership": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembershipPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembershipPath.t()",
         true
       ],
       [
-        "routing_form_id",
-        "routingFormId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
       ],
       [
-        "response_id",
-        "responseId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateOrgMembershipDto}, nullable: false}",
+        "CalCom.Entities.UpdateOrgMembershipDto.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputBookingsController20260225ReassignBookingToUserPath": {
+  "CalCom.Entities.ResultOrganizationsMembershipsControllerUpdateMembership200": {
     "fields": [
       [
-        "booking_uid",
-        "bookingUid",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "user_id",
-        "userId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}",
+        "CalCom.Entities.GetAllOrgMemberships.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputSlotsController20240904ReserveSlotHeaders": {
+  "CalCom.Entities.InputOrganizationsRolesControllerCreateRole": {
     "fields": [
       [
-        "x_cal_client_id",
-        "x-cal-client-id",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
+        true
+      ],
+      [
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
+      ],
+      [
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateOrgRoleInput}, nullable: false}",
+        "CalCom.Entities.CreateOrgRoleInput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsRolesControllerCreateRole201": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRoleOutput}, nullable: false}",
+        "CalCom.Entities.GetOrgRoleOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsRolesControllerGetAllRoles200": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgRolesOutput}, nullable: false}",
+        "CalCom.Entities.GetAllOrgRolesOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsRolesControllerGetRole": {
+    "fields": [
+      [
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRolesControllerGetRolePath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRolesControllerGetRolePath.t()",
+        true
+      ],
+      [
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsRoutingFormsResponsesControllerCreateRoutingFormResponsePath": {
+  "CalCom.Entities.ResultOrganizationsRolesControllerGetRole200": {
     "fields": [
       [
-        "routing_form_id",
-        "routingFormId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRoleOutput}, nullable: false}",
+        "CalCom.Entities.GetOrgRoleOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsEventTypesPrivateLinksController20240904UpdatePrivateLinkPath": {
+  "CalCom.Entities.InputOrganizationsRolesControllerUpdateRole": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRolesControllerGetRolePath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRolesControllerGetRolePath.t()",
         true
       ],
       [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
       ],
       [
-        "link_id",
-        "linkId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.UpdateOrgRoleInput}, nullable: false}",
+        "CalCom.Entities.UpdateOrgRoleInput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsUsersOOOControllerUpdateOrganizationUserOOOPath": {
+  "CalCom.Entities.ResultOrganizationsRolesControllerUpdateRole200": {
     "fields": [
       [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "user_id",
-        "userId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "ooo_id",
-        "oooId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRoleOutput}, nullable: false}",
+        "CalCom.Entities.GetOrgRoleOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsUsersOOOControllerDeleteOrganizationUserOOOPath": {
+  "CalCom.Entities.ResultOrganizationsRolesControllerDeleteRole200": {
     "fields": [
       [
-        "ooo_id",
-        "oooId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "user_id",
-        "userId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRoleOutput}, nullable: false}",
+        "CalCom.Entities.GetOrgRoleOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputEventTypesController20260612DeleteCustomBookingFieldPath": {
+  "CalCom.Entities.InputOrganizationsRolesPermissionsControllerAddPermissions": {
     "fields": [
       [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRolesControllerGetRolePath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRolesControllerGetRolePath.t()",
         true
       ],
       [
-        "slug",
-        "slug",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
+      ],
+      [
+        "body",
+        "body",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.CreateOrgRolePermissionsInput}, nullable: false}",
+        "CalCom.Entities.CreateOrgRolePermissionsInput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputEventTypesPrivateLinksController20240904UpdatePrivateLinkPath": {
+  "CalCom.Entities.ResultOrganizationsRolesPermissionsControllerListPermissions200": {
     "fields": [
       [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "link_id",
-        "linkId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRolePermissionsOutput}, nullable: false}",
+        "CalCom.Entities.GetOrgRolePermissionsOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612DeleteCustomBookingFieldPath": {
+  "CalCom.Entities.InputOrganizationsRolesPermissionsControllerRemovePermissions": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRolesControllerGetRolePath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRolesControllerGetRolePath.t()",
         true
       ],
       [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
+        "query",
+        "query",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRolesPermissionsControllerRemovePermissionsQuery}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRolesPermissionsControllerRemovePermissionsQuery.t()",
+        false
       ],
       [
-        "slug",
-        "slug",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "org_id",
-        "orgId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputUserOOOControllerUpdateMyOOOPath": {
-    "fields": [
-      [
-        "ooo_id",
-        "oooId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputSchedulesController20240611UpdateSchedulePath": {
-    "fields": [
-      [
-        "schedule_id",
-        "scheduleId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputSelectedCalendarsControllerDeleteSelectedCalendarQuery": {
-    "fields": [
-      [
-        "integration",
-        "integration",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "external_id",
-        "externalId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "credential_id",
-        "credentialId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ],
-      [
-        "delegation_credential_id",
-        "delegationCredentialId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
         false
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsEventTypesController20260612DeleteCustomBookingFieldPath": {
+  "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "event_type_id",
-        "eventTypeId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        true
-      ],
-      [
-        "slug",
-        "slug",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
+        "value",
+        "value",
+        "%CalCom.Rule{kind: :json, nullable: true}",
+        "CalCom.Json.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsOOOControllerUpdateTeamMemberOOOPath": {
+  "CalCom.Entities.InputOrganizationsRolesPermissionsControllerRemovePermission": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRolesPermissionsControllerRemovePermissionPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRolesPermissionsControllerRemovePermissionPath.t()",
         true
       ],
       [
-        "user_id",
-        "userId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "headers",
+        "headers",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorHeaders.t()",
+        false
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsRoutingFormsControllerGetOrganizationRoutingForms": {
+    "fields": [
+      [
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsBookingsControllerGetAllOrgTeamBookingsCursorPath.t()",
         true
       ],
       [
-        "ooo_id",
-        "oooId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "query",
+        "query",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRoutingFormsControllerGetOrganizationRoutingFormsQuery}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRoutingFormsControllerGetOrganizationRoutingFormsQuery.t()",
+        false
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsRoutingFormsControllerGetOrganizationRoutingForms200": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormsOutput}, nullable: false}",
+        "CalCom.Entities.GetRoutingFormsOutput.t()",
         true
       ]
     ],
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputTeamsOOOControllerDeleteTeamMemberOOOPath": {
+  "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponses": {
     "fields": [
       [
-        "team_id",
-        "teamId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponsesPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponsesPath.t()",
         true
       ],
       [
-        "ooo_id",
-        "oooId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "query",
+        "query",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponsesQuery}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponsesQuery.t()",
+        false
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponses200": {
+    "fields": [
+      [
+        "value",
+        "value",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetRoutingFormResponsesOutput}, nullable: false}",
+        "CalCom.Entities.GetRoutingFormResponsesOutput.t()",
+        true
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse": {
+    "fields": [
+      [
+        "path",
+        "path",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponsesPath}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerGetRoutingFormResponsesPath.t()",
         true
       ],
       [
-        "user_id",
-        "userId",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "query",
+        "query",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponseQuery}, nullable: false}",
+        "CalCom.Entities.InputOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponseQuery.t()",
         true
       ]
     ],

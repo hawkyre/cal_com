@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.BookingAttendeesController20240813AddAttendee do
+defmodule Operations.BookingsController20260225ReassignBooking do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_27.json", __MODULE__}
 end
 
-defmodule Operations.BookingGuestsController20240813AddGuests do
+defmodule Operations.BookingsController20260225ReassignBookingToUser do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_27.json", __MODULE__}
 end
 
-defmodule Operations.SlotsController20240904ReserveSlot do
+defmodule Operations.BookingsController20260225ConfirmBooking do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_27.json", __MODULE__}
 end
 
-defmodule Operations.SlotsController20240904UpdateReservedSlot do
+defmodule Operations.BookingsController20260225DeclineBooking do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_27.json", __MODULE__}
 end
 
-defmodule Operations.SlotsController20240904DeleteReservedSlot do
+defmodule Operations.BookingsController20260225RequestReschedule do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_27.json", __MODULE__}
 end

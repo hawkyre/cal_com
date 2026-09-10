@@ -1,66 +1,36 @@
 alias CalCom.Entities
 
-defmodule Entities.OrgRoleOutput do
+defmodule Entities.EventTypeOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
-defmodule Entities.OrgTeamMembershipsOutputResponseDto do
+defmodule Entities.EventTypeTeam do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
-defmodule Entities.OrgTeamOutputDto do
+defmodule Entities.EventTypeWebhookOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
-defmodule Entities.OrgTeamOutputResponseDto do
+defmodule Entities.EventTypeWebhookOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
-defmodule Entities.OrganizationMembershipOutput do
+defmodule Entities.EventTypeWebhooksOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
-defmodule Entities.OutputIntegrationLocation20240614 do
+defmodule Entities.EventTypeWorkflowActivationOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
-defmodule Entities.OutputUnknownLocation20240614 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
-end
-
-defmodule Entities.PaginationMetaDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
-end
-
-defmodule Entities.PartialOmitCustomAddressFieldInput20260612Field do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
-end
-
-defmodule Entities.PartialOmitCustomCheckboxGroupFieldInput20260612Field do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
-end
-
-defmodule Entities.PartialOmitCustomEmailFieldInput20260612Field do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
-end
-
-defmodule Entities.PartialOmitCustomLongTextFieldInput20260612Field do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
-end
-
-defmodule Entities.PartialOmitSystemAttendeePhoneFieldInput20260612Field do
+defmodule Entities.EventTypeWorkflowOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.InsightsControllerGetRoutingFormsByStatus": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormsByStatus200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_forms_by_status, id: \"POST /v2/insights/routings/forms-by-status\", method: :post, path: \"/v2/insights/routings/forms-by-status\", module: CalCom.Operations.InsightsControllerGetRoutingFormsByStatus, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormsByStatus200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormsByStatusOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetRoutingFormResponses": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormResponses",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormResponses200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_form_responses, id: \"POST /v2/insights/routings/form-responses\", method: :post, path: \"/v2/insights/routings/form-responses\", module: CalCom.Operations.InsightsControllerGetRoutingFormResponses, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormResponses, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :body_offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormResponses200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormResponsesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetRoutingFormFieldOptions": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormFieldOptions200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_form_field_options, id: \"POST /v2/insights/routings/form-field-options\", method: :post, path: \"/v2/insights/routings/form-field-options\", module: CalCom.Operations.InsightsControllerGetRoutingFormFieldOptions, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormFieldOptions200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormFieldOptionsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetRoutingFormHeaders": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions",
+    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormHeaders200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_form_headers, id: \"POST /v2/insights/routings/form-response-headers\", method: :post, path: \"/v2/insights/routings/form-response-headers\", module: CalCom.Operations.InsightsControllerGetRoutingFormHeaders, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormHeaders200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormFieldOptionsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetFailedBookingsByField": {
+    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus",
+    "result": "CalCom.Entities.ResultInsightsControllerGetFailedBookingsByField200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_failed_bookings_by_field, id: \"POST /v2/insights/routings/failed-bookings-by-field\", method: :post, path: \"/v2/insights/routings/failed-bookings-by-field\", module: CalCom.Operations.InsightsControllerGetFailedBookingsByField, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetFailedBookingsByField200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFailedBookingsByFieldOutput}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.EventTypesPrivateLinksController20240904CreatePrivateLink": {
+    "input": "CalCom.Entities.InputEventTypesPrivateLinksController20240904CreatePrivateLink",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904CreatePrivateLink201.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_create_private_link, id: \"POST /v2/event-types/{eventTypeId}/private-links\", method: :post, path: \"/v2/event-types/{eventTypeId}/private-links\", module: CalCom.Operations.EventTypesPrivateLinksController20240904CreatePrivateLink, input_module: CalCom.Entities.InputEventTypesPrivateLinksController20240904CreatePrivateLink, version: \"2024-09-04\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904CreatePrivateLink201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreatePrivateLinkOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesPrivateLinksController20240904GetPrivateLinks": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_get_private_links, id: \"GET /v2/event-types/{eventTypeId}/private-links\", method: :get, path: \"/v2/event-types/{eventTypeId}/private-links\", module: CalCom.Operations.EventTypesPrivateLinksController20240904GetPrivateLinks, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2024-09-04\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetPrivateLinksOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesPrivateLinksController20240904UpdatePrivateLink": {
+    "input": "CalCom.Entities.InputEventTypesPrivateLinksController20240904UpdatePrivateLink",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904UpdatePrivateLink200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_update_private_link, id: \"PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}\", method: :patch, path: \"/v2/event-types/{eventTypeId}/private-links/{linkId}\", module: CalCom.Operations.EventTypesPrivateLinksController20240904UpdatePrivateLink, input_module: CalCom.Entities.InputEventTypesPrivateLinksController20240904UpdatePrivateLink, version: \"2024-09-04\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904UpdatePrivateLink200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreatePrivateLinkOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesPrivateLinksController20240904DeletePrivateLink": {
+    "input": "CalCom.Entities.InputEventTypesPrivateLinksController20240904DeletePrivateLink",
+    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904DeletePrivateLink200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_delete_private_link, id: \"DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}\", method: :delete, path: \"/v2/event-types/{eventTypeId}/private-links/{linkId}\", module: CalCom.Operations.EventTypesPrivateLinksController20240904DeletePrivateLink, input_module: CalCom.Entities.InputEventTypesPrivateLinksController20240904DeletePrivateLink, version: \"2024-09-04\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904DeletePrivateLink200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeletePrivateLinkOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventsControllerList": {
+    "input": "CalCom.Entities.InputEventsControllerList",
+    "result": "CalCom.Entities.ResultEventsControllerList200.t()",
+    "contract": "%CalCom.Operation{key: :events_controller_list, id: \"GET /v2/events\", method: :get, path: \"/v2/events\", module: CalCom.Operations.EventsControllerList, input_module: CalCom.Entities.InputEventsControllerList, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventsControllerList200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventsOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

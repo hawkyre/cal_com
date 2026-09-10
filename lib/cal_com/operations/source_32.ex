@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.EventTypesController20260612ReplaceBookingFields do
+defmodule Operations.CalendarsControllerSyncCredentials do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_32.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesController20260612CreateCustomBookingFields do
+defmodule Operations.CalendarsControllerCheck do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_32.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesController20260612UpdateBookingFields do
+defmodule Operations.CalendarsControllerDeleteCalendarCredentials do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_32.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesController20260612DeleteCustomBookingField do
+defmodule Operations.ConferencingControllerConnect do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_32.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesPrivateLinksController20240904CreatePrivateLink do
+defmodule Operations.ConferencingControllerRedirect do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_32.json", __MODULE__}
 end

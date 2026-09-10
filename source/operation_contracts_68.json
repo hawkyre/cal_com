@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.WebhooksControllerGetWebhooks": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhooks",
+    "result": "CalCom.Entities.ResultWebhooksControllerGetWebhooks200.t()",
+    "contract": "%CalCom.Operation{key: :webhooks_controller_get_webhooks, id: \"GET /v2/webhooks\", method: :get, path: \"/v2/webhooks\", module: CalCom.Operations.WebhooksControllerGetWebhooks, input_module: CalCom.Entities.InputWebhooksControllerGetWebhooks, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultWebhooksControllerGetWebhooks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserWebhooksOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.WebhooksControllerUpdateWebhook": {
+    "input": "CalCom.Entities.InputWebhooksControllerUpdateWebhook",
+    "result": "CalCom.Entities.ResultWebhooksControllerCreateWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :webhooks_controller_update_webhook, id: \"PATCH /v2/webhooks/{webhookId}\", method: :patch, path: \"/v2/webhooks/{webhookId}\", module: CalCom.Operations.WebhooksControllerUpdateWebhook, input_module: CalCom.Entities.InputWebhooksControllerUpdateWebhook, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultWebhooksControllerCreateWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.WebhooksControllerGetWebhook": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhook",
+    "result": "CalCom.Entities.ResultWebhooksControllerCreateWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :webhooks_controller_get_webhook, id: \"GET /v2/webhooks/{webhookId}\", method: :get, path: \"/v2/webhooks/{webhookId}\", module: CalCom.Operations.WebhooksControllerGetWebhook, input_module: CalCom.Entities.InputWebhooksControllerGetWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultWebhooksControllerCreateWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.WebhooksControllerDeleteWebhook": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhook",
+    "result": "CalCom.Entities.ResultWebhooksControllerCreateWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :webhooks_controller_delete_webhook, id: \"DELETE /v2/webhooks/{webhookId}\", method: :delete, path: \"/v2/webhooks/{webhookId}\", module: CalCom.Operations.WebhooksControllerDeleteWebhook, input_module: CalCom.Entities.InputWebhooksControllerGetWebhook, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultWebhooksControllerCreateWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserWorkflowsControllerGetWorkflows": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhooks",
+    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200.t()",
+    "contract": "%CalCom.Operation{key: :user_workflows_controller_get_workflows, id: \"GET /v2/workflows\", method: :get, path: \"/v2/workflows\", module: CalCom.Operations.UserWorkflowsControllerGetWorkflows, input_module: CalCom.Entities.InputWebhooksControllerGetWebhooks, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflows200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  }
+}

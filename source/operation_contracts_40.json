@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.EventTypesController20260612ReplaceBookingFields": {
+    "input": "CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_replace_booking_fields, id: \"PUT /v2/event-types/{eventTypeId}/booking-fields\", method: :put, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612ReplaceBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612CreateCustomBookingFields": {
+    "input": "CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_create_custom_booking_fields, id: \"POST /v2/event-types/{eventTypeId}/booking-fields\", method: :post, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612CreateCustomBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612UpdateBookingFields": {
+    "input": "CalCom.Entities.InputEventTypesController20260612UpdateBookingFields",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_update_booking_fields, id: \"PATCH /v2/event-types/{eventTypeId}/booking-fields\", method: :patch, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612UpdateBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612UpdateBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612DeleteCustomBookingField": {
+    "input": "CalCom.Entities.InputEventTypesController20260612DeleteCustomBookingField",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_delete_custom_booking_field, id: \"DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}\", method: :delete, path: \"/v2/event-types/{eventTypeId}/booking-fields/{slug}\", module: CalCom.Operations.EventTypesController20260612DeleteCustomBookingField, input_module: CalCom.Entities.InputEventTypesController20260612DeleteCustomBookingField, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypeWebhooksControllerCreateEventTypeWebhook": {
+    "input": "CalCom.Entities.InputEventTypeWebhooksControllerCreateEventTypeWebhook",
+    "result": "CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :event_type_webhooks_controller_create_event_type_webhook, id: \"POST /v2/event-types/{eventTypeId}/webhooks\", method: :post, path: \"/v2/event-types/{eventTypeId}/webhooks\", module: CalCom.Operations.EventTypeWebhooksControllerCreateEventTypeWebhook, input_module: CalCom.Entities.InputEventTypeWebhooksControllerCreateEventTypeWebhook, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultEventTypeWebhooksControllerCreateEventTypeWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventTypeWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

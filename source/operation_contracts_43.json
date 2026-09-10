@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.EventsControllerGet": {
+    "input": "CalCom.Entities.InputEventsControllerGet",
+    "result": "CalCom.Entities.ResultEventsControllerGet200.t()",
+    "contract": "%CalCom.Operation{key: :events_controller_get, id: \"GET /v2/events/{uuid}\", method: :get, path: \"/v2/events/{uuid}\", module: CalCom.Operations.EventsControllerGet, input_module: CalCom.Entities.InputEventsControllerGet, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventsControllerGet200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.EventOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingKpiStats": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingKpiStats200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_kpi_stats, id: \"POST /v2/insights/bookings/kpi-stats\", method: :post, path: \"/v2/insights/bookings/kpi-stats\", module: CalCom.Operations.InsightsControllerGetBookingKpiStats, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingKpiStats200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingKpiStatsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingEventTrends": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingEventTrends200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_event_trends, id: \"POST /v2/insights/bookings/event-trends\", method: :post, path: \"/v2/insights/bookings/event-trends\", module: CalCom.Operations.InsightsControllerGetBookingEventTrends, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingEventTrends200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingEventTrendsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingAverageDuration": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingAverageDuration200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_average_duration, id: \"POST /v2/insights/bookings/average-duration\", method: :post, path: \"/v2/insights/bookings/average-duration\", module: CalCom.Operations.InsightsControllerGetBookingAverageDuration, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingAverageDuration200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingAverageDurationOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.InsightsControllerGetBookingMemberStats": {
+    "input": "CalCom.Entities.InputInsightsControllerGetBookingKpiStats",
+    "result": "CalCom.Entities.ResultInsightsControllerGetBookingMemberStats200.t()",
+    "contract": "%CalCom.Operation{key: :insights_controller_get_booking_member_stats, id: \"POST /v2/insights/bookings/members\", method: :post, path: \"/v2/insights/bookings/members\", module: CalCom.Operations.InsightsControllerGetBookingMemberStats, input_module: CalCom.Entities.InputInsightsControllerGetBookingKpiStats, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetBookingMemberStats200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingMemberStatsOutput}, nullable: false}, empty?: false}]}"
+  }
+}

@@ -45,6 +45,71 @@ defmodule Entities.ApiKeyOutput do
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end
 
+defmodule Entities.AppPushSubscriptionOutputDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AppPushSubscriptionResponseDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AssignOptionUserOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AssignOptionUserOutputData do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AssignOrganizationAttributeOptionToUserInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AssignedOptionOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.Attribute do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AttributeAssignmentHistoryActorOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AttributeAssignmentHistoryAttributeOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AttributeAssignmentHistoryChangeOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AttributeAssignmentHistoryDataOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AttributeAssignmentHistoryLogOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
+defmodule Entities.AttributeAssignmentHistoryValueOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
+end
+
 defmodule Entities.BaseBookingLimitsCount20240614 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
@@ -86,26 +151,6 @@ defmodule Entities.BookerActiveBookingsLimit20240614 do
 end
 
 defmodule Entities.BookerLayouts20240614 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
-end
-
-defmodule Entities.BookingAttendee do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
-end
-
-defmodule Entities.BookingAttendeeOutput20240813 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
-end
-
-defmodule Entities.BookingAttendeeWithId20240813 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
-end
-
-defmodule Entities.BookingFieldsInput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_00.json", __MODULE__}
 end

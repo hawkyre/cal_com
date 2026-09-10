@@ -1,96 +1,111 @@
 alias CalCom.Entities
 
-defmodule Entities.WebhookMeetingStarted do
+defmodule Entities.UpdateWebhookInputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookMeetingEnded do
+defmodule Entities.UpdateWhatsAppAttendeePhoneWorkflowStepDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookInstantMeeting do
+defmodule Entities.UsageBasedPrivateLinkOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookInstantMeetingAccepted do
+defmodule Entities.UserOooOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookOooCreated do
+defmodule Entities.UserOooOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookFormSubmitted do
+defmodule Entities.UserOoosOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookFormSubmittedNoEvent do
+defmodule Entities.UserVerifiedEmailOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookAfterHostsCalVideoNoShow do
+defmodule Entities.UserVerifiedEmailOutputData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookAfterGuestsCalVideoNoShow do
+defmodule Entities.UserVerifiedEmailsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialError do
+defmodule Entities.UserVerifiedPhoneOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialSecretRotated do
+defmodule Entities.UserVerifiedPhoneOutputData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialSecretRotationFailed do
+defmodule Entities.UserVerifiedPhonesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookDelegationCredentialRotationRequired do
+defmodule Entities.UserWebhookOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookWrongAssignmentReport do
+defmodule Entities.UserWebhookOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookRecordingReady do
+defmodule Entities.UserWebhooksOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookRecordingTranscriptionGenerated do
+defmodule Entities.User20240614 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookRoutingFormFallbackHit do
+defmodule Entities.ValueChangeFieldValue20240614 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.WebhookCalendarEntryRejected do
+defmodule Entities.VerifyEmailCodeData do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end
 
-defmodule Entities.AllowlistServicesDataServices do
+defmodule Entities.VerifyEmailCodeInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
+end
+
+defmodule Entities.VerifyEmailCodeOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
+end
+
+defmodule Entities.VerifyPhoneInput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
+end
+
+defmodule Entities.WorkflowActivationDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_29.json", __MODULE__}
 end

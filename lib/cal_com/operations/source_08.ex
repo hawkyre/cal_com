@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.AllowlistsControllerGetAllowlist do
+defmodule Operations.OrganizationsRolesPermissionsControllerRemovePermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_08.json", __MODULE__}
 end
 
-defmodule Operations.ApiKeysControllerRefresh do
+defmodule Operations.OrganizationsRolesPermissionsControllerRemovePermission do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_08.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260501GetBookings do
+defmodule Operations.OrganizationsRoutingFormsControllerGetOrganizationRoutingForms do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_08.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260225GetBookingBySeatUid do
+defmodule Operations.OrganizationsRoutingFormsResponsesControllerGetRoutingFormResponses do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_08.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260225GetBooking do
+defmodule Operations.OrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_08.json", __MODULE__}
 end

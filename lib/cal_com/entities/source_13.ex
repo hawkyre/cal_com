@@ -1,126 +1,146 @@
 alias CalCom.Entities
 
-defmodule Entities.PartialOmitSystemEmailFieldInput20260612Field do
+defmodule Entities.EventTypeWorkflowStepOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitSystemFullNameFieldInput20260612Field do
+defmodule Entities.EventTypeWorkflowTriggerOutputDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitSystemLocationFieldInput20260612Field do
+defmodule Entities.EventsOutputResponseDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.PartialOmitSystemSplitNameFieldInput20260612Field do
+defmodule Entities.FieldMappingAppliedOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.PatchBookingFieldsInput20260612 do
+defmodule Entities.GetAllAttributeAssignedOptionOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.PathsWorkflowStepOutputDto do
+defmodule Entities.GetAllAttributeOptionOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.Primary do
+defmodule Entities.GetAllOrgRolesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.ProfileOutput do
+defmodule Entities.GetAllTeamRolesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RangeSlotsOutput20240904 do
+defmodule Entities.GetAllowlistOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RangeWindow20240614 do
+defmodule Entities.GetAllowlistsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RawValueFieldValue20240614 do
+defmodule Entities.GetAttributeAssignmentHistoryOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RawValuesFieldValue20240614 do
+defmodule Entities.GetAttributeSyncHistoryOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.ReassignBookingOutput20240813 do
+defmodule Entities.GetBookingAttendeeOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.Recurrence20240614 do
+defmodule Entities.GetBookingAttendeesOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RecurringBookingOutput20240813 do
+defmodule Entities.GetBookingAverageDurationOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RefreshApiKeyInput do
+defmodule Entities.GetBookingEventTrendsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RefreshApiKeyOutput do
+defmodule Entities.GetBookingKpiStatsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.ReportOrgBookingData do
+defmodule Entities.GetBookingLimitsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.ReportOrgBookingInput do
+defmodule Entities.GetBookingMemberStatsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.ReportOrgBookingOutput do
+defmodule Entities.GetBookingRecordingsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RequestRescheduleInput20240813 do
+defmodule Entities.GetBookingRoutingTraceOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RescheduleBookingInput20240813 do
+defmodule Entities.GetBookingTranscriptsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RescheduleBookingOutput20240813 do
+defmodule Entities.GetBookingVideoSessionsOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.RescheduleSeatedBookingInput20240813 do
+defmodule Entities.GetBookingsOutput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end
 
-defmodule Entities.ReserveSlotInput20240904 do
+defmodule Entities.GetBookingsOutput20260501 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
+end
+
+defmodule Entities.GetBusyTimesOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
+end
+
+defmodule Entities.GetCrmSyncErrorsOutput20240614 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
+end
+
+defmodule Entities.GetDefaultConferencingAppOutputResponseDto do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
+end
+
+defmodule Entities.GetDefaultScheduleOutput20240611 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_13.json", __MODULE__}
 end

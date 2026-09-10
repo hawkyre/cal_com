@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_request_phone_verification_code, id: \"POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/request\", method: :post, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/request\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerVerifyEmail": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerVerifyEmail",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyEmail200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_verify_email, id: \"POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/verify\", method: :post, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/verify\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerVerifyEmail, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerVerifyEmail, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyEmail200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamVerifiedEmailOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerVerifyPhoneNumber": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerVerifyPhoneNumber",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyPhoneNumber200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_verify_phone_number, id: \"POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/verify\", method: :post, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/verify\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerVerifyPhoneNumber, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerVerifyPhoneNumber, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyPhoneNumber200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamVerifiedPhoneOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedEmails": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmails",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerGetVerifiedEmails200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_get_verified_emails, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedEmails, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmails, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerGetVerifiedEmails200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamVerifiedEmailsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedPhoneNumbers": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmails",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerGetVerifiedPhoneNumbers200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_get_verified_phone_numbers, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedPhoneNumbers, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmails, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerGetVerifiedPhoneNumbers200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamVerifiedPhonesOutput}, nullable: false}, empty?: false}]}"
+  }
+}

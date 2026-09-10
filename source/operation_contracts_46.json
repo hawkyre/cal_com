@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrganizationsOrganizationsControllerDeleteOrganization": {
+    "input": "CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganization",
+    "result": "CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_organizations_controller_delete_organization, id: \"DELETE /v2/organizations/{orgId}/organizations/{managedOrganizationId}\", method: :delete, path: \"/v2/organizations/{orgId}/organizations/{managedOrganizationId}\", module: CalCom.Operations.OrganizationsOrganizationsControllerDeleteOrganization, input_module: CalCom.Entities.InputOrganizationsOrganizationsControllerGetOrganization, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsOrganizationsControllerGetOrganization200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetManagedOrganizationOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerGetMe": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultMeControllerGetMe200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_get_me, id: \"GET /v2/me\", method: :get, path: \"/v2/me\", module: CalCom.Operations.MeControllerGetMe, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMe200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetMeOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerUpdateMe": {
+    "input": "CalCom.Entities.InputMeControllerUpdateMe",
+    "result": "CalCom.Entities.ResultMeControllerUpdateMe200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_update_me, id: \"PATCH /v2/me\", method: :patch, path: \"/v2/me\", module: CalCom.Operations.MeControllerUpdateMe, input_module: CalCom.Entities.InputMeControllerUpdateMe, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerUpdateMe200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetMeOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerGetMyBookingLimits": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultMeControllerGetMyBookingLimits200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_get_my_booking_limits, id: \"GET /v2/me/booking-limits\", method: :get, path: \"/v2/me/booking-limits\", module: CalCom.Operations.MeControllerGetMyBookingLimits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMyBookingLimits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingLimitsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerUpdateMyBookingLimits": {
+    "input": "CalCom.Entities.InputMeControllerUpdateMyBookingLimits",
+    "result": "CalCom.Entities.ResultMeControllerUpdateMyBookingLimits200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_update_my_booking_limits, id: \"PATCH /v2/me/booking-limits\", method: :patch, path: \"/v2/me/booking-limits\", module: CalCom.Operations.MeControllerUpdateMyBookingLimits, input_module: CalCom.Entities.InputMeControllerUpdateMyBookingLimits, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerUpdateMyBookingLimits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingLimitsOutput}, nullable: false}, empty?: false}]}"
+  }
+}

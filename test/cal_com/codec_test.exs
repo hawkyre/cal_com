@@ -2,20 +2,7 @@ defmodule CalCom.CodecTest do
   use ExUnit.Case, async: true
 
   alias CalCom.{Codec, RequestBuilder, Rule}
-
-  defmodule Patch do
-    @moduledoc "A synthetic schema used to test presence semantics."
-    alias CalCom.Rule
-
-    use CalCom.Schema,
-      fields: [
-        {:title, "title", %Rule{kind: :string, nullable: true}, String.t(), false},
-        {:enabled, "enabled", %Rule{kind: :boolean}, boolean(), false},
-        {:count, "count", %Rule{kind: :integer}, integer(), false},
-        {:items, "items", %Rule{kind: {:array, %Rule{kind: :integer}}}, [integer()], false}
-      ],
-      additional: false
-  end
+  alias CalCom.Test.Patch
 
   test "PATCH encoding preserves omitted, null, false, zero, and empty list values" do
     assert {:ok, absent} = Patch.parse(%{})

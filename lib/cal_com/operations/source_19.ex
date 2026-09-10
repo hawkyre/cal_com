@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.TeamsEventTypesController20260612GetTeamEventType do
+defmodule Operations.OrganizationTeamWorkflowsControllerGetWorkflowById do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_19.json", __MODULE__}
 end
 
-defmodule Operations.TeamsEventTypesController20260612GetBookingFields do
+defmodule Operations.OrganizationTeamWorkflowsControllerUpdateWorkflow do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_19.json", __MODULE__}
 end
 
-defmodule Operations.TeamsControllerGetTeams do
+defmodule Operations.OrganizationTeamWorkflowsControllerDeleteWorkflow do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_19.json", __MODULE__}
 end
 
-defmodule Operations.TeamsControllerGetTeam do
+defmodule Operations.OrganizationTeamWorkflowsControllerGetRoutingFormWorkflowById do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_19.json", __MODULE__}
 end
 
-defmodule Operations.TeamsBookingsControllerGetAllTeamBookings do
+defmodule Operations.OrganizationTeamWorkflowsControllerUpdateRoutingFormWorkflow do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_19.json", __MODULE__}
 end

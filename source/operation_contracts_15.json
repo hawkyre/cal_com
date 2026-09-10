@@ -1,27 +1,27 @@
 {
-  "CalCom.Operations.InsightsControllerGetRoutingFormHeaders": {
-    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions",
-    "result": "CalCom.Entities.ResultInsightsControllerGetRoutingFormHeaders200.t()",
-    "contract": "%CalCom.Operation{key: :insights_controller_get_routing_form_headers, id: \"POST /v2/insights/routings/form-response-headers\", method: :post, path: \"/v2/insights/routings/form-response-headers\", module: CalCom.Operations.InsightsControllerGetRoutingFormHeaders, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormFieldOptions, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutingFormHeaders200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFormFieldOptionsOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsRolesControllerUpdateRole": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesControllerUpdateRole",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesControllerUpdateRole200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_controller_update_role, id: \"PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}\", method: :patch, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}\", module: CalCom.Operations.OrganizationsTeamsRolesControllerUpdateRole, input_module: CalCom.Entities.InputOrganizationsTeamsRolesControllerUpdateRole, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesControllerUpdateRole200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamRoleOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.InsightsControllerGetFailedBookingsByField": {
-    "input": "CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus",
-    "result": "CalCom.Entities.ResultInsightsControllerGetFailedBookingsByField200.t()",
-    "contract": "%CalCom.Operation{key: :insights_controller_get_failed_bookings_by_field, id: \"POST /v2/insights/routings/failed-bookings-by-field\", method: :post, path: \"/v2/insights/routings/failed-bookings-by-field\", module: CalCom.Operations.InsightsControllerGetFailedBookingsByField, input_module: CalCom.Entities.InputInsightsControllerGetRoutingFormsByStatus, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetFailedBookingsByField200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingFailedBookingsByFieldOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsRolesControllerDeleteRole": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesControllerDeleteRole200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_controller_delete_role, id: \"DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}\", method: :delete, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}\", module: CalCom.Operations.OrganizationsTeamsRolesControllerDeleteRole, input_module: CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesControllerDeleteRole200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamRoleOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.InsightsControllerGetRoutedToPerPeriod": {
-    "input": "CalCom.Entities.InputInsightsControllerGetRoutedToPerPeriod",
-    "result": "CalCom.Entities.ResultInsightsControllerGetRoutedToPerPeriod200.t()",
-    "contract": "%CalCom.Operation{key: :insights_controller_get_routed_to_per_period, id: \"POST /v2/insights/routings/routed-to-per-period\", method: :post, path: \"/v2/insights/routings/routed-to-per-period\", module: CalCom.Operations.InsightsControllerGetRoutedToPerPeriod, input_module: CalCom.Entities.InputInsightsControllerGetRoutedToPerPeriod, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultInsightsControllerGetRoutedToPerPeriod200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetInsightsRoutingRoutedToPerPeriodOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerAddPermissions": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesPermissionsControllerAddPermissions",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_permissions_controller_add_permissions, id: \"POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", method: :post, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", module: CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerAddPermissions, input_module: CalCom.Entities.InputOrganizationsTeamsRolesPermissionsControllerAddPermissions, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRolePermissionsOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.MeControllerGetMe": {
-    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
-    "result": "CalCom.Entities.ResultMeControllerGetMe200.t()",
-    "contract": "%CalCom.Operation{key: :me_controller_get_me, id: \"GET /v2/me\", method: :get, path: \"/v2/me\", module: CalCom.Operations.MeControllerGetMe, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMe200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetMeOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerListPermissions": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_permissions_controller_list_permissions, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", module: CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerListPermissions, input_module: CalCom.Entities.InputOrganizationsTeamsRolesControllerGetRole, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRolePermissionsOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.MeControllerGetMyBookingLimits": {
-    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
-    "result": "CalCom.Entities.ResultMeControllerGetMyBookingLimits200.t()",
-    "contract": "%CalCom.Operation{key: :me_controller_get_my_booking_limits, id: \"GET /v2/me/booking-limits\", method: :get, path: \"/v2/me/booking-limits\", module: CalCom.Operations.MeControllerGetMyBookingLimits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMyBookingLimits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingLimitsOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerSetPermissions": {
+    "input": "CalCom.Entities.InputOrganizationsTeamsRolesPermissionsControllerAddPermissions",
+    "result": "CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_teams_roles_permissions_controller_set_permissions, id: \"PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", method: :put, path: \"/v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions\", module: CalCom.Operations.OrganizationsTeamsRolesPermissionsControllerSetPermissions, input_module: CalCom.Entities.InputOrganizationsTeamsRolesPermissionsControllerAddPermissions, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsTeamsRolesPermissionsControllerListPermissions200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRolePermissionsOutput}, nullable: false}, empty?: false}]}"
   }
 }

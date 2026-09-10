@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.OrganizationsSchedulesControllerDeleteUserSchedule do
+defmodule Operations.CalendarsControllerCheckIcsFeed do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_31.json", __MODULE__}
 end
 
-defmodule Operations.DestinationCalendarsControllerUpdateDestinationCalendars do
+defmodule Operations.CalendarsControllerGetBusyTimes do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_31.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesController20260612CreateEventType do
+defmodule Operations.CalendarsControllerGetCalendars do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_31.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesController20260612UpdateEventType do
+defmodule Operations.CalendarsControllerRedirect do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_31.json", __MODULE__}
 end
 
-defmodule Operations.EventTypesController20260612DeleteEventType do
+defmodule Operations.CalendarsControllerSave do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_31.json", __MODULE__}
 end

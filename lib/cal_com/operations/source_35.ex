@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.OrganizationsEventTypesController20260612CreateCustomBookingFields do
+defmodule Operations.OAuthClientUsersControllerUpdateUser do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_35.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsEventTypesController20260612UpdateBookingFields do
+defmodule Operations.OAuthClientUsersControllerDeleteUser do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_35.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsEventTypesController20260612DeleteCustomBookingField do
+defmodule Operations.OAuthClientUsersControllerForceRefresh do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_35.json", __MODULE__}
 end
 
-defmodule Operations.UserOOOControllerCreateMyOOO do
+defmodule Operations.OAuthFlowControllerRefreshTokens do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_35.json", __MODULE__}
 end
 
-defmodule Operations.UserOOOControllerUpdateMyOOO do
+defmodule Operations.OAuthClientWebhooksControllerCreateOAuthClientWebhook do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_35.json", __MODULE__}
 end

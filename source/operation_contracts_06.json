@@ -1,27 +1,27 @@
 {
-  "CalCom.Operations.OrganizationsUsersOOOControllerGetOrganizationUserOOO": {
-    "input": "CalCom.Entities.InputOrganizationsUsersOOOControllerGetOrganizationUserOOO",
-    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200.t()",
-    "contract": "%CalCom.Operation{key: :organizations_users_ooo_controller_get_organization_user_ooo, id: \"GET /v2/organizations/{orgId}/users/{userId}/ooo\", method: :get, path: \"/v2/organizations/{orgId}/users/{userId}/ooo\", module: CalCom.Operations.OrganizationsUsersOOOControllerGetOrganizationUserOOO, input_module: CalCom.Entities.InputOrganizationsUsersOOOControllerGetOrganizationUserOOO, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOoosOutputResponseDto}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsMembershipsControllerDeleteMembership": {
+    "input": "CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembership",
+    "result": "CalCom.Entities.ResultOrganizationsMembershipsControllerDeleteMembership200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_memberships_controller_delete_membership, id: \"DELETE /v2/organizations/{orgId}/memberships/{membershipId}\", method: :delete, path: \"/v2/organizations/{orgId}/memberships/{membershipId}\", module: CalCom.Operations.OrganizationsMembershipsControllerDeleteMembership, input_module: CalCom.Entities.InputOrganizationsMembershipsControllerGetOrgMembership, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsMembershipsControllerDeleteMembership200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.OrganizationsUsersOOOControllerGetOrganizationUsersOOO": {
-    "input": "CalCom.Entities.InputOrganizationsUsersOOOControllerGetOrganizationUsersOOO",
-    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200.t()",
-    "contract": "%CalCom.Operation{key: :organizations_users_ooo_controller_get_organization_users_ooo, id: \"GET /v2/organizations/{orgId}/ooo\", method: :get, path: \"/v2/organizations/{orgId}/ooo\", module: CalCom.Operations.OrganizationsUsersOOOControllerGetOrganizationUsersOOO, input_module: CalCom.Entities.InputOrganizationsUsersOOOControllerGetOrganizationUsersOOO, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOoosOutputResponseDto}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsMembershipsControllerUpdateMembership": {
+    "input": "CalCom.Entities.InputOrganizationsMembershipsControllerUpdateMembership",
+    "result": "CalCom.Entities.ResultOrganizationsMembershipsControllerUpdateMembership200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_memberships_controller_update_membership, id: \"PATCH /v2/organizations/{orgId}/memberships/{membershipId}\", method: :patch, path: \"/v2/organizations/{orgId}/memberships/{membershipId}\", module: CalCom.Operations.OrganizationsMembershipsControllerUpdateMembership, input_module: CalCom.Entities.InputOrganizationsMembershipsControllerUpdateMembership, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsMembershipsControllerUpdateMembership200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgMemberships}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.OrganizationsSchedulesControllerGetUserSchedules": {
-    "input": "CalCom.Entities.InputOrganizationsSchedulesControllerGetUserSchedules",
-    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200.t()",
-    "contract": "%CalCom.Operation{key: :organizations_schedules_controller_get_user_schedules, id: \"GET /v2/organizations/{orgId}/users/{userId}/schedules\", method: :get, path: \"/v2/organizations/{orgId}/users/{userId}/schedules\", module: CalCom.Operations.OrganizationsSchedulesControllerGetUserSchedules, input_module: CalCom.Entities.InputOrganizationsSchedulesControllerGetUserSchedules, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulesOutput20240611}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OrganizationsRolesControllerCreateRole": {
+    "input": "CalCom.Entities.InputOrganizationsRolesControllerCreateRole",
+    "result": "CalCom.Entities.ResultOrganizationsRolesControllerCreateRole201.t()",
+    "contract": "%CalCom.Operation{key: :organizations_roles_controller_create_role, id: \"POST /v2/organizations/{orgId}/roles\", method: :post, path: \"/v2/organizations/{orgId}/roles\", module: CalCom.Operations.OrganizationsRolesControllerCreateRole, input_module: CalCom.Entities.InputOrganizationsRolesControllerCreateRole, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsRolesControllerCreateRole201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRoleOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.OrganizationsSchedulesControllerGetUserSchedule": {
-    "input": "CalCom.Entities.InputOrganizationsSchedulesControllerGetUserSchedule",
-    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetUserSchedule200.t()",
-    "contract": "%CalCom.Operation{key: :organizations_schedules_controller_get_user_schedule, id: \"GET /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}\", method: :get, path: \"/v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}\", module: CalCom.Operations.OrganizationsSchedulesControllerGetUserSchedule, input_module: CalCom.Entities.InputOrganizationsSchedulesControllerGetUserSchedule, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetUserSchedule200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetDefaultScheduleOutput20240611}, nullable: false}, empty?: false}]}"
-  },
-  "CalCom.Operations.OrganizationsWebhooksControllerGetAllOrganizationWebhooks": {
+  "CalCom.Operations.OrganizationsRolesControllerGetAllRoles": {
     "input": "CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMemberships",
-    "result": "CalCom.Entities.ResultOrganizationsWebhooksControllerGetAllOrganizationWebhooks200.t()",
-    "contract": "%CalCom.Operation{key: :organizations_webhooks_controller_get_all_organization_webhooks, id: \"GET /v2/organizations/{orgId}/webhooks\", method: :get, path: \"/v2/organizations/{orgId}/webhooks\", module: CalCom.Operations.OrganizationsWebhooksControllerGetAllOrganizationWebhooks, input_module: CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsWebhooksControllerGetAllOrganizationWebhooks200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamWebhooksOutputResponseDto}, nullable: false}, empty?: false}]}"
+    "result": "CalCom.Entities.ResultOrganizationsRolesControllerGetAllRoles200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_roles_controller_get_all_roles, id: \"GET /v2/organizations/{orgId}/roles\", method: :get, path: \"/v2/organizations/{orgId}/roles\", module: CalCom.Operations.OrganizationsRolesControllerGetAllRoles, input_module: CalCom.Entities.InputOrganizationsMembershipsControllerGetAllMemberships, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsRolesControllerGetAllRoles200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetAllOrgRolesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrganizationsRolesControllerGetRole": {
+    "input": "CalCom.Entities.InputOrganizationsRolesControllerGetRole",
+    "result": "CalCom.Entities.ResultOrganizationsRolesControllerGetRole200.t()",
+    "contract": "%CalCom.Operation{key: :organizations_roles_controller_get_role, id: \"GET /v2/organizations/{orgId}/roles/{roleId}\", method: :get, path: \"/v2/organizations/{orgId}/roles/{roleId}\", module: CalCom.Operations.OrganizationsRolesControllerGetRole, input_module: CalCom.Entities.InputOrganizationsRolesControllerGetRole, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsRolesControllerGetRole200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOrgRoleOutput}, nullable: false}, empty?: false}]}"
   }
 }

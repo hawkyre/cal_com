@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedEmailById": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmailById",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyEmail200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_get_verified_email_by_id, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/{id}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/{id}\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedEmailById, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedEmailById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyEmail200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamVerifiedEmailOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedPhoneById": {
+    "input": "CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedPhoneById",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyPhoneNumber200.t()",
+    "contract": "%CalCom.Operation{key: :org_teams_verified_resources_controller_get_verified_phone_by_id, id: \"GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/{id}\", method: :get, path: \"/v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/{id}\", module: CalCom.Operations.OrgTeamsVerifiedResourcesControllerGetVerifiedPhoneById, input_module: CalCom.Entities.InputOrgTeamsVerifiedResourcesControllerGetVerifiedPhoneById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerVerifyPhoneNumber200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.TeamVerifiedPhoneOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserOOOControllerGetMyOOO": {
+    "input": "CalCom.Entities.InputUserOOOControllerGetMyOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200.t()",
+    "contract": "%CalCom.Operation{key: :user_ooo_controller_get_my_ooo, id: \"GET /v2/me/ooo\", method: :get, path: \"/v2/me/ooo\", module: CalCom.Operations.UserOOOControllerGetMyOOO, input_module: CalCom.Entities.InputUserOOOControllerGetMyOOO, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOoosOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserOOOControllerCreateMyOOO": {
+    "input": "CalCom.Entities.InputUserOOOControllerCreateMyOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :user_ooo_controller_create_my_ooo, id: \"POST /v2/me/ooo\", method: :post, path: \"/v2/me/ooo\", module: CalCom.Operations.UserOOOControllerCreateMyOOO, input_module: CalCom.Entities.InputUserOOOControllerCreateMyOOO, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserOOOControllerUpdateMyOOO": {
+    "input": "CalCom.Entities.InputUserOOOControllerUpdateMyOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :user_ooo_controller_update_my_ooo, id: \"PATCH /v2/me/ooo/{oooId}\", method: :patch, path: \"/v2/me/ooo/{oooId}\", module: CalCom.Operations.UserOOOControllerUpdateMyOOO, input_module: CalCom.Entities.InputUserOOOControllerUpdateMyOOO, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

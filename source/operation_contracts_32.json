@@ -1,27 +1,27 @@
 {
-  "CalCom.Operations.EventTypesController20260612ReplaceBookingFields": {
-    "input": "CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields",
-    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
-    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_replace_booking_fields, id: \"PUT /v2/event-types/{eventTypeId}/booking-fields\", method: :put, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612ReplaceBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.CalendarsControllerSyncCredentials": {
+    "input": "CalCom.Entities.InputCalendarsControllerSyncCredentials",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_sync_credentials, id: \"POST /v2/calendars/{calendar}/credentials\", method: :post, path: \"/v2/calendars/{calendar}/credentials\", module: CalCom.Operations.CalendarsControllerSyncCredentials, input_module: CalCom.Entities.InputCalendarsControllerSyncCredentials, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
   },
-  "CalCom.Operations.EventTypesController20260612CreateCustomBookingFields": {
-    "input": "CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields",
-    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
-    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_create_custom_booking_fields, id: \"POST /v2/event-types/{eventTypeId}/booking-fields\", method: :post, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612CreateCustomBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612ReplaceBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.CalendarsControllerCheck": {
+    "input": "CalCom.Entities.InputCalendarsControllerCheck",
+    "result": "CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_check, id: \"GET /v2/calendars/{calendar}/check\", method: :get, path: \"/v2/calendars/{calendar}/check\", module: CalCom.Operations.CalendarsControllerCheck, input_module: CalCom.Entities.InputCalendarsControllerCheck, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerCheckIcsFeed200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.OutputCalendarsControllerCheckIcsFeed200}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.EventTypesController20260612UpdateBookingFields": {
-    "input": "CalCom.Entities.InputEventTypesController20260612UpdateBookingFields",
-    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
-    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_update_booking_fields, id: \"PATCH /v2/event-types/{eventTypeId}/booking-fields\", method: :patch, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612UpdateBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612UpdateBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.CalendarsControllerDeleteCalendarCredentials": {
+    "input": "CalCom.Entities.InputCalendarsControllerDeleteCalendarCredentials",
+    "result": "CalCom.Entities.ResultCalendarsControllerDeleteCalendarCredentials200.t()",
+    "contract": "%CalCom.Operation{key: :calendars_controller_delete_calendar_credentials, id: \"POST /v2/calendars/{calendar}/disconnect\", method: :post, path: \"/v2/calendars/{calendar}/disconnect\", module: CalCom.Operations.CalendarsControllerDeleteCalendarCredentials, input_module: CalCom.Entities.InputCalendarsControllerDeleteCalendarCredentials, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultCalendarsControllerDeleteCalendarCredentials200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeletedCalendarCredentialsOutputResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.EventTypesController20260612DeleteCustomBookingField": {
-    "input": "CalCom.Entities.InputEventTypesController20260612DeleteCustomBookingField",
-    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
-    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_delete_custom_booking_field, id: \"DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}\", method: :delete, path: \"/v2/event-types/{eventTypeId}/booking-fields/{slug}\", module: CalCom.Operations.EventTypesController20260612DeleteCustomBookingField, input_module: CalCom.Entities.InputEventTypesController20260612DeleteCustomBookingField, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.ConferencingControllerConnect": {
+    "input": "CalCom.Entities.InputConferencingControllerConnect",
+    "result": "CalCom.Entities.ResultOrganizationsConferencingControllerConnectTeamApp200.t()",
+    "contract": "%CalCom.Operation{key: :conferencing_controller_connect, id: \"POST /v2/conferencing/{app}/connect\", method: :post, path: \"/v2/conferencing/{app}/connect\", module: CalCom.Operations.ConferencingControllerConnect, input_module: CalCom.Entities.InputConferencingControllerConnect, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsConferencingControllerConnectTeamApp200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.ConferencingAppOutputResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.EventTypesPrivateLinksController20240904CreatePrivateLink": {
-    "input": "CalCom.Entities.InputEventTypesPrivateLinksController20240904CreatePrivateLink",
-    "result": "CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904CreatePrivateLink201.t()",
-    "contract": "%CalCom.Operation{key: :event_types_private_links_controller_2024_09_04_create_private_link, id: \"POST /v2/event-types/{eventTypeId}/private-links\", method: :post, path: \"/v2/event-types/{eventTypeId}/private-links\", module: CalCom.Operations.EventTypesPrivateLinksController20240904CreatePrivateLink, input_module: CalCom.Entities.InputEventTypesPrivateLinksController20240904CreatePrivateLink, version: \"2024-09-04\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsEventTypesPrivateLinksController20240904CreatePrivateLink201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreatePrivateLinkOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.ConferencingControllerRedirect": {
+    "input": "CalCom.Entities.InputConferencingControllerRedirect",
+    "result": "CalCom.Entities.ResultOrganizationsConferencingControllerGetTeamOAuthUrl200.t()",
+    "contract": "%CalCom.Operation{key: :conferencing_controller_redirect, id: \"GET /v2/conferencing/{app}/oauth/auth-url\", method: :get, path: \"/v2/conferencing/{app}/oauth/auth-url\", module: CalCom.Operations.ConferencingControllerRedirect, input_module: CalCom.Entities.InputConferencingControllerRedirect, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsConferencingControllerGetTeamOAuthUrl200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
   }
 }

@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.OrganizationsWebhooksControllerCreateOrganizationWebhook do
+defmodule Operations.OrganizationsRolesControllerUpdateRole do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_07.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsWebhooksControllerGetOrganizationWebhook do
+defmodule Operations.OrganizationsRolesControllerDeleteRole do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_07.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsWebhooksControllerDeleteWebhook do
+defmodule Operations.OrganizationsRolesPermissionsControllerAddPermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_07.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsWebhooksControllerUpdateOrgWebhook do
+defmodule Operations.OrganizationsRolesPermissionsControllerListPermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_07.json", __MODULE__}
 end
 
-defmodule Operations.AllowlistsControllerGetAllowlists do
+defmodule Operations.OrganizationsRolesPermissionsControllerSetPermissions do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_07.json", __MODULE__}
 end

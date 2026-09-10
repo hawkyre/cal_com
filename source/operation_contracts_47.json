@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.MeControllerClearMyBookingLimits": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_clear_my_booking_limits, id: \"DELETE /v2/me/booking-limits\", method: :delete, path: \"/v2/me/booking-limits\", module: CalCom.Operations.MeControllerClearMyBookingLimits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 204, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  },
+  "CalCom.Operations.MeControllerGetMyTeamBookingLimits": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultMeControllerGetMyTeamBookingLimits200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_get_my_team_booking_limits, id: \"GET /v2/me/team-booking-limits\", method: :get, path: \"/v2/me/team-booking-limits\", module: CalCom.Operations.MeControllerGetMyTeamBookingLimits, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerGetMyTeamBookingLimits200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamBookingLimitsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerUpdateMyTeamBookingLimit": {
+    "input": "CalCom.Entities.InputMeControllerUpdateMyTeamBookingLimit",
+    "result": "CalCom.Entities.ResultMeControllerUpdateMyTeamBookingLimit200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_update_my_team_booking_limit, id: \"PATCH /v2/me/team-booking-limits/{teamId}\", method: :patch, path: \"/v2/me/team-booking-limits/{teamId}\", module: CalCom.Operations.MeControllerUpdateMyTeamBookingLimit, input_module: CalCom.Entities.InputMeControllerUpdateMyTeamBookingLimit, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultMeControllerUpdateMyTeamBookingLimit200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UpdateTeamBookingLimitOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.MeControllerClearMyTeamBookingLimit": {
+    "input": "CalCom.Entities.InputTeamsControllerGetTeam",
+    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
+    "contract": "%CalCom.Operation{key: :me_controller_clear_my_team_booking_limit, id: \"DELETE /v2/me/team-booking-limits/{teamId}\", method: :delete, path: \"/v2/me/team-booking-limits/{teamId}\", module: CalCom.Operations.MeControllerClearMyTeamBookingLimit, input_module: CalCom.Entities.InputTeamsControllerGetTeam, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 204, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  },
+  "CalCom.Operations.NotificationsSubscriptionsControllerRegister": {
+    "input": "CalCom.Entities.InputNotificationsSubscriptionsControllerRegister",
+    "result": "CalCom.Entities.ResultNotificationsSubscriptionsControllerRegister201.t()",
+    "contract": "%CalCom.Operation{key: :notifications_subscriptions_controller_register, id: \"POST /v2/notifications/subscriptions/app-push\", method: :post, path: \"/v2/notifications/subscriptions/app-push\", module: CalCom.Operations.NotificationsSubscriptionsControllerRegister, input_module: CalCom.Entities.InputNotificationsSubscriptionsControllerRegister, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultNotificationsSubscriptionsControllerRegister201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AppPushSubscriptionResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

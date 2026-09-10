@@ -1,27 +1,27 @@
 {
-  "CalCom.Operations.BookingsController20260225DeclineBooking": {
-    "input": "CalCom.Entities.InputBookingsController20260225DeclineBooking",
-    "result": "CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200.t()",
-    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_decline_booking, id: \"POST /v2/bookings/{bookingUid}/decline\", method: :post, path: \"/v2/bookings/{bookingUid}/decline\", module: CalCom.Operations.BookingsController20260225DeclineBooking, input_module: CalCom.Entities.InputBookingsController20260225DeclineBooking, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225GetBookingBySeatUid200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.BookingsController20260225GetBookingRecordings": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetCalendarLinks",
+    "result": "CalCom.Entities.ResultBookingsController20260225GetBookingRecordings200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_get_booking_recordings, id: \"GET /v2/bookings/{bookingUid}/recordings\", method: :get, path: \"/v2/bookings/{bookingUid}/recordings\", module: CalCom.Operations.BookingsController20260225GetBookingRecordings, input_module: CalCom.Entities.InputBookingsController20260225GetCalendarLinks, version: \"2026-02-25\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225GetBookingRecordings200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingRecordingsOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.BookingsController20260225RequestReschedule": {
-    "input": "CalCom.Entities.InputBookingsController20260225RequestReschedule",
-    "result": "CalCom.Entities.ResultBookingsController20260225RequestReschedule200.t()",
-    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_request_reschedule, id: \"POST /v2/bookings/{bookingUid}/request-reschedule\", method: :post, path: \"/v2/bookings/{bookingUid}/request-reschedule\", module: CalCom.Operations.BookingsController20260225RequestReschedule, input_module: CalCom.Entities.InputBookingsController20260225RequestReschedule, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225RequestReschedule200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.BookingsController20260225GetBookingTranscripts": {
+    "input": "CalCom.Entities.InputBookingsController20260225GetCalendarLinks",
+    "result": "CalCom.Entities.ResultBookingsController20260225GetBookingTranscripts200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_get_booking_transcripts, id: \"GET /v2/bookings/{bookingUid}/transcripts\", method: :get, path: \"/v2/bookings/{bookingUid}/transcripts\", module: CalCom.Operations.BookingsController20260225GetBookingTranscripts, input_module: CalCom.Entities.InputBookingsController20260225GetCalendarLinks, version: \"2026-02-25\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225GetBookingTranscripts200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetBookingTranscriptsOutput}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.BookingLocationController20240813UpdateBookingLocation": {
-    "input": "CalCom.Entities.InputBookingLocationController20240813UpdateBookingLocation",
-    "result": "CalCom.Entities.ResultBookingLocationController20240813UpdateBookingLocation200.t()",
-    "contract": "%CalCom.Operation{key: :booking_location_controller_2024_08_13_update_booking_location, id: \"PATCH /v2/bookings/{bookingUid}/location\", method: :patch, path: \"/v2/bookings/{bookingUid}/location\", module: CalCom.Operations.BookingLocationController20240813UpdateBookingLocation, input_module: CalCom.Entities.InputBookingLocationController20240813UpdateBookingLocation, version: \"2024-08-13\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingLocationController20240813UpdateBookingLocation200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.BookingsController20260225RescheduleBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225RescheduleBooking",
+    "result": "CalCom.Entities.ResultBookingsController20260225RescheduleBooking201.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_reschedule_booking, id: \"POST /v2/bookings/{bookingUid}/reschedule\", method: :post, path: \"/v2/bookings/{bookingUid}/reschedule\", module: CalCom.Operations.BookingsController20260225RescheduleBooking, input_module: CalCom.Entities.InputBookingsController20260225RescheduleBooking, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultBookingsController20260225RescheduleBooking201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.RescheduleBookingOutput20240813}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.BookingsVerificationControllerSendEmailVerificationCode": {
-    "input": "CalCom.Entities.InputBookingsVerificationControllerSendEmailVerificationCode",
-    "result": "CalCom.Entities.ResultBookingsVerificationControllerSendEmailVerificationCode200.t()",
-    "contract": "%CalCom.Operation{key: :bookings_verification_controller_send_email_verification_code, id: \"POST /v2/bookings/verification/email/send-code\", method: :post, path: \"/v2/bookings/verification/email/send-code\", module: CalCom.Operations.BookingsVerificationControllerSendEmailVerificationCode, input_module: CalCom.Entities.InputBookingsVerificationControllerSendEmailVerificationCode, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsVerificationControllerSendEmailVerificationCode200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.SendVerificationEmailOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.BookingsController20260225CancelBooking": {
+    "input": "CalCom.Entities.InputBookingsController20260225CancelBooking",
+    "result": "CalCom.Entities.ResultBookingsController20260225CancelBooking200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_cancel_booking, id: \"POST /v2/bookings/{bookingUid}/cancel\", method: :post, path: \"/v2/bookings/{bookingUid}/cancel\", module: CalCom.Operations.BookingsController20260225CancelBooking, input_module: CalCom.Entities.InputBookingsController20260225CancelBooking, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225CancelBooking200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.AddGuestsOutput20240813}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.BookingsVerificationControllerVerifyEmailCode": {
-    "input": "CalCom.Entities.InputBookingsVerificationControllerVerifyEmailCode",
-    "result": "CalCom.Entities.ResultBookingsVerificationControllerVerifyEmailCode200.t()",
-    "contract": "%CalCom.Operation{key: :bookings_verification_controller_verify_email_code, id: \"POST /v2/bookings/verification/email/verify-code\", method: :post, path: \"/v2/bookings/verification/email/verify-code\", module: CalCom.Operations.BookingsVerificationControllerVerifyEmailCode, input_module: CalCom.Entities.InputBookingsVerificationControllerVerifyEmailCode, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsVerificationControllerVerifyEmailCode200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.VerifyEmailCodeOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.BookingsController20260225MarkNoShow": {
+    "input": "CalCom.Entities.InputBookingsController20260225MarkNoShow",
+    "result": "CalCom.Entities.ResultBookingsController20260225MarkNoShow200.t()",
+    "contract": "%CalCom.Operation{key: :bookings_controller_2026_02_25_mark_no_show, id: \"POST /v2/bookings/{bookingUid}/mark-absent\", method: :post, path: \"/v2/bookings/{bookingUid}/mark-absent\", module: CalCom.Operations.BookingsController20260225MarkNoShow, input_module: CalCom.Entities.InputBookingsController20260225MarkNoShow, version: \"2026-02-25\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultBookingsController20260225MarkNoShow200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.MarkAbsentBookingOutput20240813}, nullable: false}, empty?: false}]}"
   }
 }

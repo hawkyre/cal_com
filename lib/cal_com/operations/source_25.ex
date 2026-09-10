@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.BookingsController20260225CancelBooking do
+defmodule Operations.ApiKeysControllerRefresh do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_25.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260225MarkNoShow do
+defmodule Operations.BookingsController20260225CreateBooking do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_25.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260225ReassignBooking do
+defmodule Operations.BookingsController20260501GetBookings do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_25.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260225ReassignBookingToUser do
+defmodule Operations.BookingsController20260225GetBookingBySeatUid do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_25.json", __MODULE__}
 end
 
-defmodule Operations.BookingsController20260225ConfirmBooking do
+defmodule Operations.BookingsController20260225GetBooking do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_25.json", __MODULE__}
 end

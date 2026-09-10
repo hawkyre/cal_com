@@ -1,22 +1,27 @@
 {
-  "CalCom.Operations.TeamsOOOControllerDeleteTeamMemberOOO": {
-    "input": "CalCom.Entities.InputTeamsOOOControllerDeleteTeamMemberOOO",
-    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
-    "contract": "%CalCom.Operation{key: :teams_ooo_controller_delete_team_member_ooo, id: \"DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}\", method: :delete, path: \"/v2/teams/{teamId}/users/{userId}/ooo/{oooId}\", module: CalCom.Operations.TeamsOOOControllerDeleteTeamMemberOOO, input_module: CalCom.Entities.InputTeamsOOOControllerDeleteTeamMemberOOO, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.EventTypesController20260612GetCrmSyncErrors": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetCrmSyncErrors",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetCrmSyncErrors200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_crm_sync_errors, id: \"GET /v2/event-types/{eventTypeId}/crm-sync-errors\", method: :get, path: \"/v2/event-types/{eventTypeId}/crm-sync-errors\", module: CalCom.Operations.EventTypesController20260612GetCrmSyncErrors, input_module: CalCom.Entities.InputEventTypesController20260612GetCrmSyncErrors, version: \"2026-06-12\", media_type: nil, page_size: 50, page_key: \"limit\", pagination: :cursor, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetCrmSyncErrors200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetCrmSyncErrorsOutput20240614}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.UserWorkflowsControllerCreateWorkflow": {
-    "input": "CalCom.Entities.InputUserWorkflowsControllerCreateWorkflow",
-    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200.t()",
-    "contract": "%CalCom.Operation{key: :user_workflows_controller_create_workflow, id: \"POST /v2/workflows\", method: :post, path: \"/v2/workflows\", module: CalCom.Operations.UserWorkflowsControllerCreateWorkflow, input_module: CalCom.Entities.InputUserWorkflowsControllerCreateWorkflow, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.EventTypesController20260612GetEventTypeById": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetEventTypeById200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_event_type_by_id, id: \"GET /v2/event-types/{eventTypeId}\", method: :get, path: \"/v2/event-types/{eventTypeId}\", module: CalCom.Operations.EventTypesController20260612GetEventTypeById, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetEventTypeById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.UserWorkflowsControllerUpdateWorkflow": {
-    "input": "CalCom.Entities.InputUserWorkflowsControllerUpdateWorkflow",
-    "result": "CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200.t()",
-    "contract": "%CalCom.Operation{key: :user_workflows_controller_update_workflow, id: \"PATCH /v2/workflows/{workflowId}\", method: :patch, path: \"/v2/workflows/{workflowId}\", module: CalCom.Operations.UserWorkflowsControllerUpdateWorkflow, input_module: CalCom.Entities.InputUserWorkflowsControllerUpdateWorkflow, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationTeamWorkflowsControllerGetWorkflowById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.EventTypesController20260612UpdateEventType": {
+    "input": "CalCom.Entities.InputEventTypesController20260612UpdateEventType",
+    "result": "CalCom.Entities.ResultEventTypesController20260612UpdateEventType200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_update_event_type, id: \"PATCH /v2/event-types/{eventTypeId}\", method: :patch, path: \"/v2/event-types/{eventTypeId}\", module: CalCom.Operations.EventTypesController20260612UpdateEventType, input_module: CalCom.Entities.InputEventTypesController20260612UpdateEventType, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612UpdateEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.UserWorkflowsControllerDeleteWorkflow": {
-    "input": "CalCom.Entities.InputUserWorkflowsControllerGetWorkflowById",
-    "result": "CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200.t()",
-    "contract": "%CalCom.Operation{key: :user_workflows_controller_delete_workflow, id: \"DELETE /v2/workflows/{workflowId}\", method: :delete, path: \"/v2/workflows/{workflowId}\", module: CalCom.Operations.UserWorkflowsControllerDeleteWorkflow, input_module: CalCom.Entities.InputUserWorkflowsControllerGetWorkflowById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersBookingsControllerGetOrganizationUserBookings200, rule: %CalCom.Rule{kind: :json, nullable: true}, empty?: true}]}"
+  "CalCom.Operations.EventTypesController20260612DeleteEventType": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypesController20260612DeleteEventType200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_delete_event_type, id: \"DELETE /v2/event-types/{eventTypeId}\", method: :delete, path: \"/v2/event-types/{eventTypeId}\", module: CalCom.Operations.EventTypesController20260612DeleteEventType, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612DeleteEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteEventTypeOutput20240614}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.EventTypesController20260612GetBookingFields": {
+    "input": "CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig",
+    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
+    "contract": "%CalCom.Operation{key: :event_types_controller_2026_06_12_get_booking_fields, id: \"GET /v2/event-types/{eventTypeId}/booking-fields\", method: :get, path: \"/v2/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.EventTypesController20260612GetBookingFields, input_module: CalCom.Entities.InputEventTypesController20260612GetSchedulingConfig, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
   }
 }

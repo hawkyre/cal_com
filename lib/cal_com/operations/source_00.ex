@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.OrganizationsBookingsControllerGetAllOrgTeamBookingsCursor do
+defmodule Operations.OrganizationsAttributesControllerGetOrganizationAttributes do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_00.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsMembershipsControllerGetAllMemberships do
+defmodule Operations.OrganizationsAttributesControllerCreateOrganizationAttribute do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_00.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsMembershipsControllerGetOrgMembership do
+defmodule Operations.OrganizationsAttributesControllerGetOrganizationAttribute do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_00.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsRolesControllerGetAllRoles do
+defmodule Operations.OrganizationsAttributesControllerUpdateOrganizationAttribute do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_00.json", __MODULE__}
 end
 
-defmodule Operations.OrganizationsRolesControllerGetRole do
+defmodule Operations.OrganizationsAttributesControllerDeleteOrganizationAttribute do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_00.json", __MODULE__}
 end

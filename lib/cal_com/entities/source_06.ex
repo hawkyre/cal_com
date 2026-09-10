@@ -1,131 +1,66 @@
 alias CalCom.Entities
 
-defmodule Entities.CustomCheckboxGroupFieldInput20260612 do
+defmodule Entities.CreateOrgRolePermissionsInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomCheckboxGroupFieldOutput20260612 do
+defmodule Entities.CreateOrgTeamDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomEmailFieldInput20260612 do
+defmodule Entities.CreateOrganizationAttributeInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomEmailFieldOutput20260612 do
+defmodule Entities.CreateOrganizationAttributeOptionInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomLongTextFieldInput20260612 do
+defmodule Entities.CreateOrganizationAttributesOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomLongTextFieldOutput20260612 do
+defmodule Entities.CreateOrganizationInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomMultiEmailFieldOutput20260612 do
+defmodule Entities.CreateOrganizationUserInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomMultiSelectFieldOutput20260612 do
+defmodule Entities.CreateOutOfOfficeEntryDto do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomNumberFieldOutput20260612 do
+defmodule Entities.CreatePhoneCallInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomPhoneFieldOutput20260612 do
+defmodule Entities.CreatePhoneCallOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomRadioGroupFieldOutput20260612 do
+defmodule Entities.CreatePrivateLinkInput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomSelectFieldOutput20260612 do
+defmodule Entities.CreatePrivateLinkOutput do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end
 
-defmodule Entities.CustomShortTextFieldOutput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.CustomUrlFieldOutput20260612 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeclineBookingInput20240813 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeleteData20240614 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeleteEventTypeOutput20240614 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeleteManyWebhooksOutputResponseDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeletePrivateLinkOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeleteScheduleOutput20240611 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeleteTeamEventTypeOutput do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DeletedTeamEventTypeData do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DestinationCalendar do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DestinationCalendar20240614 do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DestinationCalendarsInputBodyDto do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
-end
-
-defmodule Entities.DestinationCalendarsOutputDto do
+defmodule Entities.CreateRecurringBookingInput20240813 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_06.json", __MODULE__}
 end

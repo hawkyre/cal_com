@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.TeamsMembershipsControllerUpdateTeamMembership": {
+    "input": "CalCom.Entities.InputTeamsMembershipsControllerUpdateTeamMembership",
+    "result": "CalCom.Entities.ResultTeamsMembershipsControllerUpdateTeamMembership200.t()",
+    "contract": "%CalCom.Operation{key: :teams_memberships_controller_update_team_membership, id: \"PATCH /v2/teams/{teamId}/memberships/{membershipId}\", method: :patch, path: \"/v2/teams/{teamId}/memberships/{membershipId}\", module: CalCom.Operations.TeamsMembershipsControllerUpdateTeamMembership, input_module: CalCom.Entities.InputTeamsMembershipsControllerUpdateTeamMembership, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultTeamsMembershipsControllerUpdateTeamMembership200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamMembershipOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsMembershipsControllerDeleteTeamMembership": {
+    "input": "CalCom.Entities.InputTeamsMembershipsControllerGetTeamMembership",
+    "result": "CalCom.Entities.ResultTeamsMembershipsControllerDeleteTeamMembership200.t()",
+    "contract": "%CalCom.Operation{key: :teams_memberships_controller_delete_team_membership, id: \"DELETE /v2/teams/{teamId}/memberships/{membershipId}\", method: :delete, path: \"/v2/teams/{teamId}/memberships/{membershipId}\", module: CalCom.Operations.TeamsMembershipsControllerDeleteTeamMembership, input_module: CalCom.Entities.InputTeamsMembershipsControllerGetTeamMembership, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultTeamsMembershipsControllerDeleteTeamMembership200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetTeamMembershipOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsRoutingFormsResponsesControllerCreateRoutingFormResponse": {
+    "input": "CalCom.Entities.InputTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse",
+    "result": "CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse201.t()",
+    "contract": "%CalCom.Operation{key: :teams_routing_forms_responses_controller_create_routing_form_response, id: \"POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses\", method: :post, path: \"/v2/teams/{teamId}/routing-forms/{routingFormId}/responses\", module: CalCom.Operations.TeamsRoutingFormsResponsesControllerCreateRoutingFormResponse, input_module: CalCom.Entities.InputTeamsRoutingFormsResponsesControllerCreateRoutingFormResponse, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsRoutingFormsResponsesControllerCreateRoutingFormResponse201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateRoutingFormResponseOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsSchedulesControllerGetTeamSchedules": {
+    "input": "CalCom.Entities.InputTeamsSchedulesControllerGetTeamSchedules",
+    "result": "CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200.t()",
+    "contract": "%CalCom.Operation{key: :teams_schedules_controller_get_team_schedules, id: \"GET /v2/teams/{teamId}/schedules\", method: :get, path: \"/v2/teams/{teamId}/schedules\", module: CalCom.Operations.TeamsSchedulesControllerGetTeamSchedules, input_module: CalCom.Entities.InputTeamsSchedulesControllerGetTeamSchedules, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsSchedulesControllerGetOrganizationSchedules200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetSchedulesOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsOOOControllerGetTeamMemberOOO": {
+    "input": "CalCom.Entities.InputTeamsOOOControllerGetTeamMemberOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200.t()",
+    "contract": "%CalCom.Operation{key: :teams_ooo_controller_get_team_member_ooo, id: \"GET /v2/teams/{teamId}/users/{userId}/ooo\", method: :get, path: \"/v2/teams/{teamId}/users/{userId}/ooo\", module: CalCom.Operations.TeamsOOOControllerGetTeamMemberOOO, input_module: CalCom.Entities.InputTeamsOOOControllerGetTeamMemberOOO, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerGetOrganizationUserOOO200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOoosOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

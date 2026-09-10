@@ -1,26 +1,26 @@
 alias CalCom.Operations
 
-defmodule Operations.EventTypesController20260612GetBookingFields do
+defmodule Operations.OrganizationsConferencingControllerDisconnectTeamApp do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_12.json", __MODULE__}
 end
 
-defmodule Operations.EventTypeWebhooksControllerCreateEventTypeWebhook do
+defmodule Operations.OrganizationsConferencingControllerSaveTeamOauthCredentials do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_12.json", __MODULE__}
 end
 
-defmodule Operations.EventTypeWebhooksControllerGetEventTypeWebhooks do
+defmodule Operations.OrganizationsEventTypesPrivateLinksController20240904CreatePrivateLink do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_12.json", __MODULE__}
 end
 
-defmodule Operations.EventTypeWebhooksControllerDeleteAllEventTypeWebhooks do
+defmodule Operations.OrganizationsEventTypesPrivateLinksController20240904GetPrivateLinks do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_12.json", __MODULE__}
 end
 
-defmodule Operations.EventTypeWebhooksControllerUpdateEventTypeWebhook do
+defmodule Operations.OrganizationsEventTypesPrivateLinksController20240904UpdatePrivateLink do
   @moduledoc "A complete typed Cal provider operation."
   use CalCom.OperationModule, source: {"operation_contracts_12.json", __MODULE__}
 end

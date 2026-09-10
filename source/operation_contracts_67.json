@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedEmails": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhooks",
+    "result": "CalCom.Entities.ResultUserVerifiedResourcesControllerGetVerifiedEmails200.t()",
+    "contract": "%CalCom.Operation{key: :user_verified_resources_controller_get_verified_emails, id: \"GET /v2/verified-resources/emails\", method: :get, path: \"/v2/verified-resources/emails\", module: CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedEmails, input_module: CalCom.Entities.InputWebhooksControllerGetWebhooks, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultUserVerifiedResourcesControllerGetVerifiedEmails200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserVerifiedEmailsOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedPhoneNumbers": {
+    "input": "CalCom.Entities.InputWebhooksControllerGetWebhooks",
+    "result": "CalCom.Entities.ResultUserVerifiedResourcesControllerGetVerifiedPhoneNumbers200.t()",
+    "contract": "%CalCom.Operation{key: :user_verified_resources_controller_get_verified_phone_numbers, id: \"GET /v2/verified-resources/phones\", method: :get, path: \"/v2/verified-resources/phones\", module: CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedPhoneNumbers, input_module: CalCom.Entities.InputWebhooksControllerGetWebhooks, version: nil, media_type: nil, page_size: 250, page_key: \"take\", pagination: :offset, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultUserVerifiedResourcesControllerGetVerifiedPhoneNumbers200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserVerifiedPhonesOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedEmailById": {
+    "input": "CalCom.Entities.InputUserVerifiedResourcesControllerGetVerifiedEmailById",
+    "result": "CalCom.Entities.ResultUserVerifiedResourcesControllerVerifyEmail200.t()",
+    "contract": "%CalCom.Operation{key: :user_verified_resources_controller_get_verified_email_by_id, id: \"GET /v2/verified-resources/emails/{id}\", method: :get, path: \"/v2/verified-resources/emails/{id}\", module: CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedEmailById, input_module: CalCom.Entities.InputUserVerifiedResourcesControllerGetVerifiedEmailById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultUserVerifiedResourcesControllerVerifyEmail200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserVerifiedEmailOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedPhoneById": {
+    "input": "CalCom.Entities.InputUserVerifiedResourcesControllerGetVerifiedEmailById",
+    "result": "CalCom.Entities.ResultUserVerifiedResourcesControllerVerifyPhoneNumber200.t()",
+    "contract": "%CalCom.Operation{key: :user_verified_resources_controller_get_verified_phone_by_id, id: \"GET /v2/verified-resources/phones/{id}\", method: :get, path: \"/v2/verified-resources/phones/{id}\", module: CalCom.Operations.UserVerifiedResourcesControllerGetVerifiedPhoneById, input_module: CalCom.Entities.InputUserVerifiedResourcesControllerGetVerifiedEmailById, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultUserVerifiedResourcesControllerVerifyPhoneNumber200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserVerifiedPhoneOutput}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.WebhooksControllerCreateWebhook": {
+    "input": "CalCom.Entities.InputWebhooksControllerCreateWebhook",
+    "result": "CalCom.Entities.ResultWebhooksControllerCreateWebhook201.t()",
+    "contract": "%CalCom.Operation{key: :webhooks_controller_create_webhook, id: \"POST /v2/webhooks\", method: :post, path: \"/v2/webhooks\", module: CalCom.Operations.WebhooksControllerCreateWebhook, input_module: CalCom.Entities.InputWebhooksControllerCreateWebhook, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultWebhooksControllerCreateWebhook201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserWebhookOutputResponseDto}, nullable: false}, empty?: false}]}"
+  }
+}

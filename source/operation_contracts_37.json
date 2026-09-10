@@ -1,27 +1,27 @@
 {
-  "CalCom.Operations.SelectedCalendarsControllerDeleteSelectedCalendar": {
-    "input": "CalCom.Entities.InputSelectedCalendarsControllerDeleteSelectedCalendar",
-    "result": "CalCom.Entities.ResultSelectedCalendarsControllerAddSelectedCalendar201.t()",
-    "contract": "%CalCom.Operation{key: :selected_calendars_controller_delete_selected_calendar, id: \"DELETE /v2/selected-calendars\", method: :delete, path: \"/v2/selected-calendars\", module: CalCom.Operations.SelectedCalendarsControllerDeleteSelectedCalendar, input_module: CalCom.Entities.InputSelectedCalendarsControllerDeleteSelectedCalendar, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultSelectedCalendarsControllerAddSelectedCalendar201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.SelectedCalendarOutputResponseDto}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OAuthClientsControllerCreateOAuthClient": {
+    "input": "CalCom.Entities.InputOAuthClientsControllerCreateOAuthClient",
+    "result": "CalCom.Entities.ResultOAuthClientsControllerCreateOAuthClient201.t()",
+    "contract": "%CalCom.Operation{key: :o_auth_clients_controller_create_o_auth_client, id: \"POST /v2/oauth-clients\", method: :post, path: \"/v2/oauth-clients\", module: CalCom.Operations.OAuthClientsControllerCreateOAuthClient, input_module: CalCom.Entities.InputOAuthClientsControllerCreateOAuthClient, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOAuthClientsControllerCreateOAuthClient201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateOAuthClientResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.TeamsEventTypesController20260612CreateTeamEventType": {
-    "input": "CalCom.Entities.InputTeamsEventTypesController20260612CreateTeamEventType",
-    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612CreateTeamEventType201.t()",
-    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_create_team_event_type, id: \"POST /v2/teams/{teamId}/event-types\", method: :post, path: \"/v2/teams/{teamId}/event-types\", module: CalCom.Operations.TeamsEventTypesController20260612CreateTeamEventType, input_module: CalCom.Entities.InputTeamsEventTypesController20260612CreateTeamEventType, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612CreateTeamEventType201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateTeamEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OAuthClientsControllerGetOAuthClients": {
+    "input": "CalCom.Entities.InputAllowlistsControllerGetAllowlists",
+    "result": "CalCom.Entities.ResultOAuthClientsControllerGetOAuthClients200.t()",
+    "contract": "%CalCom.Operation{key: :o_auth_clients_controller_get_o_auth_clients, id: \"GET /v2/oauth-clients\", method: :get, path: \"/v2/oauth-clients\", module: CalCom.Operations.OAuthClientsControllerGetOAuthClients, input_module: CalCom.Entities.InputAllowlistsControllerGetAllowlists, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOAuthClientsControllerGetOAuthClients200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOAuthClientsResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.TeamsEventTypesController20260612UpdateTeamEventType": {
-    "input": "CalCom.Entities.InputTeamsEventTypesController20260612UpdateTeamEventType",
-    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612UpdateTeamEventType200.t()",
-    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_update_team_event_type, id: \"PATCH /v2/teams/{teamId}/event-types/{eventTypeId}\", method: :patch, path: \"/v2/teams/{teamId}/event-types/{eventTypeId}\", module: CalCom.Operations.TeamsEventTypesController20260612UpdateTeamEventType, input_module: CalCom.Entities.InputTeamsEventTypesController20260612UpdateTeamEventType, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612UpdateTeamEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.CreateTeamEventTypeOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OAuthClientsControllerGetOAuthClientById": {
+    "input": "CalCom.Entities.InputOAuth2ControllerGetClient",
+    "result": "CalCom.Entities.ResultOAuthClientsControllerGetOAuthClientById200.t()",
+    "contract": "%CalCom.Operation{key: :o_auth_clients_controller_get_o_auth_client_by_id, id: \"GET /v2/oauth-clients/{clientId}\", method: :get, path: \"/v2/oauth-clients/{clientId}\", module: CalCom.Operations.OAuthClientsControllerGetOAuthClientById, input_module: CalCom.Entities.InputOAuth2ControllerGetClient, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOAuthClientsControllerGetOAuthClientById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOAuthClientResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.TeamsEventTypesController20260612DeleteTeamEventType": {
-    "input": "CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventType",
-    "result": "CalCom.Entities.ResultOrganizationsEventTypesController20260612DeleteTeamEventType200.t()",
-    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_delete_team_event_type, id: \"DELETE /v2/teams/{teamId}/event-types/{eventTypeId}\", method: :delete, path: \"/v2/teams/{teamId}/event-types/{eventTypeId}\", module: CalCom.Operations.TeamsEventTypesController20260612DeleteTeamEventType, input_module: CalCom.Entities.InputTeamsEventTypesController20260612GetTeamEventType, version: \"2026-06-12\", media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsEventTypesController20260612DeleteTeamEventType200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteTeamEventTypeOutput}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OAuthClientsControllerUpdateOAuthClient": {
+    "input": "CalCom.Entities.InputOAuthClientsControllerUpdateOAuthClient",
+    "result": "CalCom.Entities.ResultOAuthClientsControllerGetOAuthClientById200.t()",
+    "contract": "%CalCom.Operation{key: :o_auth_clients_controller_update_o_auth_client, id: \"PATCH /v2/oauth-clients/{clientId}\", method: :patch, path: \"/v2/oauth-clients/{clientId}\", module: CalCom.Operations.OAuthClientsControllerUpdateOAuthClient, input_module: CalCom.Entities.InputOAuthClientsControllerUpdateOAuthClient, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOAuthClientsControllerGetOAuthClientById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOAuthClientResponseDto}, nullable: false}, empty?: false}]}"
   },
-  "CalCom.Operations.TeamsEventTypesController20260612ReplaceBookingFields": {
-    "input": "CalCom.Entities.InputTeamsEventTypesController20260612ReplaceBookingFields",
-    "result": "CalCom.Entities.ResultEventTypesController20260612GetBookingFields200.t()",
-    "contract": "%CalCom.Operation{key: :teams_event_types_controller_2026_06_12_replace_booking_fields, id: \"PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields\", method: :put, path: \"/v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields\", module: CalCom.Operations.TeamsEventTypesController20260612ReplaceBookingFields, input_module: CalCom.Entities.InputTeamsEventTypesController20260612ReplaceBookingFields, version: \"2026-06-12\", media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultEventTypesController20260612GetBookingFields200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.BookingFieldsOutput20260612}, nullable: false}, empty?: false}]}"
+  "CalCom.Operations.OAuthClientsControllerDeleteOAuthClient": {
+    "input": "CalCom.Entities.InputOAuth2ControllerGetClient",
+    "result": "CalCom.Entities.ResultOAuthClientsControllerGetOAuthClientById200.t()",
+    "contract": "%CalCom.Operation{key: :o_auth_clients_controller_delete_o_auth_client, id: \"DELETE /v2/oauth-clients/{clientId}\", method: :delete, path: \"/v2/oauth-clients/{clientId}\", module: CalCom.Operations.OAuthClientsControllerDeleteOAuthClient, input_module: CalCom.Entities.InputOAuth2ControllerGetClient, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOAuthClientsControllerGetOAuthClientById200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.GetOAuthClientResponseDto}, nullable: false}, empty?: false}]}"
   }
 }

@@ -4,6 +4,22 @@ Every entry names the SHA-256 of the `source/openapi.json` the release was
 generated from, so a published version can be traced to its provider document.
 CI fails when the current hash is absent from this file.
 
+## 0.2.0 (2026-09-09)
+
+Every operation the document describes — 349, up from 199 — generated from
+`source/openapi.json` with SHA-256
+`44488d2fed1bfd978e3b006ca463ff43d5b5c72f028b3fa7c5620040c92c2484`.
+
+- 349 operation modules and 1242 entity modules.
+- **No module changes its name.** Every module released in 0.1.0 still exists
+  with the same name and shape; the 150 new operation modules and 409 new entity
+  modules are additions. `source/entity_name_pins.json` records each shape's
+  module name by shape hash, so a shape keeps the name it was released under
+  however the inventory or registration order changes.
+- `CalCom.Registry.all/0` returns 349 operations; the transport, pagination,
+  webhook and error surfaces are unchanged.
+- Compile cost grows with the document: see the README's compile-cost section.
+
 ## 0.1.0 (2026-09-09)
 
 First release, generated from `source/openapi.json` with SHA-256

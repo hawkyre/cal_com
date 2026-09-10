@@ -1,0 +1,27 @@
+{
+  "CalCom.Operations.TeamsOOOControllerCreateTeamMemberOOO": {
+    "input": "CalCom.Entities.InputTeamsOOOControllerCreateTeamMemberOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :teams_ooo_controller_create_team_member_ooo, id: \"POST /v2/teams/{teamId}/users/{userId}/ooo\", method: :post, path: \"/v2/teams/{teamId}/users/{userId}/ooo\", module: CalCom.Operations.TeamsOOOControllerCreateTeamMemberOOO, input_module: CalCom.Entities.InputTeamsOOOControllerCreateTeamMemberOOO, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 201, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsOOOControllerUpdateTeamMemberOOO": {
+    "input": "CalCom.Entities.InputTeamsOOOControllerUpdateTeamMemberOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :teams_ooo_controller_update_team_member_ooo, id: \"PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}\", method: :patch, path: \"/v2/teams/{teamId}/users/{userId}/ooo/{oooId}\", module: CalCom.Operations.TeamsOOOControllerUpdateTeamMemberOOO, input_module: CalCom.Entities.InputTeamsOOOControllerUpdateTeamMemberOOO, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsOOOControllerDeleteTeamMemberOOO": {
+    "input": "CalCom.Entities.InputTeamsOOOControllerDeleteTeamMemberOOO",
+    "result": "CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201.t()",
+    "contract": "%CalCom.Operation{key: :teams_ooo_controller_delete_team_member_ooo, id: \"DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}\", method: :delete, path: \"/v2/teams/{teamId}/users/{userId}/ooo/{oooId}\", module: CalCom.Operations.TeamsOOOControllerDeleteTeamMemberOOO, input_module: CalCom.Entities.InputTeamsOOOControllerDeleteTeamMemberOOO, version: nil, media_type: nil, page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrganizationsUsersOOOControllerCreateOrganizationUserOOO201, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.UserOooOutputResponseDto}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsVerifiedResourcesControllerRequestEmailVerificationCode": {
+    "input": "CalCom.Entities.InputTeamsVerifiedResourcesControllerRequestEmailVerificationCode",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerRequestEmailVerificationCode200.t()",
+    "contract": "%CalCom.Operation{key: :teams_verified_resources_controller_request_email_verification_code, id: \"POST /v2/teams/{teamId}/verified-resources/emails/verification-code/request\", method: :post, path: \"/v2/teams/{teamId}/verified-resources/emails/verification-code/request\", module: CalCom.Operations.TeamsVerifiedResourcesControllerRequestEmailVerificationCode, input_module: CalCom.Entities.InputTeamsVerifiedResourcesControllerRequestEmailVerificationCode, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerRequestEmailVerificationCode200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  },
+  "CalCom.Operations.TeamsVerifiedResourcesControllerRequestPhoneVerificationCode": {
+    "input": "CalCom.Entities.InputTeamsVerifiedResourcesControllerRequestPhoneVerificationCode",
+    "result": "CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode200.t()",
+    "contract": "%CalCom.Operation{key: :teams_verified_resources_controller_request_phone_verification_code, id: \"POST /v2/teams/{teamId}/verified-resources/phones/verification-code/request\", method: :post, path: \"/v2/teams/{teamId}/verified-resources/phones/verification-code/request\", module: CalCom.Operations.TeamsVerifiedResourcesControllerRequestPhoneVerificationCode, input_module: CalCom.Entities.InputTeamsVerifiedResourcesControllerRequestPhoneVerificationCode, version: nil, media_type: \"application/json\", page_size: nil, page_key: nil, pagination: :none, outputs: [%CalCom.Output{status: 200, module: CalCom.Entities.ResultOrgTeamsVerifiedResourcesControllerRequestPhoneVerificationCode200, rule: %CalCom.Rule{kind: {:object, CalCom.Entities.DeleteScheduleOutput20240611}, nullable: false}, empty?: false}]}"
+  }
+}
