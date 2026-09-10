@@ -63,6 +63,12 @@ jobs:
             exit 1
           fi
 
+      # The certification file is the release gate. This cannot re-run the sweep
+      # (that needs a live key) but it can refuse a report that leaves an
+      # operation unexplained, or one that quietly lost its reasons.
+      - name: Every operation is certified or explained
+        run: python3 scripts/coverage.py --require-complete
+
       # Publishing is by hand, from a maintainer's machine; CI only proves the
       # tarball builds.
       - run: mix hex.build

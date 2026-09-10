@@ -129,6 +129,7 @@ call against a real account:
 CAL_COM_API_KEY=... mix run scripts/certify.exs   # reads
 MUTATE_APPLY=1 CAL_COM_API_KEY=... mix run scripts/mutate.exs   # mutations
 python3 scripts/coverage.py                        # the table below
+python3 scripts/coverage.py --require-complete      # fails on anything unexplained (CI)
 ```
 
 | verdict       | meaning                                                                    |
@@ -139,6 +140,13 @@ python3 scripts/coverage.py                        # the table below
 | `declined`    | the operation cannot be exercised on the test account at all — each entry carries the reason (a third-party OAuth grant, a platform account, real money, a device token) |
 | `throttled`   | the provider rate-limited the call; the sweep retries it in a later round    |
 | `write`       | a mutation the write pass has not reached yet                                |
+
+`mix test` asserts the same thing from the other side: every operation in the
+registry has exactly one verdict, every `declined` entry carries a reason, every
+`unreachable` one carries the probe that called it, and no live response is
+refused by its own contract. CI runs both, so a report that leaves an operation
+unexplained, or a contract that starts refusing live bodies, fails the build
+instead of sitting quietly in a JSON file.
 
 Every capture a parsed call produced is kept, redacted, under
 `test/support/fixtures/cal_com/certified/`; a 2xx the contract refused is kept

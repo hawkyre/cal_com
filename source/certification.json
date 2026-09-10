@@ -6,10 +6,10 @@
   "generated_at": "2026-09-10T06:38:05.787941Z",
   "operations": {
     "POST /v2/insights/bookings/members": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/event-types/{eventTypeId}/booking-fields": {
       "fields": [],
@@ -17,15 +17,15 @@
       "status": "verified"
     },
     "POST /v2/insights/bookings/kpi-stats": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PATCH /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/bookings/{bookingUid}/attendees": {
       "fields": [],
@@ -33,9 +33,9 @@
       "status": "verified"
     },
     "POST /v2/workflows": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
@@ -49,10 +49,10 @@
       "status": "unreachable"
     },
     "PUT /v2/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/calendars/{calendar}/save": {
       "fields": [],
@@ -76,21 +76,21 @@
       "status": "declined"
     },
     "GET /v2/slots": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/verify": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/bookings/{bookingUid}/decline": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/calendars/{calendar}/credentials": {
       "reason": "needs a third-party calendar OAuth grant",
@@ -124,9 +124,9 @@
       "status": "unreachable"
     },
     "POST /v2/teams/{teamId}/users/{userId}/ooo": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/schedules": {
       "fields": [],
@@ -134,9 +134,9 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/users/{userId}/schedules": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/schedules": {
       "fields": [],
@@ -154,9 +154,9 @@
       "status": "unreachable"
     },
     "POST /v2/organizations/{orgId}/users/{userId}/ooo": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
       "fields": [],
@@ -176,19 +176,19 @@
       "status": "unreachable"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/oauth-clients/{clientId}/users": {
       "reason": "needs a platform OAuth client",
       "status": "declined"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/users": {
       "reason": "would invite a real person to the organization",
@@ -201,9 +201,9 @@
       "status": "refused"
     },
     "PUT /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/conferencing/default": {
       "fields": [],
@@ -216,18 +216,18 @@
       "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/roles/{roleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/notifications/subscriptions/app-push": {
       "reason": "needs a device push token for this account",
       "status": "declined"
     },
     "DELETE /v2/organizations/{orgId}/attributes/{attributeId}/options/{optionId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/users/{userId}/schedules": {
       "fields": [],
@@ -235,10 +235,10 @@
       "status": "verified"
     },
     "DELETE /v2/selected-calendars": {
+      "fields": [],
       "http": 500,
       "reason": "{:http, 500}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/organizations": {
       "fields": [],
@@ -252,10 +252,10 @@
       "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/request": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/verified-resources/emails": {
       "fields": [],
@@ -284,9 +284,9 @@
       "status": "unreachable"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/verified-resources/phones/{id}": {
       "fields": [],
@@ -299,34 +299,34 @@
       "status": "unreachable"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/attributes/options/{userId}": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/webhooks": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/me/booking-limits": {
+      "fields": [],
       "http": 204,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/webhooks": {
       "fields": [],
@@ -334,46 +334,46 @@
       "status": "verified"
     },
     "GET /v2/organizations/{orgId}/memberships": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+      "fields": [],
       "http": 204,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/attributes/{attributeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/reschedule": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/insights/routings/forms-by-status": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "reason": "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\"",
       "status": "declined"
     },
     "POST /v2/calendars/ics-feed/save": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/slots/reservations/{uid}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes/{attributeId}": {
       "fields": [],
@@ -386,15 +386,15 @@
       "status": "unreachable"
     },
     "DELETE /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/bookings/verification/email/verify-code": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/oauth-clients/{clientId}": {
       "fields": [],
@@ -413,10 +413,10 @@
       "status": "verified"
     },
     "POST /v2/insights/routings/form-responses": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones": {
       "fields": [],
@@ -428,21 +428,21 @@
       "status": "declined"
     },
     "POST /v2/selected-calendars": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PATCH /v2/schedules/{scheduleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/me/team-booking-limits/{teamId}": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/verified-resources/phones/{id}": {
       "fields": [],
@@ -460,9 +460,9 @@
       "status": "verified"
     },
     "PATCH /v2/teams/{teamId}/users/{userId}/ooo/{oooId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/bookings/{bookingUid}/conferencing-sessions": {
       "fields": [],
@@ -471,15 +471,15 @@
       "status": "refused"
     },
     "POST /v2/bookings/{bookingUid}/confirm": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+      "fields": [],
       "http": 204,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes": {
       "fields": [],
@@ -487,36 +487,36 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/bookings/report": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/workflows/{workflowId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/event-types/{eventTypeId}/booking-fields/{slug}": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/teams/{teamId}/event-types": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/users/{userId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes/options/{userId}": {
       "fields": [],
@@ -530,21 +530,21 @@
       "status": "refused"
     },
     "POST /v2/insights/routings/routed-to-per-period": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/organizations/{orgId}/memberships/{membershipId}": {
       "reason": "would remove a membership the account already has",
@@ -571,10 +571,10 @@
       "status": "unreachable"
     },
     "POST /v2/insights/bookings/event-trends": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/oauth-clients/{clientId}/webhooks": {
       "reason": "OAuth clients are a platform feature this account cannot use",
@@ -592,7 +592,7 @@
       "status": "refused"
     },
     "POST /v2/credits/charge": {
-      "reason": "charges real money",
+      "reason": "charges the account's payment method for real money",
       "status": "declined"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/check": {
@@ -607,10 +607,10 @@
       "status": "verified"
     },
     "POST /v2/insights/routings/form-field-options": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
       "fields": [],
@@ -619,29 +619,29 @@
       "status": "refused"
     },
     "PUT /v2/destination-calendars": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/oauth-clients/{clientId}": {
       "reason": "needs a platform OAuth client",
       "status": "declined"
     },
     "DELETE /v2/organizations/{orgId}/roles/{roleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/verified-resources/emails": {
       "fields": [],
@@ -649,10 +649,10 @@
       "status": "verified"
     },
     "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/request": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/notifications/subscriptions/slack": {
       "reason": "needs a Slack workspace to unlink",
@@ -665,10 +665,10 @@
       "status": "refused"
     },
     "POST /v2/verified-resources/phones/verification-code/request": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/bookings/{bookingUid}/reassign": {
       "reason": "needs a second user on the account, and inviting a real person is declined",
@@ -686,14 +686,14 @@
       "status": "unreachable"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/teams/{teamId}/invite": {
       "reason": "would email an invite to a real person",
@@ -711,20 +711,20 @@
       "status": "unreachable"
     },
     "POST /v2/routing-forms/{routingFormId}/calculate-slots": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/default": {
       "reason": "needs a connected conferencing app",
       "status": "declined"
     },
     "DELETE /v2/teams/{teamId}": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams": {
       "fields": [],
@@ -752,14 +752,14 @@
       "status": "verified"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/webhooks": {
       "fields": [],
@@ -778,10 +778,10 @@
       "status": "unreachable"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/routing-forms/{routingFormId}/responses/{responseId}": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
       "fields": [],
@@ -795,20 +795,20 @@
       "status": "unreachable"
     },
     "PATCH /v2/slots/reservations/{uid}": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/delegation-credentials": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
       "fields": [],
@@ -822,9 +822,9 @@
       "status": "verified"
     },
     "POST /v2/slots/reservations": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/notifications/subscriptions/telegram/link-intents": {
       "reason": "needs a Telegram account to link",
@@ -842,10 +842,10 @@
       "status": "unreachable"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/memberships": {
+      "fields": [],
       "http": 409,
       "reason": "{:http, 409}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/calendars/{calendar}/disconnect": {
       "reason": "needs a connected third-party calendar",
@@ -872,15 +872,15 @@
       "status": "declined"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}/routing-form": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PUT /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/verified-resources/phones": {
       "fields": [],
@@ -888,9 +888,9 @@
       "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/attributes/{attributeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/users/{userId}/bookings": {
       "fields": [],
@@ -909,25 +909,25 @@
       "status": "unreachable"
     },
     "POST /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails/verification-code/verify": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/organizations/{orgId}/users/{userId}": {
       "reason": "would remove a member the account already has",
       "status": "declined"
     },
     "POST /v2/organizations/{orgId}/roles": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/oauth-clients/{clientId}/users/{userId}": {
       "fields": [],
@@ -941,21 +941,21 @@
       "status": "unreachable"
     },
     "POST /v2/insights/bookings/average-duration": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/insights/routings/form-response-headers": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/users/{userId}/conferencing": {
       "fields": [],
@@ -968,9 +968,9 @@
       "status": "verified"
     },
     "DELETE /v2/me/ooo/{oooId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/verified-resources/emails/{id}": {
       "fields": [],
@@ -983,19 +983,19 @@
       "status": "unreachable"
     },
     "POST /v2/teams/{teamId}/verified-resources/phones/verification-code/verify": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/organizations/{orgId}/bookings/block": {
       "reason": "blocks a booker by email or domain and the API has no unblock route, so it would permanently change who can book this account",
       "status": "declined"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/conferencing/{app}/oauth/callback": {
       "fields": [],
@@ -1013,9 +1013,9 @@
       "status": "declined"
     },
     "POST /v2/bookings/{bookingUid}/guests": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/teams/{teamId}/memberships/{membershipId}": {
       "reason": "the account holds one membership per team and the provider refuses a second with 409, so the only membership this could delete is the user's own",
@@ -1028,10 +1028,10 @@
       "status": "refused"
     },
     "POST /v2/verified-resources/phones/verification-code/verify": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/event-types/{eventTypeId}/crm-sync-errors": {
       "fields": [],
@@ -1050,19 +1050,19 @@
       "status": "unreachable"
     },
     "PATCH /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PATCH /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
       "reason": "needs a platform OAuth client",
       "status": "declined"
     },
     "GET /v2/teams": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/verified-resources/phones": {
       "fields": [],
@@ -1080,9 +1080,9 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/stripe/save": {
       "fields": [],
@@ -1095,9 +1095,9 @@
       "status": "declined"
     },
     "POST /v2/webhooks": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/bookings/{bookingUid}/recordings": {
       "fields": [],
@@ -1145,15 +1145,15 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
+      "fields": [],
       "http": 500,
       "reason": "{:http, 500}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PATCH /v2/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/workflows/{workflowId}": {
       "fields": [],
@@ -1167,35 +1167,35 @@
       "status": "unreachable"
     },
     "PATCH /v2/bookings/{bookingUid}/location": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/request-reschedule": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/event-types/{eventTypeId}/webhooks": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/verified-resources/emails/verification-code/verify": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/schedules": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/workflows": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/bookings/{bookingUid}": {
       "fields": [],
@@ -1225,14 +1225,14 @@
       "status": "declined"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/users": {
       "fields": [],
@@ -1240,14 +1240,14 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/roles": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PUT /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/oauth-clients/{clientId}/webhooks/{webhookId}": {
       "reason": "needs a platform OAuth client",
@@ -1278,9 +1278,9 @@
       "status": "declined"
     },
     "POST /v2/bookings/verification/email/send-code": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/conferencing/{app}/default": {
       "reason": "needs a connected conferencing app",
@@ -1298,19 +1298,19 @@
       "status": "unreachable"
     },
     "POST /v2/bookings": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/event-types/{eventTypeId}/booking-fields": {
       "reason": "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\"",
       "status": "declined"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/me/ooo": {
       "fields": [],
@@ -1335,9 +1335,9 @@
       "status": "refused"
     },
     "PATCH /v2/me": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/oauth-clients/{clientId}/users/{userId}/force-refresh": {
       "reason": "needs a platform OAuth client",
@@ -1364,15 +1364,15 @@
       "status": "unreachable"
     },
     "GET /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
       "fields": [],
@@ -1386,30 +1386,30 @@
       "status": "unreachable"
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/me/team-booking-limits/{teamId}": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/me/booking-limits": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/conferencing": {
       "fields": [],
@@ -1437,34 +1437,34 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/attributes/{attributeId}/options": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/event-types/{eventTypeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions/{permission}": {
+      "fields": [],
       "http": 204,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/schedules/default": {
       "fields": [],
@@ -1472,9 +1472,9 @@
       "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/{id}": {
       "fields": [],
@@ -1518,10 +1518,10 @@
       "status": "unreachable"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields/{slug}": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/stripe/save": {
       "fields": [],
@@ -1545,18 +1545,18 @@
       "status": "declined"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/notifications/subscriptions/app-push": {
       "reason": "needs a device push token for this account",
       "status": "declined"
     },
     "GET /v2/me": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/stripe/check": {
       "fields": [],
@@ -1565,15 +1565,15 @@
       "status": "refused"
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks/{webhookId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/users/{userId}/conferencing/default": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/workflows/{workflowId}": {
       "fields": [],
@@ -1587,10 +1587,10 @@
       "status": "unreachable"
     },
     "POST /v2/organizations/{orgId}/delegation-credentials/{credentialId}/reset-rotation": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/me": {
       "fields": [],
@@ -1609,9 +1609,9 @@
       "status": "unreachable"
     },
     "DELETE /v2/event-types/{eventTypeId}/webhooks": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/calendars/{calendar}/check": {
       "fields": [],
@@ -1625,16 +1625,16 @@
       "status": "unreachable"
     },
     "POST /v2/teams/{teamId}/verified-resources/emails/verification-code/verify": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/insights/routings/failed-bookings-by-field": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/verified-resources/emails": {
       "fields": [],
@@ -1642,10 +1642,10 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/verified-resources/phones/verification-code/request": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/schedules/{scheduleId}": {
       "fields": [],
@@ -1669,9 +1669,9 @@
       "status": "unreachable"
     },
     "POST /v2/event-types/{eventTypeId}/private-links": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}": {
       "fields": [],
@@ -1679,10 +1679,10 @@
       "status": "verified"
     },
     "PATCH /v2/teams/{teamId}": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/roles": {
       "fields": [],
@@ -1690,9 +1690,9 @@
       "status": "verified"
     },
     "POST /v2/me/ooo": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/event-types": {
       "fields": [],
@@ -1700,14 +1700,14 @@
       "status": "verified"
     },
     "POST /v2/organizations/{orgId}/attributes": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/memberships/{membershipId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/teams/{teamId}/memberships": {
       "reason": "the user route answers 403 for this account",
@@ -1719,9 +1719,9 @@
       "status": "verified"
     },
     "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/bookings": {
       "fields": [],
@@ -1734,25 +1734,25 @@
       "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/memberships/{membershipId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/attributes/options/{userId}/{attributeOptionId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}/webhooks": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/organizations": {
+      "fields": [],
       "http": 403,
       "reason": ":forbidden",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/bookings/verification/email/check": {
       "fields": [],
@@ -1761,9 +1761,9 @@
       "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/memberships": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/organizations/{managedOrganizationId}": {
       "reason": "would edit a managed organization the account already has",
@@ -1775,9 +1775,9 @@
       "status": "verified"
     },
     "DELETE /v2/schedules/{scheduleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/calendars/ics-feed/check": {
       "fields": [],
@@ -1790,29 +1790,29 @@
       "status": "declined"
     },
     "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/cancel": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/oauth-clients/{clientId}/users/{userId}": {
       "reason": "needs a platform OAuth client",
       "status": "declined"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/private-links/{linkId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/workflows/{workflowId}": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/event-types/{eventTypeId}/webhooks": {
       "fields": [],
@@ -1825,9 +1825,9 @@
       "status": "verified"
     },
     "PATCH /v2/event-types/{eventTypeId}/booking-fields": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
       "reason": "no input can succeed: `field` must be one of ten system names on every write route, and a system field is refused with \"Only custom booking fields can be added\"",
@@ -1839,9 +1839,9 @@
       "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/roles/{roleId}/permissions/{permission}": {
+      "fields": [],
       "http": 204,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/roles": {
       "fields": [],
@@ -1863,29 +1863,29 @@
       "status": "verified"
     },
     "POST /v2/verified-resources/emails/verification-code/request": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/attendees": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "DELETE /v2/organizations/{orgId}/teams/{teamId}": {
       "reason": "would delete a team the account already has: team creation is refused with 409, so there is no disposable team, and the three teams here are the user's own",
       "status": "declined"
     },
     "POST /v2/teams/{teamId}/verified-resources/phones/verification-code/request": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/teams": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes/sync-history/user/{userId}": {
       "fields": [],
@@ -1903,15 +1903,15 @@
       "status": "verified"
     },
     "POST /v2/bookings/{bookingUid}/mark-absent": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "POST /v2/event-types": {
+      "fields": [],
       "http": 201,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes/assignments/{userId}/history": {
       "fields": [],
@@ -1923,19 +1923,19 @@
       "status": "declined"
     },
     "PATCH /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/users/{userId}/schedules/{scheduleId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/teams/{teamId}/memberships": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/oauth-clients": {
       "fields": [],
@@ -1944,10 +1944,10 @@
       "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams": {
+      "fields": [],
       "http": 409,
       "reason": "{:http, 409}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/default": {
       "fields": [],
@@ -1955,10 +1955,10 @@
       "status": "verified"
     },
     "PATCH /v2/organizations/{orgId}/routing-forms/{routingFormId}/responses/{responseId}": {
+      "fields": [],
       "http": 404,
       "reason": ":not_found",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/allowlists": {
       "fields": [],
@@ -1967,15 +1967,15 @@
       "status": "refused"
     },
     "DELETE /v2/organizations/{orgId}/users/{userId}/ooo/{oooId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/workflows/routing-form": {
+      "fields": [],
       "http": 400,
       "reason": "{:http, 400}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "GET /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
       "fields": [],
@@ -1984,26 +1984,26 @@
       "status": "refused"
     },
     "DELETE /v2/event-types/{eventTypeId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "GET /v2/organizations/{orgId}/attributes/{attributeId}/options": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/create-phone-call": {
+      "fields": [],
       "http": 500,
       "reason": "{:http, 500}",
-      "status": "refused",
-      "fields": []
+      "status": "refused"
     },
     "DELETE /v2/organizations/{orgId}/delegation-credentials/{credentialId}": {
+      "fields": [],
       "http": 200,
-      "status": "verified",
-      "fields": []
+      "status": "verified"
     }
   },
-  "writes_generated_at": "2026-09-10T08:19:31.291306Z"
+  "writes_generated_at": "2026-09-10T08:23:11.412579Z"
 }

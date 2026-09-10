@@ -200,7 +200,7 @@ defmodule Mutate do
     [
       {"POST /v2/api-keys/refresh",
        "rotating the key would invalidate the credential this sweep is using"},
-      {"POST /v2/credits/charge", "charges real money"},
+      {"POST /v2/credits/charge", "charges the account's payment method for real money"},
       {"POST /v2/auth/oauth2/token",
        "needs an OAuth client id and secret from a platform account"},
       {"POST /v2/oauth/{clientId}/refresh",

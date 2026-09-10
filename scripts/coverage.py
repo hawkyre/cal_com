@@ -44,6 +44,28 @@ def main(argv):
         if verdict["status"] != "verified":
             gaps[verdict["status"]].append((operation, verdict.get("reason", "")))
 
+    if "--require-complete" in argv:
+        # The release gate is not "everything verified" — some operations need a
+        # mailbox, a second person or a payment — it is "nothing unexplained".
+        unexplained = [
+            operation
+            for operation, verdict in sorted(operations.items())
+            if verdict["status"] not in ("verified", "refused", "unreachable", "declined")
+        ]
+        thin = [
+            operation
+            for operation, verdict in sorted(operations.items())
+            if verdict["status"] == "declined" and len(str(verdict.get("reason", ""))) < 20
+        ]
+
+        if unexplained or thin:
+            print(f"\nunexplained: {unexplained}")
+            print(f"declined without a usable reason: {thin}")
+            return 1
+
+        print("\nevery operation carries a verdict with evidence behind it")
+        return 0
+
     if "--gaps" in argv or counts.get("verified", 0) != total:
         for status, rows in gaps.items():
             if not rows:
