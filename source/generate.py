@@ -478,7 +478,15 @@ def build(original, inventory, overrides, webhook_shapes):
     for operation_id, parameters in overrides.get("operation_parameters", {}).items():
         for parameter in operations[operation_id].get("parameters", []):
             if parameter["name"] in parameters:
-                parameter["schema"] = dict(parameter.get("schema", {}), default=parameters[parameter["name"]])
+                # A string corrects the parameter's default; a dict merges into
+                # its schema, which is how a placeholder the source types two
+                # different ways is settled by live evidence.
+                change = parameters[parameter["name"]]
+                parameter["schema"] = (
+                    dict(parameter.get("schema", {}), **change)
+                    if isinstance(change, dict)
+                    else dict(parameter.get("schema", {}), default=change)
+                )
     for name, fields in overrides.get("schema_properties", {}).items():
         schemas[name]["properties"].update(fields)
 

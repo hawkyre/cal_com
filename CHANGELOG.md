@@ -47,6 +47,23 @@ New tooling, all of it repo-only and not part of the published package:
   delete envelope, and refuses to run without `MUTATE_APPLY=1`.
 - `scripts/coverage.py` prints what is certified and what is still open.
 
+Mutations then found two more contract bugs, both fixed the same way:
+
+- `GetEventTypeWorkflowOutput.data` is a single workflow object, not an array.
+  `POST /v2/workflows`, `GET /v2/workflows/{workflowId}` and
+  `PATCH /v2/workflows/{workflowId}` all answer one object; the list endpoints
+  have their own envelope. That envelope now has its own module name
+  (`GetEventTypeWorkflowsOutput`), so `GetEventTypeWorkflowOutput` names the
+  single-workflow shape; no module disappeared.
+- Every `*WebhookOutputDto.secret` is nullable: a webhook created without one
+  answers `secret: null`. The read pass had missed this because the account's
+  webhook list was empty, so the list endpoint had only ever proved its
+  envelope.
+- `PATCH /v2/schedules/{scheduleId}` types its path id as a string while the
+  GET and DELETE on the same route type it as a number, so a real schedule id
+  could not be passed at all. `source/live_overrides.json` now carries the
+  number, which is what the provider accepts.
+
 ## 0.2.0 (2026-09-09)
 
 Every operation the document describes — 349, up from 199 — generated from

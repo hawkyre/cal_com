@@ -36,17 +36,34 @@ defmodule Sweep.Ledger do
   @spec verdicts() :: map()
   def verdicts, do: Process.get(@verdicts, %{})
 
-  @doc "Register a resource this run created, for `undo/1` to delete."
-  @spec track(String.t(), String.t(), term()) :: :ok
-  def track(undo_operation, param, id) when not is_nil(id) do
-    Process.put(@resources, [{undo_operation, param, id} | resources()])
+  @doc """
+  Register a resource this run created, for `undo/1` to delete.
+
+  The whole path is recorded, not just the id: an organization resource needs
+  `orgId` alongside it, and a delete that loses a required parameter never
+  reaches the provider at all.
+  """
+  @spec track(String.t(), map() | String.t(), term()) :: :ok
+  def track(undo_operation, path, _id) when is_map(path), do: put_resource(undo_operation, path)
+  def track(undo_operation, param, _id), do: put_resource(undo_operation, %{param => nil})
+
+  @doc "Register a resource by the full path its delete needs."
+  @spec track(String.t(), map()) :: :ok
+  def track(undo_operation, path), do: put_resource(undo_operation, path)
+
+  @spec put_resource(String.t(), map()) :: :ok
+  defp put_resource(operation_id, path) do
+    # A path with a missing id would only produce a delete the provider never
+    # sees, so it is not recorded at all.
+    if Enum.all?(path, fn {_param, value} -> not is_nil(value) end) do
+      Process.put(@resources, [{operation_id, path} | resources()])
+    end
+
     :ok
   end
 
-  def track(_undo_operation, _param, _id), do: :ok
-
   @doc "What this run created and has not cleaned up yet."
-  @spec resources() :: [{String.t(), String.t(), term()}]
+  @spec resources() :: [{String.t(), map()}]
   def resources, do: Process.get(@resources, [])
 
   @doc """
@@ -55,38 +72,83 @@ defmodule Sweep.Ledger do
   A resource whose delete did not come back `verified` or `refused` is reported
   and left in the ledger, so the operator sees exactly what is still there.
   """
-  @spec undo(Credentials.t()) :: [{String.t(), String.t(), term()}]
+  @spec undo(Credentials.t()) :: [{String.t(), map()}]
   def undo(credentials) do
-    leftovers =
-      Enum.reduce(resources(), [], fn {operation_id, param, id}, leftovers ->
-        verdict = call(credentials, operation_id, %{"path" => %{param => id}})
+    leftovers = delete_all(credentials, resources(), [])
 
-        if verdict.status in ["verified", "refused"] do
-          leftovers
-        else
-          Client.log("  LEFT BEHIND #{operation_id} #{param}=#{inspect(id)} -> #{verdict.status}")
-          [{operation_id, param, id} | leftovers]
-        end
-      end)
+    # A delete the provider throttled is worth one more attempt after a pause:
+    # leaving a certification team behind is worse than a slower run.
+    leftovers =
+      if leftovers == [] do
+        []
+      else
+        Client.log("  undo: #{length(leftovers)} left, cooling down 65s and retrying")
+        Process.sleep(65_000)
+        delete_all(credentials, leftovers, [])
+      end
 
     Process.put(@resources, leftovers)
     leftovers
   end
 
-  @doc "The verdict for an id a create answered with, as the package parsed it."
+  @spec delete_all(Credentials.t(), [{String.t(), map()}], [{String.t(), map()}]) :: [
+          {String.t(), map()}
+        ]
+  defp delete_all(credentials, resources, leftovers) do
+    Enum.reduce(resources, leftovers, fn {operation_id, path}, leftovers ->
+      verdict = call(credentials, operation_id, %{"path" => path})
+
+      if verdict.status in ["verified", "refused"] do
+        leftovers
+      else
+        Client.log("  LEFT BEHIND #{operation_id} #{inspect(path)} -> #{verdict.status}")
+        [{operation_id, path} | leftovers]
+      end
+    end)
+  end
+
+  @doc """
+  The id a create answered with, as the package parsed it.
+
+  Generated entities are structs, not maps with the Access behaviour, so the
+  value is walked with `Map.get/2` rather than `get_in/2`. Some creates nest the
+  created object one level down (`data: {role: {...}}`), so a miss looks once
+  inside the values of `data` before giving up.
+  """
   @spec created_id(map(), atom()) :: term()
   def created_id(verdict, field) do
     case verdict[:capture] do
-      {typed, _package} -> get_in(typed, [:value, :data, field]) || get_in(typed, [:value, field])
+      # A refused body rides in the same slot as a parsed one, marked false; a
+      # capture that never parsed has no id to read.
+      {false, _package} -> nil
+      {nil, _package} -> nil
+      {typed, _package} -> maybe_id(Map.get(typed, :value), field)
       _none -> nil
     end
+  end
+
+  @spec maybe_id(term(), atom()) :: term()
+  defp maybe_id(%{data: data}, field) when is_map(data),
+    do: Map.get(data, field) || nested_id(data, field)
+
+  defp maybe_id(value, field) when is_map(value), do: Map.get(value, field)
+  defp maybe_id(_value, _field), do: nil
+
+  @spec nested_id(map(), atom()) :: term()
+  defp nested_id(data, field) do
+    Enum.find_value(Map.values(data), fn
+      %{} = inner -> Map.get(inner, field)
+      _other -> nil
+    end)
   end
 
   @doc "The parsed body of a verdict, for a scenario that has to read a field."
   @spec parsed(map()) :: term()
   def parsed(verdict) do
     case verdict[:capture] do
-      {typed, _package} -> typed.value
+      {false, _package} -> nil
+      {nil, _package} -> nil
+      {typed, _package} -> Map.get(typed, :value)
       _none -> nil
     end
   end

@@ -50,6 +50,11 @@
       }
     },
     "UserWebhookOutputDto": {
+      "secret": {
+        "type": "string",
+        "nullable": true,
+        "description": "A webhook created without a secret answers with an explicit null, which the source types as a plain string."
+      },
       "payloadTemplate": {
         "type": "string",
         "description": "The template of the payload that will be sent to the subscriberUrl, check cal.com/docs/core-features/webhooks for more information",
@@ -85,6 +90,11 @@
       }
     },
     "EventTypeWebhookOutputDto": {
+      "secret": {
+        "type": "string",
+        "nullable": true,
+        "description": "A webhook created without a secret answers with an explicit null, which the source types as a plain string."
+      },
       "payloadTemplate": {
         "type": "string",
         "description": "The template of the payload that will be sent to the subscriberUrl, check cal.com/docs/core-features/webhooks for more information",
@@ -432,11 +442,53 @@
         "description": "The source declares cursor metadata, but the live API answers the booking list with the offset metadata the other paginated endpoints use. Both shapes are accepted because the path carries no cal-api-version of its own."
       }
     },
+    "GetEventTypeWorkflowOutput": {
+      "data": {
+        "$ref": "#/components/schemas/EventTypeWorkflowOutput",
+        "description": "The source types this as an array, but every endpoint that shares the shape — create, get one, patch one — answers with a single workflow object. The list endpoints use their own envelope."
+      }
+    },
     "MembershipUserOutputDto": {
       "avatarUrl": {
         "type": "string",
         "nullable": true,
         "description": "A member who never uploaded an avatar answers with an explicit null, which the source types as a plain string."
+      }
+    },
+    "TeamWebhookOutputDto": {
+      "secret": {
+        "type": "string",
+        "nullable": true,
+        "description": "A webhook created without a secret answers with an explicit null, which the source types as a plain string. Found by creating one: the read that certified the list endpoint had answered with an empty collection."
+      },
+      "payloadTemplate": {
+        "type": "string",
+        "nullable": true
+      },
+      "time": {
+        "type": "number",
+        "nullable": true
+      },
+      "timeUnit": {
+        "type": "string",
+        "nullable": true
+      },
+      "id": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "OAuthClientWebhookOutputDto": {
+      "secret": {
+        "type": "string",
+        "nullable": true,
+        "description": "A webhook created without a secret answers with an explicit null, which the source types as a plain string."
       }
     },
     "UserVerifiedEmailOutput": {
@@ -559,6 +611,11 @@
   "operation_parameters": {
     "GET /v2/bookings": {
       "cal-api-version": "2024-08-13"
+    },
+    "PATCH /v2/schedules/{scheduleId}": {
+      "scheduleId": {
+        "type": "number"
+      }
     }
   },
   "operation_responses": {

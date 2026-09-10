@@ -370,8 +370,8 @@
       [
         "value",
         "value",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowOutput}, nullable: false}",
-        "CalCom.Entities.GetEventTypeWorkflowOutput.t()",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.GetEventTypeWorkflowsOutput}, nullable: false}",
+        "CalCom.Entities.GetEventTypeWorkflowsOutput.t()",
         true
       ]
     ],

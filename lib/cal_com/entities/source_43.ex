@@ -35,11 +35,6 @@ defmodule Entities.InputSchedulesController20240611GetSchedulePath do
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
 end
 
-defmodule Entities.InputSchedulesController20240611UpdateSchedulePath do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
-end
-
 defmodule Entities.InputSelectedCalendarsControllerDeleteSelectedCalendarQuery do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}

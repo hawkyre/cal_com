@@ -268,7 +268,7 @@
   "GetEventTypeHistoryOutput_2024_06_14": "CalCom.Entities.GetEventTypeHistoryOutput20240614",
   "GetEventTypeOutput_2026_06_12": "CalCom.Entities.GetEventTypeOutput20260612",
   "GetEventTypeWorkflowOutput": "CalCom.Entities.GetEventTypeWorkflowOutput",
-  "GetEventTypeWorkflowsOutput": "CalCom.Entities.GetEventTypeWorkflowOutput",
+  "GetEventTypeWorkflowsOutput": "CalCom.Entities.GetEventTypeWorkflowsOutput",
   "GetEventTypesOutput_2026_06_12": "CalCom.Entities.GetEventTypesOutput20260612",
   "GetInsightsRoutingFailedBookingsByFieldOutput": "CalCom.Entities.GetInsightsRoutingFailedBookingsByFieldOutput",
   "GetInsightsRoutingFormFieldOptionsOutput": "CalCom.Entities.GetInsightsRoutingFormFieldOptionsOutput",

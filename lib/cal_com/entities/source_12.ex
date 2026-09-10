@@ -50,6 +50,11 @@ defmodule Entities.GetEventTypeWorkflowOutput do
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
 end
 
+defmodule Entities.GetEventTypeWorkflowsOutput do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}
+end
+
 defmodule Entities.GetEventTypesOutput20260612 do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_12.json", __MODULE__}

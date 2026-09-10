@@ -146,9 +146,14 @@ under `unparsed/` instead, so a shape bug leaves its evidence behind. Live
 corrections the spec gets wrong are recorded in `source/live_overrides.json`,
 each with the observation that justifies it — for example
 `PaginationMetaDto.currentPage` starting at 0, `TeamOutputDto` fields the
-provider sends as an explicit null, and `GET /v2/bookings`, whose documented
-`2026-05-01` version times out at the provider (Cloudflare 524 after 125s) while
-`2024-08-13` answers the same shape in under a second.
+provider sends as an explicit null, `GetEventTypeWorkflowOutput.data` being one
+object rather than the array the document declares, and `GET /v2/bookings`,
+whose documented `2026-05-01` version times out at the provider (Cloudflare 524
+after 125s) while `2024-08-13` answers the same shape in under a second.
+
+A `verified` read is weaker evidence when the collection it read was empty: the
+envelope parsed, but no row did. That is how the webhook `secret` null stayed
+hidden until a mutation created a webhook and read it back.
 
 ## Compile cost
 

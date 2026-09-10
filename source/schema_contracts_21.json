@@ -331,7 +331,7 @@
       [
         "payload_template",
         "payloadTemplate",
-        "%CalCom.Rule{kind: :string, nullable: false}",
+        "%CalCom.Rule{kind: :string, nullable: true}",
         "String.t()",
         true
       ],
@@ -345,15 +345,15 @@
       [
         "time",
         "time",
-        "%CalCom.Rule{kind: :number, nullable: false}",
+        "%CalCom.Rule{kind: :number, nullable: true}",
         "number()",
         false
       ],
       [
         "time_unit",
         "timeUnit",
-        "%CalCom.Rule{kind: {:enum, [{\"DAY\", :DAY}, {\"HOUR\", :HOUR}, {\"MINUTE\", :MINUTE}]}, nullable: false}",
-        ":DAY | :HOUR | :MINUTE",
+        "%CalCom.Rule{kind: :string, nullable: true}",
+        "String.t()",
         false
       ],
       [
@@ -373,8 +373,8 @@
       [
         "id",
         "id",
-        "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
+        "%CalCom.Rule{kind: {:one_of, [%CalCom.Rule{kind: :number, nullable: false}, %CalCom.Rule{kind: :string, nullable: false}]}, nullable: false}",
+        "number() | String.t()",
         true
       ],
       [
@@ -394,7 +394,7 @@
       [
         "secret",
         "secret",
-        "%CalCom.Rule{kind: :string, nullable: false}",
+        "%CalCom.Rule{kind: :string, nullable: true}",
         "String.t()",
         false
       ]

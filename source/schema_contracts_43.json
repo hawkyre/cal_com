@@ -181,19 +181,6 @@
     "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
-  "CalCom.Entities.InputSchedulesController20240611UpdateSchedulePath": {
-    "fields": [
-      [
-        "schedule_id",
-        "scheduleId",
-        "%CalCom.Rule{kind: :string, nullable: false}",
-        "String.t()",
-        true
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
   "CalCom.Entities.InputSelectedCalendarsControllerDeleteSelectedCalendarQuery": {
     "fields": [
       [

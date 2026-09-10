@@ -138,10 +138,20 @@ defmodule Sweep.Report do
     :ok
   end
 
-  @doc "Write one capture into the certified tree, leaving every other capture alone."
-  @spec capture!(String.t(), Response.t()) :: :ok
-  def capture!(id, package),
-    do: write_capture(Path.join(@fixtures, "certified"), id, package, true)
+  @doc """
+  Write one capture, leaving every other capture alone.
+
+  `parsed: false` is for a body the contract refused: it goes to `unparsed/`,
+  where the read pass files one too, so a shape bug keeps its evidence without
+  pretending to be a verified response.
+  """
+  @spec capture!(String.t(), Response.t(), keyword()) :: :ok
+  def capture!(id, package, options \\ []) do
+    parsed? = Keyword.get(options, :parsed, true)
+    dir = if parsed?, do: "certified", else: "unparsed"
+
+    write_capture(Path.join(@fixtures, dir), id, package, parsed?)
+  end
 
   @spec write_capture(String.t(), String.t(), Response.t(), boolean()) :: :ok
   defp write_capture(dir, id, package, parsed?) do

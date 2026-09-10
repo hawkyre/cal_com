@@ -51,8 +51,7 @@ defmodule Mutate do
   @spec main() :: :ok
   def main do
     credentials = %Credentials{kind: :api_key, token: System.fetch_env!("CAL_COM_API_KEY")}
-    only = System.get_env("MUTATE_ONLY")
-    scenarios = Enum.filter(scenarios(), fn {id, _proves, _fun} -> is_nil(only) or id == only end)
+    scenarios = Enum.filter(scenarios(), &selected?/1)
 
     IO.puts("plan: #{length(scenarios)} scenarios, #{length(declined())} declined")
 
@@ -63,7 +62,7 @@ defmodule Mutate do
       account = Discover.account(credentials)
       ids = Discover.ids(credentials, account)
       Client.log("account: user=#{account.user_id} org=#{inspect(account.organization_id)}")
-      for {_id, _proves, fun} <- scenarios, do: fun.(credentials, ids)
+      run(credentials, scenarios, ids)
       leftovers = Ledger.undo(credentials)
       if leftovers == [], do: Client.log("undo: everything this run created is gone")
       finish(credentials, account)
@@ -74,19 +73,80 @@ defmodule Mutate do
     :ok
   end
 
+  # A scenario that raises must not take its fixtures down with it: the caller
+  # deletes everything tracked whatever happens here.
+  @spec run(Credentials.t(), [{String.t(), String.t(), fun()}], map()) :: :ok
+  defp run(credentials, scenarios, ids) do
+    for {id, _proves, fun} <- scenarios do
+      try do
+        fun.(credentials, ids)
+      rescue
+        error ->
+          Client.log("  SCENARIO RAISED #{id}: #{Exception.message(error)}")
+
+          Client.log(
+            "    " <>
+              Enum.map_join(
+                Enum.take(__STACKTRACE__, 4),
+                "\n    ",
+                &Exception.format_stacktrace_entry/1
+              )
+          )
+      catch
+        kind, reason ->
+          Client.log("  SCENARIO EXITED #{id}: #{inspect({kind, reason})}")
+      end
+    end
+
+    :ok
+  end
+
+  # `MUTATE_ONLY` runs every scenario whose operation id contains one of the
+  # comma separated fragments (`bookings`, `verified`, a whole id); `MUTATE_SKIP`
+  # leaves them out. Both keep a staged run honest: what was skipped stays a
+  # recorded `write`, not a silent success.
+  @spec selected?({String.t(), String.t(), fun()}) :: boolean()
+  defp selected?({id, _proves, _fun}) do
+    only = fragments("MUTATE_ONLY")
+    skip = fragments("MUTATE_SKIP")
+
+    (only == [] or Enum.any?(only, &String.contains?(id, &1))) and
+      not Enum.any?(skip, &String.contains?(id, &1))
+  end
+
+  @spec fragments(String.t()) :: [String.t()]
+  defp fragments(variable) do
+    case System.get_env(variable) do
+      nil -> []
+      value -> value |> String.split(",") |> Enum.map(&String.trim/1) |> Enum.reject(&(&1 == ""))
+    end
+  end
+
   @spec finish(Credentials.t(), map()) :: :ok
   defp finish(_credentials, _account) do
+    # Captures are written exactly as the read pass writes them: a body the
+    # contract refused is evidence for a fix, not a parsed response. The capture
+    # itself cannot go into the report — it holds live structs and a response.
+    for {id, verdict} <- Ledger.verdicts(), do: write_capture(id, verdict)
+
     Ledger.verdicts()
+    |> Map.new(fn {id, verdict} -> {id, Map.delete(verdict, :capture)} end)
     |> Map.merge(
       Map.new(declined(), fn {id, reason} -> {id, %{status: "declined", reason: reason}} end)
     )
     |> merge_into_report()
 
-    for {id, verdict} <- Ledger.verdicts(),
-        package = write_package(verdict),
-        do: Report.capture!(id, package)
-
     :ok
+  end
+
+  @spec write_capture(String.t(), map()) :: :ok
+  defp write_capture(id, verdict) do
+    case verdict[:capture] do
+      {false, package} -> Report.capture!(id, package, parsed: false)
+      {nil, package} -> Report.capture!(id, package, parsed: false)
+      {%{} = _typed, package} -> Report.capture!(id, package, parsed: true)
+      _none -> :ok
+    end
   end
 
   # The read pass owns `source/certification.json`: the write pass merges its own
@@ -108,14 +168,6 @@ defmodule Mutate do
     IO.puts("merged #{map_size(verdicts)} write verdicts into source/certification.json")
     Report.summary(merged)
     :ok
-  end
-
-  @spec write_package(map()) :: Response.t() | nil
-  defp write_package(verdict) do
-    case verdict[:capture] do
-      {_typed, package} -> package
-      _none -> nil
-    end
   end
 
   @spec now() :: String.t()
@@ -216,12 +268,32 @@ defmodule Mutate do
   # Input helpers
   # ---------------------------------------------------------------------------
 
-  # Every required field of an operation's body or query, sampled from its own
-  # contract, with the scenario's values laid over the top.
-  @spec input(String.t(), String.t(), map()) :: map()
-  defp input(operation_id, part, overrides) do
+  # The input parts an operation declares, with the scenario's values laid over
+  # the required fields sampled from its own contract. A part the operation does
+  # not declare is never sent — its input contract rejects an undeclared part —
+  # and an optional part nobody filled in is left out rather than sent empty.
+  @spec params(String.t(), keyword()) :: map()
+  defp params(operation_id, options) do
     operation = CalCom.Registry.find(operation_id)
 
+    %{}
+    |> put(operation, "path", Keyword.get(options, :path))
+    |> put(operation, "query", merge_part(operation, "query", Keyword.get(options, :query, %{})))
+    |> put(operation, "body", merge_part(operation, "body", Keyword.get(options, :body, %{})))
+  end
+
+  @spec put(map(), CalCom.Operation.t(), String.t(), map() | nil) :: map()
+  defp put(params, operation, part, values) do
+    case Enum.find(operation.input_module.fields(), &(&1.wire == part)) do
+      nil -> params
+      %{required: true} -> Map.put(params, part, values || %{})
+      %{required: false} when values in [nil, %{}] -> params
+      %{required: false} -> Map.put(params, part, values)
+    end
+  end
+
+  @spec merge_part(CalCom.Operation.t(), String.t(), map()) :: map()
+  defp merge_part(operation, part, overrides) do
     base =
       case Enum.find(operation.input_module.fields(), &(&1.wire == part)) do
         %{rule: %{kind: {:object, module}}} -> Inputs.required_fields(module)
@@ -229,24 +301,24 @@ defmodule Mutate do
         _none -> %{}
       end
 
-    Map.merge(base, overrides)
+    # A union whose first variant samples to a scalar leaves nothing to merge
+    # into; the scenario's own values then stand alone and the provider decides.
+    if is_map(base), do: Map.merge(base, overrides), else: overrides
   end
 
-  @spec params(String.t(), keyword()) :: map()
-  defp params(operation_id, options) do
-    %{}
-    |> maybe("path", Keyword.get(options, :path))
-    |> maybe("query", input(operation_id, "query", Keyword.get(options, :query, %{})))
-    |> maybe("body", input(operation_id, "body", Keyword.get(options, :body, %{})))
-  end
-
-  @spec maybe(map(), String.t(), map() | nil) :: map()
-  defp maybe(params, _part, nil), do: params
-  defp maybe(params, part, values), do: Map.put(params, part, values)
-
-  # A unique slug/name per run, so two runs never collide on the same resource.
+  # A unique slug/name per call, so two scenarios never collide on the same
+  # resource: the provider answers a duplicate slug with 409, which would look
+  # like a contract failure instead of a fixture collision.
   @spec suffix() :: String.t()
-  defp suffix, do: System.system_time(:second) |> Integer.to_string(36)
+  defp suffix do
+    counter = Process.get(:certify_suffix, 0) + 1
+    Process.put(:certify_suffix, counter)
+    Integer.to_string(System.system_time(:second), 36) <> Integer.to_string(counter, 36)
+  end
+
+  # A webhook destination nothing listens on, unique per call for the same reason.
+  @spec subscriber() :: String.t()
+  defp subscriber, do: @subscriber <> "-" <> suffix()
 
   @spec tomorrow() :: String.t()
   defp tomorrow,
@@ -276,7 +348,7 @@ defmodule Mutate do
              params("POST /v2/webhooks",
                body: %{
                  "active" => true,
-                 "subscriberUrl" => @subscriber,
+                 "subscriberUrl" => subscriber(),
                  "triggers" => ["BOOKING_CREATED"]
                }
              )
@@ -296,7 +368,7 @@ defmodule Mutate do
              "PATCH /v2/webhooks/{webhookId}",
              params("PATCH /v2/webhooks/{webhookId}",
                path: %{"webhookId" => id},
-               body: %{"active" => false, "subscriberUrl" => @subscriber}
+               body: %{"active" => false}
              )
            )
          end)
@@ -310,7 +382,7 @@ defmodule Mutate do
              params("POST /v2/webhooks",
                body: %{
                  "active" => true,
-                 "subscriberUrl" => @subscriber,
+                 "subscriberUrl" => subscriber(),
                  "triggers" => ["BOOKING_CREATED"]
                }
              )
@@ -414,17 +486,14 @@ defmodule Mutate do
        "adds a booking field to a claimed event type",
        fn credentials, _ids ->
          with_event_type(credentials, fn id ->
+           # The field body is a tagged union; the contract samples it, a guess
+           # does not.
            Ledger.call(
              credentials,
              "POST /v2/event-types/{eventTypeId}/booking-fields",
              params("POST /v2/event-types/{eventTypeId}/booking-fields",
                path: %{"eventTypeId" => id},
-               body: %{
-                 "type" => "text",
-                 "slug" => slug("cert-field"),
-                 "label" => "Certification field",
-                 "required" => false
-               }
+               body: %{"slug" => slug("cert-field")}
              )
            )
          end)
@@ -539,58 +608,60 @@ defmodule Mutate do
   defp slots do
     [
       {"POST /v2/slots/reservations", "reserves a slot on a claimed event type",
-       fn credentials, ids ->
-         each(ids, "eventTypeId", fn event_type_id ->
-           Ledger.track(
-             "DELETE /v2/slots/reservations/{uid}",
-             "uid",
-             Ledger.created_id(reservation(credentials, event_type_id), :reservation_uid)
+       fn credentials, _ids ->
+         Ledger.track(
+           "DELETE /v2/slots/reservations/{uid}",
+           "uid",
+           Ledger.created_id(reservation(credentials), :reservation_uid)
+         )
+       end},
+      {"PATCH /v2/slots/reservations/{uid}", "edits the reservation this run created",
+       fn credentials, _ids ->
+         with_reservation(credentials, fn uid ->
+           Ledger.call(
+             credentials,
+             "PATCH /v2/slots/reservations/{uid}",
+             params("PATCH /v2/slots/reservations/{uid}", path: %{"uid" => uid}, body: %{})
            )
          end)
        end},
-      {"PATCH /v2/slots/reservations/{uid}", "edits the reservation this run created",
-       fn credentials, ids ->
-         each(ids, "eventTypeId", fn event_type_id ->
-           with_reservation(credentials, event_type_id, fn uid ->
-             Ledger.call(
-               credentials,
-               "PATCH /v2/slots/reservations/{uid}",
-               params("PATCH /v2/slots/reservations/{uid}", path: %{"uid" => uid}, body: %{})
-             )
-           end)
-         end)
-       end},
       {"DELETE /v2/slots/reservations/{uid}", "releases a reservation this run created",
-       fn credentials, ids ->
-         each(ids, "eventTypeId", fn event_type_id ->
-           case Ledger.created_id(reservation(credentials, event_type_id), :reservation_uid) do
-             nil ->
-               :ok
+       fn credentials, _ids ->
+         case Ledger.created_id(reservation(credentials), :reservation_uid) do
+           nil ->
+             :ok
 
-             uid ->
-               Ledger.call(credentials, "DELETE /v2/slots/reservations/{uid}", %{
-                 "path" => %{"uid" => uid}
-               })
-           end
-         end)
+           uid ->
+             Ledger.call(credentials, "DELETE /v2/slots/reservations/{uid}", %{
+               "path" => %{"uid" => uid}
+             })
+         end
        end}
     ]
   end
 
-  @spec reservation(Credentials.t(), term()) :: map()
-  defp reservation(credentials, event_type_id) do
-    Ledger.call(
-      credentials,
-      "POST /v2/slots/reservations",
-      params("POST /v2/slots/reservations",
-        body: %{"eventTypeId" => event_type_id, "slotStart" => tomorrow()}
-      )
-    )
+  # A reservation takes a slot the provider reports as open on an event type this
+  # run is willing to lose, so it borrows the same fixture the bookings use.
+  @spec reservation(Credentials.t()) :: map()
+  defp reservation(credentials) do
+    case free_slot(credentials) do
+      nil ->
+        Ledger.call(credentials, "POST /v2/slots/reservations", %{"body" => %{}})
+
+      {event_type_id, start} ->
+        Ledger.call(
+          credentials,
+          "POST /v2/slots/reservations",
+          params("POST /v2/slots/reservations",
+            body: %{"eventTypeId" => event_type_id, "slotStart" => start}
+          )
+        )
+    end
   end
 
-  @spec with_reservation(Credentials.t(), term(), (term() -> any())) :: any()
-  defp with_reservation(credentials, event_type_id, fun) do
-    case Ledger.created_id(reservation(credentials, event_type_id), :reservation_uid) do
+  @spec with_reservation(Credentials.t(), (term() -> any())) :: any()
+  defp with_reservation(credentials, fun) do
+    case Ledger.created_id(reservation(credentials), :reservation_uid) do
       nil -> :ok
       uid -> Ledger.track("DELETE /v2/slots/reservations/{uid}", "uid", uid) && fun.(uid)
     end
@@ -617,8 +688,8 @@ defmodule Mutate do
                path: %{"oooId" => id},
                body: %{
                  "notes" => "Edited by the certification sweep",
-                 "start" => tomorrow(),
-                 "end" => tomorrow()
+                 "start" => ooo_window()["start"],
+                 "end" => ooo_window()["end"]
                }
              )
            )
@@ -643,9 +714,23 @@ defmodule Mutate do
       credentials,
       "POST /v2/me/ooo",
       params("POST /v2/me/ooo",
-        body: %{"start" => tomorrow(), "end" => tomorrow(), "notes" => "cal_com certification"}
+        body: Map.merge(ooo_window(), %{"notes" => "cal_com certification"})
       )
     )
+  end
+
+  # Out-of-office entries for the same day overlap, and the provider answers an
+  # overlap with 409, so each scenario takes its own day.
+  @spec ooo_window() :: map()
+  defp ooo_window do
+    day = Process.get(:certify_ooo_day, 0) + 1
+    Process.put(:certify_ooo_day, day)
+    start_at = DateTime.utc_now() |> DateTime.add(day, :day) |> DateTime.truncate(:second)
+
+    %{
+      "start" => DateTime.to_iso8601(start_at),
+      "end" => DateTime.to_iso8601(DateTime.add(start_at, 8, :hour))
+    }
   end
 
   @spec with_ooo(Credentials.t(), (term() -> any())) :: any()
@@ -762,28 +847,12 @@ defmodule Mutate do
 
   @spec workflows() :: [{String.t(), String.t(), fun()}]
   defp workflows do
-    step = %{
-      "action" => "EMAIL_HOST",
-      "template" => "REMINDER",
-      "includeCalendarEvent" => false,
-      "sender" => "me@hawkyre.com",
-      "subject" => "Kithe certification",
-      "body" => "Reminder created by the cal_com certification sweep"
-    }
-
-    trigger = %{"type" => "BEFORE_EVENT", "offset" => 1, "timeUnit" => "HOUR"}
-    activation = %{"type" => "EVENT_START", "offset" => 1, "timeUnit" => "HOUR"}
-
+    # The workflow body comes from the operation's own contract: a workflow step
+    # is a tagged union the generator already knows how to sample, and a
+    # hand-written guess at it is exactly what failed before the first call.
     body = fn overrides ->
-      Map.merge(
-        %{
-          "name" => "Kithe certification " <> suffix(),
-          "activation" => activation,
-          "trigger" => trigger,
-          "steps" => [step]
-        },
-        overrides
-      )
+      base = merge_part(CalCom.Registry.find("POST /v2/workflows"), "body", %{})
+      Map.merge(base, Map.merge(%{"name" => "Kithe certification " <> suffix()}, overrides))
     end
 
     [
@@ -954,20 +1023,29 @@ defmodule Mutate do
            )
          end)
        end},
-      {"POST /v2/teams/{teamId}/roles", "creates a team role",
-       fn credentials, _ids ->
-         with_team(credentials, fn team_id ->
-           Ledger.call(
-             credentials,
-             "POST /v2/teams/{teamId}/roles",
-             params("POST /v2/teams/{teamId}/roles",
-               path: %{"teamId" => team_id},
-               body: %{
-                 "name" => "Kithe cert role " <> suffix(),
-                 "permissions" => ["booking.read"]
-               }
-             )
-           )
+      {"POST /v2/organizations/{orgId}/teams/{teamId}/roles", "creates a team role",
+       fn credentials, ids ->
+         each(ids, "orgId", fn org_id ->
+           with_team(credentials, fn team_id ->
+             created =
+               Ledger.call(
+                 credentials,
+                 "POST /v2/organizations/{orgId}/teams/{teamId}/roles",
+                 params("POST /v2/organizations/{orgId}/teams/{teamId}/roles",
+                   path: %{"orgId" => org_id, "teamId" => team_id},
+                   body: %{
+                     "name" => "Kithe cert role " <> suffix(),
+                     "permissions" => ["booking.read"]
+                   }
+                 )
+               )
+
+             Ledger.track("DELETE /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}", %{
+               "orgId" => org_id,
+               "teamId" => team_id,
+               "roleId" => Ledger.created_id(created, :id)
+             })
+           end)
          end)
        end}
     ]
@@ -1031,8 +1109,7 @@ defmodule Mutate do
 
            Ledger.track(
              "DELETE /v2/organizations/{orgId}/attributes/{attributeId}",
-             "attributeId",
-             Ledger.created_id(created, :id)
+             %{"orgId" => org_id, "attributeId" => Ledger.created_id(created, :id)}
            )
          end)
        end},
@@ -1117,8 +1194,7 @@ defmodule Mutate do
       attribute_id ->
         Ledger.track(
           "DELETE /v2/organizations/{orgId}/attributes/{attributeId}",
-          "attributeId",
-          attribute_id
+          %{"orgId" => org_id, "attributeId" => attribute_id}
         )
 
         fun.(attribute_id)
@@ -1150,8 +1226,7 @@ defmodule Mutate do
 
            Ledger.track(
              "DELETE /v2/organizations/{orgId}/roles/{roleId}",
-             "roleId",
-             Ledger.created_id(created, :id)
+             %{"orgId" => org_id, "roleId" => Ledger.created_id(created, :id)}
            )
          end)
        end},
@@ -1230,14 +1305,20 @@ defmodule Mutate do
         :ok
 
       role_id ->
-        Ledger.track("DELETE /v2/organizations/{orgId}/roles/{roleId}", "roleId", role_id)
+        Ledger.track("DELETE /v2/organizations/{orgId}/roles/{roleId}", %{
+          "orgId" => org_id,
+          "roleId" => role_id
+        })
+
         fun.(role_id)
     end
   end
 
   @spec organization_webhooks() :: [{String.t(), String.t(), fun()}]
   defp organization_webhooks do
-    body = %{"active" => true, "subscriberUrl" => @subscriber, "triggers" => ["BOOKING_CREATED"]}
+    body = fn ->
+      %{"active" => true, "subscriberUrl" => subscriber(), "triggers" => ["BOOKING_CREATED"]}
+    end
 
     [
       {"POST /v2/organizations/{orgId}/webhooks", "creates an organization webhook",
@@ -1249,14 +1330,13 @@ defmodule Mutate do
                "POST /v2/organizations/{orgId}/webhooks",
                params("POST /v2/organizations/{orgId}/webhooks",
                  path: %{"orgId" => org_id},
-                 body: body
+                 body: body.()
                )
              )
 
            Ledger.track(
              "DELETE /v2/organizations/{orgId}/webhooks/{webhookId}",
-             "webhookId",
-             Ledger.created_id(created, :id)
+             %{"orgId" => org_id, "webhookId" => Ledger.created_id(created, :id)}
            )
          end)
        end},
@@ -1270,7 +1350,7 @@ defmodule Mutate do
                "PATCH /v2/organizations/{orgId}/webhooks/{webhookId}",
                params("PATCH /v2/organizations/{orgId}/webhooks/{webhookId}",
                  path: %{"orgId" => org_id, "webhookId" => webhook_id},
-                 body: %{"active" => false, "subscriberUrl" => @subscriber}
+                 body: %{"active" => false}
                )
              )
            end)
@@ -1286,7 +1366,7 @@ defmodule Mutate do
                "POST /v2/organizations/{orgId}/webhooks",
                params("POST /v2/organizations/{orgId}/webhooks",
                  path: %{"orgId" => org_id},
-                 body: body
+                 body: body.()
                )
              )
 
@@ -1312,7 +1392,10 @@ defmodule Mutate do
       Ledger.call(
         credentials,
         "POST /v2/organizations/{orgId}/webhooks",
-        params("POST /v2/organizations/{orgId}/webhooks", path: %{"orgId" => org_id}, body: body)
+        params("POST /v2/organizations/{orgId}/webhooks",
+          path: %{"orgId" => org_id},
+          body: body.()
+        )
       )
 
     case Ledger.created_id(created, :id) do
@@ -1322,8 +1405,7 @@ defmodule Mutate do
       webhook_id ->
         Ledger.track(
           "DELETE /v2/organizations/{orgId}/webhooks/{webhookId}",
-          "webhookId",
-          webhook_id
+          %{"orgId" => org_id, "webhookId" => webhook_id}
         )
 
         fun.(webhook_id)
@@ -1334,34 +1416,39 @@ defmodule Mutate do
   # Insights: POST bodies that compute an answer and change nothing
   # ---------------------------------------------------------------------------
 
+  # The insights endpoints compute an answer and change nothing, so they are the
+  # one family the write pass calls without a fixture. `scope` is a lowercase
+  # enum in the contract, and the routing ones also need a date window.
   @spec insights() :: [{String.t(), String.t(), fun()}]
   defp insights do
-    start_at = DateTime.utc_now() |> DateTime.add(-30, :day) |> DateTime.truncate(:second)
-    end_at = DateTime.utc_now() |> DateTime.truncate(:second)
+    bookings = [
+      "POST /v2/insights/bookings/average-duration",
+      "POST /v2/insights/bookings/event-trends",
+      "POST /v2/insights/bookings/kpi-stats",
+      "POST /v2/insights/bookings/members"
+    ]
+
+    routings = [
+      "POST /v2/insights/routings/failed-bookings-by-field",
+      "POST /v2/insights/routings/form-field-options",
+      "POST /v2/insights/routings/form-response-headers",
+      "POST /v2/insights/routings/form-responses",
+      "POST /v2/insights/routings/forms-by-status",
+      "POST /v2/insights/routings/routed-to-per-period"
+    ]
 
     window = %{
-      "start" => DateTime.to_iso8601(start_at),
-      "end" => DateTime.to_iso8601(end_at),
-      "timeZone" => "Europe/London"
+      "timeZone" => "Europe/London",
+      "startDate" => DateTime.utc_now() |> DateTime.add(-30, :day) |> DateTime.to_iso8601(),
+      "endDate" => DateTime.utc_now() |> DateTime.to_iso8601(),
+      "offset" => 0,
+      "limit" => 10
     }
 
-    for path <- [
-          "average-duration",
-          "event-trends",
-          "kpi-stats",
-          "members"
-        ] do
-      {"POST /v2/insights/bookings/#{path}", "computes an insight over the last 30 days",
-       fn credentials, ids ->
-         each(ids, "orgId", fn org_id ->
-           Ledger.call(
-             credentials,
-             "POST /v2/insights/bookings/#{path}",
-             params("POST /v2/insights/bookings/#{path}",
-               body: Map.merge(window, %{"scope" => "ORG", "selectedTeamId" => org_id})
-             )
-           )
-         end)
+    for id <- bookings ++ routings do
+      {id, "computes an insight over the last 30 days",
+       fn credentials, _ids ->
+         Ledger.call(credentials, id, params(id, body: Map.merge(window, %{"scope" => "org"})))
        end}
     end
   end
@@ -1405,7 +1492,8 @@ defmodule Mutate do
            })
          end)
        end},
-      {"POST /v2/bookings/{bookingUid}/location", "sets a location on a booking this run created",
+      {"PATCH /v2/bookings/{bookingUid}/location",
+       "sets a location on a booking this run created",
        fn credentials, ids ->
          with_booking(credentials, ids, fn uid ->
            Ledger.call(
@@ -1484,17 +1572,117 @@ defmodule Mutate do
     ]
   end
 
+  # A booking needs a free slot on an event type the run is willing to lose, so
+  # the scenario books a 15-minute event type it created for itself on a slot the
+  # provider says is open — never a slot on an event type the account already had.
   @spec booking(Credentials.t(), map()) :: map()
-  defp booking(credentials, ids) do
-    event_type_id = ids |> Map.get("eventTypeId", []) |> List.wrap() |> List.first()
+  defp booking(credentials, _ids) do
+    case free_slot(credentials) do
+      nil ->
+        Ledger.call(credentials, "POST /v2/bookings", %{"body" => %{}})
 
-    Ledger.call(
-      credentials,
-      "POST /v2/bookings",
-      params("POST /v2/bookings",
-        body: %{"start" => tomorrow(), "eventTypeId" => event_type_id, "attendee" => @attendee}
+      {event_type_id, start} ->
+        Ledger.call(
+          credentials,
+          "POST /v2/bookings",
+          params("POST /v2/bookings",
+            body: %{"start" => start, "eventTypeId" => event_type_id, "attendee" => @attendee}
+          )
+        )
+    end
+  end
+
+  @spec booking_event_type(Credentials.t()) :: term()
+  defp booking_event_type(credentials) do
+    case Process.get(:certify_booking_event_type) do
+      nil ->
+        created =
+          Ledger.call(
+            credentials,
+            "POST /v2/event-types",
+            params("POST /v2/event-types",
+              body: %{
+                "title" => "Kithe certification booking",
+                "slug" => slug("kithe-cert-booking"),
+                "lengthInMinutes" => 15,
+                "description" => "Created and deleted by the cal_com certification sweep"
+              }
+            )
+          )
+
+        id = Ledger.created_id(created, :id)
+        Ledger.track("DELETE /v2/event-types/{eventTypeId}", "eventTypeId", id)
+        Process.put(:certify_booking_event_type, id)
+        id
+
+      id ->
+        id
+    end
+  end
+
+  # Slots the provider reports as open, handed out one per booking so two
+  # scenarios never fight over the same time.
+  @spec free_slot(Credentials.t()) :: {term(), String.t()} | nil
+  defp free_slot(credentials) do
+    event_type_id = booking_event_type(credentials)
+    if is_nil(event_type_id), do: nil, else: {event_type_id, pop_slot(credentials, event_type_id)}
+  end
+
+  @spec pop_slot(Credentials.t(), term()) :: String.t() | nil
+  defp pop_slot(credentials, event_type_id) do
+    slots =
+      case Process.get(:certify_booking_slots) do
+        nil -> fetch_slots(credentials, event_type_id)
+        cached -> cached
+      end
+
+    case slots do
+      [start | rest] ->
+        Process.put(:certify_booking_slots, rest)
+        start
+
+      [] ->
+        nil
+    end
+  end
+
+  @spec fetch_slots(Credentials.t(), term()) :: [String.t()]
+  defp fetch_slots(credentials, event_type_id) do
+    start_at = DateTime.utc_now() |> DateTime.add(1, :day) |> DateTime.truncate(:second)
+    end_at = DateTime.add(start_at, 9, :day)
+
+    verdict =
+      Ledger.call(
+        credentials,
+        "GET /v2/slots",
+        params("GET /v2/slots",
+          query: %{
+            "eventTypeId" => event_type_id,
+            "start" => DateTime.to_iso8601(start_at),
+            "end" => DateTime.to_iso8601(end_at),
+            "timeZone" => "America/Los_Angeles"
+          }
+        )
       )
-    )
+
+    case verdict[:capture] do
+      {false, _package} ->
+        []
+
+      {nil, _package} ->
+        []
+
+      {typed, _package} ->
+        # `data` is provider-defined JSON (a date -> slots map), so it is read
+        # back through the wire form rather than as a typed field.
+        typed.value.data
+        |> CalCom.Codec.wire()
+        |> Enum.flat_map(fn {_date, rows} -> Enum.map(rows, &Map.get(&1, "start")) end)
+        |> Enum.reject(&is_nil/1)
+
+      _none ->
+        []
+    end
   end
 
   # A booking whose lifecycle step needs cancelling afterwards: it is created,

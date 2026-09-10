@@ -260,8 +260,8 @@
       [
         "path",
         "path",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputSchedulesController20240611UpdateSchedulePath}, nullable: false}",
-        "CalCom.Entities.InputSchedulesController20240611UpdateSchedulePath.t()",
+        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputSchedulesController20240611GetSchedulePath}, nullable: false}",
+        "CalCom.Entities.InputSchedulesController20240611GetSchedulePath.t()",
         true
       ],
       [

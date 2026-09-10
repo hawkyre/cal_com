@@ -705,7 +705,7 @@
       [
         "secret",
         "secret",
-        "%CalCom.Rule{kind: :string, nullable: false}",
+        "%CalCom.Rule{kind: :string, nullable: true}",
         "String.t()",
         false
       ]
