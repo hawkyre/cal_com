@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "active": true,
+      "id": "d7585ec8-c467-4027-9307-e6ddde982430",
+      "payloadTemplate": null,
+      "subscriberUrl": "https://example.invalid/kithe-certification-TL4WMD2",
+      "time": null,
+      "timeUnit": null,
+      "triggers": [
+        "BOOKING_CREATED"
+      ],
+      "userId": 3209949,
+      "version": "2021-10-20"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/webhooks",
+  "parsed": true,
+  "provider": "cal_com"
+}

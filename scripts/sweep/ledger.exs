@@ -104,10 +104,17 @@ defmodule Sweep.Ledger do
     Enum.reduce(resources, leftovers, fn {operation_id, params}, leftovers ->
       verdict = call(credentials, operation_id, params)
 
-      if verdict.status in ["verified", "refused"] do
+      # Only a 2xx proves the resource is gone, and a 404 means it already was.
+      # Any other refusal — a 403 on something the account does not own, a
+      # validation error — leaves it there and has to be reported, not counted
+      # as cleaned.
+      if verdict.status == "verified" or verdict[:http] == 404 do
         leftovers
       else
-        Client.log("  LEFT BEHIND #{operation_id} #{inspect(params)} -> #{verdict.status}")
+        Client.log(
+          "  LEFT BEHIND #{operation_id} #{inspect(params)} -> #{verdict.status} #{verdict[:http] || ""}"
+        )
+
         [{operation_id, params} | leftovers]
       end
     end)

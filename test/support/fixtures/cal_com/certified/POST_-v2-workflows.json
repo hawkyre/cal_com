@@ -1,0 +1,46 @@
+{
+  "body": {
+    "data": {
+      "activation": {
+        "activeOnEventTypeIds": [],
+        "isActiveOnAllEventTypes": false
+      },
+      "id": 446630,
+      "name": "Kithe certification TL4WNFI",
+      "steps": [
+        {
+          "action": "email_host",
+          "autoTranslateEnabled": false,
+          "email": "",
+          "id": 493889,
+          "includeCalendarEvent": false,
+          "message": {
+            "html": "<body>Hi {ORGANIZER},<br><br>This is a reminder about your upcoming event.<br><br><div><strong class=\"editor-text-bold\">Event: </strong></div>{EVENT_NAME}<br><br><div><strong class=\"editor-text-bold\">Date & time: </strong></div>{EVENT_DATE_ddd, MMM D, YYYY h:mma} - {EVENT_END_TIME} ({TIMEZONE})<br><br><div><strong class=\"editor-text-bold\">Attendees: </strong></div>You & {ATTENDEE}<br><br><div><strong class=\"editor-text-bold\">Location: </strong></div>{LOCATION} {MEETING_URL}<br><br></body>",
+            "subject": "Reminder: {EVENT_NAME} - {EVENT_DATE_ddd, MMM D, YYYY h:mma}"
+          },
+          "phone": "",
+          "recipient": "const",
+          "sender": "a",
+          "skipNoShowAttendees": false,
+          "sourceLocale": "en",
+          "stepNumber": 0,
+          "template": "reminder"
+        }
+      ],
+      "trigger": {
+        "offset": {
+          "unit": "hour",
+          "value": 1
+        },
+        "type": "beforeEvent"
+      },
+      "type": "event-type"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/workflows",
+  "parsed": true,
+  "provider": "cal_com"
+}

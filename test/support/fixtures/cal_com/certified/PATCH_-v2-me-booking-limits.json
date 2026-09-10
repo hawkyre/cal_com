@@ -1,0 +1,16 @@
+{
+  "body": {
+    "data": {
+      "perDay": null,
+      "perMonth": null,
+      "perWeek": null,
+      "perYear": null
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/me/booking-limits",
+  "parsed": true,
+  "provider": "cal_com"
+}

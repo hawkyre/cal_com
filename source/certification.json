@@ -24,14 +24,12 @@
       "status": "write"
     },
     "DELETE /v2/event-types/{eventTypeId}/webhooks": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "DELETE /v2/me/booking-limits": {
       "http": 204,
@@ -43,6 +41,7 @@
     },
     "DELETE /v2/me/team-booking-limits/{teamId}": {
       "http": 404,
+      "reason": ":not_found",
       "status": "refused"
     },
     "DELETE /v2/notifications/subscriptions/app-push": {
@@ -193,6 +192,7 @@
     },
     "DELETE /v2/selected-calendars": {
       "http": 500,
+      "reason": "{:http, 500}",
       "status": "refused"
     },
     "DELETE /v2/slots/reservations/{uid}": {
@@ -201,6 +201,7 @@
     },
     "DELETE /v2/teams/{teamId}": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "DELETE /v2/teams/{teamId}/event-types/{eventTypeId}": {
@@ -448,7 +449,6 @@
       "status": "verified"
     },
     "GET /v2/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
       "http": 200,
       "status": "verified"
     },
@@ -507,7 +507,6 @@
       "status": "unreachable"
     },
     "GET /v2/me": {
-      "fields": [],
       "http": 200,
       "status": "verified"
     },
@@ -1244,8 +1243,7 @@
       "status": "verified"
     },
     "PATCH /v2/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
+      "reason": "the sweep could not build an input the contract accepts",
       "status": "write"
     },
     "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}": {
@@ -1259,20 +1257,20 @@
       "status": "write"
     },
     "PATCH /v2/me": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/me/booking-limits": {
       "http": 200,
       "status": "verified"
     },
     "PATCH /v2/me/ooo/{oooId}": {
-      "http": 409,
-      "status": "refused"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/me/team-booking-limits/{teamId}": {
       "http": 400,
+      "reason": "{:http, 400}",
       "status": "refused"
     },
     "PATCH /v2/oauth-clients/{clientId}": {
@@ -1394,10 +1392,12 @@
     },
     "PATCH /v2/slots/reservations/{uid}": {
       "http": 404,
+      "reason": ":not_found",
       "status": "refused"
     },
     "PATCH /v2/teams/{teamId}": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "PATCH /v2/teams/{teamId}/event-types/{eventTypeId}": {
@@ -1426,12 +1426,12 @@
       "status": "write"
     },
     "PATCH /v2/webhooks/{webhookId}": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 200,
+      "status": "verified"
     },
     "PATCH /v2/workflows/{workflowId}": {
       "http": 400,
+      "reason": "{:http, 400}",
       "status": "refused"
     },
     "POST /v2/api-keys/refresh": {
@@ -1443,8 +1443,9 @@
       "status": "declined"
     },
     "POST /v2/bookings": {
-      "http": 201,
-      "status": "verified"
+      "http": 409,
+      "reason": "{:http, 409}",
+      "status": "refused"
     },
     "POST /v2/bookings/verification/email/send-code": {
       "fields": [],
@@ -1512,9 +1513,8 @@
       "status": "declined"
     },
     "POST /v2/calendars/{calendar}/disconnect": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "reason": "needs a connected third-party calendar",
+      "status": "declined"
     },
     "POST /v2/conferencing/{app}/connect": {
       "reason": "needs a Zoom or Google Meet OAuth grant",
@@ -1534,6 +1534,7 @@
     },
     "POST /v2/event-types/{eventTypeId}/booking-fields": {
       "http": 400,
+      "reason": "{:http, 400}",
       "status": "refused"
     },
     "POST /v2/event-types/{eventTypeId}/private-links": {
@@ -1541,48 +1542,57 @@
       "status": "verified"
     },
     "POST /v2/event-types/{eventTypeId}/webhooks": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
-      "status": "write"
+      "http": 201,
+      "status": "verified"
     },
     "POST /v2/insights/bookings/average-duration": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/bookings/event-trends": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/bookings/kpi-stats": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/bookings/members": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/routings/failed-bookings-by-field": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/routings/form-field-options": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/routings/form-response-headers": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/routings/form-responses": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/routings/forms-by-status": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/insights/routings/routed-to-per-period": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/me/ooo": {
@@ -1720,6 +1730,7 @@
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/roles": {
       "http": 404,
+      "reason": ":not_found",
       "status": "refused"
     },
     "POST /v2/organizations/{orgId}/teams/{teamId}/roles/{roleId}/permissions": {
@@ -1796,6 +1807,7 @@
     },
     "POST /v2/selected-calendars": {
       "http": 404,
+      "reason": ":not_found",
       "status": "refused"
     },
     "POST /v2/slots/reservations": {
@@ -1808,6 +1820,7 @@
     },
     "POST /v2/teams/{teamId}/event-types": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/teams/{teamId}/event-types/{eventTypeId}/booking-fields": {
@@ -1831,6 +1844,7 @@
     },
     "POST /v2/teams/{teamId}/memberships": {
       "http": 403,
+      "reason": ":forbidden",
       "status": "refused"
     },
     "POST /v2/teams/{teamId}/routing-forms/{routingFormId}/responses": {
@@ -1893,11 +1907,11 @@
     },
     "PUT /v2/destination-calendars": {
       "http": 404,
+      "reason": ":not_found",
       "status": "refused"
     },
     "PUT /v2/event-types/{eventTypeId}/booking-fields": {
-      "fields": [],
-      "reason": "mutation: the read pass skips it",
+      "reason": "the sweep could not build an input the contract accepts",
       "status": "write"
     },
     "PUT /v2/organizations/{orgId}/roles/{roleId}/permissions": {
@@ -1921,5 +1935,5 @@
       "status": "write"
     }
   },
-  "writes_generated_at": "2026-09-10T05:56:36.902882Z"
+  "writes_generated_at": "2026-09-10T06:01:37.125457Z"
 }

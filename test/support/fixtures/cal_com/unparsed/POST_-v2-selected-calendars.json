@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Not Found",
+        "message": "Calendar credentials not found",
+        "statusCode": 404
+      },
+      "message": "Calendar credentials not found"
+    },
+    "path": "/v2/selected-calendars",
+    "status": "error",
+    "timestamp": "2026-09-10T05:59:35.815Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 404,
+  "operation": "POST /v2/selected-calendars",
+  "parsed": false,
+  "provider": "cal_com"
+}

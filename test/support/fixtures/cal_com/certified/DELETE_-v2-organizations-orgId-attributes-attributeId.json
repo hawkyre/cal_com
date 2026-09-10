@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "createdAt": "2026-09-10T06:00:16.934Z",
+      "enabled": true,
+      "id": "be6cc7c6-9877-478e-898f-ceb7e938a174",
+      "isLocked": false,
+      "isWeightsEnabled": false,
+      "name": "Kithe certification TL4WNW14",
+      "slug": "kithe-cert-TL4WNW15",
+      "teamId": 422850,
+      "type": "TEXT",
+      "updatedAt": "2026-09-10T06:00:16.934Z",
+      "usersCanEditRelation": false
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "DELETE /v2/organizations/{orgId}/attributes/{attributeId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

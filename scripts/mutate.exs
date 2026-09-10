@@ -262,6 +262,8 @@ defmodule Mutate do
       attributes() ++
       roles() ++
       organization_webhooks() ++
+      event_type_children() ++
+      account_settings() ++
       insights() ++
       bookings() ++
       verified_resources()
@@ -1416,8 +1418,286 @@ defmodule Mutate do
   end
 
   # ---------------------------------------------------------------------------
-  # Insights: POST bodies that compute an answer and change nothing
+  # Resources that live under an event type this run creates
   # ---------------------------------------------------------------------------
+
+  @spec event_type_children() :: [{String.t(), String.t(), fun()}]
+  defp event_type_children do
+    webhook = fn credentials, event_type_id ->
+      Ledger.call(
+        credentials,
+        "POST /v2/event-types/{eventTypeId}/webhooks",
+        params("POST /v2/event-types/{eventTypeId}/webhooks",
+          path: %{"eventTypeId" => event_type_id},
+          body: %{
+            "active" => true,
+            "subscriberUrl" => subscriber(),
+            "triggers" => ["BOOKING_CREATED"]
+          }
+        )
+      )
+    end
+
+    webhook_path = fn event_type_id, webhook_id ->
+      %{"eventTypeId" => event_type_id, "webhookId" => webhook_id}
+    end
+
+    [
+      {"POST /v2/event-types/{eventTypeId}/webhooks",
+       "adds a webhook to an event type this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           created = webhook.(credentials, event_type_id)
+
+           Ledger.track(
+             "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+             webhook_path.(event_type_id, Ledger.created_id(created, :id))
+           )
+         end)
+       end},
+      {"PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+       "edits the event-type webhook this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           with_child_webhook(credentials, event_type_id, webhook, webhook_path, fn webhook_id ->
+             Ledger.call(
+               credentials,
+               "PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+               params("PATCH /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+                 path: webhook_path.(event_type_id, webhook_id),
+                 body: %{"active" => false}
+               )
+             )
+           end)
+         end)
+       end},
+      {"DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+       "deletes an event-type webhook this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           case Ledger.created_id(webhook.(credentials, event_type_id), :id) do
+             nil ->
+               :ok
+
+             webhook_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+                 %{"path" => webhook_path.(event_type_id, webhook_id)}
+               )
+           end
+         end)
+       end},
+      {"DELETE /v2/event-types/{eventTypeId}/webhooks",
+       "deletes every webhook of an event type this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           webhook.(credentials, event_type_id)
+
+           Ledger.call(
+             credentials,
+             "DELETE /v2/event-types/{eventTypeId}/webhooks",
+             params("DELETE /v2/event-types/{eventTypeId}/webhooks",
+               path: %{"eventTypeId" => event_type_id}
+             )
+           )
+         end)
+       end},
+      {"PATCH /v2/event-types/{eventTypeId}/booking-fields",
+       "replaces the booking fields of an event type this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           home =
+             params("PATCH /v2/event-types/{eventTypeId}/booking-fields",
+               path: %{"eventTypeId" => event_type_id},
+               body: %{"bookingFields" => booking_fields(credentials, event_type_id)}
+             )
+
+           Ledger.call(credentials, "PATCH /v2/event-types/{eventTypeId}/booking-fields", home)
+         end)
+       end},
+      {"PUT /v2/event-types/{eventTypeId}/booking-fields",
+       "replaces the booking fields of an event type this run created (PUT)",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           Ledger.call(
+             credentials,
+             "PUT /v2/event-types/{eventTypeId}/booking-fields",
+             params("PUT /v2/event-types/{eventTypeId}/booking-fields",
+               path: %{"eventTypeId" => event_type_id},
+               body: %{"bookingFields" => booking_fields(credentials, event_type_id)}
+             )
+           )
+         end)
+       end},
+      {"POST /v2/event-types/{eventTypeId}/private-links",
+       "creates a private link on a claimed event type",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           created =
+             Ledger.call(
+               credentials,
+               "POST /v2/event-types/{eventTypeId}/private-links",
+               params("POST /v2/event-types/{eventTypeId}/private-links",
+                 path: %{"eventTypeId" => event_type_id}
+               )
+             )
+
+           Ledger.track(
+             "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}",
+             %{"eventTypeId" => event_type_id, "linkId" => Ledger.created_id(created, :id)}
+           )
+         end)
+       end},
+      {"PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}",
+       "edits the private link this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           with_private_link(credentials, event_type_id, fn link_id ->
+             Ledger.call(
+               credentials,
+               "PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}",
+               params("PATCH /v2/event-types/{eventTypeId}/private-links/{linkId}",
+                 path: %{"eventTypeId" => event_type_id, "linkId" => link_id},
+                 body: %{"maxUsageCount" => 2}
+               )
+             )
+           end)
+         end)
+       end},
+      {"DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}",
+       "deletes a private link this run created",
+       fn credentials, _ids ->
+         with_event_type(credentials, fn event_type_id ->
+           case private_link(credentials, event_type_id) do
+             nil ->
+               :ok
+
+             link_id ->
+               Ledger.call(
+                 credentials,
+                 "DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}",
+                 %{"path" => %{"eventTypeId" => event_type_id, "linkId" => link_id}}
+               )
+           end
+         end)
+       end}
+    ]
+  end
+
+  @spec with_child_webhook(Credentials.t(), term(), function(), function(), (term() -> any())) ::
+          any()
+  defp with_child_webhook(credentials, event_type_id, webhook, webhook_path, fun) do
+    case Ledger.created_id(webhook.(credentials, event_type_id), :id) do
+      nil ->
+        :ok
+
+      webhook_id ->
+        Ledger.track(
+          "DELETE /v2/event-types/{eventTypeId}/webhooks/{webhookId}",
+          webhook_path.(event_type_id, webhook_id)
+        )
+
+        fun.(webhook_id)
+    end
+  end
+
+  @spec private_link(Credentials.t(), term()) :: term()
+  defp private_link(credentials, event_type_id) do
+    Ledger.created_id(
+      Ledger.call(
+        credentials,
+        "POST /v2/event-types/{eventTypeId}/private-links",
+        params("POST /v2/event-types/{eventTypeId}/private-links",
+          path: %{"eventTypeId" => event_type_id}
+        )
+      ),
+      :id
+    )
+  end
+
+  @spec with_private_link(Credentials.t(), term(), (term() -> any())) :: any()
+  defp with_private_link(credentials, event_type_id, fun) do
+    case private_link(credentials, event_type_id) do
+      nil ->
+        :ok
+
+      link_id ->
+        Ledger.track("DELETE /v2/event-types/{eventTypeId}/private-links/{linkId}", %{
+          "eventTypeId" => event_type_id,
+          "linkId" => link_id
+        })
+
+        fun.(link_id)
+    end
+  end
+
+  # The event type's own booking fields, read back so a replace reflects them.
+  @spec booking_fields(Credentials.t(), term()) :: [map()]
+  defp booking_fields(credentials, event_type_id) do
+    verdict =
+      Ledger.call(
+        credentials,
+        "GET /v2/event-types/{eventTypeId}/booking-fields",
+        %{"path" => %{"eventTypeId" => event_type_id}}
+      )
+
+    case verdict[:capture] do
+      {%{} = typed, _package} -> typed.value.data |> CalCom.Codec.wire()
+      _none -> []
+    end
+  end
+
+  # ---------------------------------------------------------------------------
+  # The account's own settings
+  # ---------------------------------------------------------------------------
+
+  @spec account_settings() :: [{String.t(), String.t(), fun()}]
+  defp account_settings do
+    [
+      {"PATCH /v2/me", "edits this user's own profile, then puts it back",
+       fn credentials, _ids ->
+         before = Ledger.call(credentials, "GET /v2/me", %{})
+
+         restored =
+           case Ledger.parsed(before) do
+             %{data: data} when is_map(data) ->
+               Map.take(data, [:name, :time_zone, :week_start, :locale])
+
+             _other ->
+               nil
+           end
+
+         verdict =
+           Ledger.call(
+             credentials,
+             "PATCH /v2/me",
+             params("PATCH /v2/me", body: %{"name" => "hawkyre"})
+           )
+
+         if verdict.status == "verified" and is_map(restored) do
+           body =
+             restored
+             |> Enum.map(fn {field, value} ->
+               {field |> Atom.to_string() |> Macro.underscore() |> camel(), value}
+             end)
+             |> Map.new()
+             |> Map.reject(fn {_key, value} -> is_nil(value) end)
+
+           restore = params("PATCH /v2/me", body: body)
+           Ledger.call(credentials, "PATCH /v2/me", restore)
+         end
+       end}
+    ]
+  end
+
+  @spec camel(String.t()) :: String.t()
+  defp camel(field) do
+    case String.split(field, "_") do
+      [single] -> single
+      [head | tail] -> head <> Enum.map_join(tail, &String.capitalize/1)
+    end
+  end
 
   # The insights endpoints compute an answer and change nothing, so they are the
   # one family the write pass calls without a fixture. `scope` is a lowercase

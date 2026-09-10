@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "active": false,
+      "id": "483934f0-9783-49bf-a434-4ecc52a4f37f",
+      "payloadTemplate": null,
+      "subscriberUrl": "https://example.invalid/kithe-certification",
+      "time": null,
+      "timeUnit": null,
+      "triggers": [
+        "BOOKING_CREATED"
+      ],
+      "userId": 3209949,
+      "version": "2021-10-20"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 200,
+  "operation": "PATCH /v2/webhooks/{webhookId}",
+  "parsed": true,
+  "provider": "cal_com"
+}

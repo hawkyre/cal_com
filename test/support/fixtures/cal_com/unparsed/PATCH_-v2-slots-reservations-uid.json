@@ -1,0 +1,20 @@
+{
+  "body": {
+    "error": {
+      "details": {
+        "error": "Not Found",
+        "message": "Event Type with ID=0 not found",
+        "statusCode": 404
+      },
+      "message": "Event Type with ID=0 not found"
+    },
+    "path": "/v2/slots/reservations/f6f5dc53-7813-44dc-9ce4-58f87cd7f8f6",
+    "status": "error",
+    "timestamp": "2026-09-10T05:59:23.012Z"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 404,
+  "operation": "PATCH /v2/slots/reservations/{uid}",
+  "parsed": false,
+  "provider": "cal_com"
+}

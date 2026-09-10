@@ -1,0 +1,19 @@
+{
+  "body": {
+    "data": {
+      "eventTypeId": 7013523,
+      "reservationDuration": 5,
+      "reservationUid": "aa020951-dc62-488b-ac46-27507da64ab4",
+      "reservationUntil": "2026-09-10T06:04:23.801Z",
+      "slotDuration": 15,
+      "slotEnd": "2026-09-11T16:45:00.000Z",
+      "slotStart": "2026-09-11T16:30:00.000Z"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/slots/reservations",
+  "parsed": true,
+  "provider": "cal_com"
+}

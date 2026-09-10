@@ -1,0 +1,23 @@
+{
+  "body": {
+    "data": {
+      "color": null,
+      "createdAt": "2026-09-10T06:00:21.973Z",
+      "description": null,
+      "id": "540388c5-f741-4ac9-b59b-a97db92e6895",
+      "name": "Kithe cert role TL4WOK19",
+      "organizationId": 422850,
+      "permissions": [
+        "booking.read"
+      ],
+      "type": "CUSTOM",
+      "updatedAt": "2026-09-10T06:00:21.973Z"
+    },
+    "status": "success"
+  },
+  "captured_on": "2026-09-10",
+  "http_status": 201,
+  "operation": "POST /v2/organizations/{orgId}/roles",
+  "parsed": true,
+  "provider": "cal_com"
+}
