@@ -50,6 +50,11 @@ defmodule Entities.InputBookingsController20260225CancelBookingBody do
   use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
 end
 
+defmodule Entities.InputBookingsController20260225CancelBookingBodyOption1 do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
+end
+
 defmodule Entities.InputBookingsController20260225ReassignBookingToUserPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
@@ -216,11 +221,6 @@ defmodule Entities.InputTeamsEventTypesController20260612GetTeamEventTypesPath d
 end
 
 defmodule Entities.InputOrganizationsEventTypesController20260612GetTeamEventTypesQuery do
-  @moduledoc "Complete typed fields for this Cal provider object."
-  use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
-end
-
-defmodule Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypesQuery do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_42.json", __MODULE__}
 end

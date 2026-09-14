@@ -1,5 +1,10 @@
 alias CalCom.Entities
 
+defmodule Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypesQuery do
+  @moduledoc "Complete typed fields for this Cal provider object."
+  use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}
+end
+
 defmodule Entities.InputOrganizationsEventTypesController20260612DeleteCustomBookingFieldPath do
   @moduledoc "Complete typed fields for this Cal provider object."
   use CalCom.Schema, source: {"schema_contracts_43.json", __MODULE__}

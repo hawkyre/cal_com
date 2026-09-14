@@ -17,12 +17,12 @@ HTTP client you already use and hand the status, headers and body back as
 
 ## Install
 
-Depend on it by git ref:
+Add the Hex dependency:
 
 ```elixir
 def deps do
   [
-    {:cal_com, git: "git@github.com:hawkyre/cal_com.git", tag: "v0.2.0"}
+    {:cal_com, "~> 0.4.0"}
   ]
 end
 ```
@@ -159,16 +159,15 @@ object rather than the array the document declares, and `GET /v2/bookings`,
 whose documented `2026-05-01` version times out at the provider (Cloudflare 524
 after 125s) while `2024-08-13` answers the same shape in under a second.
 
-Two provider behaviours a caller should know about, both found by the write
-pass and both classified rather than papered over:
+Two provider behaviours a caller should know about:
 
 - `POST /v2/teams` answers `201` with `data.pendingTeam` and a Stripe
   `paymentLink`; the team does not exist until the payment completes, so a
   follow-up `PATCH` or `DELETE` on that id answers 403 or 404. The response
   parses, and nothing was created to clean up.
-- `POST /v2/bookings/{bookingUid}/cancel` requires `cancellationReason`. The
-  document declares no request body, so `source/live_overrides.json` supplies
-  one and the client refuses to build a cancel without a reason.
+- `POST /v2/bookings/{bookingUid}/cancel` accepts an optional reason. Its standard
+  input supports `cancelSubsequentBookings`; its seated input requires `seatUid`.
+  Each input rejects fields from the other variant before a request is built.
 
 A `verified` read is weaker evidence when the collection it read was empty: the
 envelope parsed, but no row did. That is how the webhook `secret` null stayed

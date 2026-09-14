@@ -3,15 +3,12 @@ defmodule CalCom.CertificationTest do
 
   alias CalCom.Registry
 
-  @source Path.expand("../../source", __DIR__)
+  @report_path Path.expand("../../source/certification.json", __DIR__)
   @statuses ~w(verified refused unreachable declined)
 
-  # The certification file is the release gate: it says, per operation, what a
-  # live call answered. These assertions keep it from rotting — an operation
-  # added without being exercised, a verdict that lost its reason, or an open
-  # shape mismatch all fail the suite rather than sitting quietly in a JSON file.
+  # Each operation needs a complete verdict from the live certification report.
   setup do
-    {:ok, report: read("certification.json")}
+    {:ok, report: @report_path |> File.read!() |> Jason.decode!()}
   end
 
   test "every operation the registry has carries exactly one verdict", %{report: report} do
@@ -83,7 +80,4 @@ defmodule CalCom.CertificationTest do
     assert is_integer(user_id) and is_integer(organization_id)
     assert is_binary(report["generated_at"])
   end
-
-  @spec read(String.t()) :: map()
-  defp read(file), do: @source |> Path.join(file) |> File.read!() |> Jason.decode!()
 end

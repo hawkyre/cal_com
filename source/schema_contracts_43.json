@@ -1,4 +1,31 @@
 {
+  "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypesQuery": {
+    "fields": [
+      [
+        "take",
+        "take",
+        "%CalCom.Rule{kind: :number, nullable: false, minimum: 1, maximum: 250}",
+        "number()",
+        false
+      ],
+      [
+        "skip",
+        "skip",
+        "%CalCom.Rule{kind: :number, nullable: false, minimum: 0}",
+        "number()",
+        false
+      ],
+      [
+        "sort_created_at",
+        "sortCreatedAt",
+        "%CalCom.Rule{kind: {:enum, [{\"asc\", :asc}, {\"desc\", :desc}]}, nullable: false}",
+        ":asc | :desc",
+        false
+      ]
+    ],
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
   "CalCom.Entities.InputOrganizationsEventTypesController20260612DeleteCustomBookingFieldPath": {
     "fields": [
       [

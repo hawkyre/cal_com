@@ -71,8 +71,8 @@
       [
         "body",
         "body",
-        "%CalCom.Rule{kind: {:object, CalCom.Entities.InputBookingsController20260225CancelBookingBody}, nullable: false}",
-        "CalCom.Entities.InputBookingsController20260225CancelBookingBody.t()",
+        "%CalCom.Rule{kind: {:one_of, [%CalCom.Rule{kind: {:object, CalCom.Entities.InputBookingsController20260225CancelBookingBody}, nullable: false}, %CalCom.Rule{kind: {:object, CalCom.Entities.InputBookingsController20260225CancelBookingBodyOption1}, nullable: false}]}, nullable: false}",
+        "CalCom.Entities.InputBookingsController20260225CancelBookingBody.t() | CalCom.Entities.InputBookingsController20260225CancelBookingBodyOption1.t()",
         true
       ]
     ],
