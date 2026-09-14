@@ -17,12 +17,12 @@ HTTP client you already use and hand the status, headers and body back as
 
 ## Install
 
-Depend on it by git ref:
+Add the Hex dependency:
 
 ```elixir
 def deps do
   [
-    {:cal_com, git: "git@github.com:hawkyre/cal_com.git", tag: "v0.2.0"}
+    {:cal_com, "~> 0.4.0"}
   ]
 end
 ```
