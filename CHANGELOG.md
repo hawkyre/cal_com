@@ -4,6 +4,12 @@ Every entry names the SHA-256 of the `source/openapi.json` the release was
 generated from, so a published version can be traced to its provider document.
 CI fails when the current hash is absent from this file.
 
+## Unreleased
+
+Cancellation requests preserve an absent reason and type ordinary and seated
+inputs separately. Invalid occurrence flags and seat identifiers fail before
+request construction. The ordinary body keeps its published module name.
+
 ## 0.3.0 (2026-09-10)
 
 Still generated from `source/openapi.json` with SHA-256

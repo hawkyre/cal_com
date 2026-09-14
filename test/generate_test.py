@@ -58,6 +58,17 @@ class NormalizationTest(unittest.TestCase):
         recorded = (SOURCE / "SOURCE_HASH").read_text().strip()
         self.assertEqual(recorded, hashlib.sha256((SOURCE / "openapi.json").read_bytes()).hexdigest())
 
+    def test_cancellation_variants_retain_documented_fields_and_required_flags(self):
+        operation = ORIGINAL["paths"]["/v2/bookings/{bookingUid}/cancel"]["post"]
+        declared = operation["requestBody"]["content"]["application/json"]["schema"]["oneOf"]
+        overrides = json.loads((SOURCE / "live_overrides.json").read_text())
+        variants = overrides["operation_bodies"]["POST /v2/bookings/{bookingUid}/cancel"]["oneOf"]
+        for reference, variant in zip(declared, variants, strict=True):
+            source = ORIGINAL["components"]["schemas"][reference["$ref"].split("/")[-1]]
+            self.assertEqual(NORMALIZE(source["properties"]), NORMALIZE(variant["properties"]))
+            self.assertEqual(source.get("required", []), variant.get("required", []))
+            self.assertIs(variant["additionalProperties"], False)
+
 
 if __name__ == "__main__":
     unittest.main()

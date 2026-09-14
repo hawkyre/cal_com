@@ -4138,8 +4138,6 @@ defmodule Mutate do
     end
   end
 
-  # Cal.com requires a reason to cancel, and the document does not say so: the
-  # classification for this operation carries the body the provider demands.
   @spec cancel_params(term()) :: map()
   defp cancel_params(uid) do
     %{

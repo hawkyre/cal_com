@@ -1145,16 +1145,26 @@
   },
   "operation_bodies": {
     "POST /v2/bookings/{bookingUid}/cancel": {
-      "type": "object",
-      "properties": {
-        "cancellationReason": {
-          "type": "string",
-          "description": "Why the booking is cancelled."
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cancellationReason": {"type": "string"},
+            "cancelSubsequentBookings": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "seatUid": {"type": "string"},
+            "cancellationReason": {"type": "string"}
+          },
+          "required": ["seatUid"],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "cancellationReason"
-      ]
+      ],
+      "description": "The documented standard and seated request fields are distinct. Close each input variant so seatUid cannot match the standard variant as an unknown field."
     }
   },
   "operation_parameters": {

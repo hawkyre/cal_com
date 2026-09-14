@@ -333,10 +333,37 @@
         "cancellationReason",
         "%CalCom.Rule{kind: :string, nullable: false}",
         "String.t()",
-        true
+        false
+      ],
+      [
+        "cancel_subsequent_bookings",
+        "cancelSubsequentBookings",
+        "%CalCom.Rule{kind: :boolean, nullable: false}",
+        "boolean()",
+        false
       ]
     ],
-    "additional": "%CalCom.Rule{kind: :json, nullable: true}",
+    "additional": "false",
+    "additional_type": "CalCom.Json.t()"
+  },
+  "CalCom.Entities.InputBookingsController20260225CancelBookingBodyOption1": {
+    "fields": [
+      [
+        "seat_uid",
+        "seatUid",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        true
+      ],
+      [
+        "cancellation_reason",
+        "cancellationReason",
+        "%CalCom.Rule{kind: :string, nullable: false}",
+        "String.t()",
+        false
+      ]
+    ],
+    "additional": "false",
     "additional_type": "CalCom.Json.t()"
   },
   "CalCom.Entities.InputBookingsController20260225ReassignBookingToUserPath": {
@@ -1012,33 +1039,6 @@
         "hosts_limit",
         "hostsLimit",
         "%CalCom.Rule{kind: :number, nullable: false}",
-        "number()",
-        false
-      ],
-      [
-        "sort_created_at",
-        "sortCreatedAt",
-        "%CalCom.Rule{kind: {:enum, [{\"asc\", :asc}, {\"desc\", :desc}]}, nullable: false}",
-        ":asc | :desc",
-        false
-      ]
-    ],
-    "additional": "false",
-    "additional_type": "CalCom.Json.t()"
-  },
-  "CalCom.Entities.InputOrganizationsEventTypesController20260612GetTeamsEventTypesQuery": {
-    "fields": [
-      [
-        "take",
-        "take",
-        "%CalCom.Rule{kind: :number, nullable: false, minimum: 1, maximum: 250}",
-        "number()",
-        false
-      ],
-      [
-        "skip",
-        "skip",
-        "%CalCom.Rule{kind: :number, nullable: false, minimum: 0}",
         "number()",
         false
       ],
